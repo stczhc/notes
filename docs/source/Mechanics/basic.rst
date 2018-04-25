@@ -36,8 +36,7 @@
 
 将这个表达式展开成 :math:`\bm{\epsilon}` 的幂级数并忽略一阶以上的无穷小量得
 
-.. math::
-    \mathscr{L}(v'^2)=\mathscr{L}(v^2)+2\frac{\partial \mathscr{L}}{\partial v^2}\bm{v}\cdot\bm{\epsilon}
+.. math:: \mathscr{L}(v'^2)=\mathscr{L}(v^2)+2\frac{\partial \mathscr{L}}{\partial v^2}\bm{v}\cdot\bm{\epsilon}
     :label: eq2
 
 具体来看
