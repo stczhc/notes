@@ -136,6 +136,7 @@ latex_elements = {
     'preamble': r'''
 \hypersetup{unicode=true}
 \usepackage{CJKutf8}
+\usepackage{bm}
 \begin{CJK}{UTF8}{gbsn}
 \AtEndDocument{\end{CJK}}
 '''
