@@ -133,7 +133,14 @@ latex_elements = {
     # Latex figure (float) alignment
     #
     # 'figure_align': 'htbp',
+    'preamble': r'''
+\hypersetup{unicode=true}
+\usepackage{CJKutf8}
+\begin{CJK}{UTF8}{gbsn}
+\AtEndDocument{\end{CJK}}
+'''
 }
+
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
