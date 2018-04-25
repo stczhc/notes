@@ -27,6 +27,9 @@ I.1 牛顿定律
 其中上标(index) :math:`i = 1,2,3,\cdots, D` (:math:`D` 维空间). 注意这里的 :math:`x` 有时表示 :math:`x` 坐标轴, 取值是 :math:`-\infty` 到 :math:`+\infty`, 它不是时间的函数. 但有时又表示质点的位置, 这时它是时间的函数. 一般力 :math:`F` 只依赖于  :math:`x` 而不会依赖于 :math:`t` 或 :math:`\frac{\D x}{\D t}` . 复杂的力 (有时间或速度依赖的) 通常是由于在某些特殊情况做了一些近似.
 
 .. compound::
+    dfggwgwfwefwef
+
+.. compound::
 
     .. admonition:: 例A
 
