@@ -54,7 +54,7 @@ I.1 牛顿定律
 
         一个行星系统可以近似表示为一个质量为 :math:`m` 的质点围绕质量为 :math:`M` 的恒星运动.
     
-    .. admonition:: 动力学方程
+    .. admonition:: 行星运动方程
 
         根据万有引力方程和牛顿定律
         
@@ -67,7 +67,7 @@ I.1 牛顿定律
         
         其中 :math:`\kappa=GM`.
     
-    .. admonition:: 动力学方程的求解(暴力法)
+    .. admonition:: 行星运动方程的求解(暴力法)
 
         由于是有心力, 根据对称性我们知道运动是限制在一个平面的, 假定为 :math:`(x-y)` 平面. 令 :math:`z=0` 得
         
@@ -123,7 +123,7 @@ I.1 牛顿定律
               \frac{\D}{\D t}\left( r^2\dot{\theta} \right) =&\ 2 r\dot{r}\dot{\theta} + r^2 \ddot{\theta} = 0
            \end{equation*}
         
-        即角动量 :math:`l=r^2\dot{\theta}` 是守恒量(常数). 代入 :eq:`eqx` 得
+        即单位质量的角动量 :math:`l=r^2\dot{\theta}` 是守恒量(常数). [#l]_ 代入 :eq:`eqx` 得
         
         .. math:: \ddot{r} - r \left(\frac{l}{r^2}\right)^2 = -\frac{\kappa}{r^2}
 
@@ -149,7 +149,7 @@ I.1 牛顿定律
         
         其中 :math:`\epsilon = E/m` (能量密度) 为积分常数. :eq:`eqp` 为"动能+势能=总能量"的形式, 根据总能量 :math:`\epsilon` 的大小, 决定了半径是在两个可能值之间变化(椭圆轨道),还是为常数(圆轨道), 或者是非束缚态.
 
-    .. admonition:: 动力学方程的求解(分析力学方法)
+    .. admonition:: 行星运动方程的求解(分析力学方法)
 
         由万有引力 :math:`F(\bm{r})=-K\bm{r}/r^3` (其中 :math:`K=m\kappa=GMm`) 可以求对应的势能
         
@@ -164,16 +164,24 @@ I.1 牛顿定律
         
         .. math:: \frac{\D}{\D \bm{r}} \left( \frac{1}{r} \right) = - \frac{\bm{r}}{r^3}
         
-        系统的哈密顿量为 (根据理论力学哈密顿量公式, 参见其他章节 :eq:`eqlcylin`)
+        系统的拉格朗日量为 (根据理论力学拉格朗日量公式, 参见经典力学部分 :eq:`eqlcylin`)
         
-        .. math:: L = T - U = \frac{m}{2}\left( \dot{r}^2 + r^2 \dot{\theta}^2 \right) + \frac{K}{r}
+        .. math:: L(r,\theta) = T - U = \frac{m}{2}\left( \dot{r}^2 + r^2 \dot{\theta}^2 \right) + \frac{K}{r}
+
+        运动方程为 (参见经典力学部分 :eq:`lagrange`)
         
-
-
-
+        .. math::
+           :nowrap:
+           
+           \begin{equation*}
+              \frac{\D }{\D t} \frac{\partial L}{\partial \dot{r}} - \frac{\partial L}{\partial r} =&\ 0 
+              \Rightarrow &\ m \ddot{r} - mr\dot{\theta}^2 +\frac{K}{r^2} &= 0 \\
+              \frac{\D }{\D t} \frac{\partial L}{\partial \dot{\theta}} - \frac{\partial L}{\partial \theta} =&\ 0 
+              \Rightarrow &\ \frac{\D }{\D t} (mr^2 \dot{\theta}) = 2mr\dot{r} \dot{\theta} + mr^2 \ddot{\theta} &= 0
+           \end{equation*}
         
+        和之前的结论一样. 
 
-        
+.. rubric:: 注释 
 
-
-        
+.. [#l] [朗道力学P31] 无限邻近的两个径矢和轨道微元围成的扇形面积等于 :math:`\frac{1}{2} \bm{r}^2 \D \theta` 将它表示为 :math:`\D f`, 其中 :math:`\dot{f}` 称为掠面速度. 角动量守恒 :math:`L=\D (mr^2\dot{\theta}) = 2m \dot{f} = \mathrm{const}` 意味着掠面速度为常数, 即在相等时间间隔内质点径矢扫过相同的面积(开普勒第二定律).

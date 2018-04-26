@@ -17,12 +17,82 @@
     \newcommand{\E}{\mathrm{e}}
     \renewcommand{\bm}{\mathbf}
 
+
+最小作用量原理
+------------
+
+每一个力学系统可以用一个确定的函数(拉格朗日函数) :math:`L(q,\dot{q},t)` 表示, 并且系统的运动还要满足下面的条件.
+
+**最小作用量原理** 假设在 :math:`t=t_1` 和 :math:`t=t_2` 系统的位置由两组坐标 :math:`q^{(1)}` 和 :math:`q^{(2)}` 确定 (这是问题的边界条件, 这两个坐标是固定的, 不是变量). 那么, 系统在这两个位置之间的运动使得积分 (称为作用量)
+
+.. math:: S[q]=\int_{t_1}^{t_2} L(q,\dot{q}, t) \D t
+
+取最小值. 我们可以通过求解使 :math:`S` 取最小值得问题来推导运动方程. 设 :math:`q_0(t)` 是使 :math:`S` 取最小值的函数, 即用任意函数 :math:`q_0(t) + \delta q(t)` 代替 :math:`q_0(t)` 都会使 :math:`S` 增大. 其中函数 :math:`\delta q(t)` 在 :math:`t_1` 到 :math:`t_2` 都是小量, 称为函数 :math:`q_0(t)` 的变分. 根据边界条件, :math:`q_0(t) + \delta q(t)` 在 :math:`t=t_1, t_2` 也应该取值 :math:`q^{(1)}, q^{(2)}`, 因此
+
+.. math:: \delta q(t_1) = \delta q(t_2) = 0
+    :label: q1q2
+
+记 :math:`\delta S \equiv \delta S[q]|_{q=q_0} = S[q_0+\delta q] - S[q_0]`, 最小作用量原理要求 :math:`\delta S = 0` . 下面记 :math:`q_0` 为 :math:`q`. 对变分我们只需考虑线性主部, 即
+
+.. math:: \delta L(q,\dot{q}) = \frac{\partial L}{\partial q} \delta q + \frac{\partial L}{\partial \dot{q}} \delta \dot{q}
+
+得(利用 :math:`\delta \dot{q} = \frac{\D}{\D t} \delta q`)
+
+.. math::
+   :nowrap:
+   
+   \begin{equation*}
+      \delta S =&\ \int_{t_1}^{t_2} [L(q + \delta q,\dot{q} + \delta \dot{q}, t)-L(q,\dot{q}, t)] \D t
+      = \int_{t_1}^{t_2} \delta L(q,\dot{q}, t) \D t \\
+      =&\ \int_{t_1}^{t_2} \left[ \frac{\partial L}{\partial q} \delta q + \frac{\partial L}{\partial \dot{q}} \left( \frac{\D}{\D t} \delta q \right) \right] \D t
+   \end{equation*}
+
+对第二项进行分部积分
+
+.. math:: \int_{t_1}^{t_2} \frac{\partial L}{\partial \dot{q}} \left( \frac{\D}{\D t} \delta q \right) \D t
+    = \left[ \frac{\partial L}{\partial \dot{q}}  \delta q \right]_{t_1}^{t_2} - \int_{t_1}^{t_2} 
+    \frac{\D }{\D t} \left( \frac{\partial L}{\partial \dot{q}} \right) \delta q \D t
+
+得
+
+.. math::
+   :nowrap:
+   
+   \begin{equation*}
+      \delta S =&\ \left[ \frac{\partial L}{\partial \dot{q}}  \delta q \right]_{t_1}^{t_2} + \int_{t_1}^{t_2} 
+    \left[ \frac{\partial L}{\partial q} - \frac{\D }{\D t} \left( \frac{\partial L}{\partial \dot{q}} \right) \right] \delta q \D t
+   \end{equation*}
+
+根据 :eq:`q1q2` 可知第一项 :math:`\left[ \frac{\partial L}{\partial \dot{q}}  \delta q \right]_{t_1}^{t_2}` 为零. 剩下的积分在 :math:`\delta q` 取任何值时都应该等于零. 这只有在被积函数恒等于零的情况下才有可能. 于是我们得到拉格朗日方程
+
+.. math:: \frac{\D }{\D t} \frac{\partial L}{\partial \dot{q}} - \frac{\partial L}{\partial q} = 0
+    :label: lagrange
+
+对于有 :math:`s` 个自由度的系统, 在最小作用量原理中有 :math:`s` 个不同的函数 :math:`q_i(t)` 应该独立变分, 因此有 :math:`s` 个方程
+
+.. math:: \frac{\D }{\D t} \frac{\partial L}{\partial \dot{q}_i} - \frac{\partial L}{\partial q_i} = 0,\quad i =1,2,\dots, s
+
+
 运动方程
 -------
 
 力学状态的确定: 只给定广义坐标可以确定某一时刻的状态, 但不足以确定下一时刻的状态. 经验表明, 同时给定系统的所有广义坐标和广义速度就可以确定系统的状态. 并不需要再给定加速度.
 
-现在假定给定初始和结束位置作为限定条件, (而不是给定初始位置和速度作为限定条件). 那么拉格朗日函数只能定义到相差一个对时间和坐标的任意函数的时间全导数项.
+现在假定给定初始和结束位置作为限定条件, (而不是给定初始位置和速度作为限定条件). 那么拉格朗日函数只能定义到相差一个对时间和坐标的任意函数的时间全导数项. 考虑两个拉格朗日函数 :math:`L(q,\dot{q},t)` 和 :math:`L'(q,\dot{q}, t)`, 它们相差某个坐标和时间的函数 :math:`f(q,t)` 对时间的全导数
+
+.. math:: L'(q,\dot{q}, t) = L(q,\dot{q}, t) + \frac{\D }{\D t} f(q,t)
+
+计算作用量 :math:`S`
+
+.. math::
+   :nowrap:
+   
+   \begin{equation*}
+      S' =&\ \int_{t_1}^{t_2} L'(q,\dot{q}, t) \D t = \int_{t_1}^{t_2} L(q,\dot{q}, t) \D t + \int_{t_1}^{t_2} \frac{\D }{\D t} f(q,t) \D t \\
+      =&\ S + f(q^{(2)},t_2) - f(q^{(1)},t_1)
+   \end{equation*}
+
+即 :math:`S` 和 :math:`S` 相差一个附加项 :math:`\Delta S = f(q^{(2)},t_2) - f(q^{(1)},t_1)`. 这个附加项在求 :math:`S` 变分时消失, 即 :math:`\delta\Delta S = 0`. 条件 :math:`\delta S' = 0` 和 :math:`\delta S = 0` 完全等价, 因此运动方程也一样. 
 
 自由质点的拉格朗日函数
 ------------------
@@ -72,21 +142,25 @@
 在笛卡尔坐标系中 :math:`\D l^2 = \D x^2 + \D y^2 + \D z^2`, 进而有
 
 .. math::
-    \mathscr{L} = \frac{m}{2} (\dot{x}^2 + \dot{y}^2 + \dot{z}^2)
+    L = \frac{m}{2} (\dot{x}^2 + \dot{y}^2 + \dot{z}^2)
 
 在柱坐标系中 :math:`\D l^2 = \D r^2 + r^2\D \varphi^2 + \D z^2` 进而有
 
 .. math::
-    \mathscr{L} = \frac{m}{2} (\dot{r}^2 + r^2\dot{\varphi}^2+\dot{z}^2)
+    L = \frac{m}{2} (\dot{r}^2 + r^2\dot{\varphi}^2+\dot{z}^2)
     :label: eqlcylin
 
 在球坐标系中 :math:`\D l^2 = \D r^2 + r^2\D \theta^2 + r^2\sin^2\theta \D \varphi^2`, 进而有
 
 .. math::
-    \mathscr{L} = \frac{m}{2} (\dot{r}^2 + r^2\dot{\theta}^2+r^2\sin^2\theta\dot{\varphi}^2)
+    L = \frac{m}{2} (\dot{r}^2 + r^2\dot{\theta}^2+r^2\sin^2\theta\dot{\varphi}^2)
+
 
 质点系
 -----
+
+.. note::
+    力学(课程录像). 杨维紘.
 
 力学系统相对参考系 :math:`K` 和 :math:`K'` 的能量 :math:`E` 和 :math:`E'` 的关系为
 
@@ -106,9 +180,6 @@
 
 刚体
 ------
-
-.. note::
-    力学(课程录像). 杨维紘.
 
 刚体概念的优点: 只有6个自由度. 内力做功为零. 证明如下: 刚体定义给出:
 
