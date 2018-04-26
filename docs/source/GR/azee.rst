@@ -131,7 +131,13 @@ I.1 牛顿定律
         
         .. math:: \ddot{r} = \frac{l^2}{r^3} -\frac{\kappa}{r^2} \equiv -\frac{\D u(r)}{\D r}
 
-        其中 :math:`u(r)` 表示单位质量的势能. 有 :math:`\ddot{r} = f(r) = F(r)/m` 和 :math:`f(r) = -\frac{\D u(r)}{\D r}`. 按定义 :math:`u(r) = \frac{l^2}{2r^2} -\frac{\kappa}{r}`. 利用对 :math:`r` 积分和对时间积分的链式法则, 得
+        其中 :math:`u(r)` 表示单位质量的势能. 有 :math:`\ddot{r} = f(r) = F(r)/m` 和 :math:`f(r) = -\frac{\D u(r)}{\D r}`. 按定义
+        
+        .. math::
+            u(r) = \frac{l^2}{2r^2} -\frac{\kappa}{r}
+            :label: ur
+        
+        利用对 :math:`r` 积分和对时间积分的链式法则, 得
         
         .. math::
            :nowrap:
@@ -180,8 +186,45 @@ I.1 牛顿定律
               \Rightarrow &\ \frac{\D }{\D t} (mr^2 \dot{\theta}) = 2mr\dot{r} \dot{\theta} + mr^2 \ddot{\theta} &= 0
            \end{equation*}
         
-        和之前的结论一样. 
+        和之前得到的运动方程一样. 
+    
+    .. admonition:: 闭合轨道
+
+        在 :eq:`eqp` 中解得 :math:`\dot{r}=\pm\sqrt{2[\epsilon - u(r)]}` 并除以 :math:`\dot{\theta} = l/r^2`, 得
+        
+        .. math:: \frac{\D r}{\D \theta} = \pm\frac{r^2\sqrt{2[\epsilon - 2u(r)]}}{l}
+
+        令 :math:`u = 1/r` (注意区分这个 :math:`u` 和 :math:`u(r)` 表示两个不同的量), 并利用 :eq:`ur` 可以把 :math:`2[\epsilon - u(r)]` 写为
+        
+        .. math::
+              2[\epsilon - u(r)] = 2\epsilon - 2 \left[ \frac{l^2}{2r^2} -\frac{\kappa}{r} \right]
+              = 2\epsilon - l^2u^2 + 2\kappa u \equiv -l^2 (u-u_\max)(u-u_\min)
+        
+        再令 :math:`u = u_\min + (u_\max - u_\min)\sin^2\zeta`, 得 [#tri1]_
+        
+        .. math::
+           :nowrap:
+           
+           \begin{equation*}
+              \D u =&\ \D [u_\min + (u_\max - u_\min)\sin^2\zeta] = (u_\max - u_\min)2\sin\zeta\cos\zeta \D \zeta \\
+              u_\max - u =&\ u_\max - u_\min - (u_\max - u_\min)\sin^2\zeta = (u_\max - u_\min)\cos^2\zeta \\
+              u - u_\min =&\ (u_\max - u_\min)\sin^2\zeta \\
+              (u_\max - u)(u - u_\min) =&\ [(u_\max - u_\min)\sin\zeta\cos\zeta]^2 \\
+              \D u =&\ \D (1/r) = -\D r/r^2 \\
+              \Delta \theta =&\ 2\int_{r_\min}^{r_\max} \frac{\D \theta}{\D r} \D r 
+              = 2 \int_{u_\max}^{u_\min} \frac{l \D r}{r^2\sqrt{2\epsilon - l^2u^2 + 2\kappa u }} \\
+              =&\ 2 \int_{u_\min}^{u_\max} \frac{l r^2 \D u}{lr^2\sqrt{(u_\max-u)(u-u_\min) }}
+              = 4 \int_{0}^{\pi/2} \frac{(u_\max - u_\min)\sin\zeta\cos\zeta \D \zeta}{(u_\max - u_\min)\sin\zeta\cos\zeta} \\
+              =&\ 4 \int_{0}^{\pi/2} \D \zeta = 2\pi
+           \end{equation*}
+        
+        因此行星轨道刚好是闭合的 (在 :math:`u_\min, u_\max` 存在的情况下, 即二次方程 :math:`2\epsilon - l^2u^2 + 2\kappa u=0` 至少有一个实数解, :math:`\Delta = 4\kappa^2 +8l^2\epsilon \ge 0 \Rightarrow \epsilon \ge -\frac{\kappa^2}{2l^2}`).
+         
 
 .. rubric:: 注释 
 
 .. [#l] [朗道力学P31] 无限邻近的两个径矢和轨道微元围成的扇形面积等于 :math:`\frac{1}{2} \bm{r}^2 \D \theta` 将它表示为 :math:`\D f`, 其中 :math:`\dot{f}` 称为掠面速度. 角动量守恒 :math:`L=\D (mr^2\dot{\theta}) = 2m \dot{f} = \mathrm{const}` 意味着掠面速度为常数, 即在相等时间间隔内质点径矢扫过相同的面积(开普勒第二定律).
+
+.. [#tri1] 三角函数公式(此处似乎没用到)
+    
+    .. math:: \sin 2\alpha = 2\sin\alpha\cos\alpha, \quad \cos 2\alpha = 1-2\sin^2\alpha = 2\cos^2\alpha - 1
