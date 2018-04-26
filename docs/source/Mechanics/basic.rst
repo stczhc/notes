@@ -78,6 +78,7 @@
 
 .. math::
     \mathscr{L} = \frac{m}{2} (\dot{r}^2 + r^2\dot{\varphi}^2+\dot{z}^2)
+    :label: eqlcylin
 
 在球坐标系中 :math:`\D l^2 = \D r^2 + r^2\D \theta^2 + r^2\sin^2\theta \D \varphi^2`, 进而有
 

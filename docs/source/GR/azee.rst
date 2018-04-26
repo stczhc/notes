@@ -54,7 +54,7 @@ I.1 牛顿定律
 
         一个行星系统可以近似表示为一个质量为 :math:`m` 的质点围绕质量为 :math:`M` 的恒星运动.
     
-    .. admonition:: 解答
+    .. admonition:: 动力学方程
 
         根据万有引力方程和牛顿定律
         
@@ -66,6 +66,110 @@ I.1 牛顿定律
         .. math:: \ddot{\bm{r}}=-\kappa \frac{\bm{r}}{r^3}
         
         其中 :math:`\kappa=GM`.
+    
+    .. admonition:: 动力学方程的求解(暴力法)
+
+        由于是有心力, 根据对称性我们知道运动是限制在一个平面的, 假定为 :math:`(x-y)` 平面. 令 :math:`z=0` 得
+        
+        .. math:: \ddot{x} = -\kappa x/r^3 \quad \ddot{y} = -\kappa y/r^3
+            :label: eq3
+        
+        改为极坐标
+        
+        .. math::
+           :nowrap:
+           
+           \begin{equation*}
+              x =&\ r\cos\theta \\
+              y =&\ r\sin\theta \\
+              \dot{x} =&\ \dot{r}\cos\theta -r \dot{\theta}\sin\theta  \\
+              \ddot{x} =&\ \ddot{r}\cos\theta - 2\dot{r}\dot{\theta}\sin\theta
+                - r \ddot{\theta}\sin\theta - r \dot{\theta}^2\cos\theta\\
+              \ddot{y} =&\ \ddot{r}\sin\theta + 2\dot{r}\dot{\theta}\cos\theta
+                + r \ddot{\theta}\cos\theta - r \dot{\theta}^2\sin\theta
+           \end{equation*}
+        
+        把 :eq:`eq3` 中的两式分别乘以 :math:`\cos\theta` 和 :math:`\sin\theta` 再相加, 得
+        
+        .. math::
+           :nowrap:
+           
+           \begin{equation*}
+              \ddot{x}\cos\theta =&\ \ddot{r}\cos^2\theta - 2\dot{r}\dot{\theta}\sin\theta\cos\theta
+                - r \ddot{\theta}\sin\theta\cos\theta - r \dot{\theta}^2\cos^2\theta = -\kappa x\cos\theta/r^3\\
+              \ddot{y}\sin\theta =&\ \ddot{r}\sin^2\theta + 2\dot{r}\dot{\theta}\cos\theta\sin\theta
+                + r \ddot{\theta}\cos\theta\sin\theta - r \dot{\theta}^2\sin^2\theta =  -\kappa y\sin\theta/r^3 \\
+              -\kappa \frac{x\cos\theta}{r^3} =&\ -\kappa \frac{x\cos^2\theta}{xr^2} \\
+              -\kappa \frac{y\sin\theta}{r^3} =&\ -\kappa \frac{y\sin^2\theta}{yr^2} \\
+              \ddot{r} - r \dot{\theta}^2 =&\ -\kappa /r^2
+           \end{equation*}
+           
+        .. math::
+           :label: eqx
+        
+        另一方面, 把 :eq:`eq3` 中的两式分别乘以 :math:`\sin\theta` 和 :math:`\cos\theta` 再相减, 得
+        
+        .. math::
+           :nowrap:
+           
+           \begin{equation*}
+              \ddot{x}\sin\theta =&\ \ddot{r}\cos\theta\sin\theta - 2\dot{r}\dot{\theta}\sin^2\theta
+                - r \ddot{\theta}\sin^2\theta - r \dot{\theta}^2\cos\theta\sin\theta = -\kappa x\sin\theta/r^3\\
+              \ddot{y}\cos\theta =&\ \ddot{r}\sin\theta\cos\theta + 2\dot{r}\dot{\theta}\cos^2\theta
+                + r \ddot{\theta}\cos^2\theta - r \dot{\theta}^2\sin\theta\cos\theta = -\kappa y\cos\theta/r^3 \\
+              -\kappa \frac{x\sin\theta}{r^3} =&\ -\kappa \frac{r\cos\theta\sin\theta}{r^3} \\
+              -\kappa \frac{y\cos\theta}{r^3} =&\ -\kappa \frac{r\sin\theta\cos\theta}{r^3} \\
+              2 \dot{r}\dot{\theta} + r \ddot{\theta} =&\ 0 \\
+              \frac{\D}{\D t}\left( r^2\dot{\theta} \right) =&\ 2 r\dot{r}\dot{\theta} + r^2 \ddot{\theta} = 0
+           \end{equation*}
+        
+        即角动量 :math:`l=r^2\dot{\theta}` 是守恒量(常数). 代入 :eq:`eqx` 得
+        
+        .. math:: \ddot{r} - r \left(\frac{l}{r^2}\right)^2 = -\frac{\kappa}{r^2}
+
+        整理得
+        
+        .. math:: \ddot{r} = \frac{l^2}{r^3} -\frac{\kappa}{r^2} \equiv -\frac{\D u(r)}{\D r}
+
+        其中 :math:`u(r)` 表示单位质量的势能. 有 :math:`\ddot{r} = f(r) = F(r)/m` 和 :math:`f(r) = -\frac{\D u(r)}{\D r}`. 按定义 :math:`u(r) = \frac{l^2}{2r^2} -\frac{\kappa}{r}`. 利用对 :math:`r` 积分和对时间积分的链式法则, 得
+        
+        .. math::
+           :nowrap:
+           
+           \begin{equation*}
+              \dot{r}\ddot{r} =&\ -\frac{\D r}{\D t}\frac{\D u(r)}{\D r} \\
+              \dot{r}\ddot{r} =&\ \frac{1}{2} \frac{\D (\dot{r}^2)}{\D t} \\
+              \int \frac{1}{2} \frac{\D (\dot{r}^2)}{\D t} \D t =&\ \frac{\dot{r}^2}{2} + C_1\\
+              \int \frac{\D r}{\D t}\frac{\D u(r)}{\D r} \D t =&\ u(r) + C_2 \\
+              \Rightarrow\quad\frac{\dot{r}^2}{2} + u(r) =&\ \epsilon
+           \end{equation*}
+        
+        .. math::
+           :label: eqp
+        
+        其中 :math:`\epsilon = E/m` (能量密度) 为积分常数. :eq:`eqp` 为"动能+势能=总能量"的形式, 根据总能量 :math:`\epsilon` 的大小, 决定了半径是在两个可能值之间变化(椭圆轨道),还是为常数(圆轨道), 或者是非束缚态.
+
+    .. admonition:: 动力学方程的求解(分析力学方法)
+
+        由万有引力 :math:`F(\bm{r})=-K\bm{r}/r^3` 可以求对应的势能
+        
+        .. math:: F(\bm{r}) = -\frac{\D U(\bm{r})}{\D \bm{r}}\quad\Rightarrow \quad
+            U(\bm{r}) = -\frac{K}{r}
+        
+        注意
+        
+        .. math:: \frac{\D (1/r)}{\D x} = \frac{\D (1/\sqrt{x^2+y^2+z^2})}{\D x} = -\frac{2x}{2(x^2+y^2+z^2)\sqrt{x^2+y^2+z^2}} = -\frac{x}{r^3}
+        
+        系统的哈密顿量为 (根据理论力学哈密顿量公式, 参见其他章节 :eq:`eqlcylin`)
+        
+        .. math:: L = T - U = \frac{m}{2}\left( \dot{r}^2 + r^2 \dot{\theta}^2 \right) + \frac{K}{r}
+        
+
+
+
+        
+
+        
 
 
         
