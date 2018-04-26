@@ -151,7 +151,7 @@ I.1 牛顿定律
 
     .. admonition:: 动力学方程的求解(分析力学方法)
 
-        由万有引力 :math:`F(\bm{r})=-K\bm{r}/r^3` 可以求对应的势能
+        由万有引力 :math:`F(\bm{r})=-K\bm{r}/r^3` (其中 :math:`K=m\kappa=GMm`) 可以求对应的势能
         
         .. math:: F(\bm{r}) = -\frac{\D U(\bm{r})}{\D \bm{r}}\quad\Rightarrow \quad
             U(\bm{r}) = -\frac{K}{r}
@@ -159,6 +159,10 @@ I.1 牛顿定律
         注意
         
         .. math:: \frac{\D (1/r)}{\D x} = \frac{\D (1/\sqrt{x^2+y^2+z^2})}{\D x} = -\frac{2x}{2(x^2+y^2+z^2)\sqrt{x^2+y^2+z^2}} = -\frac{x}{r^3}
+
+        应用到 :math:`\bm{r} = (x, y,z)` 得
+        
+        .. math:: \frac{\D}{\D \bm{r}} \left( \frac{1}{r} \right) = - \frac{\bm{r}}{r^3}
         
         系统的哈密顿量为 (根据理论力学哈密顿量公式, 参见其他章节 :eq:`eqlcylin`)
         
