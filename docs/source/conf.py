@@ -39,6 +39,7 @@ release = u''
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinxcontrib.tikz',
     'sphinx.ext.autodoc',
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
@@ -137,6 +138,7 @@ latex_elements = {
 \hypersetup{unicode=true}
 \usepackage{CJKutf8}
 \usepackage{bm}
+\usepackage{tikz}
 \begin{CJK}{UTF8}{gbsn}
 \AtEndDocument{\end{CJK}}
 '''
