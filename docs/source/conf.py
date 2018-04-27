@@ -139,6 +139,15 @@ latex_elements = {
 \usepackage{CJKutf8}
 \usepackage{bm}
 \usepackage{tikz}
+\renewenvironment{equation*}
+{\begin{equation}\begin{aligned}}
+{\end{aligned}\end{equation}}
+\renewcommand{\gg}{>\!\!>}
+\renewcommand{\ll}{<\!\!<}
+\newcommand{\I}{\mathrm{i}}
+\newcommand{\D}{\mathrm{d}}
+\newcommand{\dt}{\frac{\D}{\D t}}
+\newcommand{\E}{\mathrm{e}}
 \begin{CJK}{UTF8}{gbsn}
 \AtEndDocument{\end{CJK}}
 '''

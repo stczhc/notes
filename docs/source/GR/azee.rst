@@ -15,7 +15,7 @@
     \newcommand{\D}{\mathrm{d}}
     \newcommand{\dt}{\frac{\D}{\D t}}
     \newcommand{\E}{\mathrm{e}}
-    \renewcommand{\bm}{\mathbf}
+    \newcommand{\bm}{\mathbf}
 
 I.1 牛顿定律
 ------------
