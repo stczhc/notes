@@ -1,6 +1,6 @@
 
 经典力学(朗道)
-============
+==============
 
 .. note::
     朗道理论物理学教程, 力学, 2007.
@@ -20,7 +20,7 @@
         \renewcommand{\bm}{\mathbf}
 
 最小作用量原理
-------------
+--------------
 
 每一个力学系统可以用一个确定的函数(拉格朗日函数) :math:`L(q,\dot{q},t)` 表示, 并且系统的运动还要满足下面的条件.
 
@@ -28,7 +28,7 @@
 
 .. math:: S[q]=\int_{t_1}^{t_2} L(q,\dot{q}, t) \D t
 
-取最小值. 我们可以通过求解使 :math:`S` 取最小值得问题来推导运动方程. 设 :math:`q_0(t)` 是使 :math:`S` 取最小值的函数, 即用任意函数 :math:`q_0(t) + \delta q(t)` 代替 :math:`q_0(t)` 都会使 :math:`S` 增大. 其中函数 :math:`\delta q(t)` 在 :math:`t_1` 到 :math:`t_2` 都是小量, 称为函数 :math:`q_0(t)` 的变分. 根据边界条件, :math:`q_0(t) + \delta q(t)` 在 :math:`t=t_1, t_2` 也应该取值 :math:`q^{(1)}, q^{(2)}`, 因此
+取最小值. 我们可以通过求解使 :math:`S` 取最小值的问题来推导运动方程. 设 :math:`q_0(t)` 是使 :math:`S` 取最小值的函数, 即用任意函数 :math:`q_0(t) + \delta q(t)` 代替 :math:`q_0(t)` 都会使 :math:`S` 增大. 其中函数 :math:`\delta q(t)` 在 :math:`t_1` 到 :math:`t_2` 都是小量, 称为函数 :math:`q_0(t)` 的变分. 根据边界条件, :math:`q_0(t) + \delta q(t)` 在 :math:`t=t_1, t_2` 也应该分别取值 :math:`q^{(1)}, q^{(2)}`, 因此
 
 .. math:: \delta q(t_1) = \delta q(t_2) = 0
     :label: q1q2
@@ -64,7 +64,7 @@
     \left[ \frac{\partial L}{\partial q} - \frac{\D }{\D t} \left( \frac{\partial L}{\partial \dot{q}} \right) \right] \delta q \D t
    \end{equation*}
 
-根据 :eq:`q1q2` 可知第一项 :math:`\left[ \frac{\partial L}{\partial \dot{q}}  \delta q \right]_{t_1}^{t_2}` 为零. 剩下的积分在 :math:`\delta q` 取任何值时都应该等于零. 这只有在被积函数恒等于零的情况下才有可能. 于是我们得到拉格朗日方程
+根据 :eq:`q1q2` 可知第一项 :math:`\left[ \frac{\partial L}{\partial \dot{q}}  \delta q \right]_{t_1}^{t_2}` 为零. 为了使得 :math:`\delta S = 0`, 剩下的积分在 :math:`\delta q` 取任何值时都应该等于零. 这只有在被积函数恒等于零的情况下才有可能. 于是我们得到拉格朗日方程
 
 .. math:: \frac{\D }{\D t} \frac{\partial L}{\partial \dot{q}} - \frac{\partial L}{\partial q} = 0
     :label: lagrange
@@ -75,15 +75,15 @@
 
 
 运动方程
--------
+--------
 
 力学状态的确定: 只给定广义坐标可以确定某一时刻的状态, 但不足以确定下一时刻的状态. 经验表明, 同时给定系统的所有广义坐标和广义速度就可以确定系统的状态. 并不需要再给定加速度.
 
-现在假定给定初始和结束位置作为限定条件, (而不是给定初始位置和速度作为限定条件). 那么拉格朗日函数只能定义到相差一个对时间和坐标的任意函数的时间全导数项. 考虑两个拉格朗日函数 :math:`L(q,\dot{q},t)` 和 :math:`L'(q,\dot{q}, t)`, 它们相差某个坐标和时间的函数 :math:`f(q,t)` 对时间的全导数
+现在假定给定初始和结束位置作为限定条件, (而不是给定初始位置和速度作为限定条件). 那么拉格朗日函数只能定义到相差一个对时间和坐标的任意函数的时间全导数项. 证明如下. 考虑两个拉格朗日函数 :math:`L(q,\dot{q},t)` 和 :math:`L'(q,\dot{q}, t)`, 它们相差某个坐标和时间的函数 :math:`f(q,t)` 对时间的全导数
 
 .. math:: L'(q,\dot{q}, t) = L(q,\dot{q}, t) + \frac{\D }{\D t} f(q,t)
 
-计算作用量 :math:`S`
+记 :math:`L` 和 :math:`L'` 的作用量分别为 :math:`S` 和 :math:`S'`. 则
 
 .. math::
    :nowrap:
@@ -93,10 +93,10 @@
       =&\ S + f(q^{(2)},t_2) - f(q^{(1)},t_1)
    \end{equation*}
 
-即 :math:`S` 和 :math:`S` 相差一个附加项 :math:`\Delta S = f(q^{(2)},t_2) - f(q^{(1)},t_1)`. 这个附加项在求 :math:`S` 变分时消失, 即 :math:`\delta\Delta S = 0`. 条件 :math:`\delta S' = 0` 和 :math:`\delta S = 0` 完全等价, 因此运动方程也一样. 
+即 :math:`S` 和 :math:`S'` 相差一个附加项 :math:`\Delta S = f(q^{(2)},t_2) - f(q^{(1)},t_1)`. 这个附加项在求 :math:`S` 变分时消失, 即 :math:`\delta\Delta S = 0`. 这说明条件 :math:`\delta S' = 0` 和 :math:`\delta S = 0` 完全等价, 因此运动方程也一样. 
 
 自由质点的拉格朗日函数
-------------------
+----------------------
 
 下面研究质点相对于惯性参考系的自由运动. 我们已经知道, 这种情况下拉格朗日函数只能依赖于速度的平方. 我们利用伽利略相对性原理来确定这个关系. 也就是说, 当变换参考系时,物理定律有相同的形式. 那么两者的拉格朗日函数也就必须只相差一个任意函数的时间全导数. 
 
@@ -123,7 +123,7 @@
         = \frac{\partial \mathscr{L}}{\partial v^2} (2 \bm{v})
     \end{equation*}
 
-只有当 :eq:`eq2` 式右边第二项与速度 :math:`\bm{v}` 成线性依赖关系时,它才能是时间的全导数. 因此 :math:`\frac{\partial \mathscr{L}}{\partial v^2}` 不依赖于速度, 即该情况下拉格朗日函数与速度平方成正比
+只有当 :eq:`eq2` 式右边第二项与速度 :math:`\bm{v}` 成线性依赖关系时,它才能是时间的全导数. 因此 :math:`\frac{\partial \mathscr{L}}{\partial v^2}` 不依赖于速度, :math:`\frac{\partial \mathscr{L}}{\partial v^2}=\mathrm{const}`. 即该情况下拉格朗日函数与速度平方成正比
 
 .. math::
     \mathscr{L} = \frac{m}{2}v^2
@@ -131,34 +131,34 @@
 其中 :math:`m` 为常数. 
 
 各坐标系的拉格朗日量
-----------------
+--------------------
 
-注意到 (这里没有二阶求导,只有微元的平方,其中括号省略了. 故分子分母都是微元的平方)
+注意到 (这里没有二阶求导, 只有微元的平方, 其中括号省略了. 故分子分母都是微元的平方)
 
 .. math::
     v^2=\left( \frac{\D l}{\D t}\right)^2 = \frac{\D l^2}{\D t^2}
 
-是有用的. 因此为了得到拉格朗日量只需求出在特定坐标系中弧长微元 :math:`\D l` 的平方. 
+是有用的. 因此为了得到自由质点的拉格朗日量只需求出在特定坐标系中弧长微元 :math:`\D l` 的平方. 
 
 在笛卡尔坐标系中 :math:`\D l^2 = \D x^2 + \D y^2 + \D z^2`, 进而有
 
 .. math::
-    L = \frac{m}{2} (\dot{x}^2 + \dot{y}^2 + \dot{z}^2)
+    L = \frac{m}{2} \left(\dot{x}^2 + \dot{y}^2 + \dot{z}^2\right)
 
 在柱坐标系中 :math:`\D l^2 = \D r^2 + r^2\D \varphi^2 + \D z^2` 进而有
 
 .. math::
-    L = \frac{m}{2} (\dot{r}^2 + r^2\dot{\varphi}^2+\dot{z}^2)
+    L = \frac{m}{2} \left(\dot{r}^2 + r^2\dot{\varphi}^2+\dot{z}^2\right)
     :label: eqlcylin
 
 在球坐标系中 :math:`\D l^2 = \D r^2 + r^2\D \theta^2 + r^2\sin^2\theta \D \varphi^2`, 进而有
 
 .. math::
-    L = \frac{m}{2} (\dot{r}^2 + r^2\dot{\theta}^2+r^2\sin^2\theta\dot{\varphi}^2)
+    L = \frac{m}{2} \left(\dot{r}^2 + r^2\dot{\theta}^2+r^2\sin^2\theta\dot{\varphi}^2\right)
 
 
 质点系
------
+------
 
 .. note::
     力学(课程录像). 杨维纮.
@@ -180,7 +180,7 @@
     \bm{\tau}=\bm{r}\times \bm{F}
 
 刚体
-------
+----
 
 刚体概念的优点: 只有6个自由度. 内力做功为零. 证明如下: 刚体定义给出:
 
@@ -216,7 +216,7 @@
 力矩可以相对任意点求,但是力矩做不做功要看系统是否绕那一点转动. 
 
 解题注意事项
-^^^^^^^^^
+^^^^^^^^^^^^
 
 如果一个滑块不动, 静摩擦力由于没有位移而不做功. 纯滚动时静摩擦力也不做功, 因为力做功力矩做功相互抵消. 静摩擦力
 与刚体运动趋势方向相反. 
@@ -234,7 +234,7 @@
 是刚体上那一点相对于质心的位置. 也就是在刚体坐标系的径矢. 
 
 惯量张量
--------
+--------
 
 下面研究刚体的动能
 
@@ -293,7 +293,7 @@
     T_{rot} = \frac{1}{2} (I_1\Omega_1^2 + I_2\Omega_2^2 + I_3\Omega_3^2)
 
 欧拉角
------
+------
 
 .. math::
     \Omega_1 =&\ \dot{\varphi}\sin\theta\sin\psi + \dot{\theta}\cos\psi \\
@@ -322,7 +322,7 @@
     \end{equation*}
 
 欧拉方程
------
+--------
 
 .. math::
     :nowrap:

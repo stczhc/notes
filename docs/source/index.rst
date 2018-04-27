@@ -7,5 +7,6 @@
 
    Mechanics/basic.rst
    GR/azee.rst
+   GR/azee-ps.rst
 
 
