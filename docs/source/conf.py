@@ -137,6 +137,9 @@ latex_elements = {
     'preamble': r'''
 \hypersetup{unicode=true}
 \usepackage{CJKutf8}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
 \usepackage{bm}
 \usepackage{tikz}
 \renewenvironment{equation*}
