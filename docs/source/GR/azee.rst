@@ -6,6 +6,8 @@
     Einstein Gravity in a Nutshell, Anthony Zee, 2013.
 
 .. math::
+    :nowrap:
+    \@ifundefined{pdfmode}{
     \renewenvironment{equation*}
     {\begin{equation}\begin{aligned}}
     {\end{aligned}\end{equation}}
@@ -16,6 +18,7 @@
     \newcommand{\dt}{\frac{\D}{\D t}}
     \newcommand{\E}{\mathrm{e}}
     \newcommand{\bm}{\mathbf}
+    }
 
 I.1 牛顿定律
 ------------
@@ -198,27 +201,27 @@ I.1 牛顿定律
         
         .. math::
               2[\epsilon - u(r)] = 2\epsilon - 2 \left[ \frac{l^2}{2r^2} -\frac{\kappa}{r} \right]
-              = 2\epsilon - l^2u^2 + 2\kappa u \equiv -l^2 (u-u_\max)(u-u_\min)
+              = 2\epsilon - l^2u^2 + 2\kappa u \equiv -l^2 (u-u_{\mathrm{max}})(u-u_{\mathrm{min}})
         
-        再令 :math:`u = u_\min + (u_\max - u_\min)\sin^2\zeta`, 得 [#tri1]_
+        再令 :math:`u = u_{\mathrm{min}} + (u_{\mathrm{max}} - u_{\mathrm{min}})\sin^2\zeta`, 得 [#tri1]_
         
         .. math::
            :nowrap:
            
            \begin{equation*}
-              \D u =&\ \D [u_\min + (u_\max - u_\min)\sin^2\zeta] = (u_\max - u_\min)2\sin\zeta\cos\zeta \D \zeta \\
-              u_\max - u =&\ u_\max - u_\min - (u_\max - u_\min)\sin^2\zeta = (u_\max - u_\min)\cos^2\zeta \\
-              u - u_\min =&\ (u_\max - u_\min)\sin^2\zeta \\
-              (u_\max - u)(u - u_\min) =&\ [(u_\max - u_\min)\sin\zeta\cos\zeta]^2 \\
+              \D u =&\ \D [u_{\mathrm{min}} + (u_{\mathrm{max}} - u_{\mathrm{min}})\sin^2\zeta] = (u_{\mathrm{max}} - u_{\mathrm{min}})2\sin\zeta\cos\zeta \D \zeta \\
+              u_{\mathrm{max}} - u =&\ u_{\mathrm{max}} - u_{\mathrm{min}} - (u_{\mathrm{max}} - u_{\mathrm{min}})\sin^2\zeta = (u_{\mathrm{max}} - u_{\mathrm{min}})\cos^2\zeta \\
+              u - u_{\mathrm{min}} =&\ (u_{\mathrm{max}} - u_{\mathrm{min}})\sin^2\zeta \\
+              (u_{\mathrm{max}} - u)(u - u_{\mathrm{min}}) =&\ [(u_{\mathrm{max}} - u_{\mathrm{min}})\sin\zeta\cos\zeta]^2 \\
               \D u =&\ \D (1/r) = -\D r/r^2 \\
-              \Delta \theta =&\ 2\int_{r_\min}^{r_\max} \frac{\D \theta}{\D r} \D r 
-              = 2 \int_{u_\max}^{u_\min} \frac{l \D r}{r^2\sqrt{2\epsilon - l^2u^2 + 2\kappa u }} \\
-              =&\ 2 \int_{u_\min}^{u_\max} \frac{l r^2 \D u}{lr^2\sqrt{(u_\max-u)(u-u_\min) }}
-              = 4 \int_{0}^{\pi/2} \frac{(u_\max - u_\min)\sin\zeta\cos\zeta \D \zeta}{(u_\max - u_\min)\sin\zeta\cos\zeta} \\
+              \Delta \theta =&\ 2\int_{r_{\mathrm{min}}}^{r_{\mathrm{max}}} \frac{\D \theta}{\D r} \D r 
+              = 2 \int_{u_{\mathrm{max}}}^{u_{\mathrm{min}}} \frac{l \D r}{r^2\sqrt{2\epsilon - l^2u^2 + 2\kappa u }} \\
+              =&\ 2 \int_{u_{\mathrm{min}}}^{u_{\mathrm{max}}} \frac{l r^2 \D u}{lr^2\sqrt{(u_{\mathrm{max}}-u)(u-u_{\mathrm{min}}) }}
+              = 4 \int_{0}^{\pi/2} \frac{(u_{\mathrm{max}} - u_{\mathrm{min}})\sin\zeta\cos\zeta \D \zeta}{(u_{\mathrm{max}} - u_{\mathrm{min}})\sin\zeta\cos\zeta} \\
               =&\ 4 \int_{0}^{\pi/2} \D \zeta = 2\pi
            \end{equation*}
         
-        因此行星轨道刚好是闭合的 (在 :math:`u_\min, u_\max` 存在的情况下, 即二次方程 :math:`2\epsilon - l^2u^2 + 2\kappa u=0` 至少有一个实数解, :math:`\Delta = 4\kappa^2 +8l^2\epsilon \ge 0 \Rightarrow \epsilon \ge -\frac{\kappa^2}{2l^2}`).
+        因此行星轨道刚好是闭合的 (在 :math:`u_{\mathrm{min}}, u_{\mathrm{max}}` 存在的情况下, 即二次方程 :math:`2\epsilon - l^2u^2 + 2\kappa u=0` 至少有一个实数解, :math:`\Delta = 4\kappa^2 +8l^2\epsilon \ge 0 \Rightarrow \epsilon \ge -\frac{\kappa^2}{2l^2}`).
          
 
 .. rubric:: 注释 

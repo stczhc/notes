@@ -147,10 +147,11 @@ latex_elements = {
 {\end{aligned}\end{equation}}
 \renewcommand{\gg}{>\!\!>}
 \renewcommand{\ll}{<\!\!<}
-\newcommand{\I}{\mathrm{i}}
+\renewcommand{\I}{\mathrm{i}}
 \newcommand{\D}{\mathrm{d}}
 \newcommand{\dt}{\frac{\D}{\D t}}
 \newcommand{\E}{\mathrm{e}}
+\newcommand{\latexmode}{}
 \begin{CJK}{UTF8}{gbsn}
 \AtEndDocument{\end{CJK}}
 '''

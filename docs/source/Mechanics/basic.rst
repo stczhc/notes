@@ -6,6 +6,8 @@
     朗道理论物理学教程, 力学, 2007.
 
 .. math::
+    :nowrap:
+    \@ifundefined{pdfmode}{
     \renewenvironment{equation*}
     {\begin{equation}\begin{aligned}}
     {\end{aligned}\end{equation}}
@@ -16,6 +18,7 @@
     \newcommand{\dt}{\frac{\D}{\D t}}
     \newcommand{\E}{\mathrm{e}}
     \renewcommand{\bm}{\mathbf}
+    }
 
 
 最小作用量原理
