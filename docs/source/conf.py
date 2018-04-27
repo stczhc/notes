@@ -136,7 +136,10 @@ latex_elements = {
     # 'figure_align': 'htbp',
     'preamble': r'''
 \hypersetup{unicode=true}
-\usepackage{CJKutf8}
+\ifxetex\usepackage{ctex}
+\else\usepackage{CJKutf8}
+\fi
+\usepackage{color}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathrsfs}
@@ -147,13 +150,19 @@ latex_elements = {
 {\end{aligned}\end{equation}}
 \renewcommand{\gg}{>\!\!>}
 \renewcommand{\ll}{<\!\!<}
-\renewcommand{\I}{\mathrm{i}}
+\ifcsname I\endcsname%
+    \renewcommand{\I}{\mathrm{i}}%
+\else%
+    \newcommand{\I}{\mathrm{i}}%
+\fi%
 \newcommand{\D}{\mathrm{d}}
 \newcommand{\dt}{\frac{\D}{\D t}}
 \newcommand{\E}{\mathrm{e}}
-\newcommand{\latexmode}{}
-\begin{CJK}{UTF8}{gbsn}
+\newcommand{\pdfmode}{}
+\ifxetex\else
+\AtBeginDocument{\begin{CJK}{UTF8}{gbsn}}
 \AtEndDocument{\end{CJK}}
+\fi
 '''
 }
 

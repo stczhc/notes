@@ -5,21 +5,19 @@
 .. note::
     朗道理论物理学教程, 力学, 2007.
 
-.. math::
-    :nowrap:
-    \@ifundefined{pdfmode}{
-    \renewenvironment{equation*}
-    {\begin{equation}\begin{aligned}}
-    {\end{aligned}\end{equation}}
-    \renewcommand{\gg}{>\!\!>}
-    \renewcommand{\ll}{<\!\!<}
-    \newcommand{\I}{\mathrm{i}}
-    \newcommand{\D}{\mathrm{d}}
-    \newcommand{\dt}{\frac{\D}{\D t}}
-    \newcommand{\E}{\mathrm{e}}
-    \renewcommand{\bm}{\mathbf}
-    }
+.. only:: html
 
+    .. math::
+        \renewenvironment{equation*}
+        {\begin{equation}\begin{aligned}}
+        {\end{aligned}\end{equation}}
+        \renewcommand{\gg}{>\!\!>}
+        \renewcommand{\ll}{<\!\!<}
+        \newcommand{\I}{\mathrm{i}}
+        \newcommand{\D}{\mathrm{d}}
+        \newcommand{\dt}{\frac{\D}{\D t}}
+        \newcommand{\E}{\mathrm{e}}
+        \renewcommand{\bm}{\mathbf}
 
 最小作用量原理
 ------------
@@ -163,7 +161,7 @@
 -----
 
 .. note::
-    力学(课程录像). 杨维紘.
+    力学(课程录像). 杨维纮.
 
 力学系统相对参考系 :math:`K` 和 :math:`K'` 的能量 :math:`E` 和 :math:`E'` 的关系为
 

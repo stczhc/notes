@@ -5,20 +5,19 @@
 .. note::
     Einstein Gravity in a Nutshell, Anthony Zee, 2013.
 
-.. math::
-    :nowrap:
-    \@ifundefined{pdfmode}{
-    \renewenvironment{equation*}
-    {\begin{equation}\begin{aligned}}
-    {\end{aligned}\end{equation}}
-    \renewcommand{\gg}{>\!\!>}
-    \renewcommand{\ll}{<\!\!<}
-    \newcommand{\I}{\mathrm{i}}
-    \newcommand{\D}{\mathrm{d}}
-    \newcommand{\dt}{\frac{\D}{\D t}}
-    \newcommand{\E}{\mathrm{e}}
-    \newcommand{\bm}{\mathbf}
-    }
+.. only:: html
+
+    .. math::
+        \renewenvironment{equation*}
+        {\begin{equation}\begin{aligned}}
+        {\end{aligned}\end{equation}}
+        \renewcommand{\gg}{>\!\!>}
+        \renewcommand{\ll}{<\!\!<}
+        \newcommand{\I}{\mathrm{i}}
+        \newcommand{\D}{\mathrm{d}}
+        \newcommand{\dt}{\frac{\D}{\D t}}
+        \newcommand{\E}{\mathrm{e}}
+        \renewcommand{\bm}{\mathbf}
 
 I.1 牛顿定律
 ------------
@@ -95,19 +94,13 @@ I.1 牛顿定律
         把 :eq:`eq3` 中的两式分别乘以 :math:`\cos\theta` 和 :math:`\sin\theta` 再相加, 得
         
         .. math::
-           :nowrap:
-           
-           \begin{equation*}
-              \ddot{x}\cos\theta =&\ \ddot{r}\cos^2\theta - 2\dot{r}\dot{\theta}\sin\theta\cos\theta
-                - r \ddot{\theta}\sin\theta\cos\theta - r \dot{\theta}^2\cos^2\theta = -\kappa x\cos\theta/r^3\\
-              \ddot{y}\sin\theta =&\ \ddot{r}\sin^2\theta + 2\dot{r}\dot{\theta}\cos\theta\sin\theta
-                + r \ddot{\theta}\cos\theta\sin\theta - r \dot{\theta}^2\sin^2\theta =  -\kappa y\sin\theta/r^3 \\
-              -\kappa \frac{x\cos\theta}{r^3} =&\ -\kappa \frac{x\cos^2\theta}{xr^2} \\
-              -\kappa \frac{y\sin\theta}{r^3} =&\ -\kappa \frac{y\sin^2\theta}{yr^2} \\
-              \ddot{r} - r \dot{\theta}^2 =&\ -\kappa /r^2
-           \end{equation*}
-           
-        .. math::
+            \ddot{x}\cos\theta =&\ \ddot{r}\cos^2\theta - 2\dot{r}\dot{\theta}\sin\theta\cos\theta
+            - r \ddot{\theta}\sin\theta\cos\theta - r \dot{\theta}^2\cos^2\theta = -\kappa x\cos\theta/r^3\\
+            \ddot{y}\sin\theta =&\ \ddot{r}\sin^2\theta + 2\dot{r}\dot{\theta}\cos\theta\sin\theta
+            + r \ddot{\theta}\cos\theta\sin\theta - r \dot{\theta}^2\sin^2\theta =  -\kappa y\sin\theta/r^3 \\
+            -\kappa \frac{x\cos\theta}{r^3} =&\ -\kappa \frac{x\cos^2\theta}{xr^2} \\
+            -\kappa \frac{y\sin\theta}{r^3} =&\ -\kappa \frac{y\sin^2\theta}{yr^2} \\
+            \ddot{r} - r \dot{\theta}^2 =&\ -\kappa /r^2
            :label: eqx
         
         另一方面, 把 :eq:`eq3` 中的两式分别乘以 :math:`\sin\theta` 和 :math:`\cos\theta` 再相减, 得
@@ -143,17 +136,11 @@ I.1 牛顿定律
         利用对 :math:`r` 积分和对时间积分的链式法则, 得
         
         .. math::
-           :nowrap:
-           
-           \begin{equation*}
-              \dot{r}\ddot{r} =&\ -\frac{\D r}{\D t}\frac{\D u(r)}{\D r} \\
-              \dot{r}\ddot{r} =&\ \frac{1}{2} \frac{\D (\dot{r}^2)}{\D t} \\
-              \int \frac{1}{2} \frac{\D (\dot{r}^2)}{\D t} \D t =&\ \frac{\dot{r}^2}{2} + C_1\\
-              \int \frac{\D r}{\D t}\frac{\D u(r)}{\D r} \D t =&\ u(r) + C_2 \\
-              \Rightarrow\quad\frac{\dot{r}^2}{2} + u(r) =&\ \epsilon
-           \end{equation*}
-        
-        .. math::
+            \dot{r}\ddot{r} =&\ -\frac{\D r}{\D t}\frac{\D u(r)}{\D r} \\
+            \dot{r}\ddot{r} =&\ \frac{1}{2} \frac{\D (\dot{r}^2)}{\D t} \\
+            \int \frac{1}{2} \frac{\D (\dot{r}^2)}{\D t} \D t =&\ \frac{\dot{r}^2}{2} + C_1\\
+            \int \frac{\D r}{\D t}\frac{\D u(r)}{\D r} \D t =&\ u(r) + C_2 \\
+            \Rightarrow\quad\frac{\dot{r}^2}{2} + u(r) =&\ \epsilon
            :label: eqp
         
         其中 :math:`\epsilon = E/m` (能量密度) 为积分常数. :eq:`eqp` 为"动能+势能=总能量"的形式, 根据总能量 :math:`\epsilon` 的大小, 决定了半径是在两个可能值之间变化(椭圆轨道),还是为常数(圆轨道), 或者是非束缚态.
@@ -180,17 +167,13 @@ I.1 牛顿定律
         运动方程为 (参见经典力学部分 :eq:`lagrange`)
         
         .. math::
-           :nowrap:
-           
-           \begin{equation*}
               \frac{\D }{\D t} \frac{\partial L}{\partial \dot{r}} - \frac{\partial L}{\partial r} =&\ 0 
               \Rightarrow &\ m \ddot{r} - mr\dot{\theta}^2 +\frac{K}{r^2} &= 0 \\
               \frac{\D }{\D t} \frac{\partial L}{\partial \dot{\theta}} - \frac{\partial L}{\partial \theta} =&\ 0 
               \Rightarrow &\ \frac{\D }{\D t} (mr^2 \dot{\theta}) = 2mr\dot{r} \dot{\theta} + mr^2 \ddot{\theta} &= 0
-           \end{equation*}
         
         和之前得到的运动方程一样. 
-    
+
     .. admonition:: 闭合轨道
 
         在 :eq:`eqp` 中解得 :math:`\dot{r}=\pm\sqrt{2[\epsilon - u(r)]}` 并除以 :math:`\dot{\theta} = l/r^2`, 得
@@ -213,7 +196,15 @@ I.1 牛顿定律
               u_{\mathrm{max}} - u =&\ u_{\mathrm{max}} - u_{\mathrm{min}} - (u_{\mathrm{max}} - u_{\mathrm{min}})\sin^2\zeta = (u_{\mathrm{max}} - u_{\mathrm{min}})\cos^2\zeta \\
               u - u_{\mathrm{min}} =&\ (u_{\mathrm{max}} - u_{\mathrm{min}})\sin^2\zeta \\
               (u_{\mathrm{max}} - u)(u - u_{\mathrm{min}}) =&\ [(u_{\mathrm{max}} - u_{\mathrm{min}})\sin\zeta\cos\zeta]^2 \\
-              \D u =&\ \D (1/r) = -\D r/r^2 \\
+              \D u =&\ \D (1/r) = -\D r/r^2
+           \end{equation*}
+        
+        从而
+
+        .. math::
+           :nowrap:
+        
+           \begin{equation*}
               \Delta \theta =&\ 2\int_{r_{\mathrm{min}}}^{r_{\mathrm{max}}} \frac{\D \theta}{\D r} \D r 
               = 2 \int_{u_{\mathrm{max}}}^{u_{\mathrm{min}}} \frac{l \D r}{r^2\sqrt{2\epsilon - l^2u^2 + 2\kappa u }} \\
               =&\ 2 \int_{u_{\mathrm{min}}}^{u_{\mathrm{max}}} \frac{l r^2 \D u}{lr^2\sqrt{(u_{\mathrm{max}}-u)(u-u_{\mathrm{min}}) }}
@@ -221,13 +212,13 @@ I.1 牛顿定律
               =&\ 4 \int_{0}^{\pi/2} \D \zeta = 2\pi
            \end{equation*}
         
-        因此行星轨道刚好是闭合的 (在 :math:`u_{\mathrm{min}}, u_{\mathrm{max}}` 存在的情况下, 即二次方程 :math:`2\epsilon - l^2u^2 + 2\kappa u=0` 至少有一个实数解, :math:`\Delta = 4\kappa^2 +8l^2\epsilon \ge 0 \Rightarrow \epsilon \ge -\frac{\kappa^2}{2l^2}`).
-         
-
-.. rubric:: 注释 
+        
 
 .. [#l] [朗道力学P31] 无限邻近的两个径矢和轨道微元围成的扇形面积等于 :math:`\frac{1}{2} \bm{r}^2 \D \theta` 将它表示为 :math:`\D f`, 其中 :math:`\dot{f}` 称为掠面速度. 角动量守恒 :math:`L=\D (mr^2\dot{\theta}) = 2m \dot{f} = \mathrm{const}` 意味着掠面速度为常数, 即在相等时间间隔内质点径矢扫过相同的面积(开普勒第二定律).
 
-.. [#tri1] 三角函数公式(此处似乎没用到)
-    
-    .. math:: \sin 2\alpha = 2\sin\alpha\cos\alpha, \quad \cos 2\alpha = 1-2\sin^2\alpha = 2\cos^2\alpha - 1
+.. [#tri1] 三角函数公式(此处似乎没用到) :math:`\sin 2\alpha = 2\sin\alpha\cos\alpha, \quad \cos 2\alpha = 1-2\sin^2\alpha = 2\cos^2\alpha - 1`.
+
+.. tikz:: An Example Directive with Caption
+
+   \draw[thick,rounded corners=8pt]
+   (0,0)--(0,2)--(1,3.25)--(2,2)--(2,0)--(0,2)--(2,2)--(0,0)--(2,0);
