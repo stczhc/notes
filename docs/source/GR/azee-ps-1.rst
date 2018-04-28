@@ -1,7 +1,4 @@
 
-广义相对论习题(徐一鸿)
-======================
-
 .. only:: html
 
     .. math::
@@ -14,10 +11,11 @@
         \newcommand{\D}{\mathrm{d}}
         \newcommand{\dt}{\frac{\D}{\D t}}
         \newcommand{\E}{\mathrm{e}}
+        \newcommand{\arccot}{\operatorname{arccot}}
         \renewcommand{\bm}{\mathbf}
 
 I.1 牛顿定律
-------------
+^^^^^^^^^^^^
 
 .. admonition:: 1 题目(:math:`\delta` 函数的性质)
 
@@ -150,11 +148,17 @@ I.1 牛顿定律
 
     双曲线 :math:`\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1` 的渐近线方程是 :math:`y=\pm \frac{b}{a} x`, 离心率是 :math:`e=\sqrt{1+\frac{b^2}{a^2}}`. 根据 :eq:`eccentricity` 式知 :math:`\frac{b}{a} = \sqrt{\frac{2\epsilon l^2}{\kappa^2}}`. 于是偏折角
     
-    .. math:: \varphi = 2\arctan \sqrt{\frac{2\epsilon l^2}{\kappa^2}}
+    .. math:: \varphi = 2\arctan \sqrt{\frac{2\epsilon l^2}{\kappa^2}} = 2\arccot \sqrt{\frac{\kappa^2}{2\epsilon l^2}}
 
-.. admonition:: 4 题目(壳层定理)
+    由泰勒展开 :math:`\arccot x = \frac{\pi}{2} -x + o(x)` 其中 :math:`o(x)` 是比 :math:`x` 高阶的无穷小. 于是
+    
+    .. math:: \varphi = 2 \left[ \frac{\pi}{2}- \sqrt{\frac{\kappa^2}{2\epsilon l^2}} \right]
+        = \pi -\frac{2\kappa}{l\sqrt{2\epsilon}}
+    
 
-    证明牛顿壳层定理: 一个球面质量分布施加的引力的作用等价于所有质量集中在分布中心一点的情形.
+.. admonition:: 4 题目(牛顿第一壳层定理)
+
+    证明牛顿第一壳层定理: 一个球壳质量分布施加的引力的作用等价于所有质量集中在分布中心一点的情形.
 
 .. admonition:: 4 题解
 
@@ -197,10 +201,11 @@ I.1 牛顿定律
     .. math::
         \D y = -2zR\D x, \quad -Rx = \frac{-z^2-R^2 +y}{2z},\quad z-Rx = \frac{z^2-R^2+y}{2z}
     
-    并且当 :math:`x = \cos\theta` 在 -1 和 1 之间变化时, :math:`r^2` 在 :math:`(z+R)^2` 和 :math:`(z-R)^2` 之间变化. 于是
+    并且当 :math:`x = \cos\theta` 在 -1 和 1 之间变化时, :math:`r^2` 在 :math:`(z+R)^2` 和 :math:`(z-R)^2` 之间变化. 仅考虑 :math:`z > R` 的情形. 于是
     
     .. math:: F_{2z} = -\frac{GMm}{2} \int_{(z+R)^2}^{(z-R)^2} \frac{(z^2-R^2+y)\D y}{(-4z^2R)y^{\frac{3}{2}}}
-    
+        :label: shellzr
+
     利用
     
     .. math:: \frac{\D}{\D y} y^{-1/2} = -\frac{1}{2} y^{-3/2}, \quad\frac{\D}{\D y} y^{1/2} = \frac{1}{2}  y^{-1/2}
@@ -209,10 +214,93 @@ I.1 牛顿定律
     
     .. math::
         \int_{(z+R)^2}^{(z-R)^2} \frac{(z^2-R^2+y)\D y}{y^{\frac{3}{2}}} =&\  (-2)(z^2-R^2) \left[ \frac{1}{z-R} - \frac{1}{z+R}\right] + 2 \left[ (z-R) - (z+R) \right] \\
-        =&\ (-2)(z^2-R^2) \frac{z+R-(z-R)}{(z-R)(z+R)} -4R = -8R
+        =&\ (-2)(z^2-R^2) \frac{z+R-(z-R)}{(z-R)(z+R)} -4R = -8R \quad(R<z)
     
     因此
     
     .. math:: F_{2z} = -\frac{GMm}{2} \frac{-8R}{-4z^2R} = -\frac{GMm}{z^2} = F_{1z}
+
+.. admonition:: 5 题目(牛顿第二壳层定理)
+
+    证明牛顿第二壳层定理: 在球壳内部没有引力.
+
+.. admonition:: 5 题解
+
+    现在假设 :math:`P` 点在球壳内.
+
+    .. tikz:: \draw[->] (0, -2.2) -- (0, 2.2) node[above] {$z$};
+        \draw[->] (-2.2, 0) -- (2.2, 0) node[right] {$x$};
+        \draw (0, 0) circle (1.8);
+        \fill (0, 1.2) circle (0.05) node[left] {$P$};
+        \fill (0.6, 1.7) circle (0.05) node[right] {$S$};
+        \draw[dashed] (0, 1.2) -- (0.6, 1.7) -- (0, 0) node[left] {$O$};
+        \node[right] at (0.2, 0.7) {$R$};
+        \node[right] at (0.05, 1.6) {$r$};
+        \node[left] at (0, 0.6) {$z$};
+        \node at (0.12, 0.45) {$\theta$};
+
+    根据上面 :eq:`shellzr` 考虑 :math:`R>z` 的情形. 有
+    
+    .. math::
+        \int_{(R+z)^2}^{(R-z)^2} \frac{(z^2-R^2+y)\D y}{y^{\frac{3}{2}}} =&\  (-2)(z^2-R^2) \left[ \frac{1}{R-z} - \frac{1}{R+z}\right] + 2 \left[ (R-z) - (R+z) \right] \\
+        =&\ -(-2)(z^2-R^2) \frac{R+z-(R-z)}{(z-R)(z+R)} -4z = 4z-4z = 0 \quad(R>z)
+
+.. admonition:: 6 题目(引力隧道)
+
+    假设工程师可以构建连接地球上两个城市的直线隧道. 这样一辆车可以直接从一个城市坠落到另一个城市. 使用牛顿的两个壳层定理计算隧穿时间.
+
+.. admonition:: 6 题解
+
+    在地球内部时, 只有半径小于车所在半径位置部分的质量对引力有贡献. 
+
+    .. tikz:: \draw[->] (0, -2.2) -- (0, 2.2) node[above] {$z$};
+        \draw[->] (-2.2, 0) -- (2.2, 0) node[right] {$x$};
+        \draw (0, 0) circle (1.8);
+        \draw[dashed] (0, 0) circle (1.3);
+        \draw[line width=1pt] (1.0,  1.5) node[above] {$A$} -- (1.0, -1.5) node[below] {$B$};
+        \fill (1.0, 0.83) circle (0.05) node[right] {$P$};
+        \draw[dashed] (0, 0) -- (1.0, 0.83);
+        \node at (0.45, 0.12) {$\theta$};
+        \node[right] at (1, 0) {$M$};
+        \node[left] at (0, 0) {$O$};
+    
+    设 :math:`A` 点位置对应的极角为 :math:`\theta_0`. 当车从 :math:`A` 运动到 :math:`M`, :math:`\theta` 从 :math:`\theta_0` 到 :math:`0` 进行变化. 加速度决定于万有引力沿 :math:`\overline{AB}` 的投影, 投影系数为 :math:`\sin\theta`. 设地球半径为 :math:`R`, 则 :math:`P` 点受到的引力的有效半径为(也是引力作用的距离) :math:`r = \overline{OM}/\cos\theta`. 又 :math:`\overline{OM} = R\cos\theta_0`. 得引力来源的有效质量
+    
+    .. math:: M' = M \frac{\frac{4}{3}\pi \left(\frac{R\cos\theta_0}{\cos\theta}\right)^3}{\frac{4}{3}\pi R^3}
+        = M \left(\frac{\cos\theta_0}{\cos\theta}\right)^3
+    
+    于是可得加速度为
+    
+    .. math::
+        ma =&\  \frac{GM'm}{r^2}\sin\theta\\
+        a =&\ GM\sin\theta\frac{\left(\frac{\cos\theta_0}{\cos\theta}\right)^3}{\left(\frac{R\cos\theta_0}{\cos\theta}\right)^2} = \frac{GM}{R^2} \cos\theta_0\tan\theta
+    
+    记车从 :math:`A` 到  :math:`P` (最终到 :math:`M`) 的位移为 :math:`q`. 则 :math:`q = R\sin\theta_0 - y`, 而纵坐标 :math:`y=\overline{PM}`, 即 :math:`y = \cos\theta_0\tan\theta`. 于是
+    
+    .. math::
+        q =&\ R\sin\theta_0 - \cos\theta_0\tan\theta \\
+        \frac{\D^2 q}{\D t^2} = a =&\ \frac{GM}{R^2} \cos\theta_0\tan\theta = \frac{GM(R\sin\theta_0 - q)}{R^2}
+    
+    再利用 :math:`y = R\sin\theta_0 - q` 得
+    
+    .. math::
+        \frac{\D^2 y}{\D t^2} =&\ -\frac{GM}{R^2} y \\
+        y(t) =&\ C_1 \cos \sqrt{\frac{GM}{R^2}}t + C_2 \sin \sqrt{\frac{GM}{R^2}}t
+    
+    边界条件为 :math:`t = 0` 时, :math:`y(t) = R\sin\theta_0, \frac{\D y(t)}{\D t} = 0`, 于是
+    
+    .. math::
+        R\sin\theta_0 =&\ C_1 + C_2 \cdot 0 \quad\Rightarrow \quad C_1 = R\sin\theta_0 \\
+        0 = &\ \sqrt{\frac{GM}{R^2}}\left[ -C_1  \cdot 0 + C_2 \right] \quad\Rightarrow \quad C_2 = 0
+    
+    因此运动方程为
+    
+    .. math:: y(t) = R\sin\theta_0 \cos \sqrt{\frac{GM}{R^2}}t
+    
+    当 :math:`y = 0` 时,
+    
+    .. math:: \sqrt{\frac{GM}{R^2}}t = \frac{\pi}{2} \quad\Rightarrow \quad t = \frac{\pi}{2}\sqrt{\frac{R^2}{GM}}
+
+    从 :math:`A` 到 :math:`B` 的耗时是 :math:`A` 到 :math:`M` 的两倍, 时间为 :math:`\pi\sqrt{\frac{R^2}{GM}}`.
 
 .. [#delta] 数学物理方法(第四版), 梁昆淼, 第84页.
