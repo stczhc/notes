@@ -202,15 +202,14 @@ I.1 牛顿定律
     从而
 
     .. math::
-        :nowrap:
+        \Delta \theta =&\ 2\int_{r_{\mathrm{min}}}^{r_{\mathrm{max}}} \frac{\D \theta}{\D r} \D r 
+        = 2 \int_{u_{\mathrm{max}}}^{u_{\mathrm{min}}} \frac{l \D r}{r^2\sqrt{2\epsilon - l^2u^2 + 2\kappa u }} \\
+        =&\ 2 \int_{u_{\mathrm{min}}}^{u_{\mathrm{max}}} \frac{l r^2 \D u}{lr^2\sqrt{(u_{\mathrm{max}}-u)(u-u_{\mathrm{min}}) }}
+        = 4 \int_{0}^{\pi/2} \frac{(u_{\mathrm{max}} - u_{\mathrm{min}})\sin\zeta\cos\zeta \D \zeta}{(u_{\mathrm{max}} - u_{\mathrm{min}})\sin\zeta\cos\zeta} \\
+        =&\ 4 \int_{0}^{\pi/2} \D \zeta = 2\pi
+        :label: rthetaclose
     
-        \begin{equation*}
-            \Delta \theta =&\ 2\int_{r_{\mathrm{min}}}^{r_{\mathrm{max}}} \frac{\D \theta}{\D r} \D r 
-            = 2 \int_{u_{\mathrm{max}}}^{u_{\mathrm{min}}} \frac{l \D r}{r^2\sqrt{2\epsilon - l^2u^2 + 2\kappa u }} \\
-            =&\ 2 \int_{u_{\mathrm{min}}}^{u_{\mathrm{max}}} \frac{l r^2 \D u}{lr^2\sqrt{(u_{\mathrm{max}}-u)(u-u_{\mathrm{min}}) }}
-            = 4 \int_{0}^{\pi/2} \frac{(u_{\mathrm{max}} - u_{\mathrm{min}})\sin\zeta\cos\zeta \D \zeta}{(u_{\mathrm{max}} - u_{\mathrm{min}})\sin\zeta\cos\zeta} \\
-            =&\ 4 \int_{0}^{\pi/2} \D \zeta = 2\pi
-        \end{equation*}
+    一般情况下做有界运动的质点轨道不是封闭的. 只有两种类型的有心力场, 其中的一切有界运动的轨道是封闭的, 这两种场的势能与 :math:`\frac{1}{r}` 或 :math:`r^2` (空间振子)成正比.
 
 .. [#l] [朗道力学P31] 无限邻近的两个径矢和轨道微元围成的扇形面积等于 :math:`\frac{1}{2} \bm{r}^2 \D \theta` 将它表示为 :math:`\D f`, 其中 :math:`\dot{f}` 称为掠面速度. 角动量守恒 :math:`L=\D (mr^2\dot{\theta}) = 2m \dot{f} = \mathrm{const}` 意味着掠面速度为常数, 即在相等时间间隔内质点径矢扫过相同的面积(开普勒第二定律).
 
