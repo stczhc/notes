@@ -138,8 +138,8 @@ I.1 牛顿定律
             {\sqrt{1 - \left(\frac{x + \frac{\beta}{2\gamma}}{\sqrt{\frac{\beta^2-4\alpha\gamma}{4\gamma^2}}}\right)^2 }} \\
             =&\ -\frac{1}{\sqrt{-\gamma}}\int  \D \left( -\frac{ 2\gamma x + \beta }
             {\sqrt{\beta^2-4\alpha\gamma}}  \right)\frac{1}
-            {\sqrt{1 - \left(-\frac{2\gamma x + \beta}{\sqrt{\beta^2-4\alpha\gamma}}\right)^2 }}
-            = \frac{1}{\sqrt{-\gamma}} \arccos \left( -\frac{ 2\gamma x + \beta }
+            {\sqrt{1 - \left(-\frac{2\gamma x + \beta}{\sqrt{\beta^2-4\alpha\gamma}}\right)^2 }} \\
+            =&\ \frac{1}{\sqrt{-\gamma}} \arccos \left( -\frac{ 2\gamma x + \beta }
             {\sqrt{\beta^2-4\alpha\gamma}}  \right)
     
 .. admonition:: 3 题目(牛顿引力下光线偏折)

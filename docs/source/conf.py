@@ -75,6 +75,7 @@ exclude_patterns = []
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
+tikz_proc_suite = 'GhostScript'
 
 # -- Options for HTML output -------------------------------------------------
 
