@@ -8,5 +8,6 @@
 .. toctree::
    :maxdepth: 1
 
-   azee-1.rst
+   azee-i1.rst
+   azee-i2.rst
    azee-ps-main.rst

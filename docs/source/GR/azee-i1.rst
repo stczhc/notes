@@ -154,6 +154,7 @@ I.1 牛顿定律
     
     .. math:: \frac{\D}{\D \bm{r}} \left( \frac{1}{r} \right) = - \frac{\bm{r}}{r^3}
     
+    注意这个只是三位情况的一个证明. 后面章节 :eq:`vrnd` 式考虑了一般维度的情况.
     系统的拉格朗日量为 (根据理论力学拉格朗日量公式, 参见经典力学部分 :eq:`eqlcylin`)
     
     .. math:: L(r,\theta) = T - U = \frac{m}{2}\left( \dot{r}^2 + r^2 \dot{\theta}^2 \right) + \frac{K}{r}
