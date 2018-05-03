@@ -174,6 +174,7 @@ latex_documents = [
      u'H. Zhai', 'manual'),
 ]
 
+tikz_latex_preamble = r"\usepackage{bm}"
 
 # -- Options for manual page output ------------------------------------------
 
