@@ -7,3 +7,4 @@
 
    azee-ps-i1.rst
    azee-ps-i2.rst
+   azee-ps-i3.rst

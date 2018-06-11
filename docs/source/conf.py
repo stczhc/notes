@@ -142,6 +142,7 @@ latex_elements = {
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathrsfs}
+\usepackage{tensor}
 \usepackage{bm}
 \usepackage{tikz}
 \renewenvironment{equation*}
@@ -155,8 +156,11 @@ latex_elements = {
     \newcommand{\I}{\mathrm{i}}%
 \fi%
 \newcommand{\D}{\mathrm{d}}
+\renewcommand{\C}{\mathrm{C}}
 \newcommand{\dt}{\frac{\D}{\D t}}
 \newcommand{\E}{\mathrm{e}}
+\newcommand{\xtensor}[3]{\tensor{#1}{#2#3}}
+\newcommand{\arccot}{\operatorname{arccot}}
 \newcommand{\pdfmode}{}
 \ifxetex\else
 \AtBeginDocument{\begin{CJK}{UTF8}{gbsn}}
