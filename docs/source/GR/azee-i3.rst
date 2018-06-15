@@ -68,3 +68,40 @@ I.3 旋转: 不变性和无穷小变换
         \approx&\ \begin{pmatrix} 1 & 0 & \theta_y \\ 0 & 1 & -\theta_x \\ -\theta_y & \theta_x & 1
             \end{pmatrix} \begin{pmatrix} 1 & -\theta_z & 0 \\ \theta_z & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} 
         \approx \begin{pmatrix} 1 & -\theta_z & \theta_y \\ \theta_z & 1 & -\theta_x \\ -\theta_y & \theta_x &    1 \end{pmatrix}
+
+转动矩阵是正交的 (orthogonal), 可以用 2 维转动矩阵 :math:`R(\theta)` 验证 (注意这里考虑顺时针)
+
+.. math:: R^T(\theta)R(\theta) = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}
+    \begin{pmatrix} \cos\theta & \sin\theta \\ -\sin\theta & \cos\theta \end{pmatrix} = 
+    \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}
+ 
+于是有 :math:`(\det R)^2 = 1 \Rightarrow \det R = \pm 1`. 正交矩阵的行列式可以是 :math:`-1` 或 :math:`+1`. 其中 :math:`-1` 的矩阵叫做反射矩阵 (reflection matrix). 具有单位行列式的矩阵叫做特殊的 (special).
+
+无限小作用
+^^^^^^^^^^
+
+当角度很小时, 转动矩阵接近一个单位矩阵 :math:`R(\theta) \approx I+A`. 2 维无限小转动矩阵只有一个
+
+.. math:: A = \theta\mathscr{J} = \theta\begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}
+
+对3维的情况有 :math:`A = \vec{\theta}\cdot \vec{\mathscr{J}}`. 对有限角度的情况有
+
+.. math:: R(\theta) = \lim_{N\to \infty} R\left(\frac{\theta}{N} \right)^N = \lim_{N\to\infty}
+    \left( 1+\frac{\theta\mathscr{J}}{N} \right)^N = \E^{\theta \mathscr{J}}
+
+考虑2维的情况. 现在想用 2 维无限小转动矩阵来得到有限角度的转动矩阵. 注意到 :math:`\mathscr{J}^2 = -I`, 可以分开指数级数的奇数项和偶数项.
+
+.. math:: \E^{\theta\mathscr{J}} =&\ \sum_{n=0}^\infty \frac{\theta^n\mathscr{J}^n}{n!}
+    =\left( \sum_{k=0}^\infty \frac{(-1)^k\theta^{2k}}{(2k)!} \right)I 
+    + \left( \sum_{k=0}^\infty \frac{(-1)^k\theta^{2k + 1}}{(2k + 1)!} \right)\mathscr{J} \\
+    =&\ \cos\theta I + \sin \theta \mathscr{J} = \cos \theta \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}
+        + \sin\theta \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} = \begin{pmatrix} \cos\theta & \sin\theta \\ -\sin\theta & \cos\theta \end{pmatrix}
+
+高维空间
+^^^^^^^^
+
+在 :math:`D` 维欧氏空间可以定义两相邻点的距离平方[根据广义勾股定理(generalization of Pythagora's theorem)]
+
+.. math:: \D s^2 = \sum_{i=1}^D \left( \D x^i \right)^2
+
+转动定义为保持 :math:`\D s` 不变的线性变换 :math:`\D \bm{x}' = R\D \bm{x}`. 满足两个条件 :math:`R^TR=I, \ \det R = 1` 的 :math:`D\times D` 的矩阵 :math:`R` 集合称作简单正交群(simple orthogonal group) :math:`SO(D)`.

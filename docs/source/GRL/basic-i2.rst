@@ -177,6 +177,10 @@
 
 [注8] 集合 :math:`\{ \phi_t | t\in \mathbb{R} \}` 是以复合映射为乘法的群, 各群元 :math:`\phi_t` 是从 :math:`M` 到 :math:`M` 的微分同胚映射, :math:`\phi_0` 是恒等元. 设 :math:`\phi: \mathbb{R} \times M \to M` 是单参微分同胚群, 则 :math:`\forall p\in M, \phi_p:\mathbb{R} \to M` 是过 :math:`p` 点的一条光滑曲线[满足 :math:`\phi_p(0) = p`], 叫做这个单参微分同胚群过 :math:`p` 点的 **轨道** (orbit). 把这条曲线在点 :math:`\phi_p(0)` 的切矢记作 :math:`v|_p`, 便得 :math:`M` 上的一个光滑矢量场 :math:`v`. 可见 :math:`M` 上的一个单参微分同胚群给出 :math:`M` 上的一个光滑矢量场.
 
+.. admonition:: 备注
+
+    :math:`V^*` 是 :math:`V\to \mathbb{R}` 映射, :math:`V^{**}` 是 :math:`V^* \to \mathbb{R}` 映射, 由 :math:`V^{**}` 和 :math:`V` 相互认同, 可推出 :math:`V`  是 :math:`V^* \to \mathbb{R}` 映射. 但由定义 :math:`V` 是 :math:`\mathscr{F}_M \to\mathbb{R}` 映射. 事实上, 注意 :math:`V` 的基于 :math:`f` 的映射是需要指定流形 :math:`M` 的. 然而 :math:`M` 上的 :math:`f` 可以自然诱导出一个 :math:`V^*` 场 :math:`\D f`. :math:`\D f` 和 :math:`f` 是一一对应的. 所以 :math:`V^* \to \mathbb{R}` 也就可以理解为 :math:`\mathscr{F}_M \to\mathbb{R}`.
+
 第三节 对偶矢量场
 ^^^^^^^^^^^^^^^^^
 

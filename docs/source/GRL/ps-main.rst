@@ -7,3 +7,4 @@
    :maxdepth: 1
 
    ps-i1.rst
+   ps-i2.rst
