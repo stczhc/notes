@@ -15,6 +15,9 @@
         \newcommand{\xtensor}[3]{{#1}#2 {\vphantom{#1}}#3}
         \renewcommand{\bm}{\mathbf}
 
+.. note::
+    微分几何入门与广义相对论 (上册, 第二版), 梁灿彬, 2006.
+
 第二章 流形和张量场
 -------------------
 

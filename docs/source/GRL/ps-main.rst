@@ -8,3 +8,4 @@
 
    ps-i1.rst
    ps-i2.rst
+   ps-i3.rst

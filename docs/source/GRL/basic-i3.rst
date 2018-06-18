@@ -15,6 +15,9 @@
         \newcommand{\xtensor}[3]{{#1}#2 {\vphantom{#1}}#3}
         \renewcommand{\bm}{\mathbf}
 
+.. note::
+    微分几何入门与广义相对论 (上册, 第二版), 梁灿彬, 2006.
+
 第三章 黎曼 (内禀) 曲率张量
 ---------------------------
 
@@ -128,6 +131,10 @@
     \xtensor{v}{^\nu}{_{,\mu}} \equiv \partial_\mu v^\nu \equiv \partial v^\nu / \partial x^\mu
 
 其中逗号代表求偏导数. 至于 :math:`\nabla_a v^b`, 则是与坐标系无关的张量, 它在坐标系中的分量通常记为 :math:`\xtensor{v}{^\nu}{_{;\mu}}`, 即 :math:`\nabla_a v^b = \xtensor{v}{^\nu}{_{;\mu}} (\D x^\mu )_a (\partial/\partial x^\nu)^b`, 称为 :math:`v^b` 的协变导数.
+
+.. admonition:: 备注
+
+    注意不能写 :math:`\xtensor{v}{^\nu}{_{;\mu}} = \nabla_\mu v^\nu`, 因为 :math:`v^\nu` 是标量, 用导数作用相当于 :math:`\nabla_\mu v^\nu = \partial_\mu v^\nu`. 表示协变导数的分量只能用分号记号.
 
 [定理3-1-7] :math:`\xtensor{v}{^\nu}{_{;\mu}} = \xtensor{v}{^\nu}{_{,\mu}} + \xtensor{\Gamma}{^\nu}{_{\mu\sigma}}v^\sigma,\quad \omega_{\nu;\mu} = \omega_{\nu,\mu} - \xtensor{\Gamma}{^\sigma}{_{\mu\nu}}\omega_\sigma`.
 

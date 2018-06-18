@@ -13,6 +13,9 @@
         \newcommand{\E}{\mathrm{e}}
         \renewcommand{\bm}{\mathbf}
 
+.. note::
+    Einstein Gravity in a Nutshell, Anthony Zee, 2013.
+
 I.3 旋转: 不变性和无穷小变换
 ----------------------------
 

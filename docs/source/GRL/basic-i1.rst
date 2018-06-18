@@ -14,6 +14,8 @@
         \newcommand{\E}{\mathrm{e}}
         \renewcommand{\bm}{\mathbf}
 
+.. note::
+    微分几何入门与广义相对论 (上册, 第二版), 梁灿彬, 2006.
 
 第一章 拓扑空间简介
 -------------------
