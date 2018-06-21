@@ -69,7 +69,7 @@
 
 对于微分同胚映射 :math:`\phi:M\to N` 存在两种观点: (1) **主动观点** (active viewpoint), 它如实地认为 :math:`\phi` 是点的变换 [把 :math:`p` 变为 :math:`\phi(p)`] 以及由此导致的张量变换 [把 :math:`p` 点的张量 :math:`T` 变为 :math:`\phi(p)` 点的张量 :math:`\phi_* T`]; (2) **被动观点** (passive viewpoint), 它认为点 :math:`p` 及其上的所有张量 :math:`T` 都没变, :math:`\phi : M\to N` 的后果是坐标系有了变换 (从 :math:`\{ x^\mu \}` 变为 :math:`\{ x'^\mu \}`). 这两种观点是等价的. 下面的定理可以看作等价性的某种表现.
 
-[定理4-1-3] :math:`\xtensor{(\phi_* T)}{^{\mu_1\cdots \mu_k}}{_{v_1\cdots v_l}} |_{\phi(p)} = \xtensor{{T'}}{^{\mu_1\cdots \mu_k}}{_{v_1\cdots v_l}} |_p,\quad \forall T\in \mathscr{T}_M(k, l)`. 式中左边是新点 :math:`\phi(p)` 的新张量 :math:`\phi_* T` 在老坐标系 :math:`\{ y^\mu \}` 的分量, 右边是老点 :math:`p` 的老张量 :math:`T` 在新坐标系的分量.
+[定理4-1-3] :math:`\xtensor{(\phi_* T)}{^{\mu_1\cdots \mu_k}}{_{\nu_1\cdots \nu_l}} |_{\phi(p)} = \xtensor{{T'}}{^{\mu_1\cdots \mu_k}}{_{\nu_1\cdots \nu_l}} |_p,\quad \forall T\in \mathscr{T}_M(k, l)`. 式中左边是新点 :math:`\phi(p)` 的新张量 :math:`\phi_* T` 在老坐标系 :math:`\{ y^\mu \}` 的分量, 右边是老点 :math:`p` 的老张量 :math:`T` 在新坐标系的分量.
 
 第二节 李导数
 ^^^^^^^^^^^^^
@@ -145,6 +145,10 @@
 如果 :math:`M` 上指定了度规场 :math:`g_{ab}`, 则众多光滑矢量场中可以挑出特殊的一个子类, 其中每个矢量场给出的单参微分同胚群是单参等度规群, 即每个群元 :math:`\phi_t : M \to M` 是 :math:`M` 上的一个等度规映射. 于是有以下定义
 
 [定义2] :math:`(M, g_{ab})` 上的矢量场 :math:`\xi^a` 称为 **Killing 矢量场**, 若它给出的单参微分同胚 (局部) 群是单参等度规 (局部) 群. 等价地, :math:`\xi^a` 称为 Killing 矢量场, 若 :math:`\mathscr{L}_\xi g_{ab} = 0`.
+
+.. admonition:: 备注
+
+    李导数 :math:`\mathscr{L}_\xi g_{ab}` 分子是 :math:`\phi_t^* g_{ab} - g_{ab}` 由于 :math:`\phi_t` 等度规而等于零. 
 
 [定理4-3-1] :math:`\xi^a` 为 Killing 矢量场的充要条件是 :math:`\xi^a` 满足如下的 **Killing 方程**:
 
