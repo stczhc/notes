@@ -12,7 +12,7 @@
         \renewcommand{\C}{\mathrm{C}}
         \newcommand{\dt}{\frac{\D}{\D t}}
         \newcommand{\E}{\mathrm{e}}
-        \renewcommand{\bm}{\mathbf}
+        \renewcommand{\bm}{\boldsymbol}
 
 .. note::
     微分几何入门与广义相对论 (上册, 第二版), 梁灿彬, 2006.

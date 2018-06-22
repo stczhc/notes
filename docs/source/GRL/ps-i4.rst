@@ -252,32 +252,32 @@
     于是第一项不为零的分量为 (上指标代表第几项)
     
     .. math:: 
-        \xtensor{L}{^1}_{{01}} =&\ -\xtensor{L}{^1}_{{13}} = -\xtensor{L}{^1}_{{10}} = \xtensor{L}{^1}_{{31}} \\
+        \xtensor{L}{^1}{_{01}} =&\ -\xtensor{L}{^1}{_{13}} = -\xtensor{L}{^1}{_{10}} = \xtensor{L}{^1}{_{31}} \\
         =&\ (-y)\frac{y^2}{\rho^3}+x \left( -\frac{xy}{\rho^3} \right) = -\frac{(x^2+y^2)y}{\rho^3} = -y/r \\
-        \xtensor{L}{^1}{_{02}} =&\ -\xtensor{L}{^1}_{{23}} = -\xtensor{L}{^1}_{{20}} = \xtensor{L}{^1}_{{32}} \\
+        \xtensor{L}{^1}{_{02}} =&\ -\xtensor{L}{^1}{_{23}} = -\xtensor{L}{^1}{_{20}} = \xtensor{L}{^1}{_{32}} \\
         =&\ (-y)\left( -\frac{xy}{\rho^3} \right)+ x \frac{y^2}{\rho^3} = \frac{(x^2+y^2)x}{\rho^3} = x/r
     
     第二项不为零的分量为 (:math:`\partial_1 v^2 = 1, \partial_2 v^1 = -1`)
     
     .. math:: 
-        \xtensor{L}{^2}_{{10}} =&\ F_{10}\partial_1 v^1 + F_{20}\partial_1 v^2 = F_{20} = -y/r \\
-        \xtensor{L}{^2}_{{20}} =&\ F_{10}\partial_2 v^1 + F_{20}\partial_2 v^2 = -F_{10} = x/r \\
-        \xtensor{L}{^2}_{{13}} =&\ F_{13}\partial_1 v^1 + F_{23}\partial_1 v^2 = F_{23} = -y/r \\
-        \xtensor{L}{^2}_{{23}} =&\ F_{13}\partial_2 v^1 + F_{23}\partial_2 v^2 = -F_{13} = x/r
+        \xtensor{L}{^2}{_{10}} =&\ F_{10}\partial_1 v^1 + F_{20}\partial_1 v^2 = F_{20} = -y/r \\
+        \xtensor{L}{^2}{_{20}} =&\ F_{10}\partial_2 v^1 + F_{20}\partial_2 v^2 = -F_{10} = x/r \\
+        \xtensor{L}{^2}{_{13}} =&\ F_{13}\partial_1 v^1 + F_{23}\partial_1 v^2 = F_{23} = -y/r \\
+        \xtensor{L}{^2}{_{23}} =&\ F_{13}\partial_2 v^1 + F_{23}\partial_2 v^2 = -F_{13} = x/r
     
     第三项不为零的分量为 (:math:`\partial_1 v^2 = 1, \partial_2 v^1 = -1`)
     
     .. math:: 
-        \xtensor{L}{^3}_{{01}} =&\ F_{01}\partial_1 v^1 + F_{02}\partial_1 v^2 = F_{02} = y/r \\
-        \xtensor{L}{^3}_{{02}} =&\ F_{01}\partial_2 v^1 + F_{02}\partial_2 v^2 = -F_{01} = -x/r \\
-        \xtensor{L}{^3}_{{31}} =&\ F_{31}\partial_1 v^1 + F_{32}\partial_1 v^2 = F_{32} = y/r \\
-        \xtensor{L}{^3}_{{32}} =&\ F_{31}\partial_2 v^1 + F_{32}\partial_2 v^2 = -F_{31} = -x/r
+        \xtensor{L}{^3}{_{01}} =&\ F_{01}\partial_1 v^1 + F_{02}\partial_1 v^2 = F_{02} = y/r \\
+        \xtensor{L}{^3}{_{02}} =&\ F_{01}\partial_2 v^1 + F_{02}\partial_2 v^2 = -F_{01} = -x/r \\
+        \xtensor{L}{^3}{_{31}} =&\ F_{31}\partial_1 v^1 + F_{32}\partial_1 v^2 = F_{32} = y/r \\
+        \xtensor{L}{^3}{_{32}} =&\ F_{31}\partial_2 v^1 + F_{32}\partial_2 v^2 = -F_{31} = -x/r
     
     综上第二、三项之和为
     
     .. math:: 
-        \xtensor{L}{^{23}}_{{01}} =&\ -\xtensor{L}{^{23}}_{{13}} = -\xtensor{L}{^{23}}_{{10}} = \xtensor{L}{^{23}}_{{31}} = y/r \\
-        \xtensor{L}{^{23}}_{{02}} =&\ -\xtensor{L}{^{23}}_{{23}} = -\xtensor{L}{^{23}}_{{20}} = \xtensor{L}{^{23}}_{{32}} = -x/r
+        \xtensor{L}{^{23}}{_{01}} =&\ -\xtensor{L}{^{23}}{_{13}} = -\xtensor{L}{^{23}}{_{10}} = \xtensor{L}{^{23}}{_{31}} = y/r \\
+        \xtensor{L}{^{23}}{_{02}} =&\ -\xtensor{L}{^{23}}{_{23}} = -\xtensor{L}{^{23}}{_{20}} = \xtensor{L}{^{23}}{_{32}} = -x/r
     
     因此 :math:`(\mathscr{L}_v F)_{\mu\nu} = 0`.
 

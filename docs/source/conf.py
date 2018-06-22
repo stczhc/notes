@@ -144,6 +144,7 @@ latex_elements = {
 \usepackage{mathrsfs}
 \usepackage{tensor}
 \usepackage{bm}
+\usepackage{esint}
 \usepackage{tikz}
 \renewenvironment{equation*}
 {\begin{equation}\begin{aligned}}
