@@ -13,7 +13,7 @@
         \newcommand{\dt}{\frac{\D}{\D t}}
         \newcommand{\E}{\mathrm{e}}
         \newcommand{\xtensor}[3]{{#1}#2 {\vphantom{#1}}#3}
-        \newcommand{\oiint}{{\iint\!\!\!\!\!\!\!\!\!\!\!\;\subset\!\supset}}
+        \newcommand{\oiint}{{\rlap{\,\subset\!\supset}\iint}}
         \renewcommand{\bm}{\boldsymbol}
 
 .. note::
@@ -246,3 +246,112 @@
 第五节 函数在流形上的积分, Gauss 定理
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+[定义1] 设 :math:`\bm{\varepsilon}` 为流形 :math:`M` 上的任一体元, :math:`f` 为 :math:`M` 上的 :math:`\C^0` 函数, 则 :math:`f` **在** :math:`M` **上的积分** (记作 :math:`\int_M f`) 定义为 :math:`n` 形式场 :math:`f\bm{\varepsilon}` 在 :math:`M` 上的积分, 即
+
+.. math:: 
+    \int_M f := \int_M f\bm{\varepsilon}
+
+[定理5-5-1] 设 :math:`M` 是 :math:`n` 维定向流形, :math:`N` 是 :math:`M` 中的 :math:`n` 维紧致带边嵌入子流形, :math:`g_{ab}` 是 :math:`M` 上的度规, :math:`\bm{\varepsilon}` 和 :math:`\nabla_a` 分别是适配体元和适配导数算符, :math:`v^a` 是 :math:`M` 上的 :math:`\C^1` 矢量场, 则
+
+.. math:: 
+    \int_{\I(N)} (\nabla_b v^b)\bm{\varepsilon} = \int_{\partial N} v^b \varepsilon_{ba_1\cdots a_{n - 1}}
+
+[证明] :math:`n - 1` 形式场 :math:`\bm{\omega} \equiv v^b \varepsilon_{ba_1\cdots a_{n-1}}` 的外微分 :math:`\D \bm{\omega} = n\nabla_{[c}(v^b \varepsilon_{|b|a_1\cdots a_{n - 1}]})` 是 :math:`n` 形式场, 其中 :math:`\nabla_c` 可为任意导数算符. :math:`N` 中任一点的 :math:`n` 形式的集合是1维矢量空间, 故该点的两个 :math:`n` 形式 :math:`\D \bm{\omega}` 与 :math:`\bm{\varepsilon}` 只差一个因子, 即
+
+.. math:: 
+    n\nabla_{[c}(v^b \varepsilon_{|b|a_1\cdots a_{n -1}]}) = h\varepsilon_{ca_1\cdots a_{n-1}}
+
+其中 :math:`h` 是 :math:`N` 上的函数. 上式两边与 :math:`\varepsilon^{ca_1\cdots a_{n - 1}}` 缩并, 右边得 :math:`(-1)^shn!`, 左边得
+
+.. math:: 
+    &\ n\varepsilon^{ca_1\cdots a_{n - 1}} \nabla_{[c}(v^b \varepsilon_{|b|a_1\cdots a_{n -1}]})
+    = n\varepsilon^{[ca_1\cdots a_{n - 1}]} \nabla_c (v^b \varepsilon_{ba_1\cdots a_{n - 1}} ) \\
+    =&\ n\varepsilon^{ca_1\cdots a_{n - 1}}\varepsilon_{ba_1\cdots a_{n -1}}\nabla_c v^b
+    = n(-1)^s(n-1)!\xtensor{\delta}{^c}{_b} \nabla_c v^b = (-1)^sn!\nabla_b v^b
+
+故 :math:`h = \nabla_b v^b, \ \D\bm{\omega} = \bm{\varepsilon}\nabla_bv^b`. 根据 Stokes 定理可以得证.
+
+:math:`N` 上的度规 :math:`g_{ab}` 在 :math:`\partial N` 上的诱导度规为 :math:`h_{ab} = g_{ab} \mp n_an_b`. 把 :math:`\partial N` 看作带度规 :math:`h_{ab}` 的 :math:`n-1` 维流形, 其体元 (记作 :math:`\hat{\varepsilon}_{a_1\cdots a_{n- 1}}`) 应满足两个条件: (1) 与 :math:`\partial N` 的诱导定向 (记作 :math:`\overline{\varepsilon}_{a_1\cdots a_{n - 1}}`) 相容; (2) 与度规 :math:`h_{ab}` 相适配, 即
+
+.. math:: 
+    \hat{\varepsilon}^{a_1\cdots a_{n - 1}}\hat{\varepsilon}_{a_1\cdots a_{n-1}} = (-1)^{\hat{s}}(n - 1)!
+
+其中 :math:`\hat{\varepsilon}^{a_1\cdots a_{n - 1}}` 是用 :math:`h^{ab}` 对 :math:`\hat{\varepsilon}` 升指标的结果, :math:`\hat{s}` 是 :math:`h_{ab}` 的对角元中负数的个数. :math:`\partial N` 上满足这两个条件的体元 :math:`\hat{\varepsilon}_{a_1\cdots a_{n-1}}` 称为 **诱导体元**. 设 :math:`n^b` 是 :math:`\partial N` 的外向单位法矢, 则诱导体元 :math:`\hat{\varepsilon}_{a_1\cdots a_{n - 1}}` 与 :math:`N` 上体元 :math:`{\color{red}{\varepsilon_{ba_1\cdots a_{n - 1}}}}` 有如下关系
+
+.. math:: 
+    \hat{\varepsilon}_{a_1\cdots a_{n - 1}} = n^b \hat{\varepsilon}_{ba_1\cdots a_{n - 1}}
+
+[定理5-5-2 (Gauss 定理)] 设 :math:`M` 是 :math:`n` 维定向流形, :math:`N` 是 :math:`M` 中的 :math:`n` 维紧致带边嵌入子流形, :math:`g_{ab}` 是 :math:`M` 上的度规, :math:`\bm{\varepsilon}` 和 :math:`\nabla_a` 分别是适配体元和适配导数算符, :math:`{\color{\red}{\hat{\bm{\varepsilon}}}}` 是 :math:`\partial N` 上的诱导体元, :math:`\partial N` 的外向法矢 :math:`n^a` 满足 :math:`n^an_a = \pm 1`, :math:`v^a` 是 :math:`M` 上的 :math:`\C^1` 矢量场, 则
+
+.. math:: 
+    \int_{\I(N)} (\nabla_a v^a)\bm{\varepsilon} = \pm \int_{\partial N} v^an_a \hat{\bm{\varepsilon}}
+
+:math:`n^an_a = \pm 1` 时取 :math:`+`, :math:`n^an_a = -1` 时取 :math:`-`.
+
+[证明] 由定理5-5-1 知只需证明 :math:`\int_{\partial N} v^b \varepsilon_{ba_1\cdots a_{n - 1}} = \pm \int_{\partial N} v^an_a \hat{\bm{\varepsilon}}`. 令 :math:`\bm{\omega} = v^b \varepsilon_{ba_1\cdots a_{n-1}}`, 注意到 :math:`\int_{\phi[S]} \bm{\omega} \equiv \int_{\phi[S]} \tilde{\bm{\omega}}`, 可知此处的 :math:`\int_{\partial N} v^b \varepsilon_{ba_1\cdots a_{n - 1}}` 是指 :math:`\int_{\partial N} \tilde{\bm{\omega}}`, 故只需证明
+
+.. math:: 
+    \tilde{\omega}_{a_1\cdots a_{n -1}} = \pm v^bn_b \hat{\varepsilon}_{a_1\cdots a_{n -1}},\quad \forall q\in \partial N
+
+其中 :math:`n^a` 为 :math:`\partial N` 的单位外向法矢. 上式两边都是 :math:`W_q` 上的 :math:`n - 1` 形式, 故必有 :math:`K` 使
+
+.. math:: 
+    \tilde{\omega}_{a_1\cdots a_{n -1}} = Kv^bn_b\hat{\varepsilon}_{a_1\cdots a_{n-1}}
+
+于是只需证明 :math:`K = \pm 1`. 设 :math:`\{ (e_0)^a =n^a, (e_1)^a, \cdots, (e_{n-1})^a \}` 是 :math:`V_q` 的一个右手正交归一基底, 用 :math:`(e_1)^{a_1}\cdots(e_{n-1})^{a_{n-1}}` 缩并上式, 右边给出
+
+.. math:: 
+    Kv^b n_b\hat{\varepsilon}_{12\cdots (n -1)} = \pm Kv^b(e^0)_b \hat{\varepsilon}_{12\cdots (n-1)} = \pm Kv^0
+
+左边缩并结果为
+
+.. math:: 
+    \tilde{\omega}_{a_1\cdots a_{n -1}} (e_1)^{a_1}\cdots(e_{n-1})^{a_{n-1}} =&\ 
+        \omega_{a_1\cdots a_{n -1}} (e_1)^{a_1}\cdots(e_{n-1})^{a_{n-1}} \\
+        =&\ v^b\varepsilon_{ba_1\cdots a_{n -1}} (e_1)^{a_1}\cdots(e_{n-1})^{a_{n-1}} = v^\mu \varepsilon_{\mu12\cdots (n-1)} \\
+        =&\ v^0\varepsilon_{012\cdots (n-1)} = v^0
+
+于是 :math:`K = \pm 1`.
+
+第六节 对偶微分形式
+^^^^^^^^^^^^^^^^^^^
+
+[定义1] :math:`\forall \bm{\omega} \in \Lambda_M(l)`, 定义 :math:`\bm{\omega}` 的 **对偶微分形式** (dual form) :math:`{}^*\bm{\omega} \in \Lambda_M(n-l)` 为
+
+.. math:: 
+    {}^*\omega_{a_1\cdots a_{n-l}} := \frac{1}{l!}\omega^{b_1\cdots b_l}\varepsilon_{b_1\cdots b_la_1\cdots a_{n-l}}
+
+其中 :math:`\omega^{b_1\cdots b_l} = g^{b_1c_1}\cdots g^{b_lc_l}\omega_{c_1\cdots c_l}`.
+
+[注1] 以上定义的 :math:`*` 称为 Hodge star. 不难看出: (1) :math:`*:\Lambda_M(l) \to \Lambda_M(n - l)` 是同构映射; (2) :math:`f\in\mathscr{F}_M` 作为0形式场, 其对偶形式场为
+
+.. math:: 
+    {}^*f_{a_1\cdots a_n} = \frac{1}{0!} f\varepsilon_{a_1\cdots a_n} = f\varepsilon_{a_1\cdots a_n}
+
+即 :math:`{}^*f` 等于与度规适配的体元 :math:`\bm{\varepsilon}` 的 :math:`f` 倍, 因此可以说函数 :math:`f` 的积分定义为其对偶形式场的积分. 对上式再取 :math:`*` 得
+
+.. math:: 
+    {}^*(^*f) = {}^*(f\bm{\varepsilon}) = \frac{1}{n!}f \varepsilon^{b_1\cdots b_n}\varepsilon_{b_1\cdots b_n} = (-1)^s f
+
+[定理5-6-1] :math:`{}^{**}\bm{\omega} = (-1)^{s+l(n-l)}\bm{\omega}`
+
+对 :math:`\bm{A}` 和 :math:`\bm{B}` 求叉积就是先求楔积再求其对偶形式. 矢量场论的 :math:`\bm{\nabla}` 就是与欧氏度规 :math:`\delta_{ab}` 适配的导数算符 :math:`\partial_a`, 涉及 :math:`\bm{\nabla}` 的公式原则上都可用 :math:`\partial_a` 表出. 例如
+
+(a) :math:`\bm{\nabla} f = \partial_a f`
+(b) :math:`\bm{\nabla} \cdot \bm{A} = \partial_a A^a`
+(c) :math:`\bm{\nabla} \times \bm{A} = \varepsilon^{abc} \partial_a A^b`
+(d) :math:`\bm{\nabla} \cdot (\bm{A}\bm{B}) = \partial_a (A^aB^b)`
+(e) :math:`\bm{\nabla} \bm{A} = \partial^a A^b`
+(f) :math:`\bm{\nabla}^2 f = \partial_a\partial^a f`
+(g) :math:`\bm{\nabla}^2 \bm{A} = \partial_a\partial^a A^b`
+
+[定理5-6-2] 设 :math:`f` 和 :math:`\bm{A}` 是3维欧氏空间的函数和矢量场, 则
+
+.. math:: 
+    \mathrm{grad}\ f = \D f, \quad \mathrm{curl}\ \bm{A} = {}^*\D \bm{A},\quad \mathrm{div}\ \bm{A} = {}^*\D (^*\bm{A})
+    :label: grad-curl-div
+
+:math:`\mathbb{R}^3` 是平凡流形保证 :math:`\mathbb{R}^3` 上的闭形式场必恰当, 再同 :eq:`grad-curl-div` 结合便很容易证明 (习题) 3维欧氏空间场论中并不易证的下列熟知命题:
+
+(1) 无旋矢量场必可表为梯度, 即 :math:`\mathrm{curl}\ \bm{E} = 0`, 则存在标量场 :math:`\phi` 使 :math:`\bm{E} = \mathrm{grad}\ \phi`.
+(2) 无散矢量场必可表为旋度, 即 :math:`\mathrm{div}\ \bm{B} = 0`, 则存在矢量场 :math:`\bm{A}` 使 :math:`\bm{B} = \mathrm{curl}\ \bm{A}`.
