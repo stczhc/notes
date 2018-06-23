@@ -10,3 +10,4 @@
    ps-i2.rst
    ps-i3.rst
    ps-i4.rst
+   ps-i5.rst

@@ -12,8 +12,8 @@
         \renewcommand{\C}{\mathrm{C}}
         \newcommand{\dt}{\frac{\D}{\D t}}
         \newcommand{\E}{\mathrm{e}}
-        \renewcommand{\bm}{\mathbf}
         \newcommand{\xtensor}[3]{{#1}#2 {\vphantom{#1}}#3}
+        \renewcommand{\bm}{\boldsymbol}
 
 第二章习题
 ----------

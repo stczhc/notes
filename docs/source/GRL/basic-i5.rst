@@ -281,7 +281,7 @@
 .. math:: 
     \hat{\varepsilon}_{a_1\cdots a_{n - 1}} = n^b \hat{\varepsilon}_{ba_1\cdots a_{n - 1}}
 
-[定理5-5-2 (Gauss 定理)] 设 :math:`M` 是 :math:`n` 维定向流形, :math:`N` 是 :math:`M` 中的 :math:`n` 维紧致带边嵌入子流形, :math:`g_{ab}` 是 :math:`M` 上的度规, :math:`\bm{\varepsilon}` 和 :math:`\nabla_a` 分别是适配体元和适配导数算符, :math:`{\color{\red}{\hat{\bm{\varepsilon}}}}` 是 :math:`\partial N` 上的诱导体元, :math:`\partial N` 的外向法矢 :math:`n^a` 满足 :math:`n^an_a = \pm 1`, :math:`v^a` 是 :math:`M` 上的 :math:`\C^1` 矢量场, 则
+[定理5-5-2 (Gauss 定理)] 设 :math:`M` 是 :math:`n` 维定向流形, :math:`N` 是 :math:`M` 中的 :math:`n` 维紧致带边嵌入子流形, :math:`g_{ab}` 是 :math:`M` 上的度规, :math:`\bm{\varepsilon}` 和 :math:`\nabla_a` 分别是适配体元和适配导数算符, :math:`{\color{red}{\hat{\bm{\varepsilon}}}}` 是 :math:`\partial N` 上的诱导体元, :math:`\partial N` 的外向法矢 :math:`n^a` 满足 :math:`n^an_a = \pm 1`, :math:`v^a` 是 :math:`M` 上的 :math:`\C^1` 矢量场, 则
 
 .. math:: 
     \int_{\I(N)} (\nabla_a v^a)\bm{\varepsilon} = \pm \int_{\partial N} v^an_a \hat{\bm{\varepsilon}}

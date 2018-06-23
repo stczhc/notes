@@ -12,7 +12,7 @@
         \renewcommand{\C}{\mathrm{C}}
         \newcommand{\dt}{\frac{\D}{\D t}}
         \newcommand{\E}{\mathrm{e}}
-        \renewcommand{\bm}{\mathbf}
+        \renewcommand{\bm}{\boldsymbol}
 
 第一章习题
 ----------
