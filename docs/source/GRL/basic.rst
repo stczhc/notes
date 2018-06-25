@@ -10,4 +10,5 @@
    basic-i3.rst
    basic-i4.rst
    basic-i5.rst
+   basic-i6.rst
    ps-main.rst

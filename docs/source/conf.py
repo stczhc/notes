@@ -179,7 +179,16 @@ latex_documents = [
      u'H. Zhai', 'manual'),
 ]
 
-tikz_latex_preamble = r"\usepackage{bm}"
+tikz_latex_preamble = r'''
+\usepackage{bm}
+\ifxetex\usepackage{ctex}
+\else\usepackage{CJKutf8}
+\fi
+\ifxetex\else
+\AtBeginDocument{\begin{CJK}{UTF8}{gbsn}}
+\AtEndDocument{\end{CJK}}
+\fi
+'''
 
 # -- Options for manual page output ------------------------------------------
 
