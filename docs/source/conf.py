@@ -146,6 +146,7 @@ latex_elements = {
 \usepackage{bm}
 \usepackage{esint}
 \usepackage{tikz}
+\setcounter{tocdepth}{2}
 \renewenvironment{equation*}
 {\begin{equation}\begin{aligned}}
 {\end{aligned}\end{equation}}
