@@ -158,7 +158,11 @@ latex_elements = {
     \newcommand{\I}{\mathrm{i}}%
 \fi%
 \newcommand{\D}{\mathrm{d}}
+\newcommand{\DD}{\mathrm{D}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\DF}{\mathrm{D}_{\mathrm{F}}}
 \renewcommand{\C}{\mathrm{C}}
+\renewcommand{\L}{\mathrm{L}}
 \newcommand{\dt}{\frac{\D}{\D t}}
 \newcommand{\E}{\mathrm{e}}
 \newcommand{\xtensor}[3]{\tensor{#1}{#2#3}}

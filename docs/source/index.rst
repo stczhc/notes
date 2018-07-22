@@ -9,6 +9,7 @@
    GR/azee.rst
    GRL/basic.rst
    QFT/basic.rst
+   QFTW/basic.rst
    SSP/basic.rst
    ENGW/basic.rst
 

@@ -12,3 +12,4 @@
    ps-i4.rst
    ps-i5.rst
    ps-i6.rst
+   ps-i7.rst

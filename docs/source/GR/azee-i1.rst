@@ -212,8 +212,3 @@ I.1 牛顿定律
 .. [#l] [朗道力学P31] 无限邻近的两个径矢和轨道微元围成的扇形面积等于 :math:`\frac{1}{2} \bm{r}^2 \D \theta` 将它表示为 :math:`\D f`, 其中 :math:`\dot{f}` 称为掠面速度. 角动量守恒 :math:`L=\D (mr^2\dot{\theta}) = 2m \dot{f} = \mathrm{const}` 意味着掠面速度为常数, 即在相等时间间隔内质点径矢扫过相同的面积(开普勒第二定律).
 
 .. [#tri1] 三角函数公式(此处似乎没用到) :math:`\sin 2\alpha = 2\sin\alpha\cos\alpha, \quad \cos 2\alpha = 1-2\sin^2\alpha = 2\cos^2\alpha - 1`.
-
-.. tikz:: An Example Directive with Caption
-
-   \draw[thick,rounded corners=8pt]
-   (0,0)--(0,2)--(1,3.25)--(2,2)--(2,0)--(0,2)--(2,2)--(0,0)--(2,0);
