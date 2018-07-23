@@ -14,6 +14,7 @@
         \newcommand{\E}{\mathrm{e}}
         \newcommand{\xtensor}[3]{{#1}#2 {\vphantom{#1}}#3}
         \renewcommand{\bm}{\boldsymbol}
+    
 
 第二章 相对论量子力学
 =====================
@@ -97,7 +98,7 @@
     [证明] 设 :math:`\psi' = \E^{\I\theta}\psi, \psi'_n = \E^{\I\phi}\psi_n`. 则
     
     .. math:: 
-        |(\psi', \psi'_n)|^2 = |(\E^{\I\theta}\psi, \E^{\I\phi}\psi_n)|^2 = |\E^{-\I\theta}\E^{\I\phi}(\psi, \E^{\I\phi}\psi_n)|^2 = |(\psi, \E^{\I\phi}\psi_n)|^2
+        |(\psi', \psi'_n)|^2 = |(\E^{\I\theta}\psi, \E^{\I\phi}\psi_n)|^2 = |\E^{-\I\theta}\E^{\I\phi}(\psi, \psi_n)|^2 = |(\psi, \psi_n)|^2
     
     注意复数的模和相因子无关.
 
@@ -364,7 +365,7 @@
 
 其中 :math:`t_a, t_{bc} = t_{cb}` 等是与 :math:`\theta` 无关的厄米算符. 其中 :math:`t_a` 的厄米性在前面已经证过. 下面需要证 :math:`t_{bc}` 的对称性和厄米性.
 
-[定理10] :math:`t_{bc}` 是对称反厄米算符. [这里 Weinberg 书错误. Weinberg 认为应该是厄米算符. 实际上后面的推导只是用到了它的对称条件, 而没有用到厄米或反厄米条件. ]
+[定理10(错误)] :math:`t_{bc}` 是对称反厄米算符. [这里 Weinberg 书错误. Weinberg 认为应该是厄米算符. 实际上后面的推导只是用到了它的对称条件, 而没有用到厄米或反厄米条件. ] [这里经过仔细考虑, 应该只能推出 :math:`t_b^\dagger t_c + \frac{1}{2} (t_{bc}^\dagger + t_{bc}) = 0`, :math:`t_{bc}` 既不是反厄米算符也不是厄米算符. ]
 
 [证明] 首先对称性是由于小括号的传递: :math:`\frac{1}{2} \theta^b\theta^c t_{bc} = \frac{1}{2} \theta^{(b}\theta^{c)} t_{bc} = \frac{1}{2} \theta^{(b}\theta^{c)} t_{(bc)} = \frac{1}{2} \theta^b\theta^c t_{(bc)}`. 即 :math:`t_{bc} = t_{(bc)}`. 利用 :math:`U^\dagger U = 1` 和 :math:`t_a` 已经是厄米算符得 (保留到2阶项)
 
@@ -374,7 +375,7 @@
     =&\ 1 + \I \theta^a(t_a - t_a^\dagger) + \theta^b\theta^c t_b^\dagger t_c + \frac{1}{2} \theta^b\theta^c (t_{bc}^\dagger + t_{bc}) \\
     0 =&\ t_b^\dagger t_c + \frac{1}{2} (t_{bc}^\dagger + t_{bc})
 
-似乎无法证出 :math:`t_{ab}` 为厄米算符. 这个证明错在, 当初得到 :math:`t_a = t_a^\dagger` 的时候, 是忽略了二阶项 :math:`t_b^\dagger t_c`. 实际上, 我们有
+似乎无法证出 :math:`t_{ab}` 为厄米算符. 这个证明似乎可以这么修改, 当初得到 :math:`t_a = t_a^\dagger` 的时候, 是忽略了二阶项 :math:`t_b^\dagger t_c`. 实际上, 我们有
 
 .. math:: 
     1 =&\ (1 + \I \theta^a t_a)^\dagger(1 + \I \theta^a t_a) \\
@@ -386,7 +387,7 @@
 .. math:: 
     \frac{1}{2} (t_{bc}^\dagger + t_{bc}) = 0\quad \Rightarrow \quad t_{bc}^\dagger = -t_{bc}
 
-即 :math:`t_{bc}` 是反厄米算符 (注意这里的下标 :math:`bc` 不是表示矩阵元. :math:`t_{bc}` 的每一个分量都应该表示为一个矩阵). 下面采用另一种证法. 展开式可写为
+即 :math:`t_{bc}` 是反厄米算符 (注意这里的下标 :math:`bc` 不是表示矩阵元. :math:`t_{bc}` 的每一个分量都应该表示为一个矩阵). 注意上面这个证明不对. 因为在讨论 :math:`t_a` 的时候, :math:`t_a^\dagger t_b` 是二阶项, 必须舍去. 也就是说, 在一阶近似下确定 :math:`t_a` 的厄米性, 然后利用这个条件再讨论二阶的情况, 不能把一阶二阶的情况混为一谈. 另一方面, 一旦写 :math:`(1 + \I \theta^a t_a)^\dagger(1 + \I \theta^a t_a) = 1` 就表示必须忽略二阶项, 因为如果考虑二阶项, 不能只考虑 :math:`t_a^\dagger t_b`, 因为 :math:`t_{bc}` 也会造成影响. 因此在考虑二阶项时只考虑 :math:`t_a^\dagger t_b` 是不完全的. 下面采用另一种证法. 展开式可写为
 
 .. math:: 
     U(T(\theta)) =&\ 1 + \I \theta^a t_a + \frac{1}{2} \theta^a\theta^b t_{ab} + \cdots \\
@@ -399,7 +400,7 @@
     1 =&\ (1 + \I \theta^a T_a)^\dagger (1 + \I \theta^a T_a ) = 1 -\I \theta^a T_a^\dagger + \I \theta^a T_a \\
         =&\ 1 +  \I \theta^a (T_a - T_a^\dagger)
 
-于是得 :math:`T_a = T_a^\dagger`. 此即
+于是得 :math:`T_a = T_a^\dagger`. [这个地方不对. 既然 :math:`T_a` 内部展开到了二阶, 那么这里 :math:`T^\dagger T` 的项就不应该舍去, 它也是二阶项. ] 此即
 
 .. math:: 
     t_a - \frac{1}{2}\I \theta^b t_{ab} = t_a^\dagger + \frac{1}{2}\I \theta^b t_{ab}^\dagger
@@ -564,6 +565,7 @@
 
 .. math:: 
     \eta_{\mu\nu} \frac{\partial x'^\mu}{\partial x^\rho} \frac{\partial x'^\nu}{\partial x^\sigma} = \eta_{\rho\sigma}
+    :label: isometric-cond
 
 [证明] 简单的证明是先改写为
 
@@ -641,3 +643,215 @@
 
 这些变换有一个特殊性质, 即光速在任何惯性系是不变的 (用我们这里的单位, 就是1). 以单位速度传播的光波满足 :math:`|\D \bm{x}/\D t| = 1`, 即 :math:`\eta_{\mu\nu} \D x^\mu \D x^\nu = \D \bm{x}^2 - \D t^2 = 0`, 从而根据相对性原理第一式 :eq:`line-element-inva`, 在另一个坐标系有 :math:`\eta_{\mu\nu} \D x'^\mu \D x'^\nu = 0`, 从而 :math:`|\D \bm{x'}/\D t'| = 1`, 即光速不变.
 
+2 洛伦兹变换
+^^^^^^^^^^^^
+
+[定理14] 满足 :eq:`isometric-cond` 的坐标变换 :math:`x^\mu \mapsto x'^\mu` 必须是 **线性的** (linear)
+
+.. math:: 
+    x'^\mu = \xtensor{\Lambda}{^\mu}{_\nu} x^\nu + a^\mu
+    :label: trans-linear-poin
+
+其中 :math:`a^\mu` 是任意常数, :math:`\xtensor{\Lambda}{^\mu}{_\nu}` 是满足下列条件的常矩阵
+
+.. math:: 
+    \eta_{\mu\nu}\xtensor{\Lambda}{^\mu}{_\rho}\xtensor{\Lambda}{^\nu}{_\sigma} = \eta_{\rho\sigma}
+    :label: lorentz-trans-cond
+
+[证明] 满足 :eq:`isometric-cond` 的坐标变换是等度规变换. 在闵氏时空, 这样的等度规变换只有10个, 包括4个平移, 3个转动和3个推进 (boost). 这里 :math:`a^\mu` 是表示平移对应的变换, 而 :math:`\xtensor{\Lambda}{^\mu}{_\nu}` 表示剩余类型的变换. 实际上, Poincaré 群是4维平移群 :math:`T(4)` 与6维洛伦兹群 (不考虑量子力学引入的复数域的情况下) :math:`L \equiv \mathrm{SO}(1, 3)` 的半直积群. 这个群的每个群元由一对常数表示, 记为 :math:`(a, \Lambda)`. 之所以是半直积, 因为群乘法为 (证明见 定理16)
+
+.. math:: 
+    (a_1, \Lambda_1)(a_2, \Lambda_2) = (a_1 + \Lambda_1a_2, \Lambda_1 \Lambda_2)
+
+要证明 :math:`\xtensor{\Lambda}{^\mu}{_\nu}` 满足条件
+
+.. math:: 
+    \eta_{\mu\nu}\xtensor{\Lambda}{^\mu}{_\rho}\xtensor{\Lambda}{^\nu}{_\sigma} = \eta_{\rho\sigma}
+
+对比 :eq:`isometric-cond` 发现只需证
+
+.. math:: 
+    \xtensor{\Lambda}{^\mu}{_\rho}\xtensor{\Lambda}{^\nu}{_\sigma} = \frac{\partial x'^\mu}{\partial x^\rho} \frac{\partial x'^\nu}{\partial x^\sigma} \quad \Leftarrow\quad \xtensor{\Lambda}{^\mu}{_\rho} = \frac{\partial x'^\mu}{\partial x^\rho}
+
+:eq:`trans-linear-poin` 对 :math:`x^\rho` 求导得
+
+.. math:: 
+    \frac{\partial x'^\mu}{\partial x^\rho} = \xtensor{\Lambda}{^\mu}{_\nu} \frac{x^\nu}{\partial x^\rho} = \xtensor{\Lambda}{^\mu}{_\nu} \xtensor{\delta}{^\nu}{_\rho} = \xtensor{\Lambda}{^\mu}{_\rho}
+
+注意, 此处一旦确定了坐标变换的线性性, 那么写成 :eq:`trans-linear-poin` 就是必然的, 因为一个线性变换必须包括一个常数项和一个张量系数. 然后由等度规条件可以确定对张量系数所加的限制. 对代表平移的常数项 :math:`a` 没有限制.
+
+下面考虑把洛伦兹变换写成另一种形式. 矩阵 :math:`\eta_{\mu\nu}` 有逆矩阵, 记作 :math:`\eta^{\mu\nu}`, 它和 :math:`\eta_{\mu\nu}` 矩阵元相同: 它是对角矩阵, 对角元为 :math:`\eta^{00} = -1, \eta^{11} = \eta^{22} = \eta^{33} = +1`.
+
+[定理15] 条件 :math:`\eta_{\mu\nu}\xtensor{\Lambda}{^\mu}{_\rho}\xtensor{\Lambda}{^\nu}{_\sigma} = \eta_{\rho\sigma}` 等价于 :math:`\eta^{\mu\nu}\xtensor{\Lambda}{^\rho}{_\mu}\xtensor{\Lambda}{^\sigma}{_\nu} = \eta^{\rho\sigma}`.
+
+[证明] 对第一式两边乘 :math:`\eta^{\sigma\tau}\xtensor{\Lambda}{^\kappa}{_\tau}`, 合理地插入括号, 得
+
+.. math:: 
+    \eta^{\sigma\tau}\xtensor{\Lambda}{^\kappa}{_\tau}\eta_{\rho\sigma} =&\ \xtensor{\delta}{^\tau}{_\rho}\xtensor{\Lambda}{^\kappa}{_\tau} = \xtensor{\Lambda}{^\kappa}{_\rho} \\
+    \eta_{\mu\nu}\xtensor{\Lambda}{^\mu}{_\rho}\xtensor{\Lambda}{^\nu}{_\sigma} \eta^{\sigma\tau}\xtensor{\Lambda}{^\kappa}{_\tau} =&\ \Lambda_{\nu\rho} \big( \xtensor{\Lambda}{^\nu}{_\sigma} \xtensor{\Lambda}{^\kappa}{_\tau} \eta^{\sigma\tau} \big)
+
+其中对 :math:`\xtensor{\Lambda}{^\kappa}{_\rho}` 的 :math:`\kappa` 指标可以降指标得
+
+.. math:: 
+    \xtensor{\Lambda}{^\kappa}{_\rho} = \eta^{\nu\kappa} \Lambda_{\nu\rho}
+
+于是得 :math:`\eta^{\nu\kappa} \Lambda_{\nu\rho} = \Lambda_{\nu\rho} \big( \xtensor{\Lambda}{^\nu}{_\sigma} \xtensor{\Lambda}{^\kappa}{_\tau} \eta^{\sigma\tau} \big)`. 两边乘矩阵 :math:`\Lambda_{\nu\rho}` 的逆, 得
+
+.. math:: 
+    \eta^{\nu\kappa} = \xtensor{\Lambda}{^\nu}{_\sigma} \xtensor{\Lambda}{^\kappa}{_\tau} \eta^{\sigma\tau}
+
+3 群乘法和逆元
+^^^^^^^^^^^^^^
+
+这些变换构成一个群. 要证明这一点, 需要定义群乘法, 并证明存在逆元. 下面证明, 如果以复合变换定义为群乘法, 那么所得的变换仍然是群中的元素.
+
+[定理16] 考虑两个洛伦兹变换
+
+.. math:: 
+    x^\mu \mapsto&\  x'^\mu = \xtensor{\Lambda}{^\mu}{_\nu} x^\nu + a^\mu \\
+    x'^\mu \mapsto&\  x''^\mu = \xtensor{{\Lambda'}}{^\mu}{_\nu} x'^\nu + {a'}^\mu
+
+它们的复合变换为
+
+.. math:: 
+    x^\mu \mapsto  x''^\mu =&\ \xtensor{{\Lambda'}}{^\mu}{_\rho} x'^\rho + {a'}^\mu
+        \xtensor{{\Lambda'}}{^\mu}{_\rho} \big(\xtensor{\Lambda}{^\rho}{_\nu} x^\nu + a^\rho\big) + {a'}^\mu \\
+        =&\ \big( \xtensor{{\Lambda'}}{^\mu}{_\rho} \xtensor{\Lambda}{^\rho}{_\nu} \big) x^\nu
+            + \big( \xtensor{{\Lambda'}}{^\mu}{_\rho} a^\rho + {a'}^\mu \big)
+
+仍为一个洛伦兹变换 (即满足 :eq:`lorentz-trans-cond`).
+
+[证明] 对平移项 :math:`\xtensor{{\Lambda'}}{^\mu}{_\rho} a^\rho + {a'}^\mu` 洛伦兹变换并没有给出任何限制. 因此只需检验 :math:`\xtensor{{\Lambda'}}{^\mu}{_\rho} \xtensor{\Lambda}{^\rho}{_\nu}` 这一项. 利用 :math:`\Lambda, \Lambda'` 都满足 :eq:`lorentz-trans-cond`, 有
+
+.. math:: 
+    \eta_{\mu\nu} \big( \xtensor{{\Lambda'}}{^\mu}{_\kappa} \xtensor{\Lambda}{^\kappa}{_\rho} \big)
+        \big( \xtensor{{\Lambda'}}{^\nu}{_\lambda} \xtensor{\Lambda}{^\lambda}{_\sigma} \big) 
+    =&\ \big( \eta_{\mu\nu} \xtensor{{\Lambda'}}{^\mu}{_\kappa} \xtensor{{\Lambda'}}{^\nu}{_\lambda} \big)
+        \xtensor{\Lambda}{^\kappa}{_\rho}  \xtensor{\Lambda}{^\lambda}{_\sigma}  \\
+    =&\ \eta_{\kappa\lambda} \xtensor{\Lambda}{^\kappa}{_\rho}  \xtensor{\Lambda}{^\lambda}{_\sigma} \\
+    =&\ \eta_{\rho\sigma}
+
+现在坐标变换 (或者矢量变换) 可以由 :math:`(\Lambda, a)` 表示, 根据之前的讨论, 它们构成物理态的变换 (射线变换) 的一个表示. 之前我们使用 :math:`U` 表示矢量变换, :math:`T(U)` 表示矢量变换对应的射线变换. 现在用 :math:`T(\Lambda, a)` 表示对应的射线变换. 由于矢量变换是射线变换的一个表示, 而射线变换群的群乘法定义为映射的复合 (见 :eq:`u-theta-f`), 因此我们有
+
+.. math:: 
+    T(\Lambda', a')T(\Lambda, a) = T(\Lambda'\Lambda, \Lambda' a + a')
+    :label: t-lambda-a-compose
+
+取 :eq:`lorentz-trans-cond` 的行列式, 得
+
+.. math:: 
+    \det \eta (\det \Lambda)^2 = \det \eta \quad \Rightarrow \quad -(\det \Lambda)^2 = -1 \quad \Rightarrow \quad (\det \Lambda)^2 = 1
+
+这说明 :math:`\Lambda` 的行列式是一个相因子 :math:`\E^{\I \theta}`. 注意我们现在讨论的是量子力学复空间. 如果是实空间, 那么只能有 :math:`\det \Lambda = \pm 1`, 变换群就不连通. 但是量子力学复空间的情况下, 变换群仍是连通的 (在复空间, 该行列式的值可以连续变化). 另一方面, 由于行列式不为零, :math:`\Lambda` 有逆, 记为 :math:`\xtensor{(\Lambda^{-1})}{^\rho}{_\nu}`.
+
+[定理17] :math:`\xtensor{(\Lambda^{-1})}{^\rho}{_\nu} = \eta_{\nu\mu}\eta^{\rho\sigma}\xtensor{\Lambda}{^\mu}{_\sigma}`.
+
+[证明] 首先由逆矩阵定义我们有
+
+.. math:: 
+    \xtensor{(\Lambda^{-1})}{^\lambda}{_\nu} \xtensor{\Lambda}{^\nu}{_\sigma} = \xtensor{\delta}{^\lambda}{_\sigma}
+
+:eq:`lorentz-trans-cond` 式两边乘 :math:`\eta^{\lambda\rho}`, 得
+
+.. math:: 
+    \eta^{\lambda\rho} \eta_{\mu\nu}\xtensor{\Lambda}{^\mu}{_\rho}\xtensor{\Lambda}{^\nu}{_\sigma} =&\ \eta_{\rho\sigma}\eta^{\lambda\rho} \\
+    \big(\eta^{\lambda\rho} \eta_{\mu\nu}\xtensor{\Lambda}{^\mu}{_\rho} \big)  \xtensor{\Lambda}{^\nu}{_\sigma} =&\ \xtensor{\delta}{^\lambda}{_\sigma}
+
+与逆矩阵定义式对比得
+
+.. math:: 
+    \xtensor{(\Lambda^{-1})}{^\lambda}{_\nu} = \eta^{\lambda\rho} \eta_{\mu\nu}\xtensor{\Lambda}{^\mu}{_\rho}
+
+[定理18] 变换 :math:`T(\Lambda, a)` 的逆变换为 :math:`T(\Lambda^{-1}, -\Lambda^{-1}a)`.
+
+[证明] 根据 :eq:`t-lambda-a-compose`, 若令等式右边为恒等变换 :math:`T(1, 0)` 则 :math:`T(\Lambda', a')` 即为所求的逆变换. 我们有
+
+.. math:: 
+    \Lambda'\Lambda = 1\quad \Rightarrow&\ \quad \Lambda' = \Lambda^{-1} \\
+    \Lambda' a + a' = 0\quad \Rightarrow&\ \quad a' = -\Lambda' a = -\Lambda^{-1} a
+
+为了证明 :math:`(\Lambda^{-1}, -\Lambda^{-1}a)` 确实是变换群中的元素 (仍为洛伦兹变换), 还需要证明 :math:`\Lambda^{-1}` 满足 :eq:`lorentz-trans-cond`. 我们有
+
+.. math:: 
+    \eta_{\mu\nu} \xtensor{(\Lambda^{-1})}{^\mu}{_\rho}\xtensor{(\Lambda^{-1})}{^\nu}{_\sigma}
+    =&\ \eta_{\mu\nu} \eta^{\mu\tau} \eta_{\rho\lambda}\xtensor{\Lambda}{^\lambda}{_\tau}
+        \eta^{\nu\gamma} \eta_{\sigma\kappa}\xtensor{\Lambda}{^\kappa}{_\gamma} \\
+    =&\ \xtensor{\delta}{^\tau}{_\nu} \eta^{\nu\gamma}\eta_{\rho\lambda} \eta_{\sigma\kappa} \xtensor{\Lambda}{^\lambda}{_\tau} \xtensor{\Lambda}{^\kappa}{_\gamma} \\
+    =&\ \eta^{\tau\gamma} \xtensor{\Lambda}{^\lambda}{_\tau} \xtensor{\Lambda}{^\kappa}{_\gamma}  \eta_{\rho\lambda} \eta_{\sigma\kappa}
+    = \eta^{\lambda\kappa} \eta_{\rho\lambda} \eta_{\sigma\kappa} = \xtensor{\delta}{^\lambda}{_\sigma} \eta_{\rho\lambda} = \eta_{\rho\sigma}
+
+其中第四步应用了定理15.
+
+恒等元当然是 :math:`T(1, 0)`, 它对应的 :math:`\xtensor{\Lambda}{^\mu}{_\rho} = \xtensor{\delta}{^\mu}{_\rho}`, 显然满足条件 :eq:`lorentz-trans-cond`.
+
+4 固有正时洛伦兹群
+^^^^^^^^^^^^^^^^^^
+
+为了与前面的讨论相联系, 射线变换 :math:`T(\Lambda, a)` 诱导出物理 Hilbert 空间的幺正线性矢量变换 (算符), 记作 :math:`U(\Lambda, a)`
+
+.. math:: 
+    \psi \mapsto U(\Lambda, a) \psi
+
+注意这个地方与前面的标记稍有差别, :math:`T(\Lambda, a)` 是 :math:`T(U(\Lambda, a))` 的简写. 算符 :math:`U` 满足复合规则
+
+.. math:: 
+    U(\Lambda', a')U(\Lambda, a) = U(\Lambda' \Lambda, \Lambda' a + a')
+
+和之前一样, 上式右边的相因子被略去不写. 一般而言, 需要对洛伦兹群进行扩张. 2.7节将介绍合适的扩张.
+
+整个变换群 :math:`T(\Lambda, a)` 被称为 **非齐次洛伦兹群** (inhomogeneous Lorentz group), 或者 **Poincaré群** (Poincaré group). 它有一些重要的子群. 首先, :math:`a^\mu = 0` 的那些变换显然构成一个子群, 满足
+
+.. math:: 
+    T(\Lambda', 0) T(\Lambda, 0) = T(\Lambda'\Lambda, 0)
+
+称为 **齐次洛伦兹群** (homogeneous Lorentz group). 除此之外, 满足 :math:`\det \Lambda = +1` 的变换显然构成非齐次洛伦兹群或者齐次洛伦兹群的一个子群. 另一方面, 根据 :eq:`lorentz-trans-cond` 及[定理15], 考虑它的 :math:`00` 分量, 有
+
+.. math:: 
+    \eta_{00} =&\ -1 = \eta_{\mu\nu}\xtensor{\Lambda}{^\mu}{_0}\xtensor{\Lambda}{^\nu}{_0} = 
+        -\big( \xtensor{\Lambda}{^0}{_0} \big)^2 + \xtensor{\Lambda}{^i}{_0} \xtensor{\Lambda}{^i}{_0} \\
+    \eta^{00} =&\ -1 = \eta^{\mu\nu}\xtensor{\Lambda}{^0}{_\mu}\xtensor{\Lambda}{^0}{_\nu} = 
+        -\big( \xtensor{\Lambda}{^0}{_0} \big)^2 + \xtensor{\Lambda}{^0}{_i} \xtensor{\Lambda}{^0}{_i} \\
+    \big( \xtensor{\Lambda}{^0}{_0} \big)^2 =&\ 1 + \xtensor{\Lambda}{^i}{_0} \xtensor{\Lambda}{^i}{_0} = 1 + \xtensor{\Lambda}{^0}{_i} \xtensor{\Lambda}{^0}{_i}
+    :label: lambda-i0
+
+其中 :math:`i` 对 :math:`1, 2, 3` 求和. 这里含有 :math:`i` 的项不能写成平方形式, 是为了让 :math:`i` 指标出现两次表示求和. 这里按照 Weinberg 的意思, 考虑 :math:`\Lambda` 都是实数 (即经典狭义相对论的情况, 因为若是量子力学, 应该允许矩阵元为复数). 那么 :math:`\xtensor{\Lambda}{^i}{_0} \xtensor{\Lambda}{^i}{_0}` 相当于内积, 必须大于等于零. 从而 :math:`\big( \xtensor{\Lambda}{^0}{_0} \big)^2 \geqslant 1`. 于是要么 :math:`\xtensor{\Lambda}{^0}{_0} \geqslant +1` 要么 :math:`\xtensor{\Lambda}{^0}{_0} \leqslant -1`.
+
+[定理19] 满足 :math:`\xtensor{\Lambda}{^0}{_0} \geqslant +1` 的变换构成一个子群, 其中的群乘法按照Poincaré群的群乘法相同的方式定义. 注意 满足 :math:`\xtensor{\Lambda}{^0}{_0} \leqslant -1` 的变换不构成子群, 因为恒等元不在其中.
+
+[证明] 为了证明它构成子群, 对两个群元, 表示为 :math:`\xtensor{\Lambda}{^\mu}{_\nu}` 和 :math:`\xtensor{{\Lambda'}}{^\mu}{_\nu}`, 需要证明它们的乘积 :math:`\Lambda'\Lambda` 也满足 :math:`\xtensor{(\Lambda'\Lambda)}{^0}{_0} \geqslant +1`. 首先有
+
+.. math:: 
+    \xtensor{(\Lambda'\Lambda)}{^0}{_0} = \xtensor{{\Lambda'}}{^0}{_0}\xtensor{\Lambda}{^0}{_0} + \xtensor{{\Lambda'}}{^0}{_i}\xtensor{\Lambda}{^i}{_0}
+
+而由 :eq:`lambda-i0` 知分量为 :math:`\xtensor{\Lambda}{^i}{_0}` 和 :math:`\xtensor{\Lambda}{^0}{_i}` 的矢量的长度为
+
+.. math:: 
+    \sqrt{\xtensor{\Lambda}{^i}{_0}\xtensor{\Lambda}{^i}{_0}} = \sqrt{\xtensor{\Lambda}{^0}{_i}\xtensor{\Lambda}{^0}{_i}} = \sqrt{\big( \xtensor{\Lambda}{^0}{_0} \big)^2 - 1}
+
+而 :math:`\xtensor{{\Lambda'}}{^0}{_i}\xtensor{\Lambda}{^i}{_0}` 是矢量的内积, 它等于两个矢量的长度乘积乘以两矢量夹角的余弦. 而余弦函数的绝对值小于等于1. 因此有不等式
+
+.. math:: 
+    \big\lvert \xtensor{{\Lambda'}}{^0}{_i}\xtensor{\Lambda}{^i}{_0} \big\rvert \leqslant \sqrt{\big( \xtensor{{\Lambda'}}{^0}{_0} \big)^2 - 1} \sqrt{\big( \xtensor{\Lambda}{^0}{_0} \big)^2 - 1}
+
+于是
+
+.. math:: 
+    \xtensor{(\Lambda'\Lambda)}{^0}{_0} =&\ \xtensor{{\Lambda'}}{^0}{_0}\xtensor{\Lambda}{^0}{_0} + \xtensor{{\Lambda'}}{^0}{_i}\xtensor{\Lambda}{^i}{_0} \\
+    \geqslant&\ \xtensor{{\Lambda'}}{^0}{_0}\xtensor{\Lambda}{^0}{_0} - \sqrt{\big( \xtensor{{\Lambda'}}{^0}{_0} \big)^2 - 1} \sqrt{\big( \xtensor{\Lambda}{^0}{_0} \big)^2 - 1} \\
+    \geqslant&\ 1\cdot 1 -  \sqrt{\big( \xtensor{{\Lambda'}}{^0}{_0} \big)^2 - 1} \sqrt{\big( \xtensor{\Lambda}{^0}{_0} \big)^2 - 1}  \geqslant 1
+
+满足 :math:`\det \Lambda = +1` 和 :math:`\xtensor{\Lambda}{^0}{_0} \geqslant +1` 的洛伦兹变换的子群, 称为 **固有正时洛伦兹群** (proper orthochronous Lorentz group). 因为不可能通过一个连续的参数变换从 :math:`\det \Lambda = +1` 变到 :math:`\det \Lambda = -1`, 或者从 :math:`\xtensor{\Lambda}{^0}{_0} \geqslant +1` 变到 :math:`\xtensor{\Lambda}{^0}{_0} \leqslant -1` (即 Poincaré群本身是非连通的, 而固有正时洛伦兹群是含有单位元的一个连通子群), 任何可以通过恒等元进行连续参数变换得到的洛伦兹变换的 :math:`\det \Lambda` 和 :math:`\xtensor{\Lambda}{^0}{_0}` 必须和恒等变换具有相同的符号. 于是这样的洛伦兹变换必定属于固有正时洛伦兹群.
+
+任何洛伦兹变换要么是固有正时的, 要么可以写成固有正时洛伦兹群的一个群元和一个离散变换 :math:`\mathscr{P}, \mathscr{T}` 或 :math:`\mathscr{PT}` 的乘积, 其中 :math:`\mathscr{P}` 是空间反射, 其非零元为
+
+.. math:: 
+    \xtensor{\mathscr{P}}{^0}{_0} = 1, \xtensor{\mathscr{P}}{^1}{_1} = \xtensor{\mathscr{P}}{^2}{_2} = \xtensor{\mathscr{P}}{^3}{_3} = -1
+
+:math:`\mathscr{P}` 的作用将改变 :math:`\Lambda` 行列式的符号. :math:`\mathscr{T}` 是时间反演, 其非零元为
+
+.. math:: 
+    \xtensor{\mathscr{T}}{^0}{_0} = -1, \xtensor{\mathscr{T}}{^1}{_1} = \xtensor{\mathscr{T}}{^2}{_2} = \xtensor{\mathscr{T}}{^3}{_3} = 1
+
+:math:`\mathscr{T}` 的作用同时改变 :math:`\Lambda` 行列式的符号和 :math:`\xtensor{\Lambda}{^0}{_0}` 的符号.
+
+因此, 对整个洛伦兹群的研究就可以通过研究它的固有正时子群, 加上空间反射和时间反演. 在2.6节我们将分别考虑空间反射和时间反演. 在那之前, 我们仅处理齐次或非齐次固有正时洛伦兹群.
