@@ -744,7 +744,7 @@
 
 这说明 :math:`\Lambda` 的行列式是一个相因子 :math:`\E^{\I \theta}`. 注意我们现在讨论的是量子力学复空间. 如果是实空间, 那么只能有 :math:`\det \Lambda = \pm 1`, 变换群就不连通. 但是量子力学复空间的情况下, 变换群仍是连通的 (在复空间, 该行列式的值可以连续变化). 另一方面, 由于行列式不为零, :math:`\Lambda` 有逆, 记为 :math:`\xtensor{(\Lambda^{-1})}{^\rho}{_\nu}`.
 
-[定理17] :math:`\xtensor{(\Lambda^{-1})}{^\rho}{_\nu} = \eta_{\nu\mu}\eta^{\rho\sigma}\xtensor{\Lambda}{^\mu}{_\sigma}`.
+[定理17] :math:`\xtensor{(\Lambda^{-1})}{^\rho}{_\nu} = \eta_{\nu\mu}\eta^{\rho\sigma}\xtensor{\Lambda}{^\mu}{_\sigma} = \xtensor{\Lambda}{_\nu}{^\rho}`.
 
 [证明] 首先由逆矩阵定义我们有
 
@@ -855,3 +855,314 @@
 :math:`\mathscr{T}` 的作用同时改变 :math:`\Lambda` 行列式的符号和 :math:`\xtensor{\Lambda}{^0}{_0}` 的符号.
 
 因此, 对整个洛伦兹群的研究就可以通过研究它的固有正时子群, 加上空间反射和时间反演. 在2.6节我们将分别考虑空间反射和时间反演. 在那之前, 我们仅处理齐次或非齐次固有正时洛伦兹群.
+
+第四节 Poincaré 代数
+--------------------
+
+1 无穷小坐标变换
+^^^^^^^^^^^^^^^^
+
+根据2.2节, 李对称群的很多信息都被包括在恒等元附近的群元性质中 (李代数是李群恒等元的切空间). 非齐次洛伦兹群的恒等元是变换 :math:`\xtensor{\Lambda}{^\mu}{_\nu} = \xtensor{\delta}{^\mu}{_\nu},\ a^\mu = 0`, 因此我们可以研究如下形式的变换
+
+.. math:: 
+    \xtensor{\Lambda}{^\mu}{_\nu} = \xtensor{\delta}{^\mu}{_\nu} + \xtensor{\omega}{^\mu}{_\nu},\quad
+    a^\mu = \epsilon^\mu
+
+其中 :math:`\xtensor{\omega}{^\mu}{_\nu}` 和 :math:`\epsilon^\mu` 都是无穷小量. 根据洛伦兹条件 :eq:`lorentz-trans-cond`
+
+.. math:: 
+    \eta_{\rho\sigma} =&\ \eta_{\mu\nu} \big( \xtensor{\delta}{^\mu}{_\rho} + \xtensor{\omega}{^\mu}{_\rho} \big)
+        \big( \xtensor{\delta}{^\nu}{_\sigma} + \xtensor{\omega}{^\nu}{_\sigma} \big) \\
+        =&\ \eta_{\sigma\rho} + \omega_{\sigma\rho} + \omega_{\rho\sigma} + O(\omega^2)
+
+这里我们使用指标升降的约定, 即指标可以通过与 :math:`\eta_{\mu\nu}` 或 :math:`\eta^{\mu\nu}` 进行收缩来升降
+
+.. math:: 
+    \omega_{\sigma\rho} \equiv \eta_{\mu\sigma} \xtensor{\omega}{^\mu}{_\rho},\quad
+    \xtensor{\omega}{^\mu}{_\rho} \equiv \eta^{\mu\sigma} \omega_{\sigma\rho}
+
+仅保留 :math:`\omega` 的一阶项得 :math:`\eta_{\rho\sigma} = \eta_{\sigma\rho} + \omega_{\sigma\rho} + \omega_{\rho\sigma}`. 注意度规 :math:`\eta_{\rho\sigma}` 是对称的. 因此得 :math:`\omega_{\sigma\rho} + \omega_{\rho\sigma} = 0`, 即 :math:`\omega` 是反称的
+
+.. math:: 
+    \omega_{\mu\nu} = -\omega_{\nu\mu}
+
+一个反称的四维二阶张量具有 :math:`(4\times 3)/2 = 6` 个独立分量, 再加上 :math:`\epsilon^\mu` 的四个分量, 一个非齐次洛伦兹变换可以由 :math:`6+4=10` 个参数描述. (这里其实是利用了李代数的维数等于李群维数的结论. 李代数的维数一般比较好决定. )
+
+注意这里有三个层次的变换. 最底层是坐标变换, 也就是李群的坐标 (作为标记群元的参数, 之前记为 :math:`\theta`. 李群作为流形一定有) 的变换.
+
+2 无穷小幺正算符
+^^^^^^^^^^^^^^^^
+
+由于 :math:`U(1, 0)` 作为矢量变换对应的射线变换是恒等射线变换, 它必须正比于单位算符 (引理7-1), 通过选择相位, 我们可以让它等于单位算符. 与无穷小洛伦兹变换 (注意这个地方无穷小洛伦兹变换是指这个变换与单位变换相差无穷小量, 而不是本身是无穷小. 但是一般都简称无穷小洛伦兹变换) 对应的 :math:`U(1+\omega, \epsilon)` 必须等于1加上 :math:`\omega_{\rho\sigma}` 和 :math:`\epsilon{\rho}` 的线性项. 无穷小幺正变换也是无穷小幺正算符, 可以写为
+
+.. math:: 
+    U(1+\omega, \epsilon) = 1+ \frac{1}{2} \I \omega_{\rho\sigma} J^{\rho\sigma} - \I \epsilon_\rho P^\rho + \cdots
+    :label: ujp-expansion
+
+其中 :math:`J^{\rho\sigma}` 和 :math:`P^\rho` 是 :math:`\omega-` 和 :math:`\epsilon-` 无关的算符, 省略号代表 :math:`\omega` 和/或 :math:`\epsilon` 的高阶项.
+
+[定理20] 为使 :math:`U(1+\omega, \epsilon)` 为幺正的, 算符 :math:`J^{\rho\sigma}` 和 :math:`P^\rho` 必须是厄米的. 并且 :math:`J^{\rho\sigma}` 还是反称的.
+
+[证明] 利用 :math:`U^\dagger U = 1` 得
+
+.. math:: 
+    1 =&\ \big( 1+ \frac{1}{2} \I \omega_{\rho\sigma} J^{\rho\sigma} - \I \epsilon_\rho P^\rho \big)^\dagger \big( 1+ \frac{1}{2} \I \omega_{\rho\sigma} J^{\rho\sigma} - \I \epsilon_\rho P^\rho \big) \\
+    =&\ 1 + \frac{1}{2} \I \omega_{\rho\sigma} \big( J^{\rho\sigma} - J^{\rho\sigma\dagger} \big) - \I \epsilon_\rho \big(P^\rho - P^{\rho\dagger} \big)
+
+注意到 :math:`\omega` 和 :math:`\epsilon` 可以任取并且独立变化, 因此有
+
+.. math:: 
+    J^{\rho\sigma\dagger} = J^{\rho\sigma}, \quad P^{\rho\dagger} = P^\rho
+
+:math:`J^{\rho\sigma}` 的反称性可以通过中括号的传递
+
+.. math:: 
+    \frac{1}{2} \I \omega_{\rho\sigma} J^{\rho\sigma} = \frac{1}{2} \I \omega_{[\rho\sigma]} J^{\rho\sigma} = \frac{1}{2} \I \omega_{[\rho\sigma]} J^{[\rho\sigma]} = \frac{1}{2} \I \omega_{\rho\sigma} J^{[\rho\sigma]}
+
+即 :math:`J^{\rho\sigma} = -J^{\sigma\rho}`.
+
+我们将说明, :math:`P^1, P^2, P^3` 是动量算符的分量, :math:`J^{23}, J^{31}, J^{12}` 是角动量矢量的分量, :math:`P^0` 是能量算符, 或者 **哈密顿量** (Hamiltonian).
+
+3 无穷小幺正算符的线性变换
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+现在我们研究 :math:`J^{\rho\sigma}` 和 :math:`P^\rho` 在洛伦兹变换 :math:`U(\Lambda, a)` 下性质. 考虑如下乘积
+
+.. math:: 
+    U(\Lambda, a)U(1+\omega, \epsilon)U^{-1}(\Lambda, a)
+
+其中 :math:`\xtensor{\Lambda}{^\mu}{_\nu}` 和 :math:`a^\mu` 是新变换的与 :math:`\omega` 及 :math:`\epsilon` 无关的参数. 但是这里需要说明, 在线性变换 :math:`U(\Lambda, a)` 作用下, 为什么算符 :math:`U(1+\omega, \epsilon)` 要按照上式进行变换. 这由如下定理保证 (王正行P21). 其实这里的关系类似于推前映射和流形间的映射的关系. 假设映射不是变换到自身的, 设 :math:`U : M \to N` (并且有逆), 那么, 算符 :math:`A` 只能作用于 :math:`M` 中的元素, :math:`A'` 只能作用于 :math:`N` 中的元素. 那么自然的定义就是 :math:`A' = UAU^{-1}`.
+
+[定理21] 设 :math:`U` 为线性变换, :math:`\psi` 为态矢. 若 :math:`\psi` 在 :math:`U` 作用下按如下规则变换
+
+.. math:: 
+    \psi \to \psi' = U\psi
+
+则算符 :math:`A` 按如下规则变换
+
+.. math:: 
+    A \to A' = UAU^{-1}
+
+[证明] 考虑方程 :math:`\phi = A\psi`, 这个方程在线性变换下形式不应该改变, 即 :math:`\phi' = A'\psi'`. 另一方面有 :math:`\phi' = U\phi`. 于是
+
+.. math:: 
+    U\phi = UA\psi = A'\psi' = A'U\psi
+
+由于 :math:`\psi` 是任意态矢, 我们有 :math:`UA = A'U`. 两边右乘 :math:`U^{-1}` 得 :math:`A' = UAU^{-1}`.
+
+根据定理18, :math:`U^{-1}(\Lambda, a) = U(\Lambda^{-1}, -\Lambda^{-1}a)`. 根据复合规则 :eq:`t-lambda-a-compose`, 有
+
+.. math:: 
+    U(\Lambda, a)U(1+\omega, \epsilon)U^{-1}(\Lambda, a) =&\  U(\Lambda, a)U(1+\omega, \epsilon)
+        U(\Lambda^{-1}, -\Lambda^{-1}a) \\
+    =&\ U(\Lambda(1+\omega), \Lambda\epsilon + a)U(\Lambda^{-1}, -\Lambda^{-1}a) \\
+    =&\ U(\Lambda(1+\omega)\Lambda^{-1}, -\Lambda(1+\omega)\Lambda^{-1}a + \Lambda\epsilon + a) \\
+    =&\ U(\Lambda(1+\omega)\Lambda^{-1}, -\Lambda\omega\Lambda^{-1}a + (-\Lambda\Lambda^{-1}a + a)+ \Lambda\epsilon) \\
+    =&\ U(1 + \Lambda\omega\Lambda^{-1}, \Lambda\epsilon -\Lambda\omega\Lambda^{-1}a)
+    :label: u-omega-lambda-raw
+
+下面要处理好上下标的问题. 利用缩并的指标可以调整上下顺序, 从 :eq:`ujp-expansion` 得
+
+.. math:: 
+    U(1+\omega, \epsilon) = 1+ \frac{1}{2} \I \xtensor{\omega}{^\rho}{_\sigma}\xtensor{J}{_\rho}{^\sigma}
+        - \I \epsilon^\rho P_\rho + \cdots
+    :label: ujp-expansion2
+
+利用 :eq:`ujp-expansion2` 将 :eq:`u-omega-lambda-raw` 保留到一阶项得
+
+.. math:: 
+    U(1 + \Lambda\omega\Lambda^{-1}, \Lambda\epsilon -\Lambda\omega\Lambda^{-1}a) 
+    =&\ 1 + \frac{1}{2}\I (\Lambda\omega\Lambda^{-1})_{\mu\nu}J^{\mu\nu} -\I (\Lambda\epsilon -\Lambda\omega\Lambda^{-1}a)_\mu P^\mu \\
+    =&\ 1 + \I \big[ \frac{1}{2} (\Lambda\omega\Lambda^{-1})_{\mu\nu}J^{\mu\nu} - (\Lambda\epsilon -\Lambda\omega\Lambda^{-1}a)_\mu P^\mu \big] \\
+    U(\Lambda, a)U(1+\omega, \epsilon)U^{-1}(\Lambda, a) =&\ U(\Lambda, a) \big[ 1+ \frac{1}{2} \I \omega_{\rho\sigma} J^{\rho\sigma} - \I \epsilon_\rho P^\rho \big] U^{-1}(\Lambda, a) \\
+    =&\ 1 + \I U(\Lambda, a) \big[ \frac{1}{2} \omega_{\rho\sigma} J^{\rho\sigma} - \epsilon_\rho P^\rho \big] U^{-1}(\Lambda, a)
+
+.. math:: 
+    U(1 + \Lambda\omega\Lambda^{-1}, \Lambda\epsilon -\Lambda\omega\Lambda^{-1}a) 
+    =&\ 1 + \frac{1}{2} \I \big[ \xtensor{(\Lambda\omega\Lambda^{-1})}{^\mu}{_\nu}\xtensor{J}{_\mu}{^\nu} - 2(\Lambda\epsilon -\Lambda\omega\Lambda^{-1}a)^\mu P_\mu \big] \\
+    U(\Lambda, a)U(1+\omega, \epsilon)U^{-1}(\Lambda, a) 
+    =&\ 1 + \frac{1}{2} \I U(\Lambda, a) \big[  \xtensor{\omega}{^\sigma}{_\rho}\xtensor{J}{_\sigma}{^\rho} - 2\epsilon^\rho P_\rho \big] U^{-1}(\Lambda, a)
+
+比较 :math:`\omega_{\rho\sigma}` 和 :math:`\epsilon_\rho` 的系数得
+
+.. math:: 
+    &\ \xtensor{(\Lambda\omega\Lambda^{-1})}{^\mu}{_\nu}\xtensor{J}{_\mu}{^\nu} - 2(\Lambda\epsilon -\Lambda\omega\Lambda^{-1}a)^\mu P_\mu \\
+    =&\ \xtensor{\Lambda}{^\mu}{_\sigma}\xtensor{\omega}{^\sigma}{_\rho}\xtensor{(\Lambda^{-1})}{^\rho}{_\nu}\xtensor{J}{_\mu}{^\nu} - 2\big[\xtensor{\Lambda}{^\mu}{_\rho} \epsilon^\rho - \xtensor{\Lambda}{^\mu}{_\sigma}\xtensor{\omega}{^\sigma}{_\rho}\xtensor{(\Lambda^{-1})}{^\rho}{_\nu}a^\nu \big]P_\mu \\
+    =&\ \xtensor{\Lambda}{^\mu}{_\sigma}\xtensor{(\Lambda^{-1})}{^\rho}{_\nu} \big[ \xtensor{J}{_\mu}{^\nu} + 2 a^\nu P_\mu \big] \xtensor{\omega}{^\sigma}{_\rho} - 2\xtensor{\Lambda}{^\mu}{_\rho} P_\mu \epsilon^\rho \\
+    &\ U(\Lambda, a) \big[ \xtensor{\omega}{^\sigma}{_\rho}\xtensor{J}{_\sigma}{^\rho} - 2\epsilon^\rho P_\rho \big] U^{-1}(\Lambda, a) \\
+    =&\ \frac{1}{2}U(\Lambda, a)\xtensor{J}{_\sigma}{^\rho}U^{-1}(\Lambda, a) \xtensor{\omega}{^\sigma}{_\rho} - 2U(\Lambda, a)P_\rho U^{-1}(\Lambda, a)\epsilon^\rho
+
+根据定理17, :math:`\xtensor{(\Lambda^{-1})}{^\rho}{_\nu} = \xtensor{\Lambda}{_\nu}{^\rho}`, 因此
+
+.. math:: 
+    U(\Lambda, a)\xtensor{J}{_\sigma}{^\rho}U^{-1}(\Lambda, a) =&\ \xtensor{\Lambda}{^\mu}{_\sigma}\xtensor{(\Lambda^{-1})}{^\rho}{_\nu} \big[ \xtensor{J}{_\mu}{^\nu} + 2 a^\nu P_\mu \big]  \\
+    U(\Lambda, a)J^{\sigma\rho}U^{-1}(\Lambda, a) =&\ \Lambda^{\mu\sigma}\xtensor{(\Lambda^{-1})}{^\rho}{_\nu} \big[ \xtensor{J}{_\mu}{^\nu} + 2 a^\nu P_\mu \big]  \\
+    =&\ \xtensor{\Lambda}{_\mu}{^\sigma}\xtensor{\Lambda}{_\nu}{^\rho} \big[ J^{\mu\nu} + 2 a^\nu P^\mu \big]  \\
+    U(\Lambda, a)P_\rho U^{-1}(\Lambda, a) =&\ \xtensor{\Lambda}{^\mu}{_\rho} P_\mu = \xtensor{\Lambda}{_\mu}{_\rho} P^\mu \\
+    U(\Lambda, a)P^\rho U^{-1}(\Lambda, a) =&\ \xtensor{\Lambda}{_\mu}{^\rho} P^\mu
+
+下面需要证明 :math:`a^\nu P^\mu = a^{[\nu} P^{\mu]}`. 由于
+
+.. math:: 
+    U(\Lambda, a)J^{\rho\sigma}U^{-1}(\Lambda, a) = U(\Lambda, a)J^{[\rho\sigma]}U^{-1}(\Lambda, a)
+
+得 (等号左边 :math:`U(\Lambda, a)J^{\rho\sigma}U^{-1}(\Lambda, a)` 反称, 右边 :math:`\xtensor{\Lambda}{_\mu}{^{\rho}}\xtensor{\Lambda}{_\nu}{^{\sigma}} \big[ J^{\mu\nu} + 2 a^\nu P^\mu \big]` 也必须反称)
+
+.. math:: 
+    \xtensor{\Lambda}{_\mu}{^{\rho}}\xtensor{\Lambda}{_\nu}{^{\sigma}} \big[ J^{\mu\nu} + 2 a^\nu P^\mu \big]
+    = \xtensor{\Lambda}{_\mu}{^{[\rho}}\xtensor{\Lambda}{_\nu}{^{\sigma]}} \big[ J^{\mu\nu} + 2 a^\nu P^\mu \big]
+
+即
+
+.. math:: 
+    \xtensor{\Lambda}{_\mu}{^{\rho}}\xtensor{\Lambda}{_\nu}{^{\sigma}} \big[ J^{\mu\nu} + 2 a^\nu P^\mu \big]
+    =&\  -\xtensor{\Lambda}{_\mu}{^{\sigma}}\xtensor{\Lambda}{_\nu}{^{\rho}} \big[ J^{\mu\nu} + 2 a^\nu P^\mu \big] \\
+    =&\  -\xtensor{\Lambda}{_\nu}{^{\rho}}\xtensor{\Lambda}{_\mu}{^{\sigma}} \big[ J^{\mu\nu} + 2 a^\nu P^\mu \big] \\
+    =&\  -\xtensor{\Lambda}{_\mu}{^{\rho}}\xtensor{\Lambda}{_\nu}{^{\sigma}} \big[ J^{\nu\mu} + 2 a^\mu P^\nu \big] \\
+    =&\  \xtensor{\Lambda}{_\mu}{^{\rho}}\xtensor{\Lambda}{_\nu}{^{\sigma}} \big[ J^{\mu\nu} - 2 a^\mu P^\nu \big]
+
+于是 :math:`2 a^\nu P^\mu = 2 a^\mu P^\nu`, 即 :math:`a^\nu P^\mu` 反称. 或者写为
+
+.. math:: 
+    2 a^\nu P^\mu = 2 a^{[\nu} P^{\mu]} = a^\nu P^\mu - a^\mu P^\nu
+
+于是我们最终得到
+
+.. math:: 
+    U(\Lambda, a)J^{\rho\sigma}U^{-1}(\Lambda, a)
+    =&\ \xtensor{\Lambda}{_\mu}{^\rho}\xtensor{\Lambda}{_\nu}{^\sigma} \big[ J^{\mu\nu} - a^\mu P^\nu + a^\nu P^\mu\big] \\
+    U(\Lambda, a)P^\rho U^{-1}(\Lambda, a) =&\ \xtensor{\Lambda}{_\mu}{^\rho} P^\mu
+    :label: jp-lambda-trans
+
+从上面的分析可以总结出一般的反称性传递的定理.
+
+[定理22] 若 :math:`\xtensor{A}{^\mu}{_\sigma}\xtensor{A}{^\nu}{_\rho} = \xtensor{A}{^{[\mu}}{_\sigma}\xtensor{A}{^{\nu]}}{_\rho}`, 则 :math:`\xtensor{A}{^\mu}{_\sigma}\xtensor{A}{^\nu}{_\rho} = \xtensor{A}{^\mu}{_{[\sigma}}\xtensor{A}{^\nu}{_{\rho]}}`. 即一对上下指标如果可以左右交换, 上指标若反称, 那么下指标必反称, 不需要要求缩并.
+
+[证明]
+
+.. math:: 
+    \xtensor{A}{^\mu}{_\sigma}\xtensor{A}{^\nu}{_\rho} = -\xtensor{A}{^\nu}{_\sigma}\xtensor{A}{^\mu}{_\rho} = -\xtensor{A}{^\mu}{_\rho}\xtensor{A}{^\nu}{_\sigma}
+
+可以看出从左到右, 添加了负号并且 :math:`\sigma, \rho` 调换了位置. 因此
+
+.. math:: 
+    \xtensor{A}{^\mu}{_\sigma}\xtensor{A}{^\nu}{_\rho} = \xtensor{A}{^\mu}{_{[\sigma}}\xtensor{A}{^\nu}{_{\rho]}}
+
+对齐次洛伦兹变换 (满足 :math:`a^\mu = 0`), :eq:`jp-lambda-trans` 相当于说 :math:`J^{\mu\nu}` 是张量 (的分量) 而 :math:`P^\mu` 是矢量 (的分量). 对纯平移 (满足 :math:`\xtensor{\Lambda}{^\mu}{_\nu} = \xtensor{\delta}{^\mu}{_\nu}`), 我们可以看出 :math:`P^\rho` 是平移不变量, 但 :math:`J^{\mu\nu}` 不是平移不变量. 一般地有 :math:`U(\Lambda, a)J^{\rho\sigma}U^{-1}(\Lambda, a)=J^{\mu\nu} - a^\mu P^\nu + a^\nu P^\mu`. 特别地, 其空间分量的变换关系由如下定理给出.
+
+[定理23] :math:`J^{\rho\sigma}` 的空间-空间分量的在空间平移变换下的改变, 就是通常角动量在改变坐标系原点时的改变.
+
+[证明] 对空间分量有
+
+.. math:: 
+    {J'}^{ij} = J^{ij} - a^iP^j + a^jP^i
+
+在三维语言中, :math:`\bm{J} = \bm{r} \times \bm{P}`, 其中 :math:`\bm{P}` 是平移不变量, 而 :math:`\bm{r} \to \bm{r}' = U\bm{r}U^{-1} = \bm{r} - \bm{a}` (注意 :math:`\bm{r}` 是坐标算符, 此条在引理23-1证). 由于 :math:`J^k = \xtensor{\epsilon}{_{ij}}{^k}r^iP^j`, 而我们这里的 :math:`J^{ij} = \xtensor{\epsilon}{^{ij}}{_k} J^k`. 因此
+
+.. math:: 
+    J^{ij} = \xtensor{\epsilon}{^{ij}}{_k} J^k =&\ \xtensor{\epsilon}{^{ij}}{_k}\xtensor{\epsilon}{_{lm}}{^k}r^lP^m \\
+    =&\ 2!1!\xtensor{\delta}{^{[i}}{_l}\xtensor{\delta}{^{j]}}{_m} r^lP^m = 2r^{[i}P^{j]} = r^iP^j - r^jP^i
+
+经过坐标变换得到
+
+.. math:: 
+    {J'}^{ij} = (r^i - a^i) P^j - (r^j - a^j) P^i = r^iP^j - r^jP^i - a^iP^j + a^jP^i = J^{ij} - a^iP^j + a^jP^i
+
+[引理23-1] 对平移变换 :math:`U|\bm{x}\rangle = |\bm{x} + \bm{a}\rangle`, 坐标算符的变换为 :math:`\bm{r} \to \bm{r}' = U\bm{r}U^{-1} = \bm{r} - \bm{a}`.
+
+[证明] 考虑用坐标算符 :math:`\bm{r}` 测量本征态 :math:`|x\rangle` 得到的值经过线性变换应该不变. 即
+
+.. math:: 
+    \langle x | \bm{r} |x\rangle = x = \langle x + a | U\bm{r}U^{-1} |x + a\rangle
+
+另一方面
+
+.. math:: 
+    \langle x + a | \bm{r} - \bm{a} |x + a\rangle = \langle x + a |\bm{r}|x + a\rangle - \bm{a} \langle x + a |x + a\rangle = x + a - a = x
+
+因此 :math:`U\bm{r}U^{-1} = \bm{r} - \bm{a}`.
+
+4 无穷小幺正算符的无穷小线性变换
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+下面, 假设线性变换 :math:`U(\Lambda, a)` 本身就是无穷小幺正变换 (即与恒等变换相差无穷小量)
+
+.. math:: 
+    \xtensor{\Lambda}{^\mu}{_\nu} = \xtensor{\delta}{^\mu}{_\nu} + \xtensor{\omega}{^\mu}{_\nu},\quad a^\mu = \epsilon^\mu
+
+其中 :math:`\xtensor{\omega}{^\mu}{_\nu}, \epsilon^\mu` 与之前的 :math:`\omega, \epsilon` 无关. 我们只想用这个式子研究 :eq:`jp-lambda-trans` 的变化, 而在 :eq:`jp-lambda-trans` 中, 之前的 :math:`\omega, \epsilon` 已经没有出现. 因此, 采用相同的 :math:`\omega, \epsilon` 是不至于引起混淆的. 先考虑 :eq:`jp-lambda-trans` 的左边. 利用 :eq:`ujp-expansion2` 得 (保留到 :math:`\xtensor{\omega}{^\mu}{_\nu}, \epsilon^\mu` 的一阶项)
+
+.. math:: 
+    U^{-1}(\Lambda, a) =&\ U(\Lambda, a)^\dagger = 1 - \frac{1}{2} \I \xtensor{\omega}{^\mu}{_\nu}\xtensor{J}{_\mu}
+        {^\nu} + \I \epsilon^\mu P_\mu + \cdots \\
+    U(\Lambda, a)P^\rho U^{-1}(\Lambda, a) =&\ \big[ 1 + \frac{1}{2} \I \xtensor{\omega}{^\mu}{_\nu}\xtensor{J}{_\mu}
+        {^\nu} - \I \epsilon^\mu P_\mu + \cdots \big] P^\rho \big[ 1 - \frac{1}{2} \I \xtensor{\omega}{^\mu}{_\nu}\xtensor{J}{_\mu} {^\nu} + \I \epsilon^\mu P_\mu + \cdots \big] \\
+    =&\ P^\rho + \frac{1}{2} \I \xtensor{\omega}{^\mu}{_\nu}\xtensor{J}{_\mu}
+        {^\nu}P^\rho - \I \epsilon^\mu P_\mu P^\rho - \frac{1}{2} \I P^\rho \xtensor{\omega}{^\mu}{_\nu}\xtensor{J}{_\mu} {^\nu} + \I P^\rho \epsilon^\mu P_\mu \\
+    =&\ P^\rho + \I \big[ \frac{1}{2} \xtensor{\omega}{^\mu}{_\nu}\xtensor{J}{_\mu}{^\nu} - \epsilon^\mu P_\mu, P^\rho\big]
+
+类似有
+
+.. math:: 
+    U(\Lambda, a)J^{\rho\sigma} U^{-1}(\Lambda, a) = J^{\rho\sigma} + \I \big[ \frac{1}{2} \xtensor{\omega}{^\mu}{_\nu}\xtensor{J}{_\mu}{^\nu} - \epsilon^\mu P_\mu, J^{\rho\sigma} \big]
+
+现在考虑 :eq:`jp-lambda-trans` 的右边
+
+.. math:: 
+    \xtensor{\Lambda}{_\mu}{^\rho} P^\mu =&\ \big(\xtensor{\delta}{_\mu}{^\rho} + \xtensor{\omega}{_\mu}{^\rho} \big) P^\mu 
+        = P^\rho + \xtensor{\omega}{_\mu}{^\rho} P^\mu \\
+    \xtensor{\Lambda}{_\mu}{^\rho}\xtensor{\Lambda}{_\nu}{^\sigma} \big[ J^{\mu\nu} - a^\mu P^\nu + a^\nu P^\mu\big] =&\ \big(\xtensor{\delta}{_\mu}{^\rho} + \xtensor{\omega}{_\mu}{^\rho} \big) \big(\xtensor{\delta}{_\nu}{^\sigma} + \xtensor{\omega}{_\nu}{^\sigma} \big) \big[ J^{\mu\nu} - \epsilon^\mu P^\nu + \epsilon^\nu P^\mu \big]\\
+    =&\ J^{\rho\sigma} - \epsilon^\rho P^\sigma + \epsilon^\sigma P^\rho + \xtensor{\omega}{_\nu}{^\sigma} 
+        \big[ J^{\rho\nu} - \epsilon^\rho P^\nu + \epsilon^\nu P^\rho\big]
+        + \xtensor{\omega}{_\mu}{^\rho} \big[ J^{\mu\sigma} - \epsilon^\mu P^\sigma + \epsilon^\sigma P^\mu\big] \\
+    =&\ J^{\rho\sigma} - \epsilon^\rho P^\sigma + \epsilon^\sigma P^\rho + \xtensor{\omega}{_\nu}{^\sigma} J^{\rho\nu}
+        + \xtensor{\omega}{_\mu}{^\rho} J^{\mu\sigma}
+
+其中最后一步略去了高阶的 :math:`\xtensor{\omega}{_\mu}{^\rho}\epsilon^\mu` 等项.
+
+根据 :eq:`jp-lambda-trans` 左边等于右边, 有
+
+.. math:: 
+    \I \big[ \frac{1}{2} \xtensor{\omega}{_\mu}{_\nu}\xtensor{J}{^\mu}{^\nu} - \epsilon_\mu P^\mu, J^{\rho\sigma} \big] =&\ 
+    \xtensor{\omega}{_\nu}{^\sigma} J^{\rho\nu}
+        + \xtensor{\omega}{_\mu}{^\rho} J^{\mu\sigma} - \epsilon^\rho P^\sigma + \epsilon^\sigma P^\rho \\
+        =&\ -\eta^{\sigma\mu}\omega_{\mu\nu} J^{\rho\nu} + \eta^{\rho\nu}\omega_{\mu\nu}J^{\mu\sigma} -\eta^{\rho\mu}\epsilon_\mu P^\sigma + \eta^{\sigma\mu}\epsilon_\mu P^\rho \\
+    \I \big[ \frac{1}{2} \xtensor{\omega}{_\mu}{_\nu}\xtensor{J}{^\mu}{^\nu} - \epsilon_\mu P^\mu, P^\rho\big] =&\ 
+        \xtensor{\omega}{_\mu}{^\rho} P^\mu = \eta^{\rho\nu}\omega_{\mu\nu} P^\mu
+    :label: jp-omega-eps
+
+5 Poincaré 代数
+^^^^^^^^^^^^^^^
+
+利用 :eq:`jp-omega-eps` 等号两边 :math:`\omega_{\mu\nu}` 和 :math:`\epsilon_\mu` 的系数相等, 我们就可以导出 :math:`J^{\mu\nu}, P^\mu` 的对易关系. 首先在 :eq:`jp-omega-eps` 第一式中令 :math:`\omega_{\mu\nu} = 0`, 然后考虑 :math:`\epsilon` 的系数 (注意 :math:`\omega_{\mu\nu}, \epsilon_\mu` 仅仅是实参数, 它们和 :math:`J^{\mu\nu}, P^\mu` 都对易), 得
+
+.. math:: 
+    -\I [ P^\mu, J^{\rho\sigma}] = -\eta^{\rho\mu} P^\sigma + \eta^{\sigma\mu} P^\rho \quad
+    \Rightarrow \quad \I [ P^\mu, J^{\rho\sigma}] = \eta^{\mu\rho} P^\sigma - \eta^{\mu\sigma} P^\rho
+
+在 :eq:`jp-omega-eps` 第一式中令 :math:`\epsilon_\mu = 0`, 然后考虑 :math:`\omega_{\mu\nu}` 的系数得
+
+.. math:: 
+    \I [ J^{\mu\nu}, J^{\rho\sigma}] = 2 \big(-\eta^{\sigma\mu} J^{\rho\nu} + \eta^{\rho\nu} J^{\mu\sigma} \big)
+
+由于等号左边关于 :math:`\rho\sigma` 反称, 所以
+
+.. math:: 
+    \I [ J^{\mu\nu}, J^{\rho\sigma}] =&\ -2 \big(\eta^{\mu[\sigma} J^{\rho]\nu} + \eta^{\nu[\rho} J^{\sigma]\mu} \big) \\
+        =&\ \eta^{\mu\rho} J^{\sigma\nu} + \eta^{\nu\sigma} J^{\rho\mu} - \eta^{\mu\sigma} J^{\rho\nu} - \eta^{\nu\rho} J^{\sigma\mu} \\
+        =&\ \eta^{\nu\rho} J^{\mu\sigma} - \eta^{\mu\rho} J^{\nu\sigma} - \eta^{\sigma\mu} J^{\rho\nu} + \eta^{\sigma\nu} J^{\rho\mu}
+
+在 :eq:`jp-omega-eps` 第二式中令 :math:`\omega_{\mu\nu} = 0`, 然后考虑 :math:`\epsilon` 的系数得
+
+.. math:: 
+    [ P^\mu, P^\rho] = 0
+
+综上, 我们得到 Poincaré 群的李代数
+
+.. math:: 
+    \I [ J^{\mu\nu}, J^{\rho\sigma}] 
+        =&\ \eta^{\nu\rho} J^{\mu\sigma} - \eta^{\mu\rho} J^{\nu\sigma} - \eta^{\sigma\mu} J^{\rho\nu} + \eta^{\sigma\nu} J^{\rho\mu} \\
+    \I [ P^\mu, J^{\rho\sigma}] =&\ \eta^{\mu\rho} P^\sigma - \eta^{\mu\sigma} P^\rho \\
+    [ P^\mu, P^\rho] =&\ 0
+
+根据 [定理12] 后面的讨论, 因为此处的李括号是按照 :math:`[A,B] = AB-BA` 定义的, 只要 :math:`[A,B]` 仍给出原矢量空间的元素, 则该矢量空间就构成李代数. 因此显然此处是李代数. 其中 :math:`J^{\mu\nu}` (6个独立分量) 和 :math:`P^\mu` (4个独立分量) 构成该李代数 (矢量空间) 的10个基矢. 这是10维李代数.
