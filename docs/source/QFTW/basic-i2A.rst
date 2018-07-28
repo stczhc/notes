@@ -16,8 +16,8 @@
         \renewcommand{\bm}{\boldsymbol}
     
 
-第二章 相对论量子力学
-=====================
+第二章 相对论量子力学 (A)
+=========================
 
 第一节 量子力学
 ---------------
@@ -491,13 +491,14 @@
 
 在2.7节, 我们将证明对易关系 :eq:`tb-tc-comm` 是接续完成以下过程的唯一条件: :math:`U(T(\theta))` 的完整幂级数展开可以从无限个类似于 :eq:`fabc-tbc` 的方程序列计算得到, 只要我们知道一阶项 (即生成元 :math:`t_a`) (因为 :eq:`fabc-tbc` 表示从一阶项可以推出二阶项, 类似地可以得到从二阶项推出三阶项的式子, 所以可以得到类似于 :eq:`fabc-tbc` 的方程的序列, 从而得到所有阶的幂级数展开系数). 这并不意味着如果我们知道 :math:`t_a` 就可以对所有 :math:`\theta^a` 唯一地确定 :math:`U(T(\theta))`, 但是这意味着至少在恒等元 (坐标 :math:`\theta^a = 0`) 的一个有限邻域内, :math:`U(T(\theta))` 可以被唯一确定, 也就是说对于在这个邻域的 :math:`\theta, \theta', f(\theta, \theta')`, :eq:`u-theta-f` 总会满足. 到所有 :math:`\theta^a` 的扩张会在 2.7 节介绍. (这一段其实是想表达如果已知李代数 :math:`\{ t_a \}`, 我们对于整个李群 :math:`\{ U(T(\theta)) \}` 的结构能知道多少. 李代数是李群恒等元的切空间, 因此当然能决定恒等元的一个邻域的情况. )
 
-7 阿贝尔李代数
-^^^^^^^^^^^^^^
+7 酉群的单参子群
+^^^^^^^^^^^^^^^^
 
-下面讨论一个重要的特殊情形, 后面会反复遇到. 假设函数 :math:`f(\theta, \theta')` 是相加的 (也可以只对部分坐标成立)
+下面讨论一个重要的特殊情形, 后面会反复遇到. 假设函数 :math:`f(\theta, \theta')` 是相加的 (additive) (也可以只对部分坐标成立)
 
 .. math:: 
     f^a(\theta, \theta') = \theta^a + \theta'^a
+    :label: f-theta-additive
 
 当我们的变换群只包括时空平移变换, 或者只包括绕某一固定轴的旋转变换 (但不能是既包括平移也包括旋转的变换群) 的时候, 那么这个相加条件是满足的, 也就是符合这一特例. (假设所考虑的坐标 :math:`\theta` 是一维矢量, 即一个实数. 在这种情况下, 如果相加条件对所有坐标成立, 相当于所考虑的变换群其实可以整个表示为一个单参子群. 对于单参子群, 可以定义指数映射. 如果只对部分坐标成立, 实际上这些满足该条件的坐标构成李群中的一条曲线, :math:`\theta` 是曲线的参数.) 由于 :math:`f^a(\theta, \theta')` 表达式中没有二次项, 所以系数 :math:`\xtensor{f}{^a}{_{bc}}` 为零, 结构常数也就为零. 所以所有生成元 (李代数元) 都对易
 
@@ -534,6 +535,9 @@
 
 .. math:: 
     U\big( T(\theta) \big) = \exp (\I t_a \theta^a)
+    :label: ut-exp
+
+这些变换构成的子群是酉群的一个单参子群, 其李代数是阿贝尔李代数.
 
 第三节 量子洛伦兹变换
 ---------------------
@@ -867,6 +871,7 @@
 .. math:: 
     \xtensor{\Lambda}{^\mu}{_\nu} = \xtensor{\delta}{^\mu}{_\nu} + \xtensor{\omega}{^\mu}{_\nu},\quad
     a^\mu = \epsilon^\mu
+    :label: infinitesimal-expansion
 
 其中 :math:`\xtensor{\omega}{^\mu}{_\nu}` 和 :math:`\epsilon^\mu` 都是无穷小量. 根据洛伦兹条件 :eq:`lorentz-trans-cond`
 
@@ -885,6 +890,7 @@
 
 .. math:: 
     \omega_{\mu\nu} = -\omega_{\nu\mu}
+    :label: omega-antisym
 
 一个反称的四维二阶张量具有 :math:`(4\times 3)/2 = 6` 个独立分量, 再加上 :math:`\epsilon^\mu` 的四个分量, 一个非齐次洛伦兹变换可以由 :math:`6+4=10` 个参数描述. (这里其实是利用了李代数的维数等于李群维数的结论. 李代数的维数一般比较好决定. )
 
@@ -1164,5 +1170,490 @@
         =&\ \eta^{\nu\rho} J^{\mu\sigma} - \eta^{\mu\rho} J^{\nu\sigma} - \eta^{\sigma\mu} J^{\rho\nu} + \eta^{\sigma\nu} J^{\rho\mu} \\
     \I [ P^\mu, J^{\rho\sigma}] =&\ \eta^{\mu\rho} P^\sigma - \eta^{\mu\sigma} P^\rho \\
     [ P^\mu, P^\rho] =&\ 0
+    :label: poin-lie-algebra
 
 根据 [定理12] 后面的讨论, 因为此处的李括号是按照 :math:`[A,B] = AB-BA` 定义的, 只要 :math:`[A,B]` 仍给出原矢量空间的元素, 则该矢量空间就构成李代数. 因此显然此处是李代数. 其中 :math:`J^{\mu\nu}` (6个独立分量) 和 :math:`P^\mu` (4个独立分量) 构成该李代数 (矢量空间) 的10个基矢. 这是10维李代数.
+
+下面考虑将 :eq:`poin-lie-algebra` 中 :math:`J` 的关系改写成容易记的形式.
+
+.. math:: 
+    \I [ J^{ab}, J^{cd}] =&\ \eta^{bc} J^{ad} - \eta^{ac} J^{bd} - \eta^{da} J^{cb} + \eta^{db} J^{ca} \\
+        =&\ -\eta^{ac} J^{bd} + \eta^{ad}J^{bc} + \eta^{bc}J^{ad} -\eta^{bd}J^{ac}
+
+可见, 如果是内外指标分别给 :math:`\eta, J`, 则取正号, 如果是交叉分配, 则取负号. 其中 :math:`J` 的指标顺序要求是字母顺序.
+
+6 3维空间对易关系
+^^^^^^^^^^^^^^^^^
+
+在量子力学中, 有一类重要算符是守恒算符. 守恒算符与能量算符 :math:`H = P^0` 对易.
+
+[定理24] (王正行P25 守恒定理) 一个不显含时间的无限小幺正变换若保持系统的 Hamilton 量不变, 则生成此无限小变换的厄米算符 :math:`F` 满足 :math:`[F, H] = 0`, 即算符 :math:`F` 与 :math:`H` 对易. 进一步, 这个算符代表一个守恒量, 即该算符对应的观测量不随时间变化 :math:`\frac{\D}{\D t} \langle F \rangle = 0`, 这个算符因而称为守恒 (conserved) 算符.
+
+[证明] 先证从一个不显含时间的无限小幺正变换 :math:`U = 1 + \I\epsilon F` 保持系统的 Hamilton 量不变推出 :math:`[F, H] = 0`. 任一算符 :math:`H` 在无限小幺正变换 :math:`U` 下的改变是
+
+.. math:: 
+    H' - H = UHU^{-1} - H = (1 + \I\epsilon F)H(1 - \I\epsilon F) - H = \I\epsilon FH -H\I\epsilon F = \I\epsilon [F, H]
+
+由于 :math:`H = H'`, 所以有 :math:`[F, H] = 0`.
+
+再证 :math:`[F, H] = 0` 导致 :math:`\frac{\D}{\D t} \langle F \rangle = 0`. 求 :math:`F` 对应的观测量平均值随时间的变化率, 得
+
+.. math:: 
+    \frac{\D}{\D t} \langle F \rangle \equiv \frac{\D}{\D t} \langle \psi |F| \psi \rangle 
+    = \langle \psi | \frac{\partial F}{\partial t} | \psi \rangle + \left( \frac{\D }{\D t} \langle \psi | \right) F|\psi\rangle 
+    +\langle \psi | F \frac{\D }{\D t} | \psi \rangle
+
+由薛定谔方程
+
+.. math:: 
+    \I\hbar \frac{\D }{\D t} | \psi \rangle = H| \psi \rangle
+
+两边取共轭得 (注意 :math:`H` 是观测量能量对应的算符, 所以是厄米算符, :math:`H = H^\dagger` )
+
+.. math:: 
+    -\I\hbar \frac{\D }{\D t} \langle \psi | = \langle \psi | H
+
+代入观测量平均值随时间的变化率的式子, 得
+
+.. math:: 
+    \frac{\D}{\D t} \langle F \rangle =&\ \langle \psi | \frac{\partial F}{\partial t} | \psi \rangle + \frac{\I}{\hbar} \langle \psi | HF|\psi\rangle - \frac{\I}{\hbar} \langle \psi | FH|\psi\rangle \\
+    =&\ \left\langle \frac{\partial F}{\partial t} + [H, F] \right\rangle
+
+由于 :math:`[H, F] = 0` 及算符 :math:`F` 不显含时间, 即 :math:`\frac{\partial F}{\partial t} = 0` 得 :math:`\frac{\D}{\D t} \langle F \rangle = 0`.
+
+通过 :eq:`poin-lie-algebra` 可知守恒量对应的算符是动量矢量
+
+.. math:: 
+    \bm{P} = \{ P^1, P^2, P^3 \}
+
+和角动量矢量
+
+.. math:: 
+    \bm{J} = \{ J^{23}, J^{31}, J^{12} \}
+
+和能量 :math:`P^0` 本身. 剩下的叫做推进 (boost) 生成元
+
+.. math:: 
+    \bm{K} = \{ J^{10}, J^{20}, J^{30} \}
+
+不是守恒量的算符, 因而我们不使用 :math:`\bm{K}` 的本征值标记物理态. 为了证明它们是否是守恒量只需要求对应的算符和能量算符的对易关系. 这些对易关系由下面的定理给出.
+
+[定理25] 采用3维标记, :eq:`poin-lie-algebra` 的对易关系可以写为
+
+.. math:: 
+    [J_i, J_j] =&\ \I \epsilon_{ijk}J_k,\quad [J_i, K_j] = \I \epsilon_{ijk}K_k,\quad [K_i, K_j]= -\I \epsilon_{ijk}J_k,\\
+    [J_i, P_j] =&\ \I \epsilon_{ijk}P_k,\quad [K_i, P_j] = \I H\delta_{ij},\quad [P_i, P_j] = 0, \\
+    [K_i, H] =&\ \I P_i,\quad [J_i, H] = [P_i, H] = [H, H] = 0
+    :label: 3d-poin-lie-algebra
+
+其中 :math:`i, j, k` 取 :math:`1, 2, 3`, :math:`\epsilon_{ijk}` 是全反称张量, 满足 :math:`\epsilon_{123} = +1`. 第一个对易关系 :math:`[J_i, J_j] = \I \epsilon_{ijk}J_k` 正是角动量算符的对易关系.
+
+[证明]
+
+(1) 首先考虑两个相同的 :math:`J`. 由于 :math:`J` 反称, 下式要求 :math:`i \neq j`.
+
+    .. math:: 
+        \I [J^{ij}, J^{ij}] = \eta^{ij} J^{ji} + \eta^{ji} J^{ij} - \eta^{ii} J^{jj} - \eta^{jj} J^{ii}
+
+    由于 :math:`\eta` 不同指标时为零, :math:`J` 相同指标时为零, 所以上式总是为零.
+
+    其次考虑两个相同的 :math:`J`. 还是要求 :math:`i, j, k` 互不相同. 四个指标中必有一个重复.
+
+    .. math:: 
+        \I [J^{ij}, J^{ki}] =&\ \eta^{ii} J^{jk} + \eta^{jk} J^{ii} - \eta^{ik} J^{ji} - \eta^{ji} J^{ik} = J^{jk} \\
+        \I [J^{ij}, J^{jk}] =&\ \I [J^{ji}, J^{kj}] = J^{ik} \\
+        \I [J^{jk}, J^{ki}] =&\ J^{ji}
+
+    其中第三式由第二式作 :math:`ijk` 顺序轮换得到. 现在令 :math:`ijk = 123` 得
+
+    .. math:: 
+        [J^3, J^2] = -\I J^1, \quad [J^3, J^1] = -\I (-J^2),\quad [J^1, J^2] = -\I (-J^3).
+
+    因此 :math:`[J_i, J_j] = \I \epsilon_{ijk}J_k` 得证.
+
+(2) 考虑指标相同的 :math:`J, K`. 由于 :math:`J` 反称, 下式要求 :math:`i \neq j`, 而为使 :math:`J, K` 指标相同, :math:`k` 必须与 :math:`ij` 不同. 因此 :math:`K` 的对应的指标只能是 :math:`k0`. 此时4个指标互不相同, 无法使 :math:`\eta` 非零. 因此
+
+    .. math:: 
+        \I [J^{ij}, J^{k0}] = 0
+
+    考虑指标不同的 :math:`J, K`. 略去为零的 :math:`\eta`.
+    
+    .. math:: 
+        \I [J^{ij}, J^{i0}] =&\ -\eta^{ii} J^{j0} = -J^{j0} \\
+        \I [J^{ij}, J^{j0}] =&\ -\I [J^{ji}, J^{j0}] = J^{i0}
+    
+    于是
+    
+    .. math:: 
+        [J^2, K^3] = -\I (-J^{10}) = \I K^1, \quad [J^3, K^1] = -\I (-J^{20}) = \I K^2, \quad 
+        [J^1, K^2] = -\I (-J^{30}) = \I K^3
+    
+    因此 :math:`[J_i, K_j] = \I \epsilon_{ijk}K_k` 得证.
+
+(3) 直接代入公式. 利用 :math:`J^{ij} = \epsilon_{ijk}J^k` 得
+    
+    .. math:: 
+        [K_i, K_j] = [J^{i0}, J^{j0}] = (-\I) (-\eta^{00} J^{ij}) = -\I J^{ij} = -\I \epsilon_{ijk}J^k
+
+(4) 注意 :math:`\I [ P^\mu, J^{\rho\sigma}] = \eta^{\mu\rho} P^\sigma - \eta^{\mu\sigma} P^\rho` 的两个 :math:`\eta` 均含有 :math:`\mu`, 因此 :math:`J` 的双指标必须含有 :math:`\mu`, 否则只能得到零.
+
+    .. math:: 
+        \I [ P^i, J^{ij}] = \eta^{ii} P^j,\quad \I [ P^i, J^{ji}] = -\eta^{ii} P^j
+
+    于是
+    
+    .. math:: 
+        [ P^1, J^2 ] =&\ [ P^1, J^{31} ] = (-\I)(-P^3), \quad [ P^2, J^3 ] = [ P^2, J^{12} ] = (-\I)(-P^1), \\
+        [ P^3, J^1 ] =&\ [ P^3, J^{23} ] = (-\I)(-P^2)
+    
+    因此 :math:`[P_i, J_j] = \I \epsilon_{ijk}P_k`. 从而 :math:`[J_i, P_j] = -[P_j, J_i] = -\I \epsilon_{jik}P_k = \I \epsilon_{ijk}P_k`.
+
+(5) 和上一条讨论一致, :math:`K` 的指标必须和 :math:`P` 指标一致, 否则只能得到零.
+    
+    .. math:: 
+        \I [ P^i, J^{i0}] = \eta^{ii} P^0 = H
+    
+    从而 :math:`[K_i, P_j] = -[P^j, J^{i0}] = -(-\I) \delta_{ij}H=\I H\delta_{ij}`.
+
+(6) :math:`[P_i, P_j] = [P_i, H] = [H, H] = 0` 可直接从4维表达式看出.
+
+(7) 考虑
+
+    .. math:: 
+        \I [ P^0, J^{i0} ] = -\eta^{00} P^i = P^i
+
+    因此 :math:`[K_i, H] = -[P^0, J^{i0}] = -(-\I) P^i = \I P^i`.
+
+(8) 按之前的讨论, :math:`J` 的双指标必须含有 :math:`\mu`, 否则只能得到零. 此时 :math:`\mu` 等于零, 因此 :math:`[J_i, H] = 0`.
+
+7 Poincaré 变换群的单参子群
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+[定理26] 纯平移变换 :math:`T(1, a)` 构成非齐次洛伦兹群的一个子群. 这个子群的 (从洛伦兹群诱导的) 群乘法规则由下式给出
+
+.. math:: 
+    T(1, a')T(1, a) = T(1, a' + a)
+
+[证明] 根据 [定理16] 的 :eq:`t-lambda-a-compose` 式, 即
+
+.. math:: 
+    T(\Lambda', a')T(\Lambda, a) = T(\Lambda'\Lambda, \Lambda' a + a')
+
+令 :math:`\Lambda = \Lambda' = 1`, 得
+
+.. math:: 
+    T(1, a')T(1, a) = T(1, a' + a)
+
+这个纯平移变换的规则是相加的 (:eq:`f-theta-additive`), 因此利用 :eq:`ujp-expansion` 可以推出类似于 :eq:`ut-exp` 的结论.
+
+[定理27] 物理的 Hilbert 空间的有限平移变换可以表示为 (注意这里的 "物理的 Hilbert 空间的有限平移变换" 因为强调了 "物理的", 所以它是射线变换 :math:`T`. 而下式给出这样的射线变换的一个表示, 即态矢变换, 因此记为 :math:`U`)
+
+.. math:: 
+    U(1, a) = \exp (-\I P^\mu a_\mu)
+
+[证明] 因为我们现在考虑的变换是 :math:`U(1, a)`, 在 :eq:`ujp-expansion` 中可令 :math:`\omega = 0`, 得
+
+.. math:: 
+    U(1, \epsilon) = 1 -\I \epsilon_\rho P^\rho + \cdots
+
+于是
+
+.. math:: 
+    U(1, a) \equiv U(T(a)) = \left[ U\left( T\left( \frac{a}{N} \right)\right) \right]^N = \lim_{N \to \infty}
+        \left[ 1 -\frac{\I}{N} a_\mu P^\mu \right]^N = \exp(-\I a_\mu P^\mu)
+
+按照完全相同的方法, 我们可以证明如下命题.
+
+[定理28] 物理的 Hilbert 空间的绕沿 :math:`\bm{\theta}` 方向的轴转角度 :math:`|\bm{\theta}|` 的转动 :math:`R_{\bm{\theta}}` 可以表示为
+
+.. math:: 
+    U(R_{\bm{\theta}}, 0) = \exp (\I \bm{J}\cdot \bm{\theta})
+
+[证明] 在 [定理16] 的 :eq:`t-lambda-a-compose` 式中令 :math:`a = 0`, 得
+
+.. math:: 
+    T(\Lambda', 0)T(\Lambda, 0) = T(\Lambda'\Lambda, 0)
+    :label: lambda-multi-rot
+
+注意 :math:`\Lambda` 本身是没有相加性的, 然而我们可以通过变换参数来得到相加性. 下面的关键是建立 :math:`\Lambda` 与 :math:`R_{\bm{\theta}}` 的关系. 由于这里限制变换是空间转动, 则若考虑无限小空间转动, 则将 :math:`\Lambda` 根据 :eq:`infinitesimal-expansion` 写成如下形式
+
+.. math:: 
+    \xtensor{\Lambda}{^\mu}{_\nu} = \xtensor{\delta}{^\mu}{_\nu} + \xtensor{\omega}{^\mu}{_\nu}
+        = \xtensor{\delta}{^\mu}{_\nu} + \begin{pmatrix}0 & 0 \\ 0 & \xtensor{\tilde{\omega}}{^i}{_j} \end{pmatrix}
+    
+其中最后一步是由于空间转动, 时间分量必须保持不变.  又由于 :math:`\omega` 是反称的, 即 :eq:`omega-antisym`, 知 :math:`\tilde{\omega}` 也是反称的, 那么它只有3个独立分量, 这三个独立分量可记为 :math:`\bm{\theta}`. 事实上, 根据 (Zee, GR书的) :eq:`infinitesimal-rotation`, 我们有
+
+.. math:: 
+    \tilde{\omega} = \begin{pmatrix} 0 & -\theta_3 & \theta_2 \\ \theta_3 & 0 & -\theta_1 \\ -\theta_2 & \theta_1 & 0 \end{pmatrix}
+
+由上述分析, 可知表示空间转动的 :math:`\Lambda` 可表成 :math:`\bm{\theta}` 的函数, 即
+
+.. math:: 
+    R_{\bm{\theta}} \equiv \Lambda(\bm{\theta})
+
+下面由 :math:`\Lambda` 的变换关系 :eq:`lambda-multi-rot` 推出关于 :math:`\bm{\theta}` 的相加性规则. 注意因为此处考虑无穷小变换, 只需要保留到一阶项.
+
+.. math:: 
+    U(R_{\bm{\theta}'}, 0) U(R_{\bm{\theta}}, 0) = U(\Lambda(\bm{\theta}'), 0)U(\Lambda(\bm{\theta}), 0) 
+    = U(\Lambda(\bm{\theta}')\Lambda(\bm{\theta}), 0)
+
+其中
+
+.. math:: 
+    \Lambda(\bm{\theta}')\Lambda(\bm{\theta}) =&\ \left[ 1 + \begin{pmatrix} 0&0&0&0\\ 0 & 0 & -\theta'_3 & \theta'_2 \\ 0&\theta'_3 & 0 & -\theta'_1 \\ 0& -\theta'_2 & \theta'_1 & 0 \end{pmatrix} \right] \left[ 1 + \begin{pmatrix} 0&0&0&0\\ 0 & 0 & -\theta_3 & \theta_2 \\ 0&\theta_3 & 0 & -\theta_1 \\ 0& -\theta_2 & \theta_1 & 0 \end{pmatrix} \right] \\
+    =&\ 1 + \begin{pmatrix} 0&0&0&0\\ 0 & 0 & -\theta'_3 & \theta'_2 \\ 0&\theta'_3 & 0 & -\theta'_1 \\ 0& -\theta'_2 & \theta'_1 & 0 \end{pmatrix} + \begin{pmatrix} 0&0&0&0\\ 0 & 0 & -\theta_3 & \theta_2 \\ 0&\theta_3 & 0 & -\theta_1 \\ 0& -\theta_2 & \theta_1 & 0 \end{pmatrix} + \cdots \\
+    =&\ \Lambda(\bm{\theta}' + \bm{\theta})
+
+于是
+
+.. math:: 
+    U(R_{\bm{\theta}'}, 0) U(R_{\bm{\theta}}, 0) = U(\Lambda(\bm{\theta}' + \bm{\theta}), 0) = U(R_{\bm{\theta}' + \bm{\theta}}, 0)
+
+即空间转动变换相对于参数 :math:`\bm{\theta}` 满足相加性规则. 和上面的平移变换不同, 这个相加性规则只对无穷小转动成立. 但是, 一个有限转动本身, 是否具有相加性, 这个问题应该从另一个角度考虑. 注意这里的推导, 我们唯一需要相加性的地方, 也就是把 :math:`\theta` 分成 :math:`\theta/N`. 而考虑一个有限转动, 如果维持转动方向不变, 仅仅每次转动一个较小角度, 那么很显然是满足相加性的. 这一点可以从如下计算看出. 假设转动是沿 :math:`z` 轴, 我们只需要计算 :math:`xy` 分量. 利用二倍角公式可得
+
+.. math:: 
+    U(R_{\theta'})U(R_{\theta}) =&\ \begin{pmatrix} \cos\theta' & -\sin\theta' \\ \sin\theta' & \cos\theta' \end{pmatrix}
+        \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix} \\
+    =&\ \begin{pmatrix} \cos\theta'\cos\theta -\sin\theta'\sin\theta & -\cos\theta'\sin\theta -\sin\theta'\cos\theta \\ \sin\theta'\cos\theta + \cos\theta'\sin\theta & -\sin\theta'\sin\theta + \cos\theta'\cos\theta \end{pmatrix} \\
+    =&\ \begin{pmatrix} \cos(\theta'+\theta) & -\sin(\theta'+\theta) \\ \sin(\theta'+\theta) & \cos(\theta'+\theta) \end{pmatrix}
+    = U(R_{\theta'+\theta})
+
+当然, 如果是两个不同方向有限角的旋转, 那么一般是没有可加性的. 所幸的是, 我们的计算中并不涉及这样的情况. 在我们的计算过程中, 把 :math:`\theta` 分成 :math:`\theta/N` 可以保证分出的有限或无穷小旋转总是沿同一方向的. 进一步, 分成无穷小角度之后, 问题就变成无穷小量的问题, 那么上述无穷小角度的讨论也就可以应用到下面的展开式了. 因为我们现在考虑的变换是 :math:`U(R_{\bm{\theta}}, 0)`, 在 :eq:`ujp-expansion` 中可令 :math:`\epsilon = 0`, 得
+
+.. math:: 
+    U(\omega, 0) = 1 + \frac{1}{2}\I \omega_{\mu\nu}J^{\mu\nu} + \cdots
+
+由上面得到的 :math:`\tilde{\omega}` 的表达式, 我们有
+
+.. math:: 
+    \omega_{12} =&\ -\omega_{21} = -\theta_3, \quad \omega_{13} = -\omega_{31} = \theta_2, \quad \omega_{23} = -\omega_{32} = -\theta_1 \\
+    \omega_{0i} =&\ \omega_{i0} = 0, \quad \omega_{\mu\mu} = 0
+
+可见若采取反方向定义 :math:`\theta` 较为方便. 则有 :math:`\omega_{ij} = \epsilon_{ijk}\theta_k`. 从而
+
+.. math:: 
+    \frac{1}{2}\I \omega_{\mu\nu}J^{\mu\nu} =&\ \frac{1}{2}\I \omega_{ij}J^{ij} = \frac{1}{2}\I \epsilon_{ijk}\theta_k J^{ij} \\
+    =&\ \frac{1}{2}\I \epsilon_{ijk}\theta_k \epsilon_{ijl}J_l = \I \theta_k J_k = \I \bm{\theta} \cdot \bm{J}
+
+从而 (注意此式成立的条件是 :math:`\bm{\theta}` 是无穷小量)
+
+.. math:: 
+    U(\bm{\theta}, 0) = 1 + \I \bm{\theta} \cdot \bm{J} + \cdots
+
+所以
+
+.. math:: 
+    U(R_{\bm{\theta}}, 0) \equiv&\ U(\bm{\theta}, 0) = \left[ U\left( T\left( \frac{\bm{\theta}}{N} \right)\right) \right]^N \\
+    =&\ \lim_{N \to \infty} \left[ 1 +\frac{\I}{N} \bm{\theta} \cdot \bm{J} \right]^N = \exp(\I \bm{\theta} \cdot \bm{J})
+
+8 伽利略群
+^^^^^^^^^^
+
+牛顿力学的对称群称为 **伽利略群** (Galilean group). 我们可以比较伽利略群的李代数和 Poincaré 代数. 我们可以按照与上面推导 Poincaré 代数相同的方法, 从伽利略群的变换规则推导出伽利略群的李代数. 但是, 考虑到我们已经有 :eq:`3d-poin-lie-algebra`, 更简单的推导方式是, 通过 Inönü-Wigner 收缩 (Inönü-Wigner contraction) 将伽利略代数作为 Poincaré 代数的低速近似. 对于一个具有质量 :math:`m` 和速度 :math:`v` 的粒子系统, 动量和角动量算符的量级是 :math:`\bm{J} \sim 1, \bm{P} \sim mv` (注意角动量算符的量级是由于 :math:`\bm{J} = \bm{r} \times \bm{P}`, 而根据测不准原理 :math:`\bm{r}` 和 :math:`\bm{P}` 的乘积的量级是 :math:`\I\hbar` 是一个常数. 所以 :math:`\bm{r}` 的量级是 :math:`1/(mv)`). 另一方面, 能量算符是 :math:`H = M + W`, 其中总质量是 :math:`M`, 非质量导致的能量是 :math:`W` (动能和势能之和), 它们的量级是 :math:`M \sim m, W \sim mv^2`. 对易关系 :eq:`3d-poin-lie-algebra` 的低速近似 :math:`v \ll 1` (由于已经设定 :math:`c = 1`, 作为低速近似自动有 :math:`v \ll c = 1`) 如下
+
+.. math:: 
+    [J_i, J_j] =&\ \I \epsilon_{ijk}J_k,\quad& [J_i, K_j] =&\ \I \epsilon_{ijk}K_k,\quad [K_i, K_j]= -\I \epsilon_{ijk}J_k,\\
+    [J_i, P_j] =&\ \I \epsilon_{ijk}P_k
+
+对于 :math:`[K_i, P_j] = \I H\delta_{ij}`, 由于 :math:`v \ll 1` 时 :math:`W \ll M`, 得
+
+.. math:: 
+    [K_i, P_j] = \I M\delta_{ij}
+
+由此式可见 :math:`\bm{K}` 的量级为 :math:`\bm{K} \sim m / (mv) \sim 1/v`
+
+原来为零的对易关系仍为零
+
+.. math:: 
+    [P_i, P_j] = [J_i, W] = [P_i, W] = [J_i, M] = [P_i, M] = [W, M] = 0
+
+下面考虑 :math:`[K_i, H] = \I P_i`. 左右两边对应量级的量应该对应相等 (下面在括号中表明对应量的量级)
+
+.. math:: 
+    [K_i, H] =&\ [K_i(1/v), M(m) + W(mv^2)] = [K_i(1/v), M(m)] + [K_i(1/v), W(mv^2)] \\
+    =&\ [K_i, M](m/v) + [K_i, W](mv) = \I P_i(mv)
+    
+由 :math:`m/v` 量级的等式得 :math:`[K_i, M] = 0`, 由 :math:`mv` 量级的等式得 :math:`[K_i, W] = \I P_i`.
+
+[引理29-1 (Hadamard 引理, Hadamard's lemma)] 设 :math:`t` 为实参数, :math:`A, B` 为算符或矩阵, 则
+
+.. math:: 
+    \E^{tA}B\E^{-tA} = B + [A, B]t + [A, [A, B]] \frac{t^2}{2!} + [A, [A, [A, B]]] \frac{t^3}{3!} + \cdots
+
+[证明] 考虑如下算符函数
+
+.. math:: 
+    F_B(t) = \E^{tA}B\E^{-tA}
+
+其导数为
+
+.. math:: 
+    F'_B(t) =&\ A \E^{tA}B\E^{-tA} - \E^{tA}B\E^{-tA}A = \E^{tA}AB\E^{-tA} - \E^{tA}BA\E^{-tA} \\
+    =&\ \E^{tA}[A, B]\E^{-tA} = F_{[A,B]}(t) \\
+    F''_B(t) =&\ F'_{[A, B]}(t) = F_{[A, [A, B]]}(t) \\
+    F'''_B(t) =&\ F''_{[A, B]}(t) = F'_{[A, [A, B]]}(t) = F_{[A, [A, [A, B]]]}(t)
+
+而注意到
+
+.. math:: 
+    F_B(0) = B
+
+于是 :math:`F_B(t)` 在 :math:`t = 0` 的泰勒展开为
+
+.. math:: 
+    F_B(t) =&\ F_B(0) + tF'_B(0) + \frac{t^2}{2!} F''_B(0) + \frac{t^3}{3!} F'''_B(0) + \cdots \\
+    =&\ F_B(0) + tF_{[A, B]}(0) + \frac{t^2}{2!} F_{[A, [A, B]]}(0) + \frac{t^3}{3!} F_{[A, [A, [A, B]]]}(0) + \cdots \\
+    =&\ B + t[A, B] + \frac{t^2}{2!} [A, [A, B]] + \frac{t^3}{3!} [A, [A, [A, B]]] + \cdots
+
+下面的一些引理对于后面的内容并非必要, 但是显示了这一数学关系和李群伴随表示的联系.
+
+[引理29-2] 对任意矩阵 :math:`M, N`, :math:`N^{-1}(\exp M) N = \exp (N^{-1}MN)` (梁灿彬 G-5-27).
+
+[证明] 做泰勒展开得
+
+.. math:: 
+    N^{-1} (\exp M) N =&\ N^{-1} \left( 1 + M + \frac{1}{2!}M^2 + \frac{1}{3!}M^3 + \cdots \right) N \\
+    =&\ 1 + N^{-1}MN + \frac{1}{2!}(N^{-1}MN)(N^{-1}MN) + \frac{1}{3!}(N^{-1}MN)^3 + \cdots \\
+    =&\ \exp (N^{-1}MN)
+
+[定义5 (梁灿彬G.8 定义1)] 用群 :math:`G` 的每一元素 :math:`g \in G` 可构造一个称为伴随同构的自同构映射 :math:`I_g : G \to G`. 对李群 :math:`G`, 这是个从 :math:`G` 到 :math:`G` 的李群同构. 按定义, :math:`I_g(h) \equiv ghg^{-1}`, 所以 :math:`I_g(e) = e`, 它在 :math:`e` 点所诱导的推前映射 (切映射) :math:`I_{g*} := I_{g*e}` 是从 :math:`V_e` 到 :math:`V_e` 的映射, 记为 :math:`\mathrm{Ad}_g \equiv I_{g*e}`. 因 :math:`V_e` 就是 :math:`G` 的李代数 :math:`\mathscr{G}`, 故 :math:`\mathrm{Ad}_g : \mathscr{G} \to \mathscr{G}` 是 :math:`\mathscr{G}` 上的线性变换.
+
+[引理29-3 (梁灿彬, 定理G-8-1)] 设 :math:`\mathscr{G}` 是李群 :math:`G` 的李代数, 则 :math:`\forall g \in G, A \in \mathscr{G}` 有
+
+.. math:: 
+    \exp(t \mathrm{Ad}_g A) = g (\exp tA) g^{-1}
+
+[证明] 令 :math:`\gamma(t) \equiv \exp(t A)`, 可见 :math:`\gamma(t)` 是单参子群. 再令 :math:`\gamma'(t) = g (\exp tA) g^{-1}`. 为了证明 :math:`\gamma'(t)` 也是单参子群, 只需证 :math:`\gamma'(t + s) = \gamma'(t) \gamma'(s)`. 事实上
+
+.. math:: 
+    \gamma'(t + s) =&\ g (\exp (t + s)A) g^{-1} = g (\exp tA)(\exp sA) g^{-1} \\
+    =&\ g (\exp tA) g^{-1} g (\exp sA) g^{-1} = \gamma'(t) \gamma'(s)
+
+因此 :math:`\gamma'(t)` (等号右边) 也是单参子群. 注意等号左边是由 :math:`\mathrm{Ad}_g A` 生成的单参子群, 为证两边相等, 只需证明两边在 :math:`e` 点的切矢相等. 证明如下 (从右边的切矢推出左边的切矢)
+
+.. math:: 
+    \frac{\D}{\D t} \bigg\rvert_{t = 0} \left[ g (\exp tA) g^{-1} \right] =&\ \frac{\D}{\D t} \bigg\rvert_{t = 0}
+        \left[ I_g (\exp tA) \right] \\
+    =&\ I_{g*} \left[ \frac{\D}{\D t} \bigg\rvert_{t = 0} (\exp tA) \right] = \mathrm{Ad}_g A
+
+[引理29-4] :math:`\mathrm{Ad}_g B = gBg^{-1}`. 其中 :math:`g` 是群元, :math:`B` 是代数元. 但此处都看作矩阵. 因此相乘有意义. 从此可以推出
+
+.. math:: 
+    \mathrm{Ad}_{\exp tA} B = \E^{tA} B \E^{-tA}
+
+[证明] 在 [引理29-3] 中利用 [引理29-2] 得 :math:`\exp(t \mathrm{Ad}_g A) = g (\exp tA) g^{-1} = \exp [tgAg^{-1}]`.
+两边对 :math:`t` 求导得
+
+.. math:: 
+    \mathrm{Ad}_g A \exp(t \mathrm{Ad}_g A) = gAg^{-1} \exp [tgAg^{-1}]
+
+令 :math:`t = 0` 得 :math:`\mathrm{Ad}_g A = gAg^{-1}`.
+
+[引理29-5 (梁灿彬 G-8-12)] 映射 :math:`\mathrm{ad}_A : \mathscr{G} \to \mathscr{G}` (其中 :math:`A` 不是群元而是代数元, :math:`A \in \mathscr{G}` 定义为 :math:`\mathrm{ad}_A (B) := [A, B], \quad \forall B \in \mathscr{G}`, 则有
+
+.. math:: 
+    \mathrm{Ad}_{\exp(A)} = \exp(\mathrm{ad}_A)
+
+[证明] 利用[引理29-1]结合 :math:`\mathrm{ad}_A` 定义得
+
+.. math:: 
+    \E^{tA}B\E^{-tA} =&\ B + [A, B]t + [A, [A, B]] \frac{t^2}{2!} + [A, [A, [A, B]]] \frac{t^3}{3!} + \cdots \\
+    =&\ \sum_{n = 0}^\infty \frac{t^n}{n!} (\mathrm{ad}_A)^n (B) = \sum_{n = 0}^\infty \frac{1}{n!} (\mathrm{ad}_{tA})^n (B) \\
+    =&\ \exp(\mathrm{ad}_{tA}) (B)
+
+而 [引理29-4] 推论给出 :math:`\mathrm{Ad}_{\exp tA} B = \E^{tA} B \E^{-tA}`, 于是
+
+.. math:: 
+    \exp(\mathrm{ad}_{tA}) (B) = \mathrm{Ad}_{\exp tA} B
+
+令 :math:`t = 1` 得 :math:`\mathrm{Ad}_{\exp(A)} = \exp(\mathrm{ad}_A)`.
+
+[定理29 (Baker–Campbell–Hausdorff 公式的简单形式)] 设 :math:`A, B` 为算符或矩阵, 其对易子 :math:`[A, B] = C` 其中 :math:`C` 满足 :math:`[C, A] = [C, B] = 0`. 则有
+
+.. math:: 
+    \E^A \E^B = \E^{A + B + \frac{1}{2}[A, B]} = \E^{A + B}\E^{\frac{1}{2}[A, B]}
+
+[证明] 考虑如下算符函数
+
+.. math:: 
+    G(t) \equiv \E^{t(A + B)} \E^{-tA}
+
+其中 :math:`t` 是一个标量参数. 由定义得
+
+.. math:: 
+    G(0) = 1
+
+并且
+
+.. math:: 
+    \E^{tA} \E^{-t(A + B)} \E^{t(A + B)} \E^{-tA} = \E^{tA} \E^{-t(A + B)} G(t) = 1
+
+因此逆变换为 :math:`G^{-1}(t) = \E^{tA} \E^{-t(A + B)}`. 导数为
+
+.. math:: 
+    \frac{\D G(t) }{\D t} = (A+B) \E^{t(A + B)} \E^{-tA} - \E^{t(A + B)} \E^{-tA} A
+
+其中, 注意由指数算符的定义可知 :math:`(A+B)` 和 :math:`\E^{t(A + B)}` 对易, :math:`\E^{-tA}` 和 :math:`A` 对易, 因此可以调换顺序. 现在考虑如下乘积
+
+.. math:: 
+    G^{-1} \frac{\D G}{\D t} =&\ \E^{tA} \E^{-t(A + B)} \left[ (A+B) \E^{t(A + B)} \E^{-tA} - \E^{t(A + B)} \E^{-tA} A \right] \\
+    =&\ \E^{tA} (A+B) \E^{-tA} - A
+    = \E^{tA} A \E^{-tA} + \E^{tA} B \E^{-tA} - A \\
+    =&\ A \E^{tA} \E^{-tA} - A + \E^{tA} B \E^{-tA} = \E^{tA} B \E^{-tA}
+
+根据[引理29-1], 利用 :math:`A, C` 对易, 有 :math:`\E^{tA} B \E^{-tA} = B + t[A, B] = B + tC` (因为 :math:`[A, [A, B]] = [A, C] = 0`, 所以这一项和更高阶项都为零). 于是
+
+.. math:: 
+    G^{-1} \frac{\D G}{\D t} = \frac{\D \ln G}{\D t} = B + tC
+
+由于 :math:`B, C` 对易, 我们有
+
+.. math:: 
+    G(t) = \E^{Bt}\E^{\frac{1}{2}Ct^2}
+
+令 :math:`t = 1`, 和 :math:`G(t)` 定义式比较, 得
+
+.. math:: 
+    \E^{A + B} \E^{-A} =&\ \E^{B}\E^{\frac{1}{2}C} \\
+    \E^{A + B} =&\ \E^{B}\E^{\frac{1}{2}C}\E^{A}
+
+利用 :math:`A, C` 对易, 得
+
+.. math:: 
+    \E^{A + B} = \E^{B}\E^{A}\E^{\frac{1}{2}C}
+
+交换 :math:`A, B` 得
+
+.. math:: 
+    \E^{A + B} =&\ \E^{A}\E^{B}\E^{-\frac{1}{2}C} \\
+    \E^{A}\E^{B} =&\ \E^{A + B}\E^{\frac{1}{2}C}
+
+利用 :math:`A + B` 和 :math:`C = [A, B]` 对易得 (若考虑 :math:`A' = A + B`, :math:`B' = C`, 它们对易, 代入上式作为 :math:`A, B`, 则 对易子 :math:`C = 0`, 于是 :math:`\E^{A'}\E^{B'} = \E^{A' + B'}`, 即对对易的 :math:`A, B` 来说, 指数运算乘积就可以写为加法的指数运算)
+
+.. math:: 
+    \E^{A}\E^{B} = \E^{A + B}\E^{\frac{1}{2}[A, B]} = \E^{A + B + \frac{1}{2}[A, B]}
+
+按照伽利略变换, 平移变换 :math:`\bm{x} \to \bm{x} + \bm{a}` 和 "推进" :math:`\bm{x} \to \bm{x} + \bm{v}t` 的乘积应该是变换 :math:`\bm{x} \to \bm{x} + \bm{v} t + \bm{a}`, 但这个关系并不能对应于 Hilbert 空间的算符作用, 见如下定理.
+
+[定理30] 对伽利略代数有
+
+.. math:: 
+    \exp(\I \bm{K} \cdot \bm{v}) \exp(-\I \bm{P}\cdot \bm{a}) = \exp(\I M \bm{a} \cdot \bm{v} / 2) \exp (\I (\bm{K}\cdot \bm{v} - \bm{P} \cdot \bm{a} ))
+
+[证明] 利用上面的对易关系, 有 :math:`[K_i, P_j] = \I M\delta_{ij}`, 也就是说 :math:`\bm{K}, \bm{P}` 不对易, 但是他们分别与对易子 :math:`M` 对易, 即 :math:`[K_i, M] = [P_i, M] = 0`. 从而利用 [定理29] 令 :math:`A = \I \bm{K} \cdot \bm{v}, B = -\I \bm{P}\cdot \bm{a}` 得
+
+.. math:: 
+    &\ \exp(\I \bm{K} \cdot \bm{v}) \exp(-\I \bm{P}\cdot \bm{a}) \\
+     =&\ \exp(\I \bm{K} \cdot \bm{v} -\I \bm{P}\cdot \bm{a})
+         \exp\big(\frac{1}{2}[\I \bm{K} \cdot \bm{v}, -\I \bm{P}\cdot \bm{a}]\big) \\
+     =&\ \exp(\I (\bm{K} \cdot \bm{v} - \bm{P}\cdot \bm{a}))
+         \exp\big(\frac{1}{2}[K_i v_i, P_j a_j]\big)
+
+其中 :math:`[K_i v_i, P_j a_j] = [K_i, P_j]v_ia_j = \I M\delta_{ij}v_ia_j = \I M \bm{v}\cdot \bm{a}`. 于是
+
+.. math:: 
+    &\ \exp(\I \bm{K} \cdot \bm{v}) \exp(-\I \bm{P}\cdot \bm{a}) \\
+    =&\ \exp(\I (\bm{K} \cdot \bm{v} - \bm{P}\cdot \bm{a}))\exp(\I M \bm{a}\cdot \bm{v}/2)
+    =&\ \exp(\I M \bm{a}\cdot \bm{v}/2) \exp(\I (\bm{K} \cdot \bm{v} - \bm{P}\cdot \bm{a}))
+
+注意相因子 :math:`\exp(\I M \bm{a}\cdot \bm{v}/2)` 说明这是一个投影表示. 这里还有一个超选择定则阻止不同质量的态的叠加. 就这一点而言, Poincaré 群的数学比伽利略群的简单. 但是, 我们仍然可以形式上扩张伽利略群, 给它的李代数加上一个生成元, 这个生成元与所有其他生成元都对易, 其本征值是物理态的质量. 在这种情况下, 物理态矢提供了一个扩张的对称群的通常表示而不是投影表示. 这种扩张做法所造成的效果, 除了在这种伽利略群的重新解释下我们不再需要质量超选择定则以外, 仅仅是一个标记的区别.

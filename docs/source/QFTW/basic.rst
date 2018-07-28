@@ -21,4 +21,5 @@
 .. toctree::
    :maxdepth: 1
 
-   basic-i2.rst
+   basic-i2A.rst
+   basic-i2B.rst

@@ -71,6 +71,7 @@ I.3 旋转: 不变性和无穷小变换
         \approx&\ \begin{pmatrix} 1 & 0 & \theta_y \\ 0 & 1 & -\theta_x \\ -\theta_y & \theta_x & 1
             \end{pmatrix} \begin{pmatrix} 1 & -\theta_z & 0 \\ \theta_z & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} 
         \approx \begin{pmatrix} 1 & -\theta_z & \theta_y \\ \theta_z & 1 & -\theta_x \\ -\theta_y & \theta_x &    1 \end{pmatrix}
+    :label: infinitesimal-rotation
 
 转动矩阵是正交的 (orthogonal), 可以用 2 维转动矩阵 :math:`R(\theta)` 验证 (注意这里考虑顺时针)
 
