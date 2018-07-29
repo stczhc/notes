@@ -820,6 +820,23 @@
 
 其中 :math:`i` 对 :math:`1, 2, 3` 求和. 这里含有 :math:`i` 的项不能写成平方形式, 是为了让 :math:`i` 指标出现两次表示求和. 这里按照 Weinberg 的意思, 考虑 :math:`\Lambda` 都是实数 (即经典狭义相对论的情况, 因为若是量子力学, 应该允许矩阵元为复数). 那么 :math:`\xtensor{\Lambda}{^i}{_0} \xtensor{\Lambda}{^i}{_0}` 相当于内积, 必须大于等于零. 从而 :math:`\big( \xtensor{\Lambda}{^0}{_0} \big)^2 \geqslant 1`. 于是要么 :math:`\xtensor{\Lambda}{^0}{_0} \geqslant +1` 要么 :math:`\xtensor{\Lambda}{^0}{_0} \leqslant -1`.
 
+[引理19-1] 设 :math:`a \geqslant 1, b \geqslant 1`, 则 :math:`ab - \sqrt{a^2 - 1}\sqrt{b^2 - 1} \geqslant 1`.
+
+[证明] 由 :math:`(a - b)^2 \geqslant 0` 得 :math:`a^2 + b^2 \geqslant 2ab`. 于是
+
+.. math:: 
+    -2ab \geqslant&\ -a^2 -b^2 \\
+    a^2b^2 + 1 -2ab \geqslant&\ -a^2 -b^2 + a^2b^2 + 1 \\
+    (ab - 1)^2 \geqslant&\ (a^2 - 1)(b^2 - 1)
+
+现在, 由于 :math:`a \geqslant 1, b \geqslant 1`, 得 :math:`ab - 1\geqslant 0, a^2 - 1 \geqslant 0, b^2 - 1 \geqslant 0`. 因此可以两边开平方, 不等式仍然成立.
+
+.. math:: 
+    ab - 1 \geqslant&\ \sqrt{a^2 - 1}\sqrt{b^2 - 1} \\
+    ab - \sqrt{a^2 - 1}\sqrt{b^2 - 1} \geqslant&\  1
+
+[引理19-2] 基本不等式 :math:`\sqrt{\frac{a^2+b^2}{2}} \geqslant \frac{a+b}{2} \geqslant \sqrt{ab} \geqslant \frac{2ab}{a+b}`.
+
 [定理19] 满足 :math:`\xtensor{\Lambda}{^0}{_0} \geqslant +1` 的变换构成一个子群, 其中的群乘法按照Poincaré群的群乘法相同的方式定义. 注意 满足 :math:`\xtensor{\Lambda}{^0}{_0} \leqslant -1` 的变换不构成子群, 因为恒等元不在其中.
 
 [证明] 为了证明它构成子群, 对两个群元, 表示为 :math:`\xtensor{\Lambda}{^\mu}{_\nu}` 和 :math:`\xtensor{{\Lambda'}}{^\mu}{_\nu}`, 需要证明它们的乘积 :math:`\Lambda'\Lambda` 也满足 :math:`\xtensor{(\Lambda'\Lambda)}{^0}{_0} \geqslant +1`. 首先有
@@ -841,8 +858,9 @@
 
 .. math:: 
     \xtensor{(\Lambda'\Lambda)}{^0}{_0} =&\ \xtensor{{\Lambda'}}{^0}{_0}\xtensor{\Lambda}{^0}{_0} + \xtensor{{\Lambda'}}{^0}{_i}\xtensor{\Lambda}{^i}{_0} \\
-    \geqslant&\ \xtensor{{\Lambda'}}{^0}{_0}\xtensor{\Lambda}{^0}{_0} - \sqrt{\big( \xtensor{{\Lambda'}}{^0}{_0} \big)^2 - 1} \sqrt{\big( \xtensor{\Lambda}{^0}{_0} \big)^2 - 1} \\
-    \geqslant&\ 1\cdot 1 -  \sqrt{\big( \xtensor{{\Lambda'}}{^0}{_0} \big)^2 - 1} \sqrt{\big( \xtensor{\Lambda}{^0}{_0} \big)^2 - 1}  \geqslant 1
+    \geqslant&\ \xtensor{{\Lambda'}}{^0}{_0}\xtensor{\Lambda}{^0}{_0} - \sqrt{\big( \xtensor{{\Lambda'}}{^0}{_0} \big)^2 - 1} \sqrt{\big( \xtensor{\Lambda}{^0}{_0} \big)^2 - 1} \geqslant 1
+
+其中最后一步的理由如下. 设 :math:`a = \xtensor{{\Lambda'}}{^0}{_0}, b = \xtensor{\Lambda}{^0}{_0}`, 由题设知 :math:`a \geqslant 1, b \geqslant 1`. 利用 [引理19-1] 可以得到结果.
 
 满足 :math:`\det \Lambda = +1` 和 :math:`\xtensor{\Lambda}{^0}{_0} \geqslant +1` 的洛伦兹变换的子群, 称为 **固有正时洛伦兹群** (proper orthochronous Lorentz group). 因为不可能通过一个连续的参数变换从 :math:`\det \Lambda = +1` 变到 :math:`\det \Lambda = -1`, 或者从 :math:`\xtensor{\Lambda}{^0}{_0} \geqslant +1` 变到 :math:`\xtensor{\Lambda}{^0}{_0} \leqslant -1` (即 Poincaré群本身是非连通的, 而固有正时洛伦兹群是含有单位元的一个连通子群), 任何可以通过恒等元进行连续参数变换得到的洛伦兹变换的 :math:`\det \Lambda` 和 :math:`\xtensor{\Lambda}{^0}{_0}` 必须和恒等变换具有相同的符号. 于是这样的洛伦兹变换必定属于固有正时洛伦兹群.
 
