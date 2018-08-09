@@ -1457,6 +1457,7 @@
 
 .. math:: 
     U(\bm{\theta}, 0) = 1 + \I \bm{\theta} \cdot \bm{J} + \cdots
+    :label: uj-expansion
 
 所以
 
