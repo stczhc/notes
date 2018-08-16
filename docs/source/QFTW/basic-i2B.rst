@@ -622,12 +622,12 @@
 成为
 
 .. math:: 
-    U(\Lambda)\psi_{p,\sigma} = \left( \frac{\sqrt{k^0/p^0}}{\sqrt{\tilde{k}^0/(\Lambda p)^0}} \right) \xtensor{D^{(j)}}{^{\sigma'}}{_\sigma}(W(\Lambda, p)) \psi_{\Lambda p,\sigma'}
+    U(\Lambda)\psi_{p,\sigma} = \left( \frac{\sqrt{k^0/p^0}}{\sqrt{\tilde{k}^0/(\Lambda p)^0}} \right) \xtensor{{D^{(j)}}}{^{\sigma'}}{_\sigma}(W(\Lambda, p)) \psi_{\Lambda p,\sigma'}
 
 其中 :math:`\tilde{k}` 是 :math:`\Lambda p` 对应的标准动量, 但是洛伦兹变换对 :math:`p` 的作用不能改变 :math:`p^2` 和 :math:`p^0` 的符号, 因此 :math:`\Lambda p` 对应的标准动量一定就是 :math:`p` 的标准动量 :math:`k`. 即 :math:`\tilde{k} = k`. 得
 
 .. math:: 
-    U(\Lambda)\psi_{p,\sigma} = \sqrt{\frac{(\Lambda p)^0}{p^0}} \xtensor{D^{(j)}}{^{\sigma'}}{_\sigma}(W(\Lambda, p)) \psi_{\Lambda p,\sigma'}
+    U(\Lambda)\psi_{p,\sigma} = \sqrt{\frac{(\Lambda p)^0}{p^0}} \xtensor{{D^{(j)}}}{^{\sigma'}}{_\sigma}(W(\Lambda, p)) \psi_{\Lambda p,\sigma'}
 
 其中小群元 :math:`W(\Lambda, p)` (称为 Wigner 转动 (Wigner rotation)) 由下式给出 (按照前面的定义)
 
@@ -1355,7 +1355,7 @@
 比较得
 
 .. math:: 
-    \xtensor{D}{^{\sigma'}}{_\sigma}(W) = \exp(\I \underline{\sigma} \theta)\xtensor{\delta}{^{\sigma'}}{_\underline{\sigma}}
+    \xtensor{D}{^{\sigma'}}{_\sigma}(W) = \exp(\I \underline{\sigma} \theta)\xtensor{\delta}{^{\sigma'}}{_{\underline{\sigma}}}
 
 其中 :math:`\theta` 是通过将 :math:`W` 表示成 :eq:`w-sr-mass-zero` 来定义的 (所以 :math:`\theta` 是 :math:`W` 的函数, 而 :math:`W` 又是 :math:`\Lambda, p` 的函数, 因此 :math:`\theta = \theta (\Lambda, p)` 是 :math:`\Lambda, p` 的函数). 另外, 由于纯推进变换 :math:`L(p)` 不会改变 :math:`\sigma` 指标, 而上式说明 :math:`W` 也不改变 :math:`\sigma` 指标, 因此 :math:`\sigma` 指标 (螺旋度) 是洛伦兹变换下的不变量.
 
