@@ -746,9 +746,9 @@
 .. math:: 
     \det \eta (\det \Lambda)^2 = \det \eta \quad \Rightarrow \quad -(\det \Lambda)^2 = -1 \quad \Rightarrow \quad (\det \Lambda)^2 = 1
 
-这说明 :math:`\Lambda` 的行列式是一个相因子 :math:`\E^{\I \theta}`. 注意我们现在讨论的是量子力学复空间. 如果是实空间, 那么只能有 :math:`\det \Lambda = \pm 1`, 变换群就不连通. 但是量子力学复空间的情况下, 变换群仍是连通的 (在复空间, 该行列式的值可以连续变化). 另一方面, 由于行列式不为零, :math:`\Lambda` 有逆, 记为 :math:`\xtensor{(\Lambda^{-1})}{^\rho}{_\nu}`.
+这说明 :math:`\Lambda` 的行列式是一个相因子 :math:`\E^{\I \theta}`. 注意量子力学复空间是指考虑了态矢的变换是复空间. 现在只是考虑坐标变换 :math:`\Lambda`, 它是实空间的变换. 所以其实只能有 :math:`\det \Lambda = \pm 1`, 变换群就不连通. 但是量子力学复空间的情况下 (即后面要考虑的 :math:`U` 变换作用的态矢空间), 变换群仍是连通的 (在复空间, 该行列式的值可以连续变化). 另一方面, 由于行列式不为零, :math:`\Lambda` 有逆, 记为 :math:`\xtensor{(\Lambda^{-1})}{^\rho}{_\nu}`. 
 
-[定理17] :math:`\xtensor{(\Lambda^{-1})}{^\rho}{_\nu} = \eta_{\nu\mu}\eta^{\rho\sigma}\xtensor{\Lambda}{^\mu}{_\sigma} = \xtensor{\Lambda}{_\nu}{^\rho}`.
+[定理17] :math:`\xtensor{(\Lambda^{-1})}{^\rho}{_\nu} = \eta_{\nu\mu}\eta^{\rho\sigma}\xtensor{\Lambda}{^\mu}{_\sigma} = \xtensor{\Lambda}{_\nu}{^\rho}`. 因此求一个齐次洛伦兹变换的逆矩阵, 就是先将矩阵转置, 然后将所有 :math:`0i` 和 :math:`i0` 分量全部变号 (因为两个上下标的上下位置发生了改变).
 
 [证明] 首先由逆矩阵定义我们有
 
