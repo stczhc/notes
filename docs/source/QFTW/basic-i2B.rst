@@ -520,7 +520,7 @@
 8 角动量理论
 ^^^^^^^^^^^^
 
-正质量粒子就是 [表1] 中情形 (a), 对应的小群就是三维转动群. 三维转动群在希尔伯特空间由对应的态矢变换 :math:`U(R_{\bm{\theta}}, 0)`, 此处简记为 :math:`U(\bm{\theta})` [定理28]. 这个转动变换 :math:`U(\bm{\theta})` 的矩阵表示, 就是量子力学中的角动量理论. 下面简要回顾其中的主要结论. 所要研究的态矢构成一个矢量空间, 我们一般选择 :math:`\bm{J}^2, J_3` 的共同本征态 :math:`|jm\rangle` 作为矢量空间的基矢来研究.
+正质量粒子就是 [表1] 中情形 (a), 对应的小群就是三维转动群. 三维转动群在希尔伯特空间由对应的态矢变换 :math:`U(R_{\bm{\theta}}, 0)`, 此处简记为 :math:`U(\bm{\theta})` [定理28], 即小群 :math:`W = R_{\bm{\theta}}`. 这个转动变换 :math:`U(\bm{\theta})` 的矩阵表示, 就是量子力学中的角动量理论. 下面简要回顾其中的主要结论. 所要研究的态矢构成一个矢量空间, 我们一般选择 :math:`\bm{J}^2, J_3` 的共同本征态 :math:`|jm\rangle` 作为矢量空间的基矢来研究.
 
 [定理39] 角动量算符平方 :math:`\bm{J}^2 \equiv J^{12}J_{12} + J^{23}J_{23} + J^{31}J_{31}` 是转动变换 (齐次洛伦兹变换的特例) :math:`U(R_{\bm{\theta}}, 0)` 下的不变量.
 
@@ -603,13 +603,46 @@
 考虑无穷小转动 :math:`R_{ik} = \delta_{ik} + \Theta_{ik}`, 其中无穷小量 :math:`\Theta_{ik}` 满足 :math:`\Theta_{ik} = -\Theta_{ki}` (参数矩阵是实的反对称矩阵, 和之前的讨论类似), 即
 
 .. math:: 
-    D^{(j)}_{m'm}(1 + \Theta) =&\ \delta_{m'm} + \frac{\I}{2} \Theta_{ik} \big( J^{(j)}_{ik} \big)_{m'm} \\
+    D^{(j)}_{m'm}(1 + \Theta) =&\ \delta_{m'm} + \frac{\I}{2} \Theta{ik} \big( J^{(j)}_{ik} \big)_{m'm} \\
     \big( J^{(j)}_{23} \pm \I J^{(j)}_{31} \big)_{m'm} =&\ \big( J^{(j)}_1 \pm \I J^{(j)}_2 \big)_{m'm} 
         = \langle jm'| J_\pm |jm\rangle \\
         =&\ \langle jm'| \sqrt{(j \mp m)(j \pm m + 1)} |jm\pm 1\rangle = \delta_{m',m\pm 1}\sqrt{(j \mp m)(j \pm m + 1)} \\
     \big( J^{(j)}_{12} \big)_{m'm} =&\ \big( J^{(j)}_3 \big)_{m'm} = m\delta_{m'm}
+    :label: jmm-element
 
-其中 :math:`m` 的取值为 :math:`j, j-1, \cdots, -j`. 注意第一式有 :math:`\frac{1}{2}` 系数是因为其中 :math:`J` 是双指标. 这和 :eq:`ujp-expansion` 的标记一致. 第二式利用了上面的 :math:`J_\pm |jm \rangle = \sqrt{(j \mp m)(j \pm m + 1)} |jm\pm 1\rangle`.
+其中 :math:`m` 的取值为 :math:`j, j-1, \cdots, -j`. 注意第一式有 :math:`\frac{1}{2}` 系数是因为其中 :math:`J` 是双指标. 这和 :eq:`ujp-expansion` 的标记一致. 第二式利用了上面的 :math:`J_\pm |jm \rangle = \sqrt{(j \mp m)(j \pm m + 1)} |jm\pm 1\rangle`. 另外注意第一式右边指标 :math:`ik` 要取和, 只是因为都是空间分量因此没有区分上下指标.
+
+下面补充一些上面的公式的细节的讨论, 对后面引用这里的结论较为方便. 由 :eq:`uwk-sigma` 即
+
+.. math:: 
+    U(W) \psi_{k,\sigma} = \xtensor{D}{^{\sigma'}}{_\sigma}(W) \psi_{k, \sigma'}
+
+而这里 :math:`W` 即是三维转动群, :math:`\sigma` 指标可对不同 :math:`j` 分开讨论, 三维转动保持 :math:`j` 不变, 因此
+
+.. math:: 
+    U(W) \psi_{k,j,m} = \xtensor{{D^{(j)}}}{^{m'}}{_m}(W) \psi_{k, j,m'}
+
+由 [定理28] :math:`U(R_{\bm{\theta}}, 0) = \exp (\I \bm{J}\cdot \bm{\theta})` 及本小节开头提到的 :math:`W = R_{\bm{\theta}}`, 考虑无穷小的情况 :math:`R_{ik} = \delta_{ik} + \Theta_{ik}` 得
+
+.. math:: 
+    U(W) = U(R_{\bm{\theta}}) = 1 + \I \bm{J}\cdot \bm{\theta} = 1 + \frac{1}{2}\I \Theta_{ik} J^{ik}
+
+注意这里原本应该是 :math:`U(\Lambda) = 1 + \frac{1}{2}\I \omega_{\mu\nu} J^{\mu\nu}`, 但是由于 :math:`W = R_{\bm{\theta}}` 的所有与时间相关的分量都为零 (00分量为1), 因此展开式中 :math:`\Theta_{ij}` 若考虑为4维矩阵, 其所有与时间相关分量都为零, 因此 :math:`\omega_{\mu\nu} J^{\mu\nu}` 改写为 :math:`\Theta_{ik} J^{ik}`. 并且由于考虑 :math:`ik` 指标交换产生一个两个负号的问题, 写成 :math:`\bm{J}\cdot \bm{\theta}` 时没有系数 :math:`\frac{1}{2}`.
+
+再利用上面的
+
+.. math:: 
+    D^{(j)}_{m'm}(1 + \Theta) =&\ \delta_{m'm} + \frac{\I}{2} \Theta_{ik} \big( J^{(j)}_{ik} \big)_{m'm} \\
+    U(W) \psi_{k,j,m} =&\ \xtensor{{D^{(j)}}}{^{m'}}{_m}(W) \psi_{k, j,m'}
+
+得
+
+.. math:: 
+    \big[ 1 + \frac{1}{2}\I \Theta_{ik} J^{ik} \big] \psi_{k,j,m} =&\ \big[ \xtensor{\delta}{^{m'}}{_m} + \frac{\I}{2} \Theta_{ik} \xtensor{\big( J^{(j)}_{ik} \big)}{^{m'}}{_m} \big] \psi_{k, j,m'} \\
+    \frac{1}{2}\I \Theta_{ik} J^{ik} \psi_{k,j,m} =&\ \frac{\I}{2} \Theta_{ik} \xtensor{\big( J^{(j)}_{ik} \big)}{^{m'}}{_m} \psi_{k, j,m'} \\
+    J_{ik} \psi_{k,j,m} =&\ \xtensor{\big( J^{(j)}_{ik} \big)}{^{m'}}{_m} \psi_{k, j,m'}
+    :label: jik-psi-jm
+
 
 9 正质量粒子态的洛伦兹变换
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -643,6 +676,7 @@
     \xtensor{L}{^i}{_k}(p) =&\ \delta_{ik} + (\gamma - 1) \hat{p}_i \hat{p}_k \\
     \xtensor{L}{^i}{_0}(p) =&\ \xtensor{L}{^0}{_i}(p) = \hat{p}_i \sqrt{\gamma^2 - 1} \\
     \xtensor{L}{^0}{_0}(p) =&\ \gamma
+    :label: mass-zero-lp
 
 其中 :math:`\hat{p}_i \equiv p_i / |\bm{p}|,\quad \gamma \equiv \sqrt{\bm{p}^2 + M^2} / M`. 下面需要证明上述定义的变换确是洛伦兹变换, 并且能把标准四动量 :math:`k^\mu = (M, 0, 0, 0)` 变到 :math:`p^\mu`.
 
@@ -1451,7 +1485,7 @@
 
 注意到, 螺旋度是洛伦兹不变的, 一个给定螺旋度 :math:`\sigma` 的零质量粒子, 它在所有惯性系的螺旋度看起来都是一样的, 这一点和动量不同. 事实上, 我们可能会想把具有不同螺旋度的无质量粒子考虑为不同种类的粒子. 但是, 我们在下一节将发现, 具有相反螺旋度的粒子是由空间反射对称性相联系的. 因此, 因为电磁和引力服从空间反射对称性, 与电磁现象相关的具有螺旋度 :math:`\pm 1` 的无质量粒子都叫做 **光子** (photons), 而具有螺旋度 :math:`\pm 2` 的无质量粒子被认为是与引力相关, 都叫做 **引力子** (gravitons). 另一方面, 在核 :math:`\beta` 衰变中释放的具有螺旋度 :math:`\pm \frac{1}{2}` 的可能无质量的粒子 (这里是假设它无质量, 实际上现在实验测得它质量非常小), 它没有具有空间反射对称性的相互作用 (引力除外), 我们给这些粒子起了不同名字: 具有螺旋度 :math:`-\frac{1}{2}` 的称为 **中微子** (neutrinos), 具有螺旋度 :math:`+\frac{1}{2}` 的称为 **反中微子** (antineutrinos). [这里 Weinberg 书有符号错误. ]
 
-注意这里相互作用具有空间反射对称性的意思是, 如果进行空间反射, 物理定律仍然是相同的形式, 也就是说, 在 (经典) 电磁相互作用中, 具有不同螺旋度的光子的行为不会有任何区别, 也就无法通过这种相互作用来区分这两种螺旋度. 但是量子效应可以测量角动量在第三轴方向的投影 (这是因为下面要讨论的, 物理量子态经过洛伦兹变换相位会改变). 也就可以测出螺旋度本征值. 对光子来说, 螺旋度 :math:`\pm 1` 对应于右/左旋圆偏振光.
+注意这里相互作用具有空间反射对称性的意思是, 如果进行空间反射, 物理定律仍然是相同的形式 (根据王正行书P82, 如果系统在空间反射以后的态与原来的态都满足同样的物理定律 (在非相对论情况下就是薛定谔方程), 是同一个量子态, 则这个系统就具有 **空间反射不变性**. 空间反射不变性又称为空间反射对称性). 也就是说, 在 (经典) 电磁相互作用中, 具有不同螺旋度的光子的行为不会有任何区别, 也就无法通过这种相互作用来区分这两种螺旋度. 但是量子效应可以测量角动量在第三轴方向的投影 (这是因为下面要讨论的, 物理量子态经过洛伦兹变换相位会改变). 也就可以测出螺旋度本征值. 对光子来说, 螺旋度 :math:`\pm 1` 对应于右/左旋圆偏振光.
 
 尽管无质量粒子的螺旋度是洛伦兹不变的, 物理态本身却不是. 特别地, 由于 :eq:`u-lambda-mass-zero-state` 中的螺旋度依赖的相因子 :math:`\exp(\I \sigma \theta)`, 一个由相反螺旋度的单粒子态的线性组合构成的态, 会被洛伦兹变换变为不同的叠加. 例如, 一个一般的单光子4动量本征态可以写为
 

@@ -148,8 +148,9 @@
 [定义4'(错误, 后面解释)] (根据梁灿彬 B.1.3 定义14修改) :math:`\mathscr{H}` 上一个反线性算符 :math:`A : \mathscr{H} \to \mathscr{H}` 自然诱导出 :math:`\mathscr{H}^*` 上一个反线性算符 :math:`A^*: \mathscr{H}^* \to \mathscr{H}^*` 定义为
 
 .. math:: 
-    (A^* \eta)(\phi) := \eta(A \phi), \quad \forall A \in \mathscr{H}, \eta \in \mathscr{H}^*
+    (A^* \eta)(\phi) := \eta(A \phi), \quad \forall A \in \mathscr{H}, \eta \in \mathscr{H}^*, \phi \in \mathscr{H}
 
+注意其中的 :math:`\eta_f( \phi) := (f, \phi)` 表示求与 :math:`\mathscr{H}^*` 中 :math:`\eta` 对应的 :math:`\mathscr{H}` 的 :math:`f` 与 :math:`\phi` 的内积.
 但如此得到的 :math:`A^*` 作用于矢量后后并不能给出 :math:`\mathscr{H}^*` 中的元素, 因为
 
 .. math:: 
@@ -992,7 +993,7 @@
         - \I \epsilon^\rho P_\rho + \cdots
     :label: ujp-expansion2
 
-利用 :eq:`ujp-expansion2` 将 :eq:`u-omega-lambda-raw` 保留到一阶项得
+利用 :eq:`ujp-expansion2` 将 :eq:`u-omega-lambda-raw` 保留到一阶项得 (注意这里假定了 :math:`\Lambda` 和 :math:`\I` 对易, 也就是说这里只考虑固有正时洛伦兹变换. 因为若是一般的洛伦兹变换, 时间反演是反线性的.)
 
 .. math:: 
     U(1 + \Lambda\omega\Lambda^{-1}, \Lambda\epsilon -\Lambda\omega\Lambda^{-1}a) 
