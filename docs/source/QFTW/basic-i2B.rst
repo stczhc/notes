@@ -174,7 +174,16 @@
 
 其中 :math:`N(p)` 是一个数值的归一化因子, 将在后面讨论. 下面我们将利用上式推出 :math:`\sigma` 指标和不同动量之间的关联. 注意这里 :eq:`psi-pk-def` 并不涉及 :math:`\sigma` 指标的混合, 但是由 :math:`U(L(p))` 我们有了一个把 :math:`U(\Lambda)` 作用纯化到使 :math:`\sigma` 不变的效果. 因此可以利用 :math:`L` 对一般的作用 :math:`U(\Lambda)` 进行分解.
 
+注意这里涉及到对 :math:`\sigma` 的重定义, 而且这个定义还依赖于 :math:`p` 的方向. 根据后面的讨论, :math:`\sigma` 将成为第三轴的角动量的本征值. 由于这个式子要求 :math:`U(L(p))` 的作用不改变 :math:`\sigma` 指标, 也就是要求 :math:`U(L(p))` 和 :math:`J_3` 对易. 但是考虑后面实际定义的 :math:`L(p)` 即 :eq:`mass-zero-lp` 和 [定理54], 它们实际并不能保证 :math:`\sigma` 指标不变, 除非更改坐标系. 更具体地说, 沿第三轴的纯推进 :math:`B(|p|)` 对应的算符 :math:`U(B(|p|))` 可以用 :eq:`jp-lambda-trans` 证明, 是和 :math:`J_3` 对易的. 但是后面补上的旋转一定不和 :math:`J_3` 对易, 因此整体来看, 实际定义的 :math:`L(p)` 是要改变 :math:`\sigma` 指标的. 也就是说, 如果预先选好一个闵氏空间的坐标系, 那么对 :math:`p = k` 的情况, :math:`L(p)` 可以不包括绕任意轴的旋转. 对与其他情况, 由于 :math:`p` 的方向任意, 一定需要做旋转, 这个旋转会导致 :math:`\sigma` 指标的混合. 为了避免这个混合, 也就是为了符合这里的定义, 相当于要重新定义坐标系. 例如, 对于 :eq:`mass-zero-lp` 的 :math:`L(p)` 根据 [引理44-2] 可以证明, 若选择第三轴为当前第三轴旋转 :math:`R(\hat{\bm{p}})`, 那么 :math:`L(p)` 将不会导致 :math:`\sigma` 改变. 这个坐标轴的旋转显然是依赖于 :math:`p` 的. 因此也就意味着坐标系的选择是依赖于具体的态的参数的. 这个隐含的问题还不清楚应该如何解决. 但是似乎我们可以先不管 :math:`L(p)` 的定义问题, 因为对于有质量粒子, 是先引入 :math:`W` 的, 它就是一个三维转动. 对于无质量粒子, 也是先考虑 :math:`W` 的.
+
+所以问题就是, 能不能不动坐标系, 就定义一个 :math:`L(p)`, 这个 :math:`L(p)` 的形式可能不是类似于 :eq:`mass-zero-lp` 的形式, 而可以每次针对 :math:`p` 重新选择 :math:`\sigma` 的基组. 但是 :math:`\sigma` 就是和 :math:`J_3` 绑定的, 所以还是要动坐标系. 既然要动坐标系, 那么 :math:`L(p)` 就不是关键了, 因为它无论怎么选都无法保证 :math:`\sigma` 真的不变. 但是这里其实有一个转机. 因为 :math:`L(p)` 后面可以补上任意的 :math:`R`, 不影响它本质功能. 能不能通过补上合适的 :math:`R`, 让它和 :math:`J_3` 对易呢? 似乎是有希望的. 这是一个未解决的问题. [#ref5]_ [#ref6]_
+
+实际上, 结合零质量粒子的讨论, 零质量粒子的 :math:`\sigma` 被定义为螺旋度, 在那里螺旋度是指角动量在运动方向的投影, 而不是在第三轴的投影. 因此, 我们可以认为, 无论何处所选的 :math:`\sigma` 表象都是以运动方向 (也就是 :math:`\bm{p}` 的方向) 为第三轴. 这样便没有任何矛盾. 实际上, 坐标系的第三轴可以任意选取, 所以 :math:`L(p)` 的表达式也不会有问题. 而 :math:`\sigma` 指标永远定义为把运动方向作为第三轴时的 :math:`\sigma` 指标. 这样也不存在重选坐标系的问题.
+
 这里首先定义了一个 "标准" 洛伦兹变换可以把 :math:`k` 变成 :math:`p`. 接下来在定义 :math:`\psi_{p,\sigma}` 的时候, 当然一般地说 :math:`\sigma` 也可以变, 但是因为这里是定义所以没有必要制造麻烦, 所以可以定义成 :math:`U(L(p))` 使 :math:`\sigma` 不变. 相当于从洛伦兹变换中抽离已知的部分 (即从 :math:`k` 到 :math:`p` 的变化), 而重点研究剩余的和 :math:`\sigma` 相关的部分. 由于 :math:`U(\Lambda)` 无论如何不可能改变 :math:`p^2`, 所以 :math:`p^2` 的部分不在研究范围之内. [#ref1]_
+
+.. [#ref5] `StackExchange-4 <https://physics.stackexchange.com/questions/199365/weinberg-qft-2-5-5>`_.
+.. [#ref6] `PhysicsForums-1 <https://www.physicsforums.com/threads/confusion-2-from-weinbergs-qft-little-group.516129>`_.
 
 5 小群
 ^^^^^^
@@ -983,19 +992,65 @@
     \xtensor{(S^{-1})}{^2}{_0} (1+\zeta) + \beta + \xtensor{(S^{-1})}{^2}{_3} \zeta =&\ 0 \\
     \zeta(1+\zeta) + \zeta(1-\zeta) + \xtensor{(S^{-1})}{^3}{_1} \alpha + \xtensor{(S^{-1})}{^3}{_2} \beta =&\ 0
 
-由第一式得 :math:`2\zeta = \alpha^2 + \beta^2` 符合已知条件. 由第二式得
+由第一式得 :math:`2\zeta = \alpha^2 + \beta^2` 符合已知条件. 由第二式和第三式得
 
 .. math:: 
-    \big[ \xtensor{(S^{-1})}{^1}{_0} + \xtensor{(S^{-1})}{^1}{_3}\big]\zeta + \xtensor{(S^{-1})}{^1}{_0} + \alpha = 0
+    \big[ \xtensor{(S^{-1})}{^1}{_0} + \xtensor{(S^{-1})}{^1}{_3}\big]\zeta + \xtensor{(S^{-1})}{^1}{_0} + \alpha =&\ 0 \\
+    \big[ \xtensor{(S^{-1})}{^2}{_0} + \xtensor{(S^{-1})}{^2}{_3}\big]\zeta + \xtensor{(S^{-1})}{^2}{_0} + \beta =&\ 0
 
-令 :math:`\zeta` 系数分别为零得 :math:`\xtensor{(S^{-1})}{^1}{_0} = -\alpha, \xtensor{(S^{-1})}{^1}{_3} = \alpha`. 类似得 :math:`\xtensor{(S^{-1})}{^2}{_0} = -\beta, \xtensor{(S^{-1})}{^2}{_3} = \beta`.
+令 :math:`\xtensor{(S^{-1})}{^1}{_0} = a, \xtensor{(S^{-1})}{^1}{_3} = b, \xtensor{(S^{-1})}{^2}{_0} = c, \xtensor{(S^{-1})}{^2}{_3} = c`, 得
+
+.. math:: 
+    (a+b)\zeta + a + \alpha = 0,\quad (c+d)\zeta + c + \beta = 0
+    :label: ab-zeta-alpha-beta
+
+这还不能完全确定这两个元素. 把 :math:`\xtensor{(S^{-1})}{^\mu}{_\nu}` 也看成一个洛伦兹变换, 它也需要满足洛伦兹变换的条件, 即 [定理15], :math:`\eta^{\mu\nu}\xtensor{\Lambda}{^\rho}{_\mu}\xtensor{\Lambda}{^\sigma}{_\nu} = \eta^{\rho\sigma}`. 令 :math:`\rho\sigma = 11, 22` 得
+
+.. math:: 
+    -a^2 + 1 +b^2 =&\ 1 \quad \Rightarrow \quad a^2 = b^2 \\
+    -c^2 + 1 +c^2 =&\ 1 \quad \Rightarrow \quad c^2 = d^2
+
+由于洛伦兹变换是闵氏空间的变换, 它的参数应该都是实数, 因此 :math:`a = \pm b, c = \pm d`. 再利用 [定理15] 中的另一条 :math:`\eta_{\mu\nu}\xtensor{\Lambda}{^\mu}{_\rho}\xtensor{\Lambda}{^\nu}{_\sigma} = \eta_{\rho\sigma}` 令 :math:`\rho\sigma = 00` 得
+
+.. math:: 
+    -(1+\zeta)^2 + a^2 + c^2 +\zeta^2 = -1 \quad \Rightarrow \quad a^2 + c^2 = \alpha^2 + \beta^2
+
+现在若 :math:`a = \pm b, c = \pm d` 中两个都取正号, 代入 :eq:`ab-zeta-alpha-beta` 得 :math:`a = b = -\frac{\alpha}{2\zeta + 1}, c = d = -\frac{\beta}{2\zeta + 1}` 从而
+
+.. math:: 
+    a^2 + c^2 = \frac{\alpha^2 + \beta^2}{(2\zeta + 1)^2}
+
+但是根据上面的要求, :math:`a^2 + c^2 = \alpha^2 + \beta^2`, 于是得 :math:`\zeta = 0, -1`, 这是不合理的. 再考虑若 :math:`a = \pm b, c = \pm d` 中两者之一取正号, 不妨设 :math:`a = -b, c = d`, 则 :math:`a = -b = -\alpha, c = d = -\frac{\beta}{2\zeta + 1}`, 从而
+
+.. math:: 
+    a^2 + c^2 = \alpha^2 + \frac{\beta^2}{(2\zeta + 1)^2}
+
+但是根据上面的要求, :math:`a^2 + c^2 = \alpha^2 + \beta^2`, 于是得 :math:`\zeta = 0, -1`, 依然不合理. 因此只能取 :math:`a = -b = -\alpha, c = -d = -\beta`, 这自动满足 :math:`a^2 + c^2 = \alpha^2 + \beta^2`. 于是得 :math:`\xtensor{(S^{-1})}{^1}{_0} = -\alpha, \xtensor{(S^{-1})}{^1}{_3} = \alpha` 以及 :math:`\xtensor{(S^{-1})}{^2}{_0} = -\beta, \xtensor{(S^{-1})}{^2}{_3} = \beta`.
 
 由最后一式得
 
 .. math:: 
     \alpha^2 + \beta^2 + \xtensor{(S^{-1})}{^3}{_1} \alpha + \xtensor{(S^{-1})}{^3}{_2} \beta = 0
 
-于是 :math:`\xtensor{(S^{-1})}{^3}{_1} = -\alpha, \xtensor{(S^{-1})}{^3}{_2} = -\beta`. 从而
+这还不能完全确定这两个元素. 把 :math:`\xtensor{(S^{-1})}{^\mu}{_\nu}` 也看成一个洛伦兹变换, 它也需要满足洛伦兹变换的条件, 即 [定理15], :math:`\eta^{\mu\nu}\xtensor{\Lambda}{^\rho}{_\mu}\xtensor{\Lambda}{^\sigma}{_\nu} = \eta^{\rho\sigma}`. 令 :math:`\rho\sigma = 33` 得
+
+.. math:: 
+    -\zeta^2 + \big(\xtensor{(S^{-1})}{^3}{_1}\big)^2 + \big(\xtensor{(S^{-1})}{^3}{_2}\big)^2 + (1-\zeta)^2 =&\ 1 \\
+    \big(\xtensor{(S^{-1})}{^3}{_1}\big)^2 + \big(\xtensor{(S^{-1})}{^3}{_2}\big)^2 =&\ 2\zeta = \alpha^2 + \beta^2
+
+令 :math:`a = \xtensor{(S^{-1})}{^3}{_1}, b = \xtensor{(S^{-1})}{^3}{_2}` 得
+
+.. math:: 
+    a^2 + b^2 =&\ \alpha^2 + \beta^2 \\
+    a\alpha + b\beta = -( \alpha^2 + \beta^2)
+
+第二式乘以2加第一式得
+
+.. math:: 
+    (a + \alpha)^2 - \alpha^2 + (b+ \beta)^2 - \beta^2 =&\ -( \alpha^2 + \beta^2) \\
+    (a + \alpha)^2 + (b+ \beta)^2 =&\ 0
+
+于是 :math:`a + \alpha = b+ \beta = 0`. 于是得 :math:`\xtensor{(S^{-1})}{^3}{_1} = -\alpha, \xtensor{(S^{-1})}{^3}{_2} = -\beta`. 从而
 
 .. math:: 
     \xtensor{(S^{-1})}{^\mu}{_\nu}(\alpha, \beta) = \begin{pmatrix} 1+\zeta & -\alpha & -\beta & -\zeta \\ -\alpha & 1 & 0 & \alpha \\ -\beta & 0 & 1 & \beta \\ \zeta & -\alpha & -\beta & 1-\zeta \end{pmatrix}\quad \Rightarrow \quad
@@ -1427,6 +1482,7 @@
 
 .. math:: 
     B(u) \equiv \begin{pmatrix} \frac{u^2 + 1}{2u} &0 &0& \frac{u^2 - 1}{2u} \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ \frac{u^2 - 1}{2u} & 0 & 0 & \frac{u^2 + 1}{2u} \end{pmatrix}
+    :label: bu-mass-zero
 
 :math:`R(\hat{\bm{p}})` 是一个纯转动, 它把第三轴转到单位矢量 :math:`\hat{\bm{p}}` 的方向.
 
@@ -1480,6 +1536,7 @@
 
 .. math:: 
     U(R(\hat{\bm{p}})) = \exp(\I \phi J_3) \exp(\I \theta J_2)
+    :label: urp-def
 
 其中 :math:`0\leqslant \theta \leqslant \pi, 0 \leqslant \phi \leqslant 2\pi`. 我们给出 :math:`U(R(\hat{\bm{p}}))` 的表达式, 而不是 :math:`R(\hat{\bm{p}})` 的, 并且给定 :math:`U(R(\hat{\bm{p}}))` 中 :math:`\phi` 和 :math:`\theta` 的取值范围. 这是因为 :math:`\theta` 或 :math:`\phi` 的 :math:`2\pi` 角的偏移会给出同样的 :math:`R(\hat{\bm{p}})` (坐标变换), 但是当作用于半整数自旋态的时候, 会导致 :math:`U(R(\hat{\bm{p}}))` 的符号改变. 考虑 :math:`J_2` 的本征值是半整数, 那么作用于它的本征态的时候, :math:`J_2` 将会被半整数比如 :math:`\frac{1}{2}` 取代, 这样 :math:`\I\theta / 2` 成了指数因子. :math:`\theta` 可取 :math:`0` 到 :math:`4\pi`. 由于上式是一个旋转, 它把第三轴转到 :math:`\hat{\bm{p}}` 的方向. 任何其他的 :math:`R(\hat{\bm{p}})` 的选择只会和这里的定义相差绕第三轴的初始转动 (也就是在上述定义的 :math:`U(R(\hat{\bm{p}}))` 右边再加上一项 :math:`\exp(\I \zeta J_3)`, 这一项作用于 :math:`(0,0,1)` 会得到它本身. 但是 :math:`U(R(\hat{\bm{p}}))` 多了个相因子). 因此这仅仅是一个单粒子态相因子的重新定义.
 
