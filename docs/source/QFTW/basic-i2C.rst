@@ -37,7 +37,7 @@
 .. math:: 
     U(\Lambda', a') U(\Lambda, a) = U(\Lambda'\Lambda, \Lambda'a + a')
 
-注意上式来源于 [定理16], 而 [定理16] 的推出的时候还没有讨论固有正时洛伦兹变换, 因此上式当然对一般的洛伦兹变换都成立. 但是上式有一个假设, 就是射线变换 :math:`U(\Lambda)` 构成 :math:`\Lambda` 的普通表示. 这个可能存在问题, 不过应该在后面一节会有详细讨论. 不过一般地说, 在现在理论框架之内, 这一条的成立是相当自然的, 没有任何更改的余地. 物理上, 这一条和大多数实验事实符合, 少数不符合的可能需要修改整个理论框架, 而不可能只修改这一条.
+注意上式来源于 [定理2-16], 而 [定理2-16] 的推出的时候还没有讨论固有正时洛伦兹变换, 因此上式当然对一般的洛伦兹变换都成立. 但是上式有一个假设, 就是射线变换 :math:`U(\Lambda)` 构成 :math:`\Lambda` 的普通表示. 这个可能存在问题, 不过应该在后面一节会有详细讨论. 不过一般地说, 在现在理论框架之内, 这一条的成立是相当自然的, 没有任何更改的余地. 物理上, 这一条和大多数实验事实符合, 少数不符合的可能需要修改整个理论框架, 而不可能只修改这一条.
 
 特别地, 人们曾经认为对应于 :math:`\mathscr{P}` 和 :math:`\mathscr{T}` 自身的算符是存在的
 
@@ -46,14 +46,14 @@
 
 并且有如下结论.
 
-[定理55] 对任何固有正时洛伦兹变换 :math:`\xtensor{\Lambda}{^\mu}{_\nu}` 和平移 :math:`a^\mu`, 有
+[定理2-55] 对任何固有正时洛伦兹变换 :math:`\xtensor{\Lambda}{^\mu}{_\nu}` 和平移 :math:`a^\mu`, 有
 
 .. math:: 
     \mathsf{P} U(\Lambda, a) \mathsf{P}^{-1} =&\ U(\mathscr{P}\Lambda \mathscr{P}^{-1}, \mathscr{P} a) \\
     \mathsf{T} U(\Lambda, a) \mathsf{T}^{-1} =&\ U(\mathscr{T}\Lambda \mathscr{T}^{-1}, \mathscr{T} a)
     :label: upt-trans
 
-[证明] 利用 :math:`\mathsf{P}, \mathsf{T}` 的定义和群乘法规则 :math:`U(\Lambda', a') U(\Lambda, a) = U(\Lambda'\Lambda, \Lambda'a + a')` 可得 (注意由于 [定理18] 即洛伦兹变换的逆元 :math:`U^{-1}(\Lambda, a) = U(\Lambda^{-1},-\Lambda^{-1}a)` 对一般的洛伦兹变换都成立, 因此也可用于 :math:`\mathscr{P}, \mathscr{T}`)
+[证明] 利用 :math:`\mathsf{P}, \mathsf{T}` 的定义和群乘法规则 :math:`U(\Lambda', a') U(\Lambda, a) = U(\Lambda'\Lambda, \Lambda'a + a')` 可得 (注意由于 [定理2-18] 即洛伦兹变换的逆元 :math:`U^{-1}(\Lambda, a) = U(\Lambda^{-1},-\Lambda^{-1}a)` 对一般的洛伦兹变换都成立, 因此也可用于 :math:`\mathscr{P}, \mathscr{T}`)
 
 .. math:: 
     \mathsf{P} U(\Lambda, a) \mathsf{P}^{-1} =&\ U(\mathscr{P}, 0) U(\Lambda, a) U^{-1}(\mathscr{P}, 0) = U(\mathscr{P} \Lambda, \mathscr{P}a) U^{-1}(\mathscr{P}, 0) \\
@@ -61,13 +61,13 @@
 
 类似可证对于 :math:`\mathsf{T}` 的情况也有相同的关系.
 
-注意 [定理55] 中, :math:`a` 的变换只需要乘以一个 :math:`\mathscr{P}`, 而 :math:`\Lambda` 则两边都要乘以 :math:`\mathscr{P}`. 这本质上是由于 :math:`a` 是闵氏空间的矢量, 而 :math:`\Lambda` 是闵氏空间的张量, 它们的变换律不同. [定理55] 的变换规则蕴含了我们通常所说的 :math:`\mathsf{P}` 和 :math:`\mathsf{T}` 是守恒的. 也就是说, 如果认为 :math:`\mathsf{P}` 和 :math:`\mathsf{T}` 守恒, 那么 [定理55] 的关系就必须满足.
+注意 [定理2-55] 中, :math:`a` 的变换只需要乘以一个 :math:`\mathscr{P}`, 而 :math:`\Lambda` 则两边都要乘以 :math:`\mathscr{P}`. 这本质上是由于 :math:`a` 是闵氏空间的矢量, 而 :math:`\Lambda` 是闵氏空间的张量, 它们的变换律不同. [定理2-55] 的变换规则蕴含了我们通常所说的 :math:`\mathsf{P}` 和 :math:`\mathsf{T}` 是守恒的. 也就是说, 如果认为 :math:`\mathsf{P}` 和 :math:`\mathsf{T}` 守恒, 那么 [定理2-55] 的关系就必须满足.
 
-这里关于这一点可以根据王正行书 P82 有更清晰的讨论. 按照 [定理24], 守恒量对应的算符与 :math:`H` 对易. 因此 :math:`\mathsf{P}` 和 :math:`\mathsf{T}` 是守恒也只需要看 :math:`\mathsf{P}` 和 :math:`\mathsf{T}` 是否和能量算符对易. 而如果承认 [定理55], 再加上后面 [定理57] 的证明中关于不能有负能量的态的讨论, 那么就会得到 [定理57] 的结论, 即 :math:`\mathsf{P}` 和 :math:`\mathsf{T}` 都和 :math:`H` 对易. 因此可以说, [定理55] 把 :math:`\mathsf{P}` 和 :math:`\mathsf{T}` 的守恒性压缩到只差一个正负号的程度. 而确定这个正负号则用到一个非常显然的物理事实 (不能有负能态), 所以认为 [定理55] 是确定 :math:`\mathsf{P}` 和 :math:`\mathsf{T}` 是否守恒的主要判据. 反过来, 当说 :math:`\mathsf{P}` 和 :math:`\mathsf{T}` 不守恒的时候, 并不是指这两个算符和能量算符反对易, 而是更深层次的无论取正负号都不成立的不守恒, 因此这时候必须修改 [定理55]. 因此说 [定理55] 成立与否是决定 :math:`\mathsf{P}` 和 :math:`\mathsf{T}` 是否守恒的关键. 另外注意, 具有空间反射不变性和宇称守恒是等价的 (这个需要证明). 而空间反射不变性的定义是, 如果系统在空间反射以后的态与原来的态都满足同样的物理定律 (在非相对论情况下就是薛定谔方程), 是同一个量子态, 则这个系统就具有 **空间反射不变性**.
+这里关于这一点可以根据王正行书 P82 有更清晰的讨论. 按照 [定理2-24], 守恒量对应的算符与 :math:`H` 对易. 因此 :math:`\mathsf{P}` 和 :math:`\mathsf{T}` 是守恒也只需要看 :math:`\mathsf{P}` 和 :math:`\mathsf{T}` 是否和能量算符对易. 而如果承认 [定理2-55], 再加上后面 [定理2-57] 的证明中关于不能有负能量的态的讨论, 那么就会得到 [定理2-57] 的结论, 即 :math:`\mathsf{P}` 和 :math:`\mathsf{T}` 都和 :math:`H` 对易. 因此可以说, [定理2-55] 把 :math:`\mathsf{P}` 和 :math:`\mathsf{T}` 的守恒性压缩到只差一个正负号的程度. 而确定这个正负号则用到一个非常显然的物理事实 (不能有负能态), 所以认为 [定理2-55] 是确定 :math:`\mathsf{P}` 和 :math:`\mathsf{T}` 是否守恒的主要判据. 反过来, 当说 :math:`\mathsf{P}` 和 :math:`\mathsf{T}` 不守恒的时候, 并不是指这两个算符和能量算符反对易, 而是更深层次的无论取正负号都不成立的不守恒, 因此这时候必须修改 [定理2-55]. 因此说 [定理2-55] 成立与否是决定 :math:`\mathsf{P}` 和 :math:`\mathsf{T}` 是否守恒的关键. 另外注意, 具有空间反射不变性和宇称守恒是等价的 (这个需要证明). 而空间反射不变性的定义是, 如果系统在空间反射以后的态与原来的态都满足同样的物理定律 (在非相对论情况下就是薛定谔方程), 是同一个量子态, 则这个系统就具有 **空间反射不变性**.
 
-一个系统是否具有空间反射不变性, 换句话说, 系统的宇称是否守恒, 取决于系统的动力学性质, 这要由实验来判定, 不能先验地论断. 在历史上, 是从原子能级跃迁的 Laporte 选择定则了解到原子系统的宇称是守恒量. 原子系统只涉及电子与原子核之间的电磁相互作用, 这表明电磁相互作用过程中宇称守恒. 后来发现, 在强相互作用过程中宇称也守恒, 但在弱相互作用过程中宇称并不守恒. 在 1956-57 年人们发现 :math:`\mathsf{P}` 守恒只在忽略弱相互作用 (比如产生原子核 :math:`\beta` 衰变的作用) 的近似下成立. 在 1964 年人们找到了间接证据证明 :math:`\mathsf{T}` 守恒的性质也只是近似成立 (见3.3节). 在下面的讨论, 我们假设满足 [定理55] 的算符 :math:`\mathsf{P}` 和 :math:`\mathsf{T}` 真的存在, 但是应该始终注意这只是一个近似.
+一个系统是否具有空间反射不变性, 换句话说, 系统的宇称是否守恒, 取决于系统的动力学性质, 这要由实验来判定, 不能先验地论断. 在历史上, 是从原子能级跃迁的 Laporte 选择定则了解到原子系统的宇称是守恒量. 原子系统只涉及电子与原子核之间的电磁相互作用, 这表明电磁相互作用过程中宇称守恒. 后来发现, 在强相互作用过程中宇称也守恒, 但在弱相互作用过程中宇称并不守恒. 在 1956-57 年人们发现 :math:`\mathsf{P}` 守恒只在忽略弱相互作用 (比如产生原子核 :math:`\beta` 衰变的作用) 的近似下成立. 在 1964 年人们找到了间接证据证明 :math:`\mathsf{T}` 守恒的性质也只是近似成立 (见3.3节). 在下面的讨论, 我们假设满足 [定理2-55] 的算符 :math:`\mathsf{P}` 和 :math:`\mathsf{T}` 真的存在, 但是应该始终注意这只是一个近似.
 
-[定理56] Poincaré 生成元在 :math:`\mathsf{P}` 和 :math:`\mathsf{T}` 变换下具有如下性质
+[定理2-56] Poincaré 生成元在 :math:`\mathsf{P}` 和 :math:`\mathsf{T}` 变换下具有如下性质
 
 .. math:: 
     \mathsf{P}\I J^{\rho\sigma} \mathsf{P}^{-1} =&\ \I \xtensor{\mathscr{P}}{_\mu}{^\rho}\xtensor{\mathscr{P}}{_\nu}{^\sigma} J^{\mu\nu} \\
@@ -98,7 +98,7 @@
     U(\mathscr{T}\Lambda \mathscr{T}^{-1}, \mathscr{T} a) =&\ U(1 + \mathscr{T}\omega \mathscr{T}^{-1}, \mathscr{T} \epsilon)
         = 1+ \frac{1}{2} \I (\mathscr{T} \omega \mathscr{T}^{-1})_{\rho\sigma} J^{\rho\sigma} - \I (\mathscr{T} \epsilon)_\rho P^\rho
 
-其中 (根据 [定理17], :math:`\xtensor{(\mathscr{P}^{-1})}{^\nu}{_\sigma} = \xtensor{\mathscr{P}}{_\sigma}{^\nu}`)
+其中 (根据 [定理2-17], :math:`\xtensor{(\mathscr{P}^{-1})}{^\nu}{_\sigma} = \xtensor{\mathscr{P}}{_\sigma}{^\nu}`)
 
 .. math:: 
     \xtensor{(\mathscr{P} \omega \mathscr{P}^{-1})}{^\rho}{_\sigma} =&\ \xtensor{\mathscr{P}}{^\rho}{_\mu}\xtensor{\omega}{^\mu}{_\nu} \xtensor{(\mathscr{P}^{-1})}{^\nu}{_\sigma} = \xtensor{\mathscr{P}}{^\rho}{_\mu}\xtensor{\omega}{^\mu}{_\nu} \xtensor{\mathscr{P}}{_\sigma}{^\nu}
@@ -139,9 +139,9 @@
 2 P/T 算符的线性性/反线性性
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-下面要确定 :math:`\mathsf{P}, \mathsf{T}` 算符的幺正线性性或反幺正反线性性. 根据 [定理4], 一个代表射线变换的算符, 要么是幺正线性的, 要么是反幺正反线性的.
+下面要确定 :math:`\mathsf{P}, \mathsf{T}` 算符的幺正线性性或反幺正反线性性. 根据 [定理2-4], 一个代表射线变换的算符, 要么是幺正线性的, 要么是反幺正反线性的.
 
-[引理57-1] 线性算符与 :math:`\I` 对易, 反线性算符与 :math:`\I` 反对易.
+[引理2-57-1] 线性算符与 :math:`\I` 对易, 反线性算符与 :math:`\I` 反对易.
 
 [证明] 对于希尔伯特空间线性算符 :math:`U`, 设 :math:`\phi` 为任意希尔伯特空间的矢量, 有
 
@@ -153,7 +153,7 @@
 .. math:: 
     U' (\I \phi) = (-\I) U' \phi \quad \Rightarrow \quad U' \I = -\I U' \quad \Rightarrow \quad \{ U, \I \} = 0
 
-[定理57] 空间反射 :math:`\mathsf{P}` 是幺正线性算符. 时间反演 :math:`\mathsf{T}` 是反幺正反线性算符.
+[定理2-57] 空间反射 :math:`\mathsf{P}` 是幺正线性算符. 时间反演 :math:`\mathsf{T}` 是反幺正反线性算符.
 
 [证明]
 
@@ -205,13 +205,13 @@
     \mathsf{T} J^{\rho\sigma} \mathsf{T}^{-1} =&\ - \xtensor{\mathscr{T}}{_\mu}{^\rho}\xtensor{\mathscr{T}}{_\nu}{^\sigma} J^{\mu\nu} \quad
     \mathsf{T} P^{\rho} \mathsf{T}^{-1} = - \xtensor{\mathscr{T}}{_\mu}{^\rho} P^{\mu}
 
-[定理58] 使用三维记号, 我们有
+[定理2-58] 使用三维记号, 我们有
 
 .. math:: 
     \mathsf{P} \bm{J} \mathsf{P}^{-1} =&\ +\bm{J}, \quad \mathsf{P} \bm{K} \mathsf{P}^{-1} =&\ -\bm{K}, \quad \mathsf{P} \bm{P} \mathsf{P}^{-1} =&\ -\bm{P} \\
     \mathsf{T} \bm{J} \mathsf{T}^{-1} =&\ -\bm{J}, \quad \mathsf{T} \bm{K} \mathsf{T}^{-1} =&\ +\bm{K}, \quad \mathsf{T} \bm{P} \mathsf{T}^{-1} =&\ -\bm{P}
 
-并且正如 [定理57] 中已经确认的
+并且正如 [定理2-57] 中已经确认的
 
 .. math:: 
     \mathsf{P} H \mathsf{P}^{-1} = \mathsf{T} H \mathsf{T}^{-1} = H
@@ -230,9 +230,9 @@
         = -(-1)\xtensor{\delta}{_l}{^k} J^{0l}  = J^{0k} \\
     \mathsf{T} P^{i} \mathsf{T}^{-1} =&\ -\xtensor{\mathscr{T}}{_j}{^i} P^{j} = -\xtensor{\delta}{_j}{^i} P^{j} = -P^i
     
-基于物理上的考虑, :math:`\mathsf{P}` 应该保持 :math:`\bm{J}` 的符号, 因为至少轨道角动量是两个矢量的矢量积 :math:`\bm{r} \times \bm{p}`, 其中 :math:`\bm{r}` 和 :math:`\bm{p}` 在空间坐标系做反射变换时都会改变符号, 因而它们的乘积 :math:`\bm{J}` 不应该改变符号. 另一方面, :math:`\mathsf{T}` 应该使 :math:`\bm{J}` 变号, 因为经过时间反演, 观察者将会看到所有物体以和原来相反的方向旋转 (考虑一个顺时针旋转的物体, 时间反演当然会变成逆时针. 而空间反射后, 仍然是顺时针的). 注意 [定理58] 中的 :math:`\mathsf{T} \bm{J} \mathsf{T}^{-1} = -\bm{J}` 和角动量对易关系 :math:`\bm{J} \times \bm{J} = \I \bm{J}` (注意这是 [定理25] 中第一式 :math:`[J_i, J_j] = \I \epsilon_{ijk}J_k` 的另一种写法. 但是当求矢量积的两个矢量不是同一个矢量的时候, 矢量积包含更少的信息, 因为它没有指出对两个矢量都取同一个分量的时候, 结果如何) 是一致的, 因为 :math:`\mathsf{T} \bm{J} \mathsf{T}^{-1} = -\bm{J}` 说明 :math:`\mathsf{T}` 改变 :math:`\bm{J}` 的符号, 但是 :math:`\mathsf{T}` 也改变 :math:`\I` 的符号, 因此 :math:`\bm{J} \times \bm{J} = \I \bm{J}` 左右两边经过时间反演变换, 都是两个符号改变的乘积, 从而总体符号都没有改变, 仍然相等.
+基于物理上的考虑, :math:`\mathsf{P}` 应该保持 :math:`\bm{J}` 的符号, 因为至少轨道角动量是两个矢量的矢量积 :math:`\bm{r} \times \bm{p}`, 其中 :math:`\bm{r}` 和 :math:`\bm{p}` 在空间坐标系做反射变换时都会改变符号, 因而它们的乘积 :math:`\bm{J}` 不应该改变符号. 另一方面, :math:`\mathsf{T}` 应该使 :math:`\bm{J}` 变号, 因为经过时间反演, 观察者将会看到所有物体以和原来相反的方向旋转 (考虑一个顺时针旋转的物体, 时间反演当然会变成逆时针. 而空间反射后, 仍然是顺时针的). 注意 [定理2-58] 中的 :math:`\mathsf{T} \bm{J} \mathsf{T}^{-1} = -\bm{J}` 和角动量对易关系 :math:`\bm{J} \times \bm{J} = \I \bm{J}` (注意这是 [定理2-25] 中第一式 :math:`[J_i, J_j] = \I \epsilon_{ijk}J_k` 的另一种写法. 但是当求矢量积的两个矢量不是同一个矢量的时候, 矢量积包含更少的信息, 因为它没有指出对两个矢量都取同一个分量的时候, 结果如何) 是一致的, 因为 :math:`\mathsf{T} \bm{J} \mathsf{T}^{-1} = -\bm{J}` 说明 :math:`\mathsf{T}` 改变 :math:`\bm{J}` 的符号, 但是 :math:`\mathsf{T}` 也改变 :math:`\I` 的符号, 因此 :math:`\bm{J} \times \bm{J} = \I \bm{J}` 左右两边经过时间反演变换, 都是两个符号改变的乘积, 从而总体符号都没有改变, 仍然相等.
 
-注意 [定理25] 中 :eq:`3d-poin-lie-algebra` 的各式可以写成矢量积形式
+注意 [定理2-25] 中 :eq:`3d-poin-lie-algebra` 的各式可以写成矢量积形式
 
 .. math:: 
     \bm{J} \times \bm{J} =&\ \I \bm{J},\quad \bm{K} \times \bm{K} = -\I \bm{J}, ,\quad \bm{J} \times \bm{K} = \I \bm{K}, \\
@@ -240,16 +240,16 @@
     [J_{\underline{i}}, K_{\underline{i}}] =&\ 0,\quad [J_{\underline{i}}, P_{\underline{i}}] = 0,\quad [K_{\underline{i}}, P_{\underline{i}}] = \I H, \\
     [\bm{K}, H] =&\ \I \bm{P}, \quad [\bm{J}, H] = [\bm{P}, H] = 0
 
-下面证明以上各式与 [定理58] 并不矛盾. 首先 :math:`\bm{J}` 在 :math:`\mathsf{T}` 变换下变号, 而 :math:`\mathsf{T}` 是反线性的, 因此 :math:`\bm{J} \times \bm{J} = \I \bm{J}` 在 :math:`\mathsf{T}` 变换下左右各有两个变号. :math:`\bm{J}` 在 :math:`\mathsf{P}` 变换下不变号, 而 :math:`\mathsf{P}` 是线性的, 因此 :math:`\bm{J} \times \bm{J} = \I \bm{J}` 在 :math:`\mathsf{P}` 变换下左右均不变号. 简单来说, 为考虑符号情况, 在 :math:`\bm{J} \times \bm{J} = \I \bm{J}` 左右两边消去 :math:`\bm{J}`, 得 :math:`\bm{J}` 在变换下的符号情况应该和 :math:`\I` 相同, 这对 :math:`\mathsf{T}` 和 :math:`\mathsf{P}` 都是符合的. 因此 :math:`\bm{J} \times \bm{K} = \I \bm{K}` 消去 :math:`\bm{K}` 后, 或者 :math:`\bm{J} \times \bm{P} = \I \bm{P}` 消去 :math:`\bm{P}` 后, 实质上也是 :math:`\bm{J}` 在变换下的符号情况和 :math:`\I` 相同. 对 :math:`\bm{K} \times \bm{K} = -\I \bm{J}`. 考虑 :math:`\bm{J}` 在 :math:`\mathsf{T}` 变换下变号, 因此 :math:`-\I \bm{J}` 在 :math:`\mathsf{T}` 变换下有两个变号, 等于没变. :math:`\bm{K}` 在 :math:`\mathsf{T}` 变换下不变号, 因此左右相等. 考虑 :math:`\bm{J}` 在 :math:`\mathsf{P}` 变换下不变号, 因此 :math:`-\I \bm{J}` 在 :math:`\mathsf{P}` 变换下不变号, 左边 :math:`\bm{K}` 在 :math:`\mathsf{P}` 变换下变号, 因此左边有两个符号改变, 右边不变号, 左右仍相等. 
+下面证明以上各式与 [定理2-58] 并不矛盾. 首先 :math:`\bm{J}` 在 :math:`\mathsf{T}` 变换下变号, 而 :math:`\mathsf{T}` 是反线性的, 因此 :math:`\bm{J} \times \bm{J} = \I \bm{J}` 在 :math:`\mathsf{T}` 变换下左右各有两个变号. :math:`\bm{J}` 在 :math:`\mathsf{P}` 变换下不变号, 而 :math:`\mathsf{P}` 是线性的, 因此 :math:`\bm{J} \times \bm{J} = \I \bm{J}` 在 :math:`\mathsf{P}` 变换下左右均不变号. 简单来说, 为考虑符号情况, 在 :math:`\bm{J} \times \bm{J} = \I \bm{J}` 左右两边消去 :math:`\bm{J}`, 得 :math:`\bm{J}` 在变换下的符号情况应该和 :math:`\I` 相同, 这对 :math:`\mathsf{T}` 和 :math:`\mathsf{P}` 都是符合的. 因此 :math:`\bm{J} \times \bm{K} = \I \bm{K}` 消去 :math:`\bm{K}` 后, 或者 :math:`\bm{J} \times \bm{P} = \I \bm{P}` 消去 :math:`\bm{P}` 后, 实质上也是 :math:`\bm{J}` 在变换下的符号情况和 :math:`\I` 相同. 对 :math:`\bm{K} \times \bm{K} = -\I \bm{J}`. 考虑 :math:`\bm{J}` 在 :math:`\mathsf{T}` 变换下变号, 因此 :math:`-\I \bm{J}` 在 :math:`\mathsf{T}` 变换下有两个变号, 等于没变. :math:`\bm{K}` 在 :math:`\mathsf{T}` 变换下不变号, 因此左右相等. 考虑 :math:`\bm{J}` 在 :math:`\mathsf{P}` 变换下不变号, 因此 :math:`-\I \bm{J}` 在 :math:`\mathsf{P}` 变换下不变号, 左边 :math:`\bm{K}` 在 :math:`\mathsf{P}` 变换下变号, 因此左边有两个符号改变, 右边不变号, 左右仍相等. 
 
-对于右边为零的情况一定满足, 无需讨论. 剩下 :math:`[\bm{K}, H] = \I \bm{P}` 和 :math:`[K_{\underline{i}}, P_{\underline{i}}] = \I H` 只是左右两边 :math:`\bm{P}` 和 :math:`H` 调换了位置, 因此只需讨论 :math:`[\bm{K}, H] = \I \bm{P}`. 由于 :math:`H` 一定不变号, 而 :math:`\mathsf{P}` 保持 :math:`\I` 不变而 :math:`\mathsf{T}` 改变 :math:`\I`, 因此只需证对于 :math:`\mathsf{P}`, :math:`\bm{K}` 和 :math:`\bm{P}` 变化相同, 而对于 :math:`\mathsf{T}`, :math:`\bm{K}` 和 :math:`\bm{P}` 变化相反. 这一点可从 [定理58] 证实. 因此所有这些对易关系都和 [定理58] 都是一致的.
+对于右边为零的情况一定满足, 无需讨论. 剩下 :math:`[\bm{K}, H] = \I \bm{P}` 和 :math:`[K_{\underline{i}}, P_{\underline{i}}] = \I H` 只是左右两边 :math:`\bm{P}` 和 :math:`H` 调换了位置, 因此只需讨论 :math:`[\bm{K}, H] = \I \bm{P}`. 由于 :math:`H` 一定不变号, 而 :math:`\mathsf{P}` 保持 :math:`\I` 不变而 :math:`\mathsf{T}` 改变 :math:`\I`, 因此只需证对于 :math:`\mathsf{P}`, :math:`\bm{K}` 和 :math:`\bm{P}` 变化相同, 而对于 :math:`\mathsf{T}`, :math:`\bm{K}` 和 :math:`\bm{P}` 变化相反. 这一点可从 [定理2-58] 证实. 因此所有这些对易关系都和 [定理2-58] 都是一致的.
 
 下面考虑 :math:`\mathsf{P}` 和 :math:`\mathsf{T}` 对单粒子态有怎样的作用.
 
 3 正质量单粒子态的空间反射
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-[定理59] 定义单粒子态 :math:`\psi_{k,\sigma}` 为分别具有本征值 :math:`0, M` 和 :math:`\sigma` 的 :math:`\bm{P}, H` 和 :math:`J_3` 的共同本征态. (注意这里没有标明指标 :math:`j`, 因为对正质量粒子我们认为具有不同 :math:`j` 的粒子是不同类型的粒子, 当我们只考虑一种类型的粒子时, 相当于 :math:`j` 已经固定, 因此不需要指明 :math:`j` 指标.) 由 [定理58], 对于 :math:`\mathsf{P} \psi_{k,\sigma}` 必然有同样的结论. 这是说, :math:`\mathsf{P} \psi_{k,\sigma}` 也是分别具有本征值 :math:`0, M` 和 :math:`\sigma` 的 :math:`\bm{P}, H` 和 :math:`J_3` 的共同本征态. 因此 (除了简并的情况) 这些态只能有一个相位的差别
+[定理2-59] 定义单粒子态 :math:`\psi_{k,\sigma}` 为分别具有本征值 :math:`0, M` 和 :math:`\sigma` 的 :math:`\bm{P}, H` 和 :math:`J_3` 的共同本征态. (注意这里没有标明指标 :math:`j`, 因为对正质量粒子我们认为具有不同 :math:`j` 的粒子是不同类型的粒子, 当我们只考虑一种类型的粒子时, 相当于 :math:`j` 已经固定, 因此不需要指明 :math:`j` 指标.) 由 [定理2-58], 对于 :math:`\mathsf{P} \psi_{k,\sigma}` 必然有同样的结论. 这是说, :math:`\mathsf{P} \psi_{k,\sigma}` 也是分别具有本征值 :math:`0, M` 和 :math:`\sigma` 的 :math:`\bm{P}, H` 和 :math:`J_3` 的共同本征态. 因此 (除了简并的情况) 这些态只能有一个相位的差别
 
 .. math:: 
     \mathsf{P} \psi_{k,\sigma} = \eta_{\underline{\sigma}} \psi_{k, \underline{\sigma}}
@@ -268,9 +268,9 @@
 
 这说明 :math:`\mathsf{P} \psi_{k,\sigma}` 是 :math:`\bm{P}` 具有本征值 :math:`0` 的本征态.
 
-下面考虑 [定理59] 中的因子 :math:`\eta_\sigma`. 注意 :math:`\mathsf{P}` 是幺正算符, 它不可能改变态矢的长度. 而 :math:`\mathsf{P} \psi_{k,\sigma}` 既然表示同一物理态, 它们属于同一射线. 由 [引理0-1], 它们之间只能有一个相位的差别. 因此 :math:`\eta_{k, \sigma}` 只是一个相因子, 即 :math:`|\eta| = 1`. 它可能依赖于自旋也可能不依赖于自旋, 也不清楚它是否依赖于 :math:`k`. Weinberg 书里面没有提及 :math:`k` 的依赖性, 并且在 :math:`\eta` 中没有下标 :math:`k`. 实际上, :math:`\eta` 是依赖于 :math:`k` 的, 但由于 :math:`k` 表示粒子类型, :math:`k` 表示 :math:`p` 中无法被洛伦兹变换改变的那一部分, 按照之前的讨论, 这种量就应该被用来区分粒子类型. 所以不同的粒子类型当然可以具有不同的 :math:`\eta`, 而一种粒子类型只能有一种标准动量 :math:`k`, 因此对标准动量 :math:`k` 的依赖性也就是对粒子类型的依赖性, 无需提及 (进一步因为我们的讨论中隐含了角动量量子数 :math:`j` 作为参数, 因此它也隐含依赖于角动量 :math:`j`, 但是角动量 :math:`j` 也被用来区分粒子类型了).
+下面考虑 [定理2-59] 中的因子 :math:`\eta_\sigma`. 注意 :math:`\mathsf{P}` 是幺正算符, 它不可能改变态矢的长度. 而 :math:`\mathsf{P} \psi_{k,\sigma}` 既然表示同一物理态, 它们属于同一射线. 由 [引理2-0-1], 它们之间只能有一个相位的差别. 因此 :math:`\eta_{k, \sigma}` 只是一个相因子, 即 :math:`|\eta| = 1`. 它可能依赖于自旋也可能不依赖于自旋, 也不清楚它是否依赖于 :math:`k`. Weinberg 书里面没有提及 :math:`k` 的依赖性, 并且在 :math:`\eta` 中没有下标 :math:`k`. 实际上, :math:`\eta` 是依赖于 :math:`k` 的, 但由于 :math:`k` 表示粒子类型, :math:`k` 表示 :math:`p` 中无法被洛伦兹变换改变的那一部分, 按照之前的讨论, 这种量就应该被用来区分粒子类型. 所以不同的粒子类型当然可以具有不同的 :math:`\eta`, 而一种粒子类型只能有一种标准动量 :math:`k`, 因此对标准动量 :math:`k` 的依赖性也就是对粒子类型的依赖性, 无需提及 (进一步因为我们的讨论中隐含了角动量量子数 :math:`j` 作为参数, 因此它也隐含依赖于角动量 :math:`j`, 但是角动量 :math:`j` 也被用来区分粒子类型了).
 
-[定理60]  相因子 :math:`\eta_\sigma` 不依赖于 :math:`\sigma`, 即
+[定理2-60]  相因子 :math:`\eta_\sigma` 不依赖于 :math:`\sigma`, 即
 
 .. math:: 
     \mathsf{P} \psi_{k,\sigma} = \eta \psi_{k, \sigma}
@@ -308,13 +308,13 @@
     \psi_{p,\sigma} = N(p) U(L(p)) \psi_{k,\sigma} = \sqrt{k^0 / p^0} U(L(p)) \psi_{k,\sigma} = \sqrt{M / p^0} U(L(p)) \psi_{k,\sigma}
     :label: psi-ps-ks
 
-[定理61] 空间反射坐标变换 :math:`\mathscr{P}` 对于 :math:`L(p)` 和 :math:`p` 的作用为
+[定理2-61] 空间反射坐标变换 :math:`\mathscr{P}` 对于 :math:`L(p)` 和 :math:`p` 的作用为
 
 .. math:: 
     \mathscr{P} L(p) \mathscr{P}^{-1} =&\ L(\mathscr{P} p) \\
     \mathscr{P} p = \mathscr{P} \left(\sqrt{\bm{p}^2 + M^2}, \bm{p}\right) =&\ \left(\sqrt{\bm{p}^2 + M^2}, -\bm{p}\right)
 
-[证明] 利用 [定理37] 证明的最后一段可知 :math:`p = (\sqrt{\bm{p}^2 + M^2}, \bm{p})`. 对于第二式的证明, 根据 :math:`\mathscr{P}` 的定义, 即 :eq:`pt-def` 可知, :math:`\mathscr{P}` 的作用将空间分量变号, 而保持时间分量不变. 因此
+[证明] 利用 [定理2-37] 证明的最后一段可知 :math:`p = (\sqrt{\bm{p}^2 + M^2}, \bm{p})`. 对于第二式的证明, 根据 :math:`\mathscr{P}` 的定义, 即 :eq:`pt-def` 可知, :math:`\mathscr{P}` 的作用将空间分量变号, 而保持时间分量不变. 因此
 
 .. math:: 
     \mathscr{P} \left(\sqrt{\bm{p}^2 + M^2}, \bm{p}\right) = \left(\sqrt{\bm{p}^2 + M^2}, -\bm{p}\right)
@@ -357,7 +357,7 @@
 
 于是第一式成立.
 
-[定理62] 宇称算符 :math:`\mathsf{P}` 对态 :math:`\psi_{p, \sigma}` 的作用为
+[定理2-62] 宇称算符 :math:`\mathsf{P}` 对态 :math:`\psi_{p, \sigma}` 的作用为
 
 .. math:: 
     \mathsf{P} \psi_{p,\sigma} = \sqrt{M / p^0} U(L(\mathscr{P}p))\eta \psi_{k, \sigma}
@@ -378,7 +378,7 @@
     \mathsf{P} U(L(p)) = U(\mathscr{P} L(p) \mathscr{P}^{-1}) \mathsf{P}
     :label: pulp-exchange
 
-再利用 :eq:`psi-ps-ks` 和 [定理60] 得
+再利用 :eq:`psi-ps-ks` 和 [定理2-60] 得
 
 .. math:: 
     \mathsf{P} \psi_{p,\sigma} =&\ \mathsf{P} \sqrt{M / p^0} U(L(p)) \psi_{k,\sigma} = \sqrt{M / p^0} \mathsf{P} U(L(p)) \psi_{k,\sigma}\\
@@ -386,7 +386,7 @@
         =&\ \sqrt{M / p^0} U(\mathscr{P} L(p) \mathscr{P}^{-1}) \eta \psi_{k,\sigma} \\
         =&\ \sqrt{M / p^0} U(L(\mathscr{P} p)) \eta \psi_{k,\sigma}
 
-其中第一步是利用 :eq:`psi-ps-ks`, 第二步是因为 :math:`\mathsf{P}` 是线性算符, 对于实数因子 :math:`\mathsf{P}` 不会做任何改变, 即便这个因子含有 :math:`\bm{p}` 也不会做任何改变. 第三步是利用 :eq:`pulp-exchange`, 第四步是利用 [定理60], 最后一步是利用 [定理61].
+其中第一步是利用 :eq:`psi-ps-ks`, 第二步是因为 :math:`\mathsf{P}` 是线性算符, 对于实数因子 :math:`\mathsf{P}` 不会做任何改变, 即便这个因子含有 :math:`\bm{p}` 也不会做任何改变. 第三步是利用 :eq:`pulp-exchange`, 第四步是利用 [定理2-60], 最后一步是利用 [定理2-61].
 
 为证明第二式, 考虑按照 :eq:`psi-ps-ks` 有
 
@@ -401,7 +401,7 @@
 4 正质量单粒子态的时间反演
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-利用 [定理58] 中的 :math:`\mathsf{T} \bm{J} \mathsf{T}^{-1} = -\bm{J}, \quad \mathsf{T} \bm{P} \mathsf{T}^{-1} = -\bm{P}, \quad \mathsf{T} H \mathsf{T}^{-1} = H`, 我们发现 :math:`\mathsf{T}` 对零动量单粒子态 :math:`\psi_{k,\sigma}` 作用得到的态 :math:`\mathsf{T}\psi_{k,\sigma}` 满足如下条件
+利用 [定理2-58] 中的 :math:`\mathsf{T} \bm{J} \mathsf{T}^{-1} = -\bm{J}, \quad \mathsf{T} \bm{P} \mathsf{T}^{-1} = -\bm{P}, \quad \mathsf{T} H \mathsf{T}^{-1} = H`, 我们发现 :math:`\mathsf{T}` 对零动量单粒子态 :math:`\psi_{k,\sigma}` 作用得到的态 :math:`\mathsf{T}\psi_{k,\sigma}` 满足如下条件
 
 .. math:: 
     \bm{P} (\mathsf{T} \psi_{k,\sigma} ) =&\ 0 \\
@@ -415,7 +415,7 @@
 
 其中 :math:`\zeta_\sigma` 是一个相因子.
 
-[定理63] 相因子可以写为 :math:`\zeta_\sigma = \zeta(-)^{j-\sigma}`, 其中 :math:`\zeta` 是另一个相因子, 这个相因子只依赖于粒子类型
+[定理2-63] 相因子可以写为 :math:`\zeta_\sigma = \zeta(-)^{j-\sigma}`, 其中 :math:`\zeta` 是另一个相因子, 这个相因子只依赖于粒子类型
 
 .. math:: 
     \mathsf{T} \psi_{k,\sigma} = \zeta (-)^{j-\sigma} \psi_{k, -\sigma}
@@ -468,15 +468,15 @@
 
 为了得到有限动量的态, 我们还是考虑应用 :eq:`mass-zero-lp` 定义的 "标准推进".
 
-[定理64] 时间反演坐标变换 :math:`\mathscr{T}` 对于 :math:`L(p)` 的作用为
+[定理2-64] 时间反演坐标变换 :math:`\mathscr{T}` 对于 :math:`L(p)` 的作用为
 
 .. math:: 
     \mathscr{T} L(p) \mathscr{T}^{-1} =&\ L(\mathscr{P} p) \\
     \mathscr{P} p =&\ \left(\sqrt{\bm{p}^2 + M^2}, -\bm{p}\right)
 
-[证明] 其中第二式和 [定理61] 的一样, 因此无需证明. 第一式其实是说 :math:`\mathscr{T} L(p) \mathscr{T}^{-1} = \mathscr{T} L(p) \mathscr{T}` 和 :math:`\mathscr{P} L(p) \mathscr{P}` 的结果一样. 这是显然的. 因为左边的 :math:`\mathscr{T}` 的作用是当 :math:`L(p)` 矩阵行指标为时间分量时变号. 右边的 :math:`\mathscr{T}` 的作用是当 :math:`L(p)` 矩阵列指标为时间分量时变号. 注意如果行列指标都为时间分量, 那么相当于没有变号. 因此, :math:`\mathscr{T} L(p) \mathscr{T}^{-1}` 对 :math:`L(p)` 的作用相当于将 :math:`L(p)` 的矩阵元若行列两个指标中有奇数个为时间指标, 那么将这个矩阵元变号. 而类似地, :math:`\mathscr{P} L(p) \mathscr{P}^{-1}` 对 :math:`L(p)` 的作用相当于将 :math:`L(p)` 的矩阵元若行列两个指标中有奇数个为空间指标, 那么将这个矩阵元变号. 实际上, 因为一共有两个指标, 当有奇数个 (1个) 时间指标的时候, 必然也有奇数个 (1个) 空间指标. 因此两个条件是等价的. 从而 :math:`\mathscr{T} L(p) \mathscr{T}^{-1} = \mathscr{P} L(p) \mathscr{P}^{-1} = L(\mathscr{P} p)`.
+[证明] 其中第二式和 [定理2-61] 的一样, 因此无需证明. 第一式其实是说 :math:`\mathscr{T} L(p) \mathscr{T}^{-1} = \mathscr{T} L(p) \mathscr{T}` 和 :math:`\mathscr{P} L(p) \mathscr{P}` 的结果一样. 这是显然的. 因为左边的 :math:`\mathscr{T}` 的作用是当 :math:`L(p)` 矩阵行指标为时间分量时变号. 右边的 :math:`\mathscr{T}` 的作用是当 :math:`L(p)` 矩阵列指标为时间分量时变号. 注意如果行列指标都为时间分量, 那么相当于没有变号. 因此, :math:`\mathscr{T} L(p) \mathscr{T}^{-1}` 对 :math:`L(p)` 的作用相当于将 :math:`L(p)` 的矩阵元若行列两个指标中有奇数个为时间指标, 那么将这个矩阵元变号. 而类似地, :math:`\mathscr{P} L(p) \mathscr{P}^{-1}` 对 :math:`L(p)` 的作用相当于将 :math:`L(p)` 的矩阵元若行列两个指标中有奇数个为空间指标, 那么将这个矩阵元变号. 实际上, 因为一共有两个指标, 当有奇数个 (1个) 时间指标的时候, 必然也有奇数个 (1个) 空间指标. 因此两个条件是等价的. 从而 :math:`\mathscr{T} L(p) \mathscr{T}^{-1} = \mathscr{P} L(p) \mathscr{P}^{-1} = L(\mathscr{P} p)`.
 
-[定理65] 时间反演算符 :math:`\mathsf{T}` 对态 :math:`\psi_{p, \sigma}` 的作用为
+[定理2-65] 时间反演算符 :math:`\mathsf{T}` 对态 :math:`\psi_{p, \sigma}` 的作用为
 
 .. math:: 
     \mathsf{T} \psi_{p,\sigma} = \sqrt{M / p^0} U(L(\mathscr{P}p))\zeta(-)^{j-\sigma} \psi_{k, -\sigma}
@@ -497,7 +497,7 @@
     \mathsf{T} U(L(p)) = U(\mathscr{T} L(p) \mathscr{T}^{-1}) \mathsf{T}
     :label: tulp-exchange
 
-再利用 :eq:`psi-ps-ks` 和 [定理63] 得
+再利用 :eq:`psi-ps-ks` 和 [定理2-63] 得
 
 .. math:: 
     \mathsf{T} \psi_{p,\sigma} =&\ \mathsf{T} \sqrt{M / p^0} U(L(p)) \psi_{k,\sigma} = \sqrt{M / p^0} \mathsf{T} U(L(p)) \psi_{k,\sigma}\\
@@ -505,7 +505,7 @@
         =&\ \sqrt{M / p^0} U(\mathscr{T} L(p) \mathscr{T}^{-1}) \zeta(-)^{j-\sigma} \psi_{k,-\sigma} \\
         =&\ \sqrt{M / p^0} U(L(\mathscr{P} p)) \zeta(-)^{j-\sigma} \psi_{k,-\sigma}
 
-其中第一步是利用 :eq:`psi-ps-ks`, 第二步是因为 :math:`\mathsf{T}` 是反线性算符, 对于实数因子 :math:`\mathsf{P}` 不会做任何改变, 即便这个因子含有 :math:`\bm{p}` 也不会做任何改变. 第三步是利用 :eq:`tulp-exchange`, 第四步是利用 [定理63], 最后一步是利用 [定理64].
+其中第一步是利用 :eq:`psi-ps-ks`, 第二步是因为 :math:`\mathsf{T}` 是反线性算符, 对于实数因子 :math:`\mathsf{P}` 不会做任何改变, 即便这个因子含有 :math:`\bm{p}` 也不会做任何改变. 第三步是利用 :eq:`tulp-exchange`, 第四步是利用 [定理2-63], 最后一步是利用 [定理2-64].
 
 为证明第二式, 考虑按照 :eq:`psi-ps-ks` 有
 
@@ -521,23 +521,23 @@
 5 零质量单粒子态的空间反射
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-考虑一个物理态 :math:`\psi_{k,\sigma}`, 它同时是具有本征值 :math:`k^\mu = (\kappa, 0,0,\kappa)` 的 :math:`P^\mu` 的本征态和具有本征值 :math:`\sigma` 的 :math:`J^3` 的本征态. 用宇称算符 :math:`\mathsf{P}` 作用于这个态, 得到一个具有四动量 :math:`(\mathscr{P}k)^\mu = (\kappa, 0,0,-\kappa)` 和 :math:`J_3` 等于 :math:`\sigma` 的态 (参考 [定理59], 注意 :math:`\mathsf{P}\bm{P}\mathsf{P}^{-1} = -\bm{P}` 导致 :math:`\bm{k}` 变为 :math:`-\bm{k}`, 而时间分量 :math:`k^0` 不变. 因此这相当于 :math:`k \to \mathscr{P}k`). 因此它把一个具有螺旋度 (自旋沿运动方向的分量) :math:`\sigma` 的态变为了具有螺旋度 :math:`-\sigma` 的态 (这里其实 :math:`\sigma` 没变, 但是运动方向改变了符号, 因此螺旋度既然是自旋在运动方向的投影, 它就改变了, 这是按照统一的坐标系来看的. 这实际上反映了 :math:`L(p)` 中对 :math:`\sigma` 表象选择的 :math:`p` 依赖性. 如果各选各的坐标系, 都以自己的运动方向为第三轴, 那么就会发现螺旋度没变, 然而实际上这里坐标系不一样). 正如之前提到的, 这表明, 由于存在空间反射对称性, 任何种类的零质量粒子, 若具有非零螺旋度, 必须导致存在相反螺旋度的粒子. 因为 :math:`\mathsf{P}` 并不维持标准动量不变, 为方便起见我们可以考虑算符 :math:`U(R^{-1}_2)\mathsf{P}`, 其中 :math:`R_2` 是一个把 :math:`k` 变到 :math:`\mathscr{P}k` 的旋转, 这可以方便地取为绕第二轴的 :math:`-180^\circ` 旋转 (参照 [定理28], 一般的旋转指数是正号)
+考虑一个物理态 :math:`\psi_{k,\sigma}`, 它同时是具有本征值 :math:`k^\mu = (\kappa, 0,0,\kappa)` 的 :math:`P^\mu` 的本征态和具有本征值 :math:`\sigma` 的 :math:`J^3` 的本征态. 用宇称算符 :math:`\mathsf{P}` 作用于这个态, 得到一个具有四动量 :math:`(\mathscr{P}k)^\mu = (\kappa, 0,0,-\kappa)` 和 :math:`J_3` 等于 :math:`\sigma` 的态 (参考 [定理2-59], 注意 :math:`\mathsf{P}\bm{P}\mathsf{P}^{-1} = -\bm{P}` 导致 :math:`\bm{k}` 变为 :math:`-\bm{k}`, 而时间分量 :math:`k^0` 不变. 因此这相当于 :math:`k \to \mathscr{P}k`). 因此它把一个具有螺旋度 (自旋沿运动方向的分量) :math:`\sigma` 的态变为了具有螺旋度 :math:`-\sigma` 的态 (这里其实 :math:`\sigma` 没变, 但是运动方向改变了符号, 因此螺旋度既然是自旋在运动方向的投影, 它就改变了, 这是按照统一的坐标系来看的. 这实际上反映了 :math:`L(p)` 中对 :math:`\sigma` 表象选择的 :math:`p` 依赖性. 如果各选各的坐标系, 都以自己的运动方向为第三轴, 那么就会发现螺旋度没变, 然而实际上这里坐标系不一样). 正如之前提到的, 这表明, 由于存在空间反射对称性, 任何种类的零质量粒子, 若具有非零螺旋度, 必须导致存在相反螺旋度的粒子. 因为 :math:`\mathsf{P}` 并不维持标准动量不变, 为方便起见我们可以考虑算符 :math:`U(R^{-1}_2)\mathsf{P}`, 其中 :math:`R_2` 是一个把 :math:`k` 变到 :math:`\mathscr{P}k` 的旋转, 这可以方便地取为绕第二轴的 :math:`180^\circ` 旋转 (参照 [定理2-28], 一般的旋转指数是正号. 1995 年旧版这里定义为 :math:`180^\circ` 的旋转, 会带来一些符号问题)
 
 .. math:: 
-    U(R_2) = \exp(-\I \pi J_2)
+    U(R_2) = \exp(\I \pi J_2)
     :label: ur2-def
 
-[定理66] :math:`U(R_2^{-1}) = U(R_2)` 对 :math:`J_3` 的作用是使之变号. 对 :math:`P^\mu` 作用是使其奇数分量变号. 即
+[定理2-66] :math:`U(R_2^{-1}) = U(R_2)` 对 :math:`J_3` 的作用是使之变号. 对 :math:`P^\mu` 作用是使其奇数分量变号. 即
 
 .. math:: 
     U(R_2) J_3 U^{-1}(R_2) =&\ -J_3 \\
     U(R_2) P^\mu U^{-1}(R_2) =&\ (-)^{\underline{\mu}} P^{\underline{\mu}}
 
-[证明] 首先, 我们尝试构造 :math:`R_2`. 按照转动矩阵的一般写法 (参考 [定理28] 的证明部分), 我们有
+[证明] 首先, 我们尝试构造 :math:`R_2`. 按照转动矩阵的一般写法 (参考 [定理2-28] 的证明部分), 我们有
 
 .. math:: 
-    \hat{R}_2(\theta = -\pi) = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix} = 
-        \begin{pmatrix} \cos(-\pi) & -\sin(-\pi) \\ \sin(-\pi) & \cos(-\pi) \end{pmatrix} = \begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix}
+    \hat{R}_2(\theta = -\pi) = \begin{pmatrix} \cos\theta & \sin\theta \\ -\sin\theta & \cos\theta \end{pmatrix} = 
+        \begin{pmatrix} \cos(-\pi) & \sin(-\pi) \\ -\sin(-\pi) & \cos(-\pi) \end{pmatrix} = \begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix}
     
 写成4维矩阵就是
 
@@ -545,7 +545,7 @@
     R_2 = \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & -1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & -1 \end{pmatrix}
     :label: r2-matrix
 
-不难看出 :math:`R_2^{-1} = R_2`, 因此 :math:`U(R_2^{-1}) = U(R_2) = U^{-1}(R_2)` ([定理18]). 根据 :eq:`jp-lambda-trans` 第一式, 即
+不难看出 :math:`R_2^{-1} = R_2`, 因此 :math:`U(R_2^{-1}) = U(R_2) = U^{-1}(R_2)` ([定理2-18]). 根据 :eq:`jp-lambda-trans` 第一式, 即
 
 .. math:: 
     U(\Lambda)J^{\rho\sigma}U^{-1}(\Lambda) = \xtensor{\Lambda}{_\mu}{^\rho}\xtensor{\Lambda}{_\nu}{^\sigma} J^{\mu\nu}
@@ -567,7 +567,7 @@
     U(R_2) P^\rho U^{-1}(R_2) =&\ \xtensor{(R_2)}{_\mu}{^\rho} P^{\mu} = \xtensor{\delta}{_{\underline{\mu}}}{^\rho} (-)^{\underline{\mu}} P^{\mu}
         = (-)^{\underline{\rho}} P^{\underline{\rho}}
 
-[定理67] :math:`U(R_2^{-1}) \mathsf{P}` 对态 :math:`\psi_{k,\sigma}` 的作用为
+[定理2-67] :math:`U(R_2^{-1}) \mathsf{P}` 对态 :math:`\psi_{k,\sigma}` 的作用为
 
 .. math:: 
     U(R_2^{-1}) \mathsf{P}\psi_{k,\sigma} = \eta_{\sigma} \psi_{k, -\sigma}
@@ -600,7 +600,7 @@
 .. math:: 
     U(R_2^{-1}) \mathsf{P}\psi_{k,\sigma} = \eta_{\sigma} \psi_{k, -\sigma}
 
-[定理68] (A) :math:`R_2^{-1}\mathscr{P}` 和洛伦兹 "推进" :eq:`bu-mass-zero` 对易. (B) :math:`\mathscr{P}` 与旋转 :math:`R(\hat{\bm{p}})` 对易, 其中 :math:`R(\hat{\bm{p}})` 把第三轴的方向转到 :math:`\bm{p}` 的方向.
+[定理2-68] (A) :math:`R_2^{-1}\mathscr{P}` 和洛伦兹 "推进" :eq:`bu-mass-zero` 对易. (B) :math:`\mathscr{P}` 与旋转 :math:`R(\hat{\bm{p}})` 对易, 其中 :math:`R(\hat{\bm{p}})` 把第三轴的方向转到 :math:`\bm{p}` 的方向.
 
 [证明] 先考虑一个对角元分别为 :math:`x_1, x_2, \cdots` 的对角矩阵对一个普通矩阵从左边或从右边作用的结果. 对角矩阵可以表示为 :math:`x^{\underline{\mu}}\xtensor{\delta}{^{\underline{\mu}}}{_\nu}`, 一般矩阵记为 :math:`\xtensor{A}{^\mu}{_\nu}`. 分别记从左边作用和从右边作用的结果为 :math:`\xtensor{L}{^\mu}{_\nu}` 和 :math:`\xtensor{R}{^\mu}{_\nu}`.
 
@@ -641,7 +641,7 @@
     
     因此 :math:`R(\hat{\bm{p}})` 和 :math:`\mathscr{P}` 对易.
 
-由 :eq:`psi-pk-def`, :eq:`np-def` 及 [定理54] 我们有
+由 :eq:`psi-pk-def`, :eq:`np-def` 及 [定理2-54] 我们有
 
 .. math:: 
     \psi_{p, \sigma} = N(p) U(L(p)) \psi_{k, \sigma} = \sqrt{\kappa / p^0} U\big( R(\hat{\bm{p}}) B(|\bm{p}|/\kappa) \big) \psi_{k, \sigma}
@@ -661,33 +661,33 @@
         = \sqrt{\kappa / p^0} \eta_\sigma U\big( R(\hat{\bm{p}}) R_2 B(|\bm{p}|/\kappa) \big)  \psi_{k,-\sigma}
     :label: p-psi-p-sigma-k
 
-其中第一步是利用了上面 :math:`\psi_{p, \sigma}` 的展开式. 第二步是因为 :math:`\mathsf{P}` 是线性算符. 第三步是利用 :math:`\mathsf{P}` 的定义, 以及 :math:`U(\Lambda)` 是 :math:`\Lambda` 的普通表示以及群乘积规则. 第四步是利用 [定理68] (B). 第五步是因为 :math:`R_2 R_2^{-1} = 1`. 第六步是利用 [定理68] (A). 第七步是利用 :math:`U(\Lambda)` 是 :math:`\Lambda` 的普通表示以及群乘积规则. 第八步是利用群乘积规则以及 :math:`\mathsf{P}` 的定义. 第九步是利用 [定理67].
+其中第一步是利用了上面 :math:`\psi_{p, \sigma}` 的展开式. 第二步是因为 :math:`\mathsf{P}` 是线性算符. 第三步是利用 :math:`\mathsf{P}` 的定义, 以及 :math:`U(\Lambda)` 是 :math:`\Lambda` 的普通表示以及群乘积规则. 第四步是利用 [定理2-68] (B). 第五步是因为 :math:`R_2 R_2^{-1} = 1`. 第六步是利用 [定理2-68] (A). 第七步是利用 :math:`U(\Lambda)` 是 :math:`\Lambda` 的普通表示以及群乘积规则. 第八步是利用群乘积规则以及 :math:`\mathsf{P}` 的定义. 第九步是利用 [定理2-67].
 
-[引理69-1] 绕第三轴的 :math:`\pm 180^\circ` 的旋转, 改变 :math:`J_2` 的符号. 即
+[引理2-69-1] 绕第三轴的 :math:`\pm 180^\circ` 的旋转, 改变 :math:`J_2` 的符号. 即
 
 .. math:: 
     \exp(\pm \I \pi J_3) J_2 \exp(\mp \I \pi J_3) = -J_2
 
-[证明] 由于第二轴和第三轴的对称性, 根据类似 [定理66] 的方法可以证明. 注意 :math:`U(R_3) = \exp(-\I \pi J_3)`.
+[证明] 由于第二轴和第三轴的对称性, 根据类似 [定理2-66] 的方法可以证明. 注意 :math:`U(R_3) = \exp(\I \pi J_3)`.
 
-[定理69] 空间反射算符 :math:`\mathsf{P}` 对态 :math:`\psi_{p,\sigma}` 的作用为
-
-.. math:: 
-    \mathsf{P}\psi_{p,\sigma} = \eta_\sigma \exp(\pm \I \pi \sigma) \psi_{\mathscr{P}p,-\sigma}
-
-其中相位取 :math:`+\pi\sigma` 还是 :math:`-\pi\sigma` 取决于 :math:`\bm{p}` 的第二分量是正还是负.
-
-注意 Weinberg 结论为
+[定理2-69] 空间反射算符 :math:`\mathsf{P}` 对态 :math:`\psi_{p,\sigma}` 的作用为
 
 .. math:: 
     \mathsf{P}\psi_{p,\sigma} = \eta_\sigma \exp(\mp \I \pi \sigma) \psi_{\mathscr{P}p,-\sigma}
 
 其中相位取 :math:`-\pi\sigma` 还是 :math:`+\pi\sigma` 取决于 :math:`\bm{p}` 的第二分量是正还是负.
 
+注意 Weinberg (1995年版) 结论为
+
+.. math:: 
+    \mathsf{P}\psi_{p,\sigma} = \eta_\sigma \exp(\pm \I \pi \sigma) \psi_{\mathscr{P}p,-\sigma}
+
+其中相位取 :math:`+\pi\sigma` 还是 :math:`-\pi\sigma` 取决于 :math:`\bm{p}` 的第二分量是正还是负. 这里的符号是错误的. 采用修正版的结论.
+
 [证明] 注意 :math:`R(\hat{\bm{p}})R_2` 是一个旋转, 它把第三轴转到 :math:`-\hat{\bm{p}}` 的方向. 但是 :math:`U(R(\hat{\bm{p}})R_2)` 并不等于 :math:`U(R(-\hat{\bm{p}}))`. 首先, 我们考虑 :math:`R(\hat{\bm{p}})R_2` 对第三轴的作用. :math:`R_2` 首先把第三轴转到它相反的方向. 而 :math:`R(\hat{\bm{p}})` 是把第三轴的方向转到 :math:`\hat{\bm{p}}`. 那么由于 :math:`R_2` 作用后的第三轴已经是它相反的方向, 所以整个作用相当于把第三轴的相反方向转到 :math:`\hat{\bm{p}}`. 也就是说, :math:`R(\hat{\bm{p}})R_2` 的作用是把第三轴转到 :math:`-\hat{\bm{p}}` 的方向. 注意这里两个旋转是完全等价的, 都是旋转, 规定了指向的起点和终点不存在两种转法. 但是 :math:`U(R(\hat{\bm{p}}))` 的表达式是越过了 :math:`R` 直接以 :math:`\hat{\bm{p}}` 的参数来表示, 所以 :math:`U` 的结果会有不同. 具体来说, :math:`-\bm{p}` 可以看作对 :math:`\bm{p}` 的空间反射变换. 这个空间反射变换的行列式一定是 :math:`-1`, 这和旋转变换是本质不同的. 由于 :math:`U(R)` 的表达式直接以 :math:`\bm{p}` 的参数 :math:`\theta, \phi` 做参数, 它可以直接反映这个空间反射. 而 :math:`R(\bm{p})` 是无法表示空间反射的, 因为旋转变换的行列式必须是 :math:`1`. 具体来看, 根据 :eq:`urp-def` 即
 
 .. math:: 
-    U(R(\hat{\bm{p}})) =&\ \exp(\I \phi J_3) \exp(\I \theta J_2), \\
+    U(R(\hat{\bm{p}})) =&\ \exp(-\I \phi J_3) \exp(-\I \theta J_2), \\
     \hat{\bm{p}} =&\ (\sin\theta \cos\phi, \sin\theta \sin\phi, \cos\theta)
 
 我们有
@@ -696,7 +696,7 @@
     -\hat{\bm{p}} =&\ (-\sin\theta \cos\phi, -\sin\theta \sin\phi, -\cos\theta) \\
         =&\ (-\sin(\pi - \theta) \cos\phi, -\sin(\pi - \theta) \sin\phi, \cos(\pi - \theta)) \\
         =&\ (\sin(\pi - \theta) \cos(\phi \pm \pi), \sin(\pi - \theta) \sin(\phi \pm \pi), \cos(\pi - \theta)) \\
-    U(R(-\hat{\bm{p}})) =&\ \exp\big(\I (\phi \pm \pi) J_3\big) \exp\big(\I (\pi - \theta) J_2\big)
+    U(R(-\hat{\bm{p}})) =&\ \exp\big(-\I (\phi \pm \pi) J_3\big) \exp\big(-\I (\pi - \theta) J_2\big)
 
 其中, 关键是考虑到 :math:`\hat{\bm{p}}` 的符号改变对应的 :math:`\phi,\theta` 的变化. 首先 :math:`\cos\theta` 变为 :math:`-\cos\theta`, 注意到 :math:`\theta` 取值为 :math:`0 \sim \pi`, 因此 :math:`\theta` 应该变为 :math:`\pi - \theta`. 而这个改变并不改变 :math:`\sin\theta` 的符号. 然后考虑 :math:`\phi`, 对于 :math:`\phi`, :math:`\sin\phi` 和 :math:`\cos\phi` 必须都改变符号. 这意味着 :math:`\phi` 应该变为 :math:`\phi \pm \pi`. 为了限制 :math:`\phi` 的取值范围为 :math:`0 \sim 2\pi`, 如果 :math:`\phi > \pi`, 即 :math:`\sin\phi < 0`, 由于 :math:`\theta \in [0, \pi)`, :math:`\sin\theta` 一定大于零, 那么 :math:`\phi > \pi` 意味着 :math:`\hat{\bm{p}}` 的第二分量 :math:`\sin\theta \sin\phi` 小于零. 这时, 我们应该把 :math:`\phi` 变为 :math:`\phi - \pi`. 如果第二分量大于零, 我们应该把 :math:`\phi` 变为 :math:`\phi + \pi`.
 
@@ -704,29 +704,29 @@
 
 .. math:: 
     &\ U^{-1}\big(R(-\hat{\bm{p}})\big) U\big( R(\hat{\bm{p}}) R_2 \big) \\
-    =&\ \left[ \exp\big(\I (\phi \pm \pi) J_3\big) \exp\big(\I (\pi - \theta) J_2\big) \right]^{-1}
-        \exp(\I \phi J_3) \exp(\I \theta J_2) \exp(-\I \pi J_2) \\
-    =&\ \exp\big(-\I (\pi - \theta) J_2\big) \exp\big(-\I (\phi \pm \pi) J_3\big) \exp(\I \phi J_3) \exp\big(-\I (\pi - \theta) J_2\big) \\
-    =&\ \exp\big(-\I (\pi - \theta) J_2\big) \exp(\mp\I\pi J_3) \exp\big(-\I (\pi - \theta) J_2\big)
+    =&\ \left[ \exp\big(-\I (\phi \pm \pi) J_3\big) \exp\big(-\I (\pi - \theta) J_2\big) \right]^{-1}
+        \exp(-\I \phi J_3) \exp(-\I \theta J_2) \exp(\I \pi J_2) \\
+    =&\ \exp\big(\I (\pi - \theta) J_2\big) \exp\big(\I (\phi \pm \pi) J_3\big) \exp(-\I \phi J_3) \exp\big(\I (\pi - \theta) J_2\big) \\
+    =&\ \exp\big(\I (\pi - \theta) J_2\big) \exp(\pm\I\pi J_3) \exp\big(\I (\pi - \theta) J_2\big)
 
-利用 [引理69-1], :math:`\exp(\pm \I \pi J_3) J_2 \exp(\mp \I \pi J_3) = -J_2` 得
+利用 [引理2-69-1], :math:`\exp(\pm \I \pi J_3) J_2 \exp(\mp \I \pi J_3) = -J_2` 得
 
 .. math:: 
     \exp(\pm \I \pi J_3) J_2 =&\ -J_2 \exp(\pm \I \pi J_3) \\
-    \exp(\pm \I \pi J_3) \exp\big(-\I (\pi - \theta) J_2\big) =&\ \exp\big(\I (\pi - \theta) J_2\big) \exp(\pm \I \pi J_3)
+    \exp(\pm \I \pi J_3) \exp\big(\I (\pi - \theta) J_2\big) =&\ \exp\big(-\I (\pi - \theta) J_2\big) \exp(\pm \I \pi J_3)
 
 于是
 
 .. math:: 
      &\ U^{-1}\big(R(-\hat{\bm{p}})\big) U\big( R(\hat{\bm{p}}) R_2 \big) \\
-     =&\ \exp\big(-\I (\pi - \theta) J_2\big) \exp\big(\I (\pi - \theta) J_2\big) \exp(\mp \I \pi J_3) = \exp(\mp \I \pi J_3)
+     =&\ \exp\big(\I (\pi - \theta) J_2\big) \exp\big(-\I (\pi - \theta) J_2\big) \exp(\pm \I \pi J_3) = \exp(\pm \I \pi J_3)
 
 即
 
 .. math:: 
-    U\big( R(\hat{\bm{p}}) R_2 \big) = U\big(R(-\hat{\bm{p}})\big) \exp(\mp \I \pi J_3)
+    U\big( R(\hat{\bm{p}}) R_2 \big) = U\big(R(-\hat{\bm{p}})\big) \exp(\pm \I \pi J_3)
 
-另外, 利用 [定理54], 即 :math:`L(p) = R(\hat{\bm{p}})B(|\bm{p}|/\kappa)` 得
+另外, 利用 [定理2-54], 即 :math:`L(p) = R(\hat{\bm{p}})B(|\bm{p}|/\kappa)` 得
 
 .. math:: 
     L(\mathscr{P}p) = R(-\hat{\bm{p}})B(|-\bm{p}|/\kappa) = R(-\hat{\bm{p}})B(|\bm{p}|/\kappa)
@@ -735,33 +735,33 @@
 
 .. math:: 
     \mathsf{P} \psi_{p, \sigma} =&\ \sqrt{\kappa / p^0} \eta_\sigma U\big( R(\hat{\bm{p}}) R_2 B(|\bm{p}|/\kappa) \big)  \psi_{k,-\sigma} \\
-    =&\ \sqrt{\kappa / p^0} \eta_\sigma U\big(R(-\hat{\bm{p}})\big) \exp(\mp \I \pi J_3) U\big( B(|\bm{p}|/\kappa) \big)  \psi_{k,-\sigma}
+    =&\ \sqrt{\kappa / p^0} \eta_\sigma U\big(R(-\hat{\bm{p}})\big) \exp(\pm \I \pi J_3) U\big( B(|\bm{p}|/\kappa) \big)  \psi_{k,-\sigma}
 
-注意其中绕第三轴的旋转 :math:`\exp(\mp \I \pi J_3)` 和沿第三轴的推进 :math:`U\big( B(|\bm{p}|/\kappa) \big)` 对易, 其证明类似 [定理44] 证明中关于 :math:`R(\theta)` 和 :math:`B(|\bm{p}|)` 对易得说明. 因此
+注意其中绕第三轴的旋转 :math:`\exp(\pm \I \pi J_3)` 和沿第三轴的推进 :math:`U\big( B(|\bm{p}|/\kappa) \big)` 对易, 其证明类似 [定理2-44] 证明中关于 :math:`R(\theta)` 和 :math:`B(|\bm{p}|)` 对易得说明. 因此
 
 .. math:: 
-    \mathsf{P} \psi_{p, \sigma} =&\ \sqrt{\kappa / p^0} \eta_\sigma U\big(R(-\hat{\bm{p}})\big) U\big( B(|\bm{p}|/\kappa) \big) \exp(\mp \I \pi J_3)   \psi_{k,-\sigma} \\
-    =&\ \sqrt{\kappa / p^0} \eta_\sigma U\big(R(-\hat{\bm{p}})\big) U\big( B(|\bm{p}|/\kappa) \big) \exp(\pm \I \pi \sigma) \psi_{k,-\sigma} \\
-    =&\ \sqrt{\kappa / p^0} \eta_\sigma \exp(\pm \I \pi \sigma) U(L(\mathscr{P}p)) \psi_{k,-\sigma} \\
-    =&\ \eta_\sigma \exp(\pm \I \pi \sigma) \psi_{\mathscr{P}p,-\sigma}
+    \mathsf{P} \psi_{p, \sigma} =&\ \sqrt{\kappa / p^0} \eta_\sigma U\big(R(-\hat{\bm{p}})\big) U\big( B(|\bm{p}|/\kappa) \big) \exp(\pm \I \pi J_3)   \psi_{k,-\sigma} \\
+    =&\ \sqrt{\kappa / p^0} \eta_\sigma U\big(R(-\hat{\bm{p}})\big) U\big( B(|\bm{p}|/\kappa) \big) \exp(\mp \I \pi \sigma) \psi_{k,-\sigma} \\
+    =&\ \sqrt{\kappa / p^0} \eta_\sigma \exp(\mp \I \pi \sigma) U(L(\mathscr{P}p)) \psi_{k,-\sigma} \\
+    =&\ \eta_\sigma \exp(\mp \I \pi \sigma) \psi_{\mathscr{P}p,-\sigma}
 
-其中最后一步利用了 :eq:`psi-pk-def`. 注意这里正负号的顺序和 Weinberg 书有所不同. 但中文译本修改了之前关于旋转方向的定义使之匹配. 具体的符号问题可能需要以后解决.
+其中最后一步利用了 :eq:`psi-pk-def`.
 
-注意, 若 :math:`\sigma` 取值只能是整数, 那么 :math:`\exp(\pm \I \pi \sigma)` 因子是没有任何实际意义的, 因为分别取正负号时, 相因子相差 :math:`2\pi`, 得到的乘积因子是一样的. 只有当 :math:`\sigma` 取半整数时, 才能得到符号差别. 对半整数自旋无质量粒子以空间反射作用所产生的这个特殊的符号差别, 其原因是在 :eq:`urp-def` 中为定义任意动量的无质量粒子态而对旋转的约定. 由于旋转群 (这里是指 :math:`U(R)`) 不是单连通的, 像这样的某些不连续性是不可避免的.
+注意, 若 :math:`\sigma` 取值只能是整数, 那么 :math:`\exp(\mp \I \pi \sigma)` 因子是没有任何实际意义的, 因为分别取正负号时, 相因子相差 :math:`2\pi`, 得到的乘积因子是一样的. 只有当 :math:`\sigma` 取半整数时, 才能得到符号差别. 对半整数自旋无质量粒子以空间反射作用所产生的这个特殊的符号差别, 其原因是在 :eq:`urp-def` 中为定义任意动量的无质量粒子态而对旋转的约定. 由于旋转群 (这里是指 :math:`U(R)`) 不是单连通的, 像这样的某些不连续性是不可避免的.
 
 6 零质量单粒子态的时间反演
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 考虑态 :math:`\psi_{k,\sigma}`, 它是算符 :math:`P^\mu` 和 :math:`J_3` 的本征态, 分别具有本征值 :math:`k^\mu = (\kappa, 0, 0, \kappa)` 和 :math:`\sigma`. 用时间反演算符 :math:`\mathsf{T}` 作用得到算符 :math:`P^\mu` 和 :math:`J_3` 的分别具有本征值 :math:`(\mathscr{P}k)^\mu = (\kappa, 0,0,-\kappa)` 和 :math:`-\sigma` 的本征态. 因此, :math:`\mathsf{T}` 并不改变螺旋度 :math:`\bm{J} \cdot \hat{k}`. 于是 :math:`\mathsf{T}` 本身并不能表明具有螺旋度 :math:`\sigma` 的零质量粒子是否伴随具有 :math:`-\sigma` 螺旋度的粒子. 因为像 :math:`\mathsf{P}` 一样, :math:`\mathsf{T}` 并不保持标准四动量 :math:`k` 不变, 我们考虑生成元 :math:`U(R_2^{-1})\mathsf{T}`, 其中 :math:`R_2` 是 :eq:`ur2-def` 定义的旋转, 这个旋转把 :math:`k` 变为 :math:`\mathscr{P}k`.
 
-[定理70] :math:`U(R_2^{-1})\mathsf{T}` 与 :math:`J_3` 对易. 因此
+[定理2-70] :math:`U(R_2^{-1})\mathsf{T}` 与 :math:`J_3` 对易. 因此
 
 .. math:: 
     U(R_2^{-1})\mathsf{T} = \zeta_\sigma \psi_{k, \sigma}
 
 其中 :math:`\zeta_\sigma` 是一个相因子.
 
-[证明] 利用 [定理66] 和 [定理67] 的部分证明, :math:`U(R_2^{-1}) \psi_{\mathscr{P}k,\sigma}` 是具有本征值 :math:`-\sigma` 的 :math:`J_3` 的本征态和具有本征值 :math:`k^\mu` 的 :math:`P^\mu` 的本征态. 又按照本小节最开始的论述, :math:`\mathsf{T}\psi_{k,\sigma}` 和 :math:`\psi_{\mathscr{P}k,-\sigma}` 态只差一个相因子, 因此
+[证明] 利用 [定理2-66] 和 [定理2-67] 的部分证明, :math:`U(R_2^{-1}) \psi_{\mathscr{P}k,\sigma}` 是具有本征值 :math:`-\sigma` 的 :math:`J_3` 的本征态和具有本征值 :math:`k^\mu` 的 :math:`P^\mu` 的本征态. 又按照本小节最开始的论述, :math:`\mathsf{T}\psi_{k,\sigma}` 和 :math:`\psi_{\mathscr{P}k,-\sigma}` 态只差一个相因子, 因此
 
 .. math:: 
     U(R_2^{-1}) \psi_{\mathscr{P}k,-\sigma} =&\ \zeta_{1\sigma} \psi_{k, \sigma} \\
@@ -777,9 +777,9 @@
 .. math:: 
     U(R_2^{-1}) \mathsf{T}\psi_{k,\sigma} = \zeta_\sigma \psi_{k, \sigma}
 
-[定理71] (A) :math:`R_2^{-1}\mathscr{T}` 和洛伦兹 "推进" :eq:`bu-mass-zero` 对易. (B) :math:`\mathscr{T}` 与旋转 :math:`R(\hat{\bm{p}})` 对易, 其中 :math:`R(\hat{\bm{p}})` 把第三轴的方向转到 :math:`\bm{p}` 的方向.
+[定理2-71] (A) :math:`R_2^{-1}\mathscr{T}` 和洛伦兹 "推进" :eq:`bu-mass-zero` 对易. (B) :math:`\mathscr{T}` 与旋转 :math:`R(\hat{\bm{p}})` 对易, 其中 :math:`R(\hat{\bm{p}})` 把第三轴的方向转到 :math:`\bm{p}` 的方向.
 
-[证明] (A) 注意到 [定理68] 指出 :math:`R_2^{-1}\mathscr{P}` 和洛伦兹 "推进" :eq:`bu-mass-zero` 对易. 而 :math:`\mathscr{T} = -\mathscr{P}`, 因此不难得出 :math:`R_2^{-1}\mathscr{T} = -R_2^{-1}\mathscr{P}` 和洛伦兹 "推进" :eq:`bu-mass-zero` 对易. (B) 还是利用 :math:`\mathscr{T} = -\mathscr{P}` 可证.
+[证明] (A) 注意到 [定理2-68] 指出 :math:`R_2^{-1}\mathscr{P}` 和洛伦兹 "推进" :eq:`bu-mass-zero` 对易. 而 :math:`\mathscr{T} = -\mathscr{P}`, 因此不难得出 :math:`R_2^{-1}\mathscr{T} = -R_2^{-1}\mathscr{P}` 和洛伦兹 "推进" :eq:`bu-mass-zero` 对易. (B) 还是利用 :math:`\mathscr{T} = -\mathscr{P}` 可证.
 
 类比 :math:`\mathsf{P}` 对无质量粒子的讨论, 我们有
 
@@ -787,8 +787,8 @@
     \mathsf{T} \psi_{p,\sigma} =&\ \sqrt{\kappa / p^0} U\big( R(\hat{\bm{p}}) R_2 B(|\bm{p}|/\kappa) \big) U(R_2^{-1}) \mathsf{T} \psi_{k, \sigma} \\
         =&\ \sqrt{\kappa / p^0} U\big( R(\hat{\bm{p}}) R_2 B(|\bm{p}|/\kappa) \big) \zeta_\sigma \psi_{k,\sigma} \\
         =&\ \sqrt{\kappa / p^0} \zeta_\sigma U\big( R(\hat{\bm{p}}) R_2 B(|\bm{p}|/\kappa) \big)  \psi_{k,\sigma} \\
-        =&\ \sqrt{\kappa / p^0} \zeta_\sigma \exp(\mp \I \pi\sigma) U(L(\mathscr{P}p)) \psi_{k,\sigma} \\
-        =&\ \zeta_\sigma \exp(\mp \I \pi\sigma) \psi_{\mathscr{P}p,\sigma} 
+        =&\ \sqrt{\kappa / p^0} \zeta_\sigma \exp(\pm \I \pi\sigma) U(L(\mathscr{P}p)) \psi_{k,\sigma} \\
+        =&\ \zeta_\sigma \exp(\pm \I \pi\sigma) \psi_{\mathscr{P}p,\sigma} 
     :label: t-act-p-mass-zero
 
 和之前一样, 上下符号取决于 :math:`\bm{p}` 的第二空间分量的正负.
@@ -798,7 +798,7 @@
 
 时间反演算符的平方 :math:`\mathsf{T}^2` 对有质量和无质量粒子有非常简单的作用. 
 
-[定理72] 对有质量或无质量粒子
+[定理2-72] 对有质量或无质量粒子
 
 .. math:: 
     \mathsf{T}^2 \psi_{p,\sigma} = (-)^{2j} \psi_{p,\sigma}
@@ -820,20 +820,20 @@
 现在考虑无质量粒子, 利用 :eq:`t-act-p-mass-zero` 即
 
 .. math:: 
-    \mathsf{T} \psi_{p,\sigma} = \zeta_\sigma \exp(\mp \I \pi\sigma) \psi_{\mathscr{P}p,\sigma}
+    \mathsf{T} \psi_{p,\sigma} = \zeta_\sigma \exp(\pm \I \pi\sigma) \psi_{\mathscr{P}p,\sigma}
     
-注意到 :math:`\mathsf{T}` 是反幺正算符, 以及 :math:`\exp(\mp \I \pi\sigma)` 的正负取决于 :math:`\bm{p}` 第二分量的正负, 我们有
+注意到 :math:`\mathsf{T}` 是反幺正算符, 以及 :math:`\exp(\pm \I \pi\sigma)` 的正负取决于 :math:`\bm{p}` 第二分量的正负, 我们有
 
 .. math:: 
-    \mathsf{T}^2 \psi_{p,\sigma} =&\ \mathsf{T} \zeta_\sigma \exp(\mp \I \pi\sigma) \psi_{\mathscr{P}p,\sigma}\\
-        =&\ \zeta^*_\sigma \exp(\pm \I \pi\sigma) \mathsf{T} \psi_{\mathscr{P}p,\sigma} \\
-        =&\ \zeta^*_\sigma \exp(\pm \I \pi\sigma) \zeta_\sigma \exp(\pm \I \pi\sigma) \psi_{\mathscr{P}^2p,\sigma} \\
-        =&\ \exp(\pm \I \pi\sigma) \exp(\pm \I \pi\sigma) \psi_{p,\sigma} \\
-        =&\ \exp(2\pm \I \pi\sigma) \psi_{p,\sigma}
+    \mathsf{T}^2 \psi_{p,\sigma} =&\ \mathsf{T} \zeta_\sigma \exp(\pm \I \pi\sigma) \psi_{\mathscr{P}p,\sigma}\\
+        =&\ \zeta^*_\sigma \exp(\mp \I \pi\sigma) \mathsf{T} \psi_{\mathscr{P}p,\sigma} \\
+        =&\ \zeta^*_\sigma \exp(\mp \I \pi\sigma) \zeta_\sigma \exp(\mp \I \pi\sigma) \psi_{\mathscr{P}^2p,\sigma} \\
+        =&\ \exp(\mp \I \pi\sigma) \exp(\mp \I \pi\sigma) \psi_{p,\sigma} \\
+        =&\ \exp(\mp2 \I \pi\sigma) \psi_{p,\sigma}
 
 注意 :math:`\mathscr{P}p` 的第二分量和 :math:`p` 的第二分量符号相反.
     
-现在若 :math:`j` 为整数, 则 :math:`2j` 为偶数, 于是 :math:`\sigma` 为整数, 则 :math:`\exp(2\pm \I \pi\sigma) = 1`. 若 :math:`j` 为半奇数, 则 :math:`j` 为奇数, 于是 :math:`\sigma` 也为半奇数, 于是 :math:`\exp(\pm \I \pi(2\sigma)) = \exp(\pm \I\pi) = -1`. 因此
+现在若 :math:`j` 为整数, 则 :math:`2j` 为偶数, 于是 :math:`\sigma` 为整数, 则 :math:`\exp(\mp2 \I \pi\sigma) = 1`. 若 :math:`j` 为半奇数, 则 :math:`j` 为奇数, 于是 :math:`\sigma` 也为半奇数, 于是 :math:`\exp(\mp \I \pi(2\sigma)) = \exp(\mp \I\pi) = -1`. 因此
 
 .. math:: 
     \mathsf{T}^2 \psi_{p,\sigma} = (-)^{2j} \psi_{p,\sigma}

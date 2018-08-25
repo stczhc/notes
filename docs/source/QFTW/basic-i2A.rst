@@ -28,7 +28,7 @@
 
     Hilbert 空间 (记为 :math:`\mathscr{H}`) 的定义就按照往常的定义 (梁灿彬书附录B). 但是射线的定义不太一样 (这里定义的射线只包括归一化矢量).
 
-    [定义1] 一个射线是归一化矢量 [即 :math:`(\psi, \psi) = 1`] 的一个集合, 即如果 :math:`\psi' = \xi \psi`, 则 :math:`\psi` 和 :math:`\psi'` 属于同一射线, 其中 :math:`\xi` 是满足 :math:`|\xi| = 1` 的任意复数. 即对任意满足 :math:`(\psi, \psi) = 1` 的 :math:`\psi \in \mathscr{H}` , 定义
+    [定义2-1] 一个射线是归一化矢量 [即 :math:`(\psi, \psi) = 1`] 的一个集合, 即如果 :math:`\psi' = \xi \psi`, 则 :math:`\psi` 和 :math:`\psi'` 属于同一射线, 其中 :math:`\xi` 是满足 :math:`|\xi| = 1` 的任意复数. 即对任意满足 :math:`(\psi, \psi) = 1` 的 :math:`\psi \in \mathscr{H}` , 定义
 
     .. math:: 
         \mathscr{R} \equiv r_\psi := \{ \xi \psi | |\xi| = 1, \xi \in \mathbb{C}, \}
@@ -43,15 +43,15 @@
 
     即
     
-    [引理0-1] 属于同一射线的两个矢量都是归一化的, 并且有一个相位的差别.
+    [引理2-0-1] 属于同一射线的两个矢量都是归一化的, 并且有一个相位的差别.
 
 (2) 可观测量由厄米算符表示.
 
-    [定义2] 厄米算符定义为满足 :math:`A^\dagger = A` 的算符 :math:`A`. 其中 :math:`A` 的共轭算符 :math:`A^\dagger` 定义为 :math:`(\phi, A^\dagger \psi) \equiv (A\phi, \psi) = \overline{(\psi, A\phi)}`.
+    [定义2-2] 厄米算符定义为满足 :math:`A^\dagger = A` 的算符 :math:`A`. 其中 :math:`A` 的共轭算符 :math:`A^\dagger` 定义为 :math:`(\phi, A^\dagger \psi) \equiv (A\phi, \psi) = \overline{(\psi, A\phi)}`.
 
     对于一个物理态 (表示为射线 :math:`\mathscr{R}`), 设 :math:`\psi \in \mathscr{R}` (于是可知 :math:`\psi` 是归一化的) 并且 :math:`\psi` 是 :math:`A` 的本征值为 :math:`\alpha` 的本征矢 (即 :math:`A\psi = \alpha\psi`), 那么这个物理态对于算符 :math:`A` 所表示的可观测量有一确定值. 由 :eq:`q-psi1-phase` 可知, 若取射线中的另一个矢量 :math:`\psi'`, 则也有 :math:`A\psi' = A \E^{\I \theta} \psi = \E^{\I \theta} A \psi = \E^{\I \theta} \alpha\psi = \alpha\psi'` 成立. 其中第二步利用了 :math:`A` 的线性性.
 
-    [定理1] 对于厄米算符 :math:`A`, :math:`\alpha` 是实的, 并且属于不同本征值 :math:`\alpha` 的两个本征矢是正交的. (王正行书1.2题)
+    [定理2-1] 对于厄米算符 :math:`A`, :math:`\alpha` 是实的, 并且属于不同本征值 :math:`\alpha` 的两个本征矢是正交的. (王正行书1.2题)
 
     [证明] (A) 由 :math:`A|\psi\rangle = \alpha|\psi\rangle` 两边取共轭得 :math:`\langle \psi |A^\dagger = \langle \psi |A = \langle \psi | \overline{\alpha}`. 其中第二步利用了 :math:`A` 的厄米性. 再分别左乘 :math:`\langle \psi |` 和右乘 :math:`|\psi\rangle` 得
 
@@ -89,11 +89,11 @@
 
     这里 Weinberg 书上的表述为: "做一个实验以检验它是否处在由互相正交的射线 :math:`\mathscr{R}_1, \mathscr{R}_2, \cdots` 所表示的不同态中. (例如, 通过对一个或多个观测量的测量) [这里中文翻译版本少译了测量]", 并且上述的正比改成了等于. 首先, 如果是通过实验测量, 那么得到的测量结果只能是观测量的本征态, 而不能是任意的态. 一个观测量的各本征态应该是互相正交的 (如果不考虑简并的情况). Weinberg 的表述强调了实验测量, 但又重复要求了这些态的正交性 (如果不正交无法在完备时给出总几率1), 更重要的是, 它没有要求这些态都是某观测量的本征态. 如果这些态不是某观测量的本征态, 那么无法做这样的测量. 似乎可以默认认为所指定的 :math:`\mathscr{R}_n` 是某观测量的本征态, 问题不大. 下面需要证明的问题是, 如何定义射线正交, 为什么任意取两个代表所在射线的矢量给出的概率都一样, 以及为什么本征态组完备时可以给出单位概率.
 
-    [定义3] 两条射线正交定义为在两条射线中分别任选的两个矢量都正交.
+    [定义2-3] 两条射线正交定义为在两条射线中分别任选的两个矢量都正交.
 
     [证明] 正交是方向性的特征, 和矢量的标量因子无关. 而同一射线中的矢量差别仅在相因子 :math:`\E^{\I\theta}`.
 
-    [定理2] 假设 :math:`\psi, \psi'` 和 :math:`\psi_n, \psi'_n` 是分别属于射线 :math:`\mathscr{R}` 和 :math:`\mathscr{R}_n` 的矢量, 则 :math:`|(\psi, \psi_n)|^2 = |(\psi', \psi'_n)|^2`
+    [定理2-2] 假设 :math:`\psi, \psi'` 和 :math:`\psi_n, \psi'_n` 是分别属于射线 :math:`\mathscr{R}` 和 :math:`\mathscr{R}_n` 的矢量, 则 :math:`|(\psi, \psi_n)|^2 = |(\psi', \psi'_n)|^2`
 
     [证明] 设 :math:`\psi' = \E^{\I\theta}\psi, \psi'_n = \E^{\I\phi}\psi_n`. 则
     
@@ -102,7 +102,7 @@
     
     注意复数的模和相因子无关.
 
-    [定理3] 若 :math:`\psi_1, \psi_2, \cdots, \psi_n` 构成完全集, 则
+    [定理2-3] 若 :math:`\psi_1, \psi_2, \cdots, \psi_n` 构成完全集, 则
     
     .. math:: 
         \sum_{i = 1}^n |(\psi, \psi_i)|^2 = 1
@@ -128,7 +128,7 @@
 
 即 :math:`|(\psi, \psi_n)|^2 = |(\psi', \psi'_n)|^2`.
 
-[定理4(Wigner定理)] 对于任意这样的射线变换 :math:`U_*`, 我们可以定义 Hilbert 空间上的一个算符 :math:`U`, 使得如果 :math:`\psi` 在射线 :math:`\mathscr{R}` 中, 那么 :math:`U\psi` 在射线 :math:`\mathscr{R}'` 中 (从这里可以看出, Weinberg 的引入方法更为稳妥. 他先引入射线变换, 因为实验上射线是更基本的对象, 一个实验上视角的改变首先应该对物理态本身有所要求. 其次, 再根据这个对射线的要求来推导出对矢量的相应变换), 则 :math:`U` 要么是幺正且线性的
+[定理2-4(Wigner定理)] 对于任意这样的射线变换 :math:`U_*`, 我们可以定义 Hilbert 空间上的一个算符 :math:`U`, 使得如果 :math:`\psi` 在射线 :math:`\mathscr{R}` 中, 那么 :math:`U\psi` 在射线 :math:`\mathscr{R}'` 中 (从这里可以看出, Weinberg 的引入方法更为稳妥. 他先引入射线变换, 因为实验上射线是更基本的对象, 一个实验上视角的改变首先应该对物理态本身有所要求. 其次, 再根据这个对射线的要求来推导出对矢量的相应变换), 则 :math:`U` 要么是幺正且线性的
 
 .. math:: 
     (U\phi, U\psi) = (\phi, \psi), \quad U (\xi\phi + \eta \psi) = \xi U\phi + \eta U\psi
@@ -145,7 +145,7 @@
 
 上面关于 :math:`U` 的反线性性的定义其实是上式两个式子的简写.
 
-[定义4'(错误, 后面解释)] (根据梁灿彬 B.1.3 定义14修改) :math:`\mathscr{H}` 上一个反线性算符 :math:`A : \mathscr{H} \to \mathscr{H}` 自然诱导出 :math:`\mathscr{H}^*` 上一个反线性算符 :math:`A^*: \mathscr{H}^* \to \mathscr{H}^*` 定义为
+[定义2-4'(错误, 后面解释)] (根据梁灿彬 B.1.3 定义14修改) :math:`\mathscr{H}` 上一个反线性算符 :math:`A : \mathscr{H} \to \mathscr{H}` 自然诱导出 :math:`\mathscr{H}^*` 上一个反线性算符 :math:`A^*: \mathscr{H}^* \to \mathscr{H}^*` 定义为
 
 .. math:: 
     (A^* \eta)(\phi) := \eta(A \phi), \quad \forall A \in \mathscr{H}, \eta \in \mathscr{H}^*, \phi \in \mathscr{H}
@@ -158,7 +158,7 @@
 
 上式表示, :math:`A^* \eta` 得到的结果 (:math:`A^*` 作用的像) 是反线性的. 只能修改定义
 
-[定义4] :math:`\mathscr{H}` 上一个反线性算符 :math:`A : \mathscr{H} \to \mathscr{H}` 自然诱导出 :math:`\mathscr{H}^*` 上一个反线性算符 :math:`A^*: \mathscr{H}^* \to \mathscr{H}^*` 定义为
+[定义2-4] :math:`\mathscr{H}` 上一个反线性算符 :math:`A : \mathscr{H} \to \mathscr{H}` 自然诱导出 :math:`\mathscr{H}^*` 上一个反线性算符 :math:`A^*: \mathscr{H}^* \to \mathscr{H}^*` 定义为
 
 .. math:: 
     (A^* \eta)(\phi) := \overline{\eta(A \phi)}, \quad \forall A \in \mathscr{H}, \eta \in \mathscr{H}^*
@@ -175,7 +175,7 @@
     A^*(\eta + \eta') (\phi) \equiv&\ \overline{(\eta + \eta')(A \phi)} = \overline{\eta(A \phi) + \eta'(A \phi)} = \overline{\eta(A \phi)} + \overline{\eta'(A \phi)} = (A^*\eta) (\phi) + (A^*\eta') (\phi) \\
     A^*(\xi\eta) (\phi) \equiv&\ \overline{(\xi\eta)(A \phi)} = \overline{\xi\cdot \eta(A \phi)} = \overline{\xi} \ \overline{\eta(A \phi)} = \overline{\xi} (A^*\eta) (\phi)
 
-[定理5] (根据梁灿彬命题B-1-3修改) 反线性算符 :math:`A` 的伴随算符 :math:`A^\dagger := \nu^{-1}\circ A^* \circ \nu` 满足
+[定理2-5] (根据梁灿彬命题B-1-3修改) 反线性算符 :math:`A` 的伴随算符 :math:`A^\dagger := \nu^{-1}\circ A^* \circ \nu` 满足
 
 .. math::
     (f, A^\dagger g) = \overline{(Af, g)}
@@ -197,21 +197,21 @@
 .. math:: 
     \overline{(f, Ag)} = \overline{\eta_f(Ag)} = (A^*\eta_f)(g) = ((\nu\circ A^\dagger \circ \nu^{-1})\eta_f)(g) = ((\nu\circ A^\dagger) f)(g) = \eta_{A^\dagger f}(g) = (A^\dagger f, g)
 
-反之, [定理5]中两式相减得
+反之, [定理2-5]中两式相减得
 
 .. math:: 
     0 = \overline{0} = (Bf, g) - (A^\dagger f, g) = ((B- A^\dagger)f, g),\quad \forall f, g \in \mathscr{H}
 
 由于 :math:`g` 可任取, 因此 :math:`(B- A^\dagger)f = 0, \quad \forall f \in \mathscr{H}`. 于是 :math:`B = A^\dagger`.
 
-[定理6a] 线性幺正算符 (根据定理4) 的定义满足 :math:`U^\dagger = U^{-1}`.
+[定理2-6a] 线性幺正算符 (根据定理4) 的定义满足 :math:`U^\dagger = U^{-1}`.
 
 [证明] 利用幺正条件 :math:`(Uf, Ug) = (f, g)` 和线性共轭条件 :math:`(f, U^\dagger g) = (Uf, g)`
 
 .. math:: 
     (f, U^\dagger U g) = (Uf, Ug) = (f, g) \quad \Rightarrow \quad U^\dagger U=1
 
-[定理6b]  反线性反幺正算符 (根据定理4) 的定义满足 :math:`U^\dagger = U^{-1}`.
+[定理2-6b]  反线性反幺正算符 (根据定理4) 的定义满足 :math:`U^\dagger = U^{-1}`.
 
 [证明] 利用反幺正条件 :math:`(Uf, Ug) = \overline{(f, g)}` 和反线性共轭条件 :math:`(f, U^\dagger g) = \overline{(Uf, g)}`
 
@@ -223,7 +223,7 @@
 
 总有一个平庸的对称变换 :math:`\mathscr{R} \to \mathscr{R}` (恒等变换) 它对应的算符 :math:`U` 是幺正线性的. (因为定理4指出, 任意物理上有用的射线变换必须要么是幺正线性的, 要么是反幺正反线性的, 这里缺一个证明, 也就是为什么恒等射线变换导致恒等矢量变换. 其实对应的矢量变换会差一个固定因子, 见下面的定理7) (这里 Weinberg 书有个错. 书中一般是用 :math:`T` 表示射线的变换, 而 :math:`U` 表示希尔伯特空间两个矢量的变换, 称为算符. 射线变换一般不能称为算符. 书中这里貌似讨论射线变换, 却用了记号 :math:`U` 并使用了名称 "算符" 其实应该是矢量变换. 但是基于物理考虑, 物理上的连续性只关于射线, 不关于矢量, 又不得不从射线变换开始讨论.) 由此, 连续性就会要求任何可以通过某些参数连续变化得到的对称性 (对称变换) (旋转, 平移, boost) 都必须由线性幺正算符 :math:`U` 表示, 而不是反线性反幺正算符 [这里中文书译错, "而不是" 被译成了 "或" ] (反幺正反线性算符表示的对称性在物理上重要性较低, 它们涉及时间方向的反演). 这里的意思是, 既然需要参数连续变化, 并且参数为0是恒等变换, 而恒等变换是幺正线性的, 那么就无法变着变着由幺正线性变成了反幺正反线性. (这一条只对连续参量的变换成立, 对离散变换不成立).
 
-[引理7-1] 恒等射线变换 :math:`I_* : \mathscr{R} \mapsto \mathscr{R}` 对应的矢量变换 :math:`J : \mathscr{H} \to \mathscr{H}` (定义为 :math:`J f = f'`, 其中 :math:`f'` 满足与 :math:`f` 属于同一射线) 和恒等矢量变换 :math:`I` 的关系为 :math:`J = \E^{\I \theta} I`, 其中 :math:`\theta` 与该矢量变换作用的对象无关, 并且 :math:`J` 是线性算符.
+[引理2-7-1] 恒等射线变换 :math:`I_* : \mathscr{R} \mapsto \mathscr{R}` 对应的矢量变换 :math:`J : \mathscr{H} \to \mathscr{H}` (定义为 :math:`J f = f'`, 其中 :math:`f'` 满足与 :math:`f` 属于同一射线) 和恒等矢量变换 :math:`I` 的关系为 :math:`J = \E^{\I \theta} I`, 其中 :math:`\theta` 与该矢量变换作用的对象无关, 并且 :math:`J` 是线性算符.
 
 [证明] 由于 :math:`f'` 满足与 :math:`f` 属于同一射线, 由引理[0-1]得 :math:`J f = f' = \E^{\I \theta} f`, 由于 :math:`f` 为任一矢量, 得 :math:`J = \E^{\I \theta} I`. 当然还应证 :math:`\theta` 与作用对象无关. 先设矢量空间为1维. 则所有归一化矢量之间仅相差系数 :math:`\xi`. 设 :math:`J(\xi f) = \E^{\I\theta_1}(\xi f), Jf = \E^{\I\theta_2}f`. 若 :math:`J` 为线性算符, 则利用 :math:`J(\xi f) = \xi Jf`, 得
 
@@ -243,7 +243,7 @@
 
 考虑到 :math:`f` 和 :math:`g` 是不同方向, 因此必有 :math:`\E^{\I\theta_0} = \E^{\I\theta_1} = \E^{\I\theta_2}` (假设 :math:`\theta` 取值范围为 :math:`0\sim 2\pi`), 也即不同维的 :math:`\theta` 系数必须相等, 但尚未说明所有系数必须相等. 若固定 :math:`f` 而改变 :math:`g`, 则 :math:`\E^{\I\theta_1}` 不变, :math:`\E^{\I\theta_2}` 和 :math:`\E^{\I\theta_0}` 决定于 :math:`g` 但必须相等, 因此对所有同维的 :math:`g`, 其系数必须相等. 从而所有系数必须相等. 也即 :math:`\theta` 为常数, 并且 :math:`J` 必须是线性算符.
 
-[定理7] 恒等射线变换对应的矢量变换是幺正线性的.
+[定理2-7] 恒等射线变换对应的矢量变换是幺正线性的.
 
 [证明] 由定理4, 既然恒等射线变换是线性的, 那么它就必须是幺正的. 直接算也可得到
 
@@ -262,7 +262,7 @@
 
 其中 :math:`\epsilon` 是一个无穷小实数. 这里加上 :math:`\I` 是为了使 :math:`t` 是厄米的. 设 :math:`A` 是厄米算符, 即 :math:`A = A^\dagger`, 令 :math:`B = \I A`, 则 :math:`B^\dagger = (\I A)^\dagger = \overline{\I}A^\dagger = -\I A = -B`. 于是 :math:`B` 是反厄米的. 由 :math:`U` 的线性性也可推出 :math:`t` 必须是线性的.
 
-[定理8] 设 :math:`U` 是幺正算符, 并且 :math:`U = 1+\I\epsilon t`, 其中 :math:`\epsilon` 是一个无穷小实数, 则 :math:`t` 是厄米算符.
+[定理2-8] 设 :math:`U` 是幺正算符, 并且 :math:`U = 1+\I\epsilon t`, 其中 :math:`\epsilon` 是一个无穷小实数, 则 :math:`t` 是厄米算符.
 
 [证明] 对幺正算符, 有 :math:`U^\dagger U = 1` 于是
 
@@ -285,7 +285,7 @@
     U(T_2)U(T_1)\psi_n = \E^{\I \theta_n(T_2, T_1)} U(T_2T_1)\psi_n
     :label: ut1t2-phase
 
-[引理9-1] 一个幺正 (反幺正) 算符的逆 (也就是它的伴随算符) 也是幺正 (反幺正的).
+[引理2-9-1] 一个幺正 (反幺正) 算符的逆 (也就是它的伴随算符) 也是幺正 (反幺正的).
 
 [证明] 对幺正算符 :math:`U`, 有 :math:`(Uf, Ug) = (f, g)` 并且 :math:`UU^\dagger = 1`, 于是
 
@@ -299,7 +299,7 @@
 
 即 :math:`(U^\dagger f, U^\dagger g) = \overline{(f, g)}`, 则 :math:`U^\dagger` 也是反幺正算符.
 
-[定理9] 假设 :math:`T(U)` 所能作用的态矢中, 任意两个的叠加都具有物理意义, 并且态矢对应的矢量空间大于一维, 则上述定义的 :math:`\theta_n(T_2, T_1)` 与态矢 :math:`\psi_n` 无关, 而只与射线变换 :math:`T_1, T_2` 有关, 即
+[定理2-9] 假设 :math:`T(U)` 所能作用的态矢中, 任意两个的叠加都具有物理意义, 并且态矢对应的矢量空间大于一维, 则上述定义的 :math:`\theta_n(T_2, T_1)` 与态矢 :math:`\psi_n` 无关, 而只与射线变换 :math:`T_1, T_2` 有关, 即
 
 .. math:: 
     \theta_n(T_2, T_1) = \theta(T_2, T_1)
@@ -313,7 +313,7 @@
         =&\ \E^{\I \theta_{AB}(T_2, T_1)}\E^{-\I \theta_A(T_2, T_1)}U(T_2)U(T_1)\psi_A 
             + \E^{\I \theta_{AB}(T_2, T_1)}\E^{-\I \theta_B(T_2, T_1)}U(T_2)U(T_1)\psi_B
 
-由于[引理9-1], 对上式两边左乘 :math:`U(T_1)^{-1}U(T_2)^{-1}` (注意 Weinberg 的书中, 他左乘的是 :math:`U(T_2T_1)`, 则无需考虑 :math:`U(T_2)` 和 :math:`U(T_1)` 各自是幺正还是反幺正的. 事实上, 它们可以不同. 它的正负号只需根据 :math:`U(T_2T_1)` 的幺正或反幺正性去取. 但是如何又能证明 :math:`U(T_2T_1)` 一定是幺正或者反幺正的呢? 答案是根据定理4, 对应于射线变换 :math:`T_2T_1` 的算符一定是幺正或反幺正的) 得
+由于[引理2-9-1], 对上式两边左乘 :math:`U(T_1)^{-1}U(T_2)^{-1}` (注意 Weinberg 的书中, 他左乘的是 :math:`U(T_2T_1)`, 则无需考虑 :math:`U(T_2)` 和 :math:`U(T_1)` 各自是幺正还是反幺正的. 事实上, 它们可以不同. 它的正负号只需根据 :math:`U(T_2T_1)` 的幺正或反幺正性去取. 但是如何又能证明 :math:`U(T_2T_1)` 一定是幺正或者反幺正的呢? 答案是根据定理4, 对应于射线变换 :math:`T_2T_1` 的算符一定是幺正或反幺正的) 得
 
 .. math:: 
     \psi_A + \psi_B =&\ \E^{\pm\I [\theta_{AB}(T_2, T_1)-\theta_A(T_2, T_1)]} \psi_A 
@@ -325,7 +325,7 @@
 .. math:: 
     \theta_{AB}(T_2, T_1) = \theta_A(T_2, T_1) = \theta_B(T_2, T_1)
 
-于是, 相位因子和态矢无关 (注意这里其实还无法推出与所有态矢无关, 因为证明时要求 :math:`\psi_A` 和 :math:`\psi_B` 线性无关. 那么自然就要问, 对两个线性相关的态矢 (两个态矢线性相关, 也就是它们平行), 它们对应的相位是否还相等呢? 这就要用类似[引理7-1]的证明的办法说明其实对于平行的矢量它们也是相等的).
+于是, 相位因子和态矢无关 (注意这里其实还无法推出与所有态矢无关, 因为证明时要求 :math:`\psi_A` 和 :math:`\psi_B` 线性无关. 那么自然就要问, 对两个线性相关的态矢 (两个态矢线性相关, 也就是它们平行), 它们对应的相位是否还相等呢? 这就要用类似[引理2-7-1]的证明的办法说明其实对于平行的矢量它们也是相等的).
 
 于是我们可以把 :eq:`ut1t2-phase` 改写成算符等式
 
@@ -335,7 +335,7 @@
 
 当 :math:`\theta = 0` 时, 我们就可以说 :math:`U(T)` 构成了对称变换 (射线变换) 群的一个表示 (因为如果没有相位因子, 上式就和群乘法关系一致), 称为 **普通表示** (ordinary representation). 对于一般的 :math:`\theta`, 我们得到一个 **投影表示** (projective representation). 李群结构本身并不能告诉我们物理态矢构成一个普通表示还是投影表示. 但我们将会说明, 它会告诉我们这个群是否有任何内禀的投影表示.
 
-注意到 [定理9] 有一个附加要求, 即要求任意两个态的叠加都有物理意义. 事实上可能不存在一个物理系统处于由 :math:`\psi_A + \psi_B` 表示的叠加态. 例如, 两个总角动量分别为整数和半整数的态就不能叠加. 在这样的情况下, 我们说在不同态矢类之间有一个 "超选择定则" (superselection rule). 从而, 相位 :math:`\theta(T_2, T_1)` 可能决定于算符 :math:`U(T_2)U(T_1)` 和 :math:`U(T_2T_1)` 所作用的的态所属的类. 在2.7节会进一步解释相位和投影表示. 我们将证明, 任何具有投影表示的对称群总是可以扩张 (在不改变物理意义的情况下), 从而它的表示是非投影的, 即 :math:`\theta = 0`. 直到第2.7节我们假设已经做了这样的扩张, 即 :math:`\theta = 0`.
+注意到 [定理2-9] 有一个附加要求, 即要求任意两个态的叠加都有物理意义. 事实上可能不存在一个物理系统处于由 :math:`\psi_A + \psi_B` 表示的叠加态. 例如, 两个总角动量分别为整数和半整数的态就不能叠加. 在这样的情况下, 我们说在不同态矢类之间有一个 "超选择定则" (superselection rule). 从而, 相位 :math:`\theta(T_2, T_1)` 可能决定于算符 :math:`U(T_2)U(T_1)` 和 :math:`U(T_2T_1)` 所作用的的态所属的类. 在2.7节会进一步解释相位和投影表示. 我们将证明, 任何具有投影表示的对称群总是可以扩张 (在不改变物理意义的情况下), 从而它的表示是非投影的, 即 :math:`\theta = 0`. 直到第2.7节我们假设已经做了这样的扩张, 即 :math:`\theta = 0`.
 
 现在, 我们在 :eq:`ut1t2-oper` 取 :math:`T_1` 为恒等射线映射, 其对应的算符记为 :math:`J`, 并取 :math:`\theta(T_2, T_1) = 0`, 则
 
@@ -364,9 +364,9 @@
     U(T(\theta)) = 1 + \I \theta^a t_a + \frac{1}{2} \theta^b\theta^c t_{bc} + \cdots
     :label: ut-base
 
-其中 :math:`t_a, t_{bc} = t_{cb}` 等是与 :math:`\theta` 无关的厄米算符. 其中 :math:`t_a` 的厄米性在前面已经证过. 下面需要证 :math:`t_{bc}` 的对称性和厄米性.
+其中 :math:`t_a, t_{bc} = t_{cb}` 等是与 :math:`\theta` 无关的厄米算符 [这里 Weinberg 书1998年修订版改为: 其中 :math:`t_a, t_{bc} = t_{cb}` 等是与 :math:`\theta` 无关的算符, :math:`t_a` 是厄米算符. 这与后面的讨论一致]. 其中 :math:`t_a` 的厄米性在前面已经证过. 下面需要证 :math:`t_{bc}` 的对称性和厄米性.
 
-[定理10(错误)] :math:`t_{bc}` 是对称反厄米算符. [这里 Weinberg 书错误. Weinberg 认为应该是厄米算符. 实际上后面的推导只是用到了它的对称条件, 而没有用到厄米或反厄米条件. ] [这里经过仔细考虑, 应该只能推出 :math:`t_b^\dagger t_c + \frac{1}{2} (t_{bc}^\dagger + t_{bc}) = 0`, :math:`t_{bc}` 既不是反厄米算符也不是厄米算符. ]
+[定理2-10(错误)] :math:`t_{bc}` 是对称反厄米算符. [这里 Weinberg 书错误. Weinberg 认为应该是厄米算符. 实际上后面的推导只是用到了它的对称条件, 而没有用到厄米或反厄米条件. ] [这里经过仔细考虑, 应该只能推出 :math:`t_b^\dagger t_c + \frac{1}{2} (t_{bc}^\dagger + t_{bc}) = 0`, :math:`t_{bc}` 既不是反厄米算符也不是厄米算符. ]
 
 [证明] 首先对称性是由于小括号的传递: :math:`\frac{1}{2} \theta^b\theta^c t_{bc} = \frac{1}{2} \theta^{(b}\theta^{c)} t_{bc} = \frac{1}{2} \theta^{(b}\theta^{c)} t_{(bc)} = \frac{1}{2} \theta^b\theta^c t_{(bc)}`. 即 :math:`t_{bc} = t_{(bc)}`. 利用 :math:`U^\dagger U = 1` 和 :math:`t_a` 已经是厄米算符得 (保留到2阶项)
 
@@ -411,7 +411,7 @@
 6 酉群李代数
 ^^^^^^^^^^^^
 
-[定理11] 假设 :math:`U(T(\theta))` 构成变换群的一个普通 (非投影的) 表示, 即
+[定理2-11] 假设 :math:`U(T(\theta))` 构成变换群的一个普通 (非投影的) 表示, 即
 
 .. math:: 
     U\big( T(\theta') \big) U\big( T(\theta) \big) = U \big( T(f(\theta', \theta)) \big)
@@ -460,7 +460,7 @@
     \I \xtensor{f}{^a}{_{bc}} t_a + t_{bc} = -t_bt_c.
     :label: fabc-tbc
 
-注意其中 :math:`t_a, t_{bc}` 是联系 :math:`\theta` 和 :math:`U(T)` 的算符 (只与李群中某一点有关). 而 :math:`\xtensor{f}{^a}{_{bc}}` 是与李群乘法定义有关的实系数 (与李群乘法有关). 因此这个式子说明, 如果我们知道了群结构 (即函数 :math:`f(\theta, \theta')`), 从而知道了它的二次项系数 :math:`\xtensor{f}{^a}{_{bc}}`, 我们就可以从生成元 :math:`t_a` 计算 :math:`U(T(\theta))` 的二阶项 (:math:`t_{bc}`). 但是根据[定理10], :math:`t_{bc}` 是对称张量, 于是
+注意其中 :math:`t_a, t_{bc}` 是联系 :math:`\theta` 和 :math:`U(T)` 的算符 (只与李群中某一点有关). 而 :math:`\xtensor{f}{^a}{_{bc}}` 是与李群乘法定义有关的实系数 (与李群乘法有关). 因此这个式子说明, 如果我们知道了群结构 (即函数 :math:`f(\theta, \theta')`), 从而知道了它的二次项系数 :math:`\xtensor{f}{^a}{_{bc}}`, 我们就可以从生成元 :math:`t_a` 计算 :math:`U(T(\theta))` 的二阶项 (:math:`t_{bc}`). 但是根据[定理2-10], :math:`t_{bc}` 是对称张量, 于是
 
 .. math:: 
     -\I \xtensor{f}{^a}{_{bc}} t_a - t_{bc} =&\ t_bt_c \\
@@ -474,7 +474,7 @@
 
 其中实常数 :math:`\xtensor{C}{^a}{_{bc}}` 称为 (李代数的) **结构常数** (structure constants). 利用这组对易关系, 可以把 :math:`\{ t_a \}` 定义为 **李代数** (Lie algebra).
 
-[定理12] 矢量空间 :math:`\{ t_a \}` 构成李代数, 其李括号定义为 :math:`[t_b, t_c] := t_b t_c - t_c t_b = \I \xtensor{C}{^a}{_{bc}} t_a`.
+[定理2-12] 矢量空间 :math:`\{ t_a \}` 构成李代数, 其李括号定义为 :math:`[t_b, t_c] := t_b t_c - t_c t_b = \I \xtensor{C}{^a}{_{bc}} t_a`.
 
 [证明] 定义了李括号的矢量空间 :math:`\mathscr{V}` 称为李代数. 李括号的定义必须为双线性映射 (要求李括号的结果还得到矢量空间 :math:`\mathscr{V}` 内的元素), 并且满足以下两个条件:
 
@@ -566,7 +566,7 @@
 
 注意, 物理上说线元不变. 但是线元是4维时空的标量, 按数学的理解本来就应该是不变的, 所以好像什么也没说. 这里的问题在于, 数学上度规作为一个张量, 其分量不一定在不同坐标系不变, 因此数学上线元一定不变, 而度规不一定. 但是物理上讨论线元的时候, 我们默认线元的表达式固定了, 也就是默认了度规不能变化. 在这种情况下线元成为了一个关于坐标 (元) 的函数, 我们就会看到结果是线元不变 (因为度规这个概念被省略了).
 
-[定理13] 线元不变的条件 :math:`\eta_{\mu\nu} (\D x'^\mu) (\D x'^\nu) = \eta_{\mu\nu} (\D x^\mu) (\D x^\nu)` 等价于如下条件
+[定理2-13] 线元不变的条件 :math:`\eta_{\mu\nu} (\D x'^\mu) (\D x'^\nu) = \eta_{\mu\nu} (\D x^\mu) (\D x^\nu)` 等价于如下条件
 
 .. math:: 
     \eta_{\mu\nu} \frac{\partial x'^\mu}{\partial x^\rho} \frac{\partial x'^\nu}{\partial x^\sigma} = \eta_{\rho\sigma}
@@ -651,7 +651,7 @@
 2 洛伦兹变换
 ^^^^^^^^^^^^
 
-[定理14] 满足 :eq:`isometric-cond` 的坐标变换 :math:`x^\mu \mapsto x'^\mu` 必须是 **线性的** (linear)
+[定理2-14] 满足 :eq:`isometric-cond` 的坐标变换 :math:`x^\mu \mapsto x'^\mu` 必须是 **线性的** (linear)
 
 .. math:: 
     x'^\mu = \xtensor{\Lambda}{^\mu}{_\nu} x^\nu + a^\mu
@@ -687,7 +687,7 @@
 
 下面考虑把洛伦兹变换写成另一种形式. 矩阵 :math:`\eta_{\mu\nu}` 有逆矩阵, 记作 :math:`\eta^{\mu\nu}`, 它和 :math:`\eta_{\mu\nu}` 矩阵元相同: 它是对角矩阵, 对角元为 :math:`\eta^{00} = -1, \eta^{11} = \eta^{22} = \eta^{33} = +1`.
 
-[定理15] 条件 :math:`\eta_{\mu\nu}\xtensor{\Lambda}{^\mu}{_\rho}\xtensor{\Lambda}{^\nu}{_\sigma} = \eta_{\rho\sigma}` 等价于 :math:`\eta^{\mu\nu}\xtensor{\Lambda}{^\rho}{_\mu}\xtensor{\Lambda}{^\sigma}{_\nu} = \eta^{\rho\sigma}`.
+[定理2-15] 条件 :math:`\eta_{\mu\nu}\xtensor{\Lambda}{^\mu}{_\rho}\xtensor{\Lambda}{^\nu}{_\sigma} = \eta_{\rho\sigma}` 等价于 :math:`\eta^{\mu\nu}\xtensor{\Lambda}{^\rho}{_\mu}\xtensor{\Lambda}{^\sigma}{_\nu} = \eta^{\rho\sigma}`.
 
 [证明] 对第一式两边乘 :math:`\eta^{\sigma\tau}\xtensor{\Lambda}{^\kappa}{_\tau}`, 合理地插入括号, 得
 
@@ -710,7 +710,7 @@
 
 这些变换构成一个群. 要证明这一点, 需要定义群乘法, 并证明存在逆元. 下面证明, 如果以复合变换定义为群乘法, 那么所得的变换仍然是群中的元素.
 
-[定理16] 考虑两个洛伦兹变换
+[定理2-16] 考虑两个洛伦兹变换
 
 .. math:: 
     x^\mu \mapsto&\  x'^\mu = \xtensor{\Lambda}{^\mu}{_\nu} x^\nu + a^\mu \\
@@ -749,7 +749,7 @@
 
 这说明 :math:`\Lambda` 的行列式是一个相因子 :math:`\E^{\I \theta}`. 注意量子力学复空间是指考虑了态矢的变换是复空间. 现在只是考虑坐标变换 :math:`\Lambda`, 它是实空间的变换. 所以其实只能有 :math:`\det \Lambda = \pm 1`, 变换群就不连通. 但是量子力学复空间的情况下 (即后面要考虑的 :math:`U` 变换作用的态矢空间), 变换群仍是连通的 (在复空间, 该行列式的值可以连续变化). 另一方面, 由于行列式不为零, :math:`\Lambda` 有逆, 记为 :math:`\xtensor{(\Lambda^{-1})}{^\rho}{_\nu}`. 
 
-[定理17] :math:`\xtensor{(\Lambda^{-1})}{^\rho}{_\nu} = \eta_{\nu\mu}\eta^{\rho\sigma}\xtensor{\Lambda}{^\mu}{_\sigma} = \xtensor{\Lambda}{_\nu}{^\rho}`. 因此求一个齐次洛伦兹变换的逆矩阵, 就是先将矩阵转置, 然后将所有 :math:`0i` 和 :math:`i0` 分量全部变号 (因为两个上下标的上下位置发生了改变).
+[定理2-17] :math:`\xtensor{(\Lambda^{-1})}{^\rho}{_\nu} = \eta_{\nu\mu}\eta^{\rho\sigma}\xtensor{\Lambda}{^\mu}{_\sigma} = \xtensor{\Lambda}{_\nu}{^\rho}`. 因此求一个齐次洛伦兹变换的逆矩阵, 就是先将矩阵转置, 然后将所有 :math:`0i` 和 :math:`i0` 分量全部变号 (因为两个上下标的上下位置发生了改变).
 
 [证明] 首先由逆矩阵定义我们有
 
@@ -767,7 +767,7 @@
 .. math:: 
     \xtensor{(\Lambda^{-1})}{^\lambda}{_\nu} = \eta^{\lambda\rho} \eta_{\mu\nu}\xtensor{\Lambda}{^\mu}{_\rho}
 
-[定理18] 变换 :math:`T(\Lambda, a)` 的逆变换为 :math:`T(\Lambda^{-1}, -\Lambda^{-1}a)`.
+[定理2-18] 变换 :math:`T(\Lambda, a)` 的逆变换为 :math:`T(\Lambda^{-1}, -\Lambda^{-1}a)`.
 
 [证明] 根据 :eq:`t-lambda-a-compose`, 若令等式右边为恒等变换 :math:`T(1, 0)` 则 :math:`T(\Lambda', a')` 即为所求的逆变换. 我们有
 
@@ -809,7 +809,7 @@
 .. math:: 
     T(\Lambda', 0) T(\Lambda, 0) = T(\Lambda'\Lambda, 0)
 
-称为 **齐次洛伦兹群** (homogeneous Lorentz group). 除此之外, 满足 :math:`\det \Lambda = +1` 的变换显然构成非齐次洛伦兹群或者齐次洛伦兹群的一个子群. 另一方面, 根据 :eq:`lorentz-trans-cond` 及[定理15], 考虑它的 :math:`00` 分量, 有
+称为 **齐次洛伦兹群** (homogeneous Lorentz group). 除此之外, 满足 :math:`\det \Lambda = +1` 的变换显然构成非齐次洛伦兹群或者齐次洛伦兹群的一个子群. 另一方面, 根据 :eq:`lorentz-trans-cond` 及[定理2-15], 考虑它的 :math:`00` 分量, 有
 
 .. math:: 
     \eta_{00} =&\ -1 = \eta_{\mu\nu}\xtensor{\Lambda}{^\mu}{_0}\xtensor{\Lambda}{^\nu}{_0} = 
@@ -821,7 +821,7 @@
 
 其中 :math:`i` 对 :math:`1, 2, 3` 求和. 这里含有 :math:`i` 的项不能写成平方形式, 是为了让 :math:`i` 指标出现两次表示求和. 这里按照 Weinberg 的意思, 考虑 :math:`\Lambda` 都是实数 (即经典狭义相对论的情况, 因为若是量子力学, 应该允许矩阵元为复数). 那么 :math:`\xtensor{\Lambda}{^i}{_0} \xtensor{\Lambda}{^i}{_0}` 相当于内积, 必须大于等于零. 从而 :math:`\big( \xtensor{\Lambda}{^0}{_0} \big)^2 \geqslant 1`. 于是要么 :math:`\xtensor{\Lambda}{^0}{_0} \geqslant +1` 要么 :math:`\xtensor{\Lambda}{^0}{_0} \leqslant -1`.
 
-[引理19-1] 设 :math:`a \geqslant 1, b \geqslant 1`, 则 :math:`ab - \sqrt{a^2 - 1}\sqrt{b^2 - 1} \geqslant 1`.
+[引理2-19-1] 设 :math:`a \geqslant 1, b \geqslant 1`, 则 :math:`ab - \sqrt{a^2 - 1}\sqrt{b^2 - 1} \geqslant 1`.
 
 [证明] 由 :math:`(a - b)^2 \geqslant 0` 得 :math:`a^2 + b^2 \geqslant 2ab`. 于是
 
@@ -836,9 +836,9 @@
     ab - 1 \geqslant&\ \sqrt{a^2 - 1}\sqrt{b^2 - 1} \\
     ab - \sqrt{a^2 - 1}\sqrt{b^2 - 1} \geqslant&\  1
 
-[引理19-2] 基本不等式 :math:`\sqrt{\frac{a^2+b^2}{2}} \geqslant \frac{a+b}{2} \geqslant \sqrt{ab} \geqslant \frac{2ab}{a+b}`.
+[引理2-19-2] 基本不等式 :math:`\sqrt{\frac{a^2+b^2}{2}} \geqslant \frac{a+b}{2} \geqslant \sqrt{ab} \geqslant \frac{2ab}{a+b}`.
 
-[定理19] 满足 :math:`\xtensor{\Lambda}{^0}{_0} \geqslant +1` 的变换构成一个子群, 其中的群乘法按照Poincaré群的群乘法相同的方式定义. 注意 满足 :math:`\xtensor{\Lambda}{^0}{_0} \leqslant -1` 的变换不构成子群, 因为恒等元不在其中.
+[定理2-19] 满足 :math:`\xtensor{\Lambda}{^0}{_0} \geqslant +1` 的变换构成一个子群, 其中的群乘法按照Poincaré群的群乘法相同的方式定义. 注意 满足 :math:`\xtensor{\Lambda}{^0}{_0} \leqslant -1` 的变换不构成子群, 因为恒等元不在其中.
 
 [证明] 为了证明它构成子群, 对两个群元, 表示为 :math:`\xtensor{\Lambda}{^\mu}{_\nu}` 和 :math:`\xtensor{{\Lambda'}}{^\mu}{_\nu}`, 需要证明它们的乘积 :math:`\Lambda'\Lambda` 也满足 :math:`\xtensor{(\Lambda'\Lambda)}{^0}{_0} \geqslant +1`. 首先有
 
@@ -861,7 +861,7 @@
     \xtensor{(\Lambda'\Lambda)}{^0}{_0} =&\ \xtensor{{\Lambda'}}{^0}{_0}\xtensor{\Lambda}{^0}{_0} + \xtensor{{\Lambda'}}{^0}{_i}\xtensor{\Lambda}{^i}{_0} \\
     \geqslant&\ \xtensor{{\Lambda'}}{^0}{_0}\xtensor{\Lambda}{^0}{_0} - \sqrt{\big( \xtensor{{\Lambda'}}{^0}{_0} \big)^2 - 1} \sqrt{\big( \xtensor{\Lambda}{^0}{_0} \big)^2 - 1} \geqslant 1
 
-其中最后一步的理由如下. 设 :math:`a = \xtensor{{\Lambda'}}{^0}{_0}, b = \xtensor{\Lambda}{^0}{_0}`, 由题设知 :math:`a \geqslant 1, b \geqslant 1`. 利用 [引理19-1] 可以得到结果.
+其中最后一步的理由如下. 设 :math:`a = \xtensor{{\Lambda'}}{^0}{_0}, b = \xtensor{\Lambda}{^0}{_0}`, 由题设知 :math:`a \geqslant 1, b \geqslant 1`. 利用 [引理2-19-1] 可以得到结果.
 
 满足 :math:`\det \Lambda = +1` 和 :math:`\xtensor{\Lambda}{^0}{_0} \geqslant +1` 的洛伦兹变换的子群, 称为 **固有正时洛伦兹群** (proper orthochronous Lorentz group). 因为不可能通过一个连续的参数变换从 :math:`\det \Lambda = +1` 变到 :math:`\det \Lambda = -1`, 或者从 :math:`\xtensor{\Lambda}{^0}{_0} \geqslant +1` 变到 :math:`\xtensor{\Lambda}{^0}{_0} \leqslant -1` (即 Poincaré群本身是非连通的, 而固有正时洛伦兹群是含有单位元的一个连通子群), 任何可以通过恒等元进行连续参数变换得到的洛伦兹变换的 :math:`\det \Lambda` 和 :math:`\xtensor{\Lambda}{^0}{_0}` 必须和恒等变换具有相同的符号. 于是这样的洛伦兹变换必定属于固有正时洛伦兹群.
 
@@ -926,7 +926,7 @@
 
 其中 :math:`J^{\rho\sigma}` 和 :math:`P^\rho` 是 :math:`\omega-` 和 :math:`\epsilon-` 无关的算符, 省略号代表 :math:`\omega` 和/或 :math:`\epsilon` 的高阶项.
 
-[定理20] 为使 :math:`U(1+\omega, \epsilon)` 为幺正的, 算符 :math:`J^{\rho\sigma}` 和 :math:`P^\rho` 必须是厄米的. 并且 :math:`J^{\rho\sigma}` 还是反称的.
+[定理2-20] 为使 :math:`U(1+\omega, \epsilon)` 为幺正的, 算符 :math:`J^{\rho\sigma}` 和 :math:`P^\rho` 必须是厄米的. 并且 :math:`J^{\rho\sigma}` 还是反称的.
 
 [证明] 利用 :math:`U^\dagger U = 1` 得
 
@@ -958,7 +958,7 @@
 
 其中 :math:`\xtensor{\Lambda}{^\mu}{_\nu}` 和 :math:`a^\mu` 是新变换的与 :math:`\omega` 及 :math:`\epsilon` 无关的参数. 但是这里需要说明, 在线性变换 :math:`U(\Lambda, a)` 作用下, 为什么算符 :math:`U(1+\omega, \epsilon)` 要按照上式进行变换. 这由如下定理保证 (王正行P21). 其实这里的关系类似于推前映射和流形间的映射的关系. 假设映射不是变换到自身的, 设 :math:`U : M \to N` (并且有逆), 那么, 算符 :math:`A` 只能作用于 :math:`M` 中的元素, :math:`A'` 只能作用于 :math:`N` 中的元素. 那么自然的定义就是 :math:`A' = UAU^{-1}`.
 
-[定理21] 设 :math:`U` 为线性变换, :math:`\psi` 为态矢. 若 :math:`\psi` 在 :math:`U` 作用下按如下规则变换
+[定理2-21] 设 :math:`U` 为线性变换, :math:`\psi` 为态矢. 若 :math:`\psi` 在 :math:`U` 作用下按如下规则变换
 
 .. math:: 
     \psi \to \psi' = U\psi
@@ -1061,7 +1061,7 @@
 
 从上面的分析可以总结出一般的反称性传递的定理.
 
-[定理22] 若 :math:`\xtensor{A}{^\mu}{_\sigma}\xtensor{A}{^\nu}{_\rho} = \xtensor{A}{^{[\mu}}{_\sigma}\xtensor{A}{^{\nu]}}{_\rho}`, 则 :math:`\xtensor{A}{^\mu}{_\sigma}\xtensor{A}{^\nu}{_\rho} = \xtensor{A}{^\mu}{_{[\sigma}}\xtensor{A}{^\nu}{_{\rho]}}`. 即一对上下指标如果可以左右交换, 上指标若反称, 那么下指标必反称, 不需要要求缩并.
+[定理2-22] 若 :math:`\xtensor{A}{^\mu}{_\sigma}\xtensor{A}{^\nu}{_\rho} = \xtensor{A}{^{[\mu}}{_\sigma}\xtensor{A}{^{\nu]}}{_\rho}`, 则 :math:`\xtensor{A}{^\mu}{_\sigma}\xtensor{A}{^\nu}{_\rho} = \xtensor{A}{^\mu}{_{[\sigma}}\xtensor{A}{^\nu}{_{\rho]}}`. 即一对上下指标如果可以左右交换, 上指标若反称, 那么下指标必反称, 不需要要求缩并.
 
 [证明]
 
@@ -1075,7 +1075,7 @@
 
 对齐次洛伦兹变换 (满足 :math:`a^\mu = 0`), :eq:`jp-lambda-trans` 相当于说 :math:`J^{\mu\nu}` 是张量 (的分量) 而 :math:`P^\mu` 是矢量 (的分量). 对纯平移 (满足 :math:`\xtensor{\Lambda}{^\mu}{_\nu} = \xtensor{\delta}{^\mu}{_\nu}`), 我们可以看出 :math:`P^\rho` 是平移不变量, 但 :math:`J^{\mu\nu}` 不是平移不变量. 一般地有 :math:`U(\Lambda, a)J^{\rho\sigma}U^{-1}(\Lambda, a)=J^{\mu\nu} - a^\mu P^\nu + a^\nu P^\mu`. 特别地, 其空间分量的变换关系由如下定理给出.
 
-[定理23] :math:`J^{\rho\sigma}` 的空间-空间分量的在空间平移变换下的改变, 就是通常角动量在改变坐标系原点时的改变.
+[定理2-23] :math:`J^{\rho\sigma}` 的空间-空间分量的在空间平移变换下的改变, 就是通常角动量在改变坐标系原点时的改变.
 
 [证明] 对空间分量有
 
@@ -1093,7 +1093,7 @@
 .. math:: 
     {J'}^{ij} = (r^i - a^i) P^j - (r^j - a^j) P^i = r^iP^j - r^jP^i - a^iP^j + a^jP^i = J^{ij} - a^iP^j + a^jP^i
 
-[引理23-1] 对平移变换 :math:`U|\bm{x}\rangle = |\bm{x} + \bm{a}\rangle`, 坐标算符的变换为 :math:`\bm{r} \to \bm{r}' = U\bm{r}U^{-1} = \bm{r} - \bm{a}`.
+[引理2-23-1] 对平移变换 :math:`U|\bm{x}\rangle = |\bm{x} + \bm{a}\rangle`, 坐标算符的变换为 :math:`\bm{r} \to \bm{r}' = U\bm{r}U^{-1} = \bm{r} - \bm{a}`.
 
 [证明] 考虑用坐标算符 :math:`\bm{r}` 测量本征态 :math:`|x\rangle` 得到的值经过线性变换应该不变. 即
 
@@ -1191,7 +1191,7 @@
     [ P^\mu, P^\rho] =&\ 0
     :label: poin-lie-algebra
 
-根据 [定理12] 后面的讨论, 因为此处的李括号是按照 :math:`[A,B] = AB-BA` 定义的, 只要 :math:`[A,B]` 仍给出原矢量空间的元素, 则该矢量空间就构成李代数. 因此显然此处是李代数. 其中 :math:`J^{\mu\nu}` (6个独立分量) 和 :math:`P^\mu` (4个独立分量) 构成该李代数 (矢量空间) 的10个基矢. 这是10维李代数.
+根据 [定理2-12] 后面的讨论, 因为此处的李括号是按照 :math:`[A,B] = AB-BA` 定义的, 只要 :math:`[A,B]` 仍给出原矢量空间的元素, 则该矢量空间就构成李代数. 因此显然此处是李代数. 其中 :math:`J^{\mu\nu}` (6个独立分量) 和 :math:`P^\mu` (4个独立分量) 构成该李代数 (矢量空间) 的10个基矢. 这是10维李代数.
 
 下面考虑将 :eq:`poin-lie-algebra` 中 :math:`J` 的关系改写成容易记的形式.
 
@@ -1206,7 +1206,7 @@
 
 在量子力学中, 有一类重要算符是守恒算符. 守恒算符与能量算符 :math:`H = P^0` 对易.
 
-[定理24] (王正行P25 守恒定理) 一个不显含时间的无限小幺正变换若保持系统的 Hamilton 量不变, 则生成此无限小变换的厄米算符 :math:`F` 满足 :math:`[F, H] = 0`, 即算符 :math:`F` 与 :math:`H` 对易. 进一步, 这个算符代表一个守恒量, 即该算符对应的观测量不随时间变化 :math:`\frac{\D}{\D t} \langle F \rangle = 0`, 这个算符因而称为守恒 (conserved) 算符.
+[定理2-24] (王正行P25 守恒定理) 一个不显含时间的无限小幺正变换若保持系统的 Hamilton 量不变, 则生成此无限小变换的厄米算符 :math:`F` 满足 :math:`[F, H] = 0`, 即算符 :math:`F` 与 :math:`H` 对易. 进一步, 这个算符代表一个守恒量, 即该算符对应的观测量不随时间变化 :math:`\frac{\D}{\D t} \langle F \rangle = 0`, 这个算符因而称为守恒 (conserved) 算符.
 
 [证明] 先证从一个不显含时间的无限小幺正变换 :math:`U = 1 + \I\epsilon F` 保持系统的 Hamilton 量不变推出 :math:`[F, H] = 0`. 任一算符 :math:`H` 在无限小幺正变换 :math:`U` 下的改变是
 
@@ -1257,7 +1257,7 @@
 
 不是守恒量的算符, 因而我们不使用 :math:`\bm{K}` 的本征值标记物理态. 为了证明它们是否是守恒量只需要求对应的算符和能量算符的对易关系. 这些对易关系由下面的定理给出.
 
-[定理25] 采用3维标记, :eq:`poin-lie-algebra` 的对易关系可以写为
+[定理2-25] 采用3维标记, :eq:`poin-lie-algebra` 的对易关系可以写为
 
 .. math:: 
     [J_i, J_j] =&\ \I \epsilon_{ijk}J_k,\quad [J_i, K_j] = \I \epsilon_{ijk}K_k,\quad [K_i, K_j]= -\I \epsilon_{ijk}J_k,\\
@@ -1348,12 +1348,12 @@
 7 Poincaré 变换群的单参子群
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-[定理26] 纯平移变换 :math:`T(1, a)` 构成非齐次洛伦兹群的一个子群. 这个子群的 (从洛伦兹群诱导的) 群乘法规则由下式给出
+[定理2-26] 纯平移变换 :math:`T(1, a)` 构成非齐次洛伦兹群的一个子群. 这个子群的 (从洛伦兹群诱导的) 群乘法规则由下式给出
 
 .. math:: 
     T(1, a')T(1, a) = T(1, a' + a)
 
-[证明] 根据 [定理16] 的 :eq:`t-lambda-a-compose` 式, 即
+[证明] 根据 [定理2-16] 的 :eq:`t-lambda-a-compose` 式, 即
 
 .. math:: 
     T(\Lambda', a')T(\Lambda, a) = T(\Lambda'\Lambda, \Lambda' a + a')
@@ -1365,7 +1365,7 @@
 
 这个纯平移变换的规则是相加的 (:eq:`f-theta-additive`), 因此利用 :eq:`ujp-expansion` 可以推出类似于 :eq:`ut-exp` 的结论.
 
-[定理27] 物理的 Hilbert 空间的有限平移变换可以表示为 (注意这里的 "物理的 Hilbert 空间的有限平移变换" 因为强调了 "物理的", 所以它是射线变换 :math:`T`. 而下式给出这样的射线变换的一个表示, 即态矢变换, 因此记为 :math:`U`)
+[定理2-27] 物理的 Hilbert 空间的有限平移变换可以表示为 (注意这里的 "物理的 Hilbert 空间的有限平移变换" 因为强调了 "物理的", 所以它是射线变换 :math:`T`. 而下式给出这样的射线变换的一个表示, 即态矢变换, 因此记为 :math:`U`)
 
 .. math:: 
     U(1, a) = \exp (-\I P^\mu a_\mu)
@@ -1383,12 +1383,12 @@
 
 按照完全相同的方法, 我们可以证明如下命题.
 
-[定理28] 物理的 Hilbert 空间的绕沿 :math:`\bm{\theta}` 方向的轴转角度 :math:`|\bm{\theta}|` 的转动 :math:`R_{\bm{\theta}}` 可以表示为
+[定理2-28] 物理的 Hilbert 空间的绕沿 :math:`\bm{\theta}` 方向的轴转角度 :math:`|\bm{\theta}|` 的转动 :math:`R_{\bm{\theta}}` 可以表示为
 
 .. math:: 
     U(R_{\bm{\theta}}, 0) = \exp (\I \bm{J}\cdot \bm{\theta})
 
-[证明] 在 [定理16] 的 :eq:`t-lambda-a-compose` 式中令 :math:`a = 0`, 得
+[证明] 在 [定理2-16] 的 :eq:`t-lambda-a-compose` 式中令 :math:`a = 0`, 得
 
 .. math:: 
     T(\Lambda', 0)T(\Lambda, 0) = T(\Lambda'\Lambda, 0)
@@ -1431,13 +1431,13 @@
 即空间转动变换相对于参数 :math:`\bm{\theta}` 满足相加性规则. 和上面的平移变换不同, 这个相加性规则只对无穷小转动成立. 但是, 一个有限转动本身, 是否具有相加性, 这个问题应该从另一个角度考虑. 注意这里的推导, 我们唯一需要相加性的地方, 也就是把 :math:`\theta` 分成 :math:`\theta/N`. 而考虑一个有限转动, 如果维持转动方向不变, 仅仅每次转动一个较小角度, 那么很显然是满足相加性的. 这一点可以从如下计算看出. 假设转动是沿 :math:`z` 轴, 我们只需要计算 :math:`xy` 分量. 利用二倍角公式可得
 
 .. math:: 
-    U(R_{\theta'})U(R_{\theta}) =&\ \begin{pmatrix} \cos\theta' & -\sin\theta' \\ \sin\theta' & \cos\theta' \end{pmatrix}
-        \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix} \\
-    =&\ \begin{pmatrix} \cos\theta'\cos\theta -\sin\theta'\sin\theta & -\cos\theta'\sin\theta -\sin\theta'\cos\theta \\ \sin\theta'\cos\theta + \cos\theta'\sin\theta & -\sin\theta'\sin\theta + \cos\theta'\cos\theta \end{pmatrix} \\
-    =&\ \begin{pmatrix} \cos(\theta'+\theta) & -\sin(\theta'+\theta) \\ \sin(\theta'+\theta) & \cos(\theta'+\theta) \end{pmatrix}
+    U(R_{\theta'})U(R_{\theta}) =&\ \begin{pmatrix} \cos\theta' & \sin\theta' \\ -\sin\theta' & \cos\theta' \end{pmatrix}
+        \begin{pmatrix} \cos\theta & \sin\theta \\ -\sin\theta & \cos\theta \end{pmatrix} \\
+    =&\ \begin{pmatrix} \cos\theta'\cos\theta -\sin\theta'\sin\theta & \cos\theta'\sin\theta +\sin\theta'\cos\theta \\ -\sin\theta'\cos\theta - \cos\theta'\sin\theta & -\sin\theta'\sin\theta + \cos\theta'\cos\theta \end{pmatrix} \\
+    =&\ \begin{pmatrix} \cos(\theta'+\theta) & \sin(\theta'+\theta) \\ -\sin(\theta'+\theta) & \cos(\theta'+\theta) \end{pmatrix}
     = U(R_{\theta'+\theta})
 
-当然, 如果是两个不同方向有限角的旋转, 那么一般是没有可加性的. 所幸的是, 我们的计算中并不涉及这样的情况. 在我们的计算过程中, 把 :math:`\theta` 分成 :math:`\theta/N` 可以保证分出的有限或无穷小旋转总是沿同一方向的. 进一步, 分成无穷小角度之后, 问题就变成无穷小量的问题, 那么上述无穷小角度的讨论也就可以应用到下面的展开式了. 因为我们现在考虑的变换是 :math:`U(R_{\bm{\theta}}, 0)`, 在 :eq:`ujp-expansion` 中可令 :math:`\epsilon = 0`, 得
+注意这里按照 Weinberg 书的约定, 旋转矩阵的方向和 Zee, 王正行等书不一样. 当然, 如果是两个不同方向有限角的旋转, 那么一般是没有可加性的. 所幸的是, 我们的计算中并不涉及这样的情况. 在我们的计算过程中, 把 :math:`\theta` 分成 :math:`\theta/N` 可以保证分出的有限或无穷小旋转总是沿同一方向的. 进一步, 分成无穷小角度之后, 问题就变成无穷小量的问题, 那么上述无穷小角度的讨论也就可以应用到下面的展开式了. 因为我们现在考虑的变换是 :math:`U(R_{\bm{\theta}}, 0)`, 在 :eq:`ujp-expansion` 中可令 :math:`\epsilon = 0`, 得
 
 .. math:: 
     U(\omega, 0) = 1 + \frac{1}{2}\I \omega_{\mu\nu}J^{\mu\nu} + \cdots
@@ -1495,7 +1495,7 @@
     
 由 :math:`m/v` 量级的等式得 :math:`[K_i, M] = 0`, 由 :math:`mv` 量级的等式得 :math:`[K_i, W] = \I P_i`.
 
-[引理29-1 (Hadamard 引理, Hadamard's lemma)] 设 :math:`t` 为实参数, :math:`A, B` 为算符或矩阵, 则
+[引理2-29-1 (Hadamard 引理, Hadamard's lemma)] 设 :math:`t` 为实参数, :math:`A, B` 为算符或矩阵, 则
 
 .. math:: 
     \E^{tA}B\E^{-tA} = B + [A, B]t + [A, [A, B]] \frac{t^2}{2!} + [A, [A, [A, B]]] \frac{t^3}{3!} + \cdots
@@ -1527,7 +1527,7 @@
 
 下面的一些引理对于后面的内容并非必要, 但是显示了这一数学关系和李群伴随表示的联系.
 
-[引理29-2] 对任意矩阵 :math:`M, N`, :math:`N^{-1}(\exp M) N = \exp (N^{-1}MN)` (梁灿彬 G-5-27).
+[引理2-29-2] 对任意矩阵 :math:`M, N`, :math:`N^{-1}(\exp M) N = \exp (N^{-1}MN)` (梁灿彬 G-5-27).
 
 [证明] 做泰勒展开得
 
@@ -1536,9 +1536,9 @@
     =&\ 1 + N^{-1}MN + \frac{1}{2!}(N^{-1}MN)(N^{-1}MN) + \frac{1}{3!}(N^{-1}MN)^3 + \cdots \\
     =&\ \exp (N^{-1}MN)
 
-[定义5 (梁灿彬G.8 定义1)] 用群 :math:`G` 的每一元素 :math:`g \in G` 可构造一个称为伴随同构的自同构映射 :math:`I_g : G \to G`. 对李群 :math:`G`, 这是个从 :math:`G` 到 :math:`G` 的李群同构. 按定义, :math:`I_g(h) \equiv ghg^{-1}`, 所以 :math:`I_g(e) = e`, 它在 :math:`e` 点所诱导的推前映射 (切映射) :math:`I_{g*} := I_{g*e}` 是从 :math:`V_e` 到 :math:`V_e` 的映射, 记为 :math:`\mathrm{Ad}_g \equiv I_{g*e}`. 因 :math:`V_e` 就是 :math:`G` 的李代数 :math:`\mathscr{G}`, 故 :math:`\mathrm{Ad}_g : \mathscr{G} \to \mathscr{G}` 是 :math:`\mathscr{G}` 上的线性变换.
+[定义2-5 (梁灿彬G.8 定义1)] 用群 :math:`G` 的每一元素 :math:`g \in G` 可构造一个称为伴随同构的自同构映射 :math:`I_g : G \to G`. 对李群 :math:`G`, 这是个从 :math:`G` 到 :math:`G` 的李群同构. 按定义, :math:`I_g(h) \equiv ghg^{-1}`, 所以 :math:`I_g(e) = e`, 它在 :math:`e` 点所诱导的推前映射 (切映射) :math:`I_{g*} := I_{g*e}` 是从 :math:`V_e` 到 :math:`V_e` 的映射, 记为 :math:`\mathrm{Ad}_g \equiv I_{g*e}`. 因 :math:`V_e` 就是 :math:`G` 的李代数 :math:`\mathscr{G}`, 故 :math:`\mathrm{Ad}_g : \mathscr{G} \to \mathscr{G}` 是 :math:`\mathscr{G}` 上的线性变换.
 
-[引理29-3 (梁灿彬, 定理G-8-1)] 设 :math:`\mathscr{G}` 是李群 :math:`G` 的李代数, 则 :math:`\forall g \in G, A \in \mathscr{G}` 有
+[引理2-29-3 (梁灿彬, 定理G-8-1)] 设 :math:`\mathscr{G}` 是李群 :math:`G` 的李代数, 则 :math:`\forall g \in G, A \in \mathscr{G}` 有
 
 .. math:: 
     \exp(t \mathrm{Ad}_g A) = g (\exp tA) g^{-1}
@@ -1556,12 +1556,12 @@
         \left[ I_g (\exp tA) \right] \\
     =&\ I_{g*} \left[ \frac{\D}{\D t} \bigg\rvert_{t = 0} (\exp tA) \right] = \mathrm{Ad}_g A
 
-[引理29-4] :math:`\mathrm{Ad}_g B = gBg^{-1}`. 其中 :math:`g` 是群元, :math:`B` 是代数元. 但此处都看作矩阵. 因此相乘有意义. 从此可以推出
+[引理2-29-4] :math:`\mathrm{Ad}_g B = gBg^{-1}`. 其中 :math:`g` 是群元, :math:`B` 是代数元. 但此处都看作矩阵. 因此相乘有意义. 从此可以推出
 
 .. math:: 
     \mathrm{Ad}_{\exp tA} B = \E^{tA} B \E^{-tA}
 
-[证明] 在 [引理29-3] 中利用 [引理29-2] 得 :math:`\exp(t \mathrm{Ad}_g A) = g (\exp tA) g^{-1} = \exp [tgAg^{-1}]`.
+[证明] 在 [引理2-29-3] 中利用 [引理2-29-2] 得 :math:`\exp(t \mathrm{Ad}_g A) = g (\exp tA) g^{-1} = \exp [tgAg^{-1}]`.
 两边对 :math:`t` 求导得
 
 .. math:: 
@@ -1569,26 +1569,26 @@
 
 令 :math:`t = 0` 得 :math:`\mathrm{Ad}_g A = gAg^{-1}`.
 
-[引理29-5 (梁灿彬 G-8-12)] 映射 :math:`\mathrm{ad}_A : \mathscr{G} \to \mathscr{G}` (其中 :math:`A` 不是群元而是代数元, :math:`A \in \mathscr{G}` 定义为 :math:`\mathrm{ad}_A (B) := [A, B], \quad \forall B \in \mathscr{G}`, 则有
+[引理2-29-5 (梁灿彬 G-8-12)] 映射 :math:`\mathrm{ad}_A : \mathscr{G} \to \mathscr{G}` (其中 :math:`A` 不是群元而是代数元, :math:`A \in \mathscr{G}` 定义为 :math:`\mathrm{ad}_A (B) := [A, B], \quad \forall B \in \mathscr{G}`, 则有
 
 .. math:: 
     \mathrm{Ad}_{\exp(A)} = \exp(\mathrm{ad}_A)
 
-[证明] 利用[引理29-1]结合 :math:`\mathrm{ad}_A` 定义得
+[证明] 利用[引理2-29-1]结合 :math:`\mathrm{ad}_A` 定义得
 
 .. math:: 
     \E^{tA}B\E^{-tA} =&\ B + [A, B]t + [A, [A, B]] \frac{t^2}{2!} + [A, [A, [A, B]]] \frac{t^3}{3!} + \cdots \\
     =&\ \sum_{n = 0}^\infty \frac{t^n}{n!} (\mathrm{ad}_A)^n (B) = \sum_{n = 0}^\infty \frac{1}{n!} (\mathrm{ad}_{tA})^n (B) \\
     =&\ \exp(\mathrm{ad}_{tA}) (B)
 
-而 [引理29-4] 推论给出 :math:`\mathrm{Ad}_{\exp tA} B = \E^{tA} B \E^{-tA}`, 于是
+而 [引理2-29-4] 推论给出 :math:`\mathrm{Ad}_{\exp tA} B = \E^{tA} B \E^{-tA}`, 于是
 
 .. math:: 
     \exp(\mathrm{ad}_{tA}) (B) = \mathrm{Ad}_{\exp tA} B
 
 令 :math:`t = 1` 得 :math:`\mathrm{Ad}_{\exp(A)} = \exp(\mathrm{ad}_A)`.
 
-[定理29 (Baker–Campbell–Hausdorff 公式的简单形式)] 设 :math:`A, B` 为算符或矩阵, 其对易子 :math:`[A, B] = C` 其中 :math:`C` 满足 :math:`[C, A] = [C, B] = 0`. 则有
+[定理2-29 (Baker–Campbell–Hausdorff 公式的简单形式)] 设 :math:`A, B` 为算符或矩阵, 其对易子 :math:`[A, B] = C` 其中 :math:`C` 满足 :math:`[C, A] = [C, B] = 0`. 则有
 
 .. math:: 
     \E^A \E^B = \E^{A + B + \frac{1}{2}[A, B]} = \E^{A + B}\E^{\frac{1}{2}[A, B]}
@@ -1621,7 +1621,7 @@
     = \E^{tA} A \E^{-tA} + \E^{tA} B \E^{-tA} - A \\
     =&\ A \E^{tA} \E^{-tA} - A + \E^{tA} B \E^{-tA} = \E^{tA} B \E^{-tA}
 
-根据[引理29-1], 利用 :math:`A, C` 对易, 有 :math:`\E^{tA} B \E^{-tA} = B + t[A, B] = B + tC` (因为 :math:`[A, [A, B]] = [A, C] = 0`, 所以这一项和更高阶项都为零). 于是
+根据[引理2-29-1], 利用 :math:`A, C` 对易, 有 :math:`\E^{tA} B \E^{-tA} = B + t[A, B] = B + tC` (因为 :math:`[A, [A, B]] = [A, C] = 0`, 所以这一项和更高阶项都为零). 于是
 
 .. math:: 
     G^{-1} \frac{\D G}{\D t} = \frac{\D \ln G}{\D t} = B + tC
@@ -1655,12 +1655,12 @@
 
 按照伽利略变换, 平移变换 :math:`\bm{x} \to \bm{x} + \bm{a}` 和 "推进" :math:`\bm{x} \to \bm{x} + \bm{v}t` 的乘积应该是变换 :math:`\bm{x} \to \bm{x} + \bm{v} t + \bm{a}`, 但这个关系并不能对应于 Hilbert 空间的算符作用, 见如下定理.
 
-[定理30] 对伽利略代数有
+[定理2-30] 对伽利略代数有
 
 .. math:: 
     \exp(\I \bm{K} \cdot \bm{v}) \exp(-\I \bm{P}\cdot \bm{a}) = \exp(\I M \bm{a} \cdot \bm{v} / 2) \exp (\I (\bm{K}\cdot \bm{v} - \bm{P} \cdot \bm{a} ))
 
-[证明] 利用上面的对易关系, 有 :math:`[K_i, P_j] = \I M\delta_{ij}`, 也就是说 :math:`\bm{K}, \bm{P}` 不对易, 但是他们分别与对易子 :math:`M` 对易, 即 :math:`[K_i, M] = [P_i, M] = 0`. 从而利用 [定理29] 令 :math:`A = \I \bm{K} \cdot \bm{v}, B = -\I \bm{P}\cdot \bm{a}` 得
+[证明] 利用上面的对易关系, 有 :math:`[K_i, P_j] = \I M\delta_{ij}`, 也就是说 :math:`\bm{K}, \bm{P}` 不对易, 但是他们分别与对易子 :math:`M` 对易, 即 :math:`[K_i, M] = [P_i, M] = 0`. 从而利用 [定理2-29] 令 :math:`A = \I \bm{K} \cdot \bm{v}, B = -\I \bm{P}\cdot \bm{a}` 得
 
 .. math:: 
     &\ \exp(\I \bm{K} \cdot \bm{v}) \exp(-\I \bm{P}\cdot \bm{a}) \\

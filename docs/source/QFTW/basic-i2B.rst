@@ -39,10 +39,11 @@
 
 为研究单粒子态在非齐次洛伦兹变换, 可以分别考虑单粒子态的平移变换和单粒子态的齐次洛伦兹变换.
 
-先考虑单粒子态在平移下的变换. 利用 [定理27] :math:`U(1, a) = \exp (-\I P^\mu a_\mu)` 和上面的本征方程得
+先考虑单粒子态在平移下的变换. 利用 [定理2-27] :math:`U(1, a) = \exp (-\I P^\mu a_\mu)` 和上面的本征方程得
 
 .. math:: 
     U(1, a)\psi_{p,\sigma} = \exp (-\I P^aa_a) \psi_{p,\sigma} = \exp (-\I p^aa_a) \psi_{p,\sigma}
+    :label: ua-act-psi-p
 
 其中 :math:`p^aa_a \equiv P^\mu a_\mu` 为四矢量的内积 (其中 :math:`a` 是抽象指标).
 
@@ -56,9 +57,9 @@
 .. math:: 
     U^{-1}(\Lambda)P^\mu U(\Lambda) = U(\Lambda^{-1})P^\mu U^{-1}(\Lambda^{-1}) = \xtensor{(\Lambda^{-1})}{_\rho}{^\mu} P^\rho = \xtensor{\Lambda}{^\mu}{_\rho} P^\rho
 
-其中第一步利用了 [定理18]. 最后一步利用了 [定理17].
+其中第一步利用了 [定理2-18]. 最后一步利用了 [定理2-17].
 
-[定理31] 齐次洛伦兹变换 :math:`U(\Lambda)` 作用于态矢 :math:`\psi_{p, \sigma}` 得到的态 :math:`U(\Lambda)\psi_{p, \sigma}` 是四动量 :math:`P^a` 的本征态 (其中 :math:`a` 是抽象指标), 对应的本征值为 :math:`\Lambda p`.
+[定理2-31] 齐次洛伦兹变换 :math:`U(\Lambda)` 作用于态矢 :math:`\psi_{p, \sigma}` 得到的态 :math:`U(\Lambda)\psi_{p, \sigma}` 是四动量 :math:`P^a` 的本征态 (其中 :math:`a` 是抽象指标), 对应的本征值为 :math:`\Lambda p`.
 
 [证明] 考虑用 :math:`P^\mu` 作用于变换后的态 :math:`U(\Lambda)\psi_{p, \sigma}`, 有
 
@@ -119,7 +120,7 @@
 4 标准四动量
 ^^^^^^^^^^^^
 
-[定理32] 在固有正时洛伦兹变换 :math:`\xtensor{\Lambda}{^\mu}{_\nu}` 作用下不变的 :math:`p^\mu` 的函数仅有 :math:`p^2 \equiv \eta_{\mu\nu}p^\mu p^\nu` 以及当 :math:`p^2 \leqslant 0` 时, :math:`p^0` 的符号.
+[定理2-32] 在固有正时洛伦兹变换 :math:`\xtensor{\Lambda}{^\mu}{_\nu}` 作用下不变的 :math:`p^\mu` 的函数仅有 :math:`p^2 \equiv \eta_{\mu\nu}p^\mu p^\nu` 以及当 :math:`p^2 \leqslant 0` 时, :math:`p^0` 的符号.
 
 [证明] 为了证明第一点, 设 :math:`p'^\mu = \xtensor{\Lambda}{^\mu}{_\nu}p^\nu`, 则需证明 :math:`p'^2 = p^2`, 即
 
@@ -174,7 +175,7 @@
 
 其中 :math:`N(p)` 是一个数值的归一化因子, 将在后面讨论. 下面我们将利用上式推出 :math:`\sigma` 指标和不同动量之间的关联. 注意这里 :eq:`psi-pk-def` 并不涉及 :math:`\sigma` 指标的混合, 但是由 :math:`U(L(p))` 我们有了一个把 :math:`U(\Lambda)` 作用纯化到使 :math:`\sigma` 不变的效果. 因此可以利用 :math:`L` 对一般的作用 :math:`U(\Lambda)` 进行分解.
 
-注意这里涉及到对 :math:`\sigma` 的重定义, 而且这个定义还依赖于 :math:`p` 的方向. 根据后面的讨论, :math:`\sigma` 将成为第三轴的角动量的本征值. 由于这个式子要求 :math:`U(L(p))` 的作用不改变 :math:`\sigma` 指标, 也就是要求 :math:`U(L(p))` 和 :math:`J_3` 对易. 但是考虑后面实际定义的 :math:`L(p)` 即 :eq:`mass-zero-lp` 和 [定理54], 它们实际并不能保证 :math:`\sigma` 指标不变, 除非更改坐标系. 更具体地说, 沿第三轴的纯推进 :math:`B(|p|)` 对应的算符 :math:`U(B(|p|))` 可以用 :eq:`jp-lambda-trans` 证明, 是和 :math:`J_3` 对易的. 但是后面补上的旋转一定不和 :math:`J_3` 对易, 因此整体来看, 实际定义的 :math:`L(p)` 是要改变 :math:`\sigma` 指标的. 也就是说, 如果预先选好一个闵氏空间的坐标系, 那么对 :math:`p = k` 的情况, :math:`L(p)` 可以不包括绕任意轴的旋转. 对与其他情况, 由于 :math:`p` 的方向任意, 一定需要做旋转, 这个旋转会导致 :math:`\sigma` 指标的混合. 为了避免这个混合, 也就是为了符合这里的定义, 相当于要重新定义坐标系. 例如, 对于 :eq:`mass-zero-lp` 的 :math:`L(p)` 根据 [引理44-2] 可以证明, 若选择第三轴为当前第三轴旋转 :math:`R(\hat{\bm{p}})`, 那么 :math:`L(p)` 将不会导致 :math:`\sigma` 改变. 这个坐标轴的旋转显然是依赖于 :math:`p` 的. 因此也就意味着坐标系的选择是依赖于具体的态的参数的. 这个隐含的问题还不清楚应该如何解决. 但是似乎我们可以先不管 :math:`L(p)` 的定义问题, 因为对于有质量粒子, 是先引入 :math:`W` 的, 它就是一个三维转动. 对于无质量粒子, 也是先考虑 :math:`W` 的.
+注意这里涉及到对 :math:`\sigma` 的重定义, 而且这个定义还依赖于 :math:`p` 的方向. 根据后面的讨论, :math:`\sigma` 将成为第三轴的角动量的本征值. 由于这个式子要求 :math:`U(L(p))` 的作用不改变 :math:`\sigma` 指标, 也就是要求 :math:`U(L(p))` 和 :math:`J_3` 对易. 但是考虑后面实际定义的 :math:`L(p)` 即 :eq:`mass-zero-lp` 和 [定理2-54], 它们实际并不能保证 :math:`\sigma` 指标不变, 除非更改坐标系. 更具体地说, 沿第三轴的纯推进 :math:`B(|p|)` 对应的算符 :math:`U(B(|p|))` 可以用 :eq:`jp-lambda-trans` 证明, 是和 :math:`J_3` 对易的. 但是后面补上的旋转一定不和 :math:`J_3` 对易, 因此整体来看, 实际定义的 :math:`L(p)` 是要改变 :math:`\sigma` 指标的. 也就是说, 如果预先选好一个闵氏空间的坐标系, 那么对 :math:`p = k` 的情况, :math:`L(p)` 可以不包括绕任意轴的旋转. 对与其他情况, 由于 :math:`p` 的方向任意, 一定需要做旋转, 这个旋转会导致 :math:`\sigma` 指标的混合. 为了避免这个混合, 也就是为了符合这里的定义, 相当于要重新定义坐标系. 例如, 对于 :eq:`mass-zero-lp` 的 :math:`L(p)` 根据 [引理2-44-2] 可以证明, 若选择第三轴为当前第三轴旋转 :math:`R(\hat{\bm{p}})`, 那么 :math:`L(p)` 将不会导致 :math:`\sigma` 改变. 这个坐标轴的旋转显然是依赖于 :math:`p` 的. 因此也就意味着坐标系的选择是依赖于具体的态的参数的. 这个隐含的问题还不清楚应该如何解决. 但是似乎我们可以先不管 :math:`L(p)` 的定义问题, 因为对于有质量粒子, 是先引入 :math:`W` 的, 它就是一个三维转动. 对于无质量粒子, 也是先考虑 :math:`W` 的.
 
 所以问题就是, 能不能不动坐标系, 就定义一个 :math:`L(p)`, 这个 :math:`L(p)` 的形式可能不是类似于 :eq:`mass-zero-lp` 的形式, 而可以每次针对 :math:`p` 重新选择 :math:`\sigma` 的基组. 但是 :math:`\sigma` 就是和 :math:`J_3` 绑定的, 所以还是要动坐标系. 既然要动坐标系, 那么 :math:`L(p)` 就不是关键了, 因为它无论怎么选都无法保证 :math:`\sigma` 真的不变. 但是这里其实有一个转机. 因为 :math:`L(p)` 后面可以补上任意的 :math:`R`, 不影响它本质功能. 能不能通过补上合适的 :math:`R`, 让它和 :math:`J_3` 对易呢? 似乎是有希望的. 这是一个未解决的问题. [#ref5]_ [#ref6]_
 
@@ -212,7 +213,7 @@
 
 其中由定义 :math:`k` 指标不应该改变, 但是 :math:`\sigma` 指标可能会改变.
 
-[定理33] 系数 :math:`D(W)` 构成小群的一个表示. 也就是说, 对于小群的一个元素 :math:`W`, :math:`D(W)` 是它的表示, :math:`D(W)` 看成一个矩阵, 这个矩阵的分量记为 :math:`\xtensor{D}{^{\sigma'}}{_\sigma}(W)`.
+[定理2-33] 系数 :math:`D(W)` 构成小群的一个表示. 也就是说, 对于小群的一个元素 :math:`W`, :math:`D(W)` 是它的表示, :math:`D(W)` 看成一个矩阵, 这个矩阵的分量记为 :math:`\xtensor{D}{^{\sigma'}}{_\sigma}(W)`.
 
 [证明] 为了证明 :math:`D(W)` 构成一个表示, 我们需要证明 :math:`D(W'W) = D(W')D(W)`, 也就是 :math:`D(W)` 满足和 :math:`W` 相同的群乘法规则. 为此, 考虑任意 :math:`W', W`, 我们有 (第一步利用 :eq:`uwk-sigma`. 第二步, 注意 :math:`U(W)` 已经是 :math:`W` 的一个表示)
 
@@ -233,6 +234,7 @@
 
 .. math:: 
     W(\Lambda, p) \equiv L^{-1}(\Lambda p)\Lambda L(p)
+    :label: w-lambda-p-def
 
 也就是说, 令 :eq:`uwk-sigma` 中的 :math:`W` 为 :math:`W(\Lambda, p)`, 得
 
@@ -304,7 +306,7 @@
 
 这里注意归一化必须满足相对论的自由粒子能量动量关系, 因此只需要对三维的 :math:`\bm{k}` 做限制而不必对四动量 :math:`k^a` 做限制 (也就是说, 四动量 :math:`k^a` 中只有3个分量是独立的. 因此不如直接选择三个空间分量. 但是注意, 能量动量关系并没有指定时间分量 :math:`k^0` 的符号. 因此其实还有一个符号的自由度. 但是我们如果限制于情形 (a) 和 (c), 那么很显然 :math:`k^0` 符号被限制为正号, 这样就完全确定了). [#ref2]_ 这里出现 delta 函数是因为 :math:`\psi_{k,\sigma}` 和 :math:`\psi_{k',\sigma'}` 分别是厄米算符具有本征值 :math:`\bm{k}` 和 :math:`\bm{k}'` 的本征态. 而由线性代数, 具有不同本征值的本征态必须是线性独立的, 从而它们的内积只有当 :math:`\bm{k} = \bm{k}'` 时才不为零. 这导致如下定理.
 
-[定理34] :eq:`uwk-sigma` 和 :eq:`sigma-sigma-w-linear` 式中小群的表示是幺正的
+[定理2-34] :eq:`uwk-sigma` 和 :eq:`sigma-sigma-w-linear` 式中小群的表示是幺正的
 
 .. math:: 
     D^\dagger (W) = D^{-1}(W)
@@ -335,7 +337,7 @@
 
 现在的问题是, 任一动量的态矢的标量积是什么? 利用 :eq:`psi-pk-def` 和 :eq:`sigma-sigma-w-linear` 式中 :math:`U(\Lambda)` 的幺正性, 我们有如下定理.
 
-[定理35] 属于某一动量本征值的态矢的标量积为
+[定理2-35] 属于某一动量本征值的态矢的标量积为
 
 .. math:: 
     (\psi_{p',\sigma'}, \psi_{p,\sigma}) =&\ N(p) \big( U^{-1}(L(p))\psi_{p',\sigma'}, \psi_{k, \sigma} \big) \\
@@ -373,7 +375,7 @@
         =&\ N(p) (U^\dagger(L(p)) \psi_{p',\sigma'}, \psi_{k,\sigma}) = N(p) (U^{-1}(L(p)) \psi_{p',\sigma'}, \psi_{k,\sigma}) \\
         =&\ N(p) (U(L^{-1}(p)) \psi_{p',\sigma'}, \psi_{k,\sigma})
     
-其中最后一步是利用 [定理18] 得 :math:`U{-1}(L(p)) = U(L^{-1}(p))`. 再由 :eq:`ulambda-w-pk` 知
+其中最后一步是利用 [定理2-18] 得 :math:`U{-1}(L(p)) = U(L^{-1}(p))`. 再由 :eq:`ulambda-w-pk` 知
 
 .. math:: 
     U(\Lambda)\psi_{p,\sigma} = N(p) \xtensor{D}{^{\sigma'}}{_\sigma}(W(\Lambda, p)) U(L(\Lambda p)) \psi_{k, \sigma'}
@@ -426,7 +428,7 @@
 
 剩下的问题是确定 :math:`\delta^3(\bm{k}' - \bm{k})` 和 :math:`\delta^3(\bm{p}' - \bm{p})` 之间的比例系数.
 
-[定理36] :math:`\D^3 \bm{p} /\sqrt{\bm{p}^2 + M^2}` 是洛伦兹不变体元. 洛伦兹不变体元的意义是, 这个体元作为对偶矢量, 或者微分形式, 在洛伦兹变换下不变.
+[定理2-36] :math:`\D^3 \bm{p} /\sqrt{\bm{p}^2 + M^2}` 是洛伦兹不变体元. 洛伦兹不变体元的意义是, 这个体元作为对偶矢量, 或者微分形式, 在洛伦兹变换下不变.
 
 [证明] 先证明 :math:`\D^4 p` 是洛伦兹不变体元. 假设在洛伦兹变换下 :math:`p \to \overline{p} = \Lambda p`. 我们要找到 :math:`\D^4 p` 和 :math:`\D^4 \overline{p}` 的关系. 根据微元的变换法则, 有 :math:`\D^4 p \to \D^4 \overline{p} = \left\lvert \frac{\partial \overline{p}^a}{\partial p^b} \right\rvert \D^4 p`. 其中行列式 :math:`\left\lvert \frac{\partial \overline{p}^\mu}{\partial p^\nu} \right\rvert = |\det \xtensor{\Lambda}{^a}{_b}|`. 而考虑固有洛伦兹变换, :math:`|\det \xtensor{\Lambda}{^a}{_b}| = 1`. 于是 :math:`\D^4 \overline{p} = \D^4 p`.
 
@@ -457,7 +459,7 @@
 
 其中最后一步是利用了 delta 函数的性质, 即可以令 :math:`(p^0)^2 = \bm{p}^2 + M^2`, 而消除该 delta 函数及对 :math:`(p^0)^2` 的积分. 消除的时候 :math:`p^0` 可取正号或负号, 如果我们只取正号则可以进一步消去 :math:`\theta(p^0)`. 由此我们可以看出, 对函数 :math:`f(p)` 和体元 :math:`\D^4 p \delta(p^2 + M^2)\theta(p^0)` 的四维空间积分, 可以改写为对修改了自变量的同样函数对体元 :math:`\frac{\D^3 \bm{p}}{2\sqrt{\bm{p}^2 - M^2}}` 的三维空间积分, 两个积分是等价的, 所以两个体元是相等的. 从而 :math:`\frac{\D^3 \bm{p}}{2\sqrt{\bm{p}^2 - M^2}}` 是洛伦兹不变的. 当然, 按照 Weinberg 书的说法, 因为消去了一重积分, 所以要强调当在质量壳 (mass shell) :math:`p^2 + M^2 = 0` 积分时, 该体元是不变的. 并且也假定质量不变, 即我们只考虑一个特定类型的单粒子.
 
-[引理37-1] 对满秩实矩阵 :math:`A \in \mathbb{R}^{n \times n}`, 有
+[引理2-37-1] 对满秩实矩阵 :math:`A \in \mathbb{R}^{n \times n}`, 有
 
 .. math:: 
     \delta(A \bm{x}) = \frac{1}{|\det (A)|}\delta(\bm{x}),\quad \bm{x}\in \mathbb{R}^n
@@ -478,7 +480,7 @@
 
 由该引理显然 :math:`\delta^4(p)` 和 :math:`\delta^4(p) \D^4 p` 是洛伦兹不变量. 而 :math:`\delta^3(\bm{p})` 不是洛伦兹不变量. 这里的不变仍然指的是函数映射或函数形式不变, 与自变量的记号无关.
 
-[定理37] :math:`\delta^3(\bm{p} - \bm{p}') \D^3 \bm{p}'` 是洛伦兹不变体元.
+[定理2-37] :math:`\delta^3(\bm{p} - \bm{p}') \D^3 \bm{p}'` 是洛伦兹不变体元.
 
 [证明] 这里的洛伦兹不变是 :math:`\bm{p}, \bm{p}'` 作为函数参数, 当这两个参数按照洛伦兹变换变化的时候, :math:`\delta^3(\bm{p} - \bm{p}') \D^3 \bm{p}'` 的 "映射形式" 不变. 设洛伦兹变换对 :math:`\bm{p}, \bm{p}'` 的变换为 :math:`\bm{p} \to \overline{\bm{p}} = \tilde{\Lambda}\bm{p}, \bm{p}' \to \overline{\bm{p}}' = \tilde{\Lambda}\bm{p}'`, 其中 :math:`\tilde{\Lambda}` 是 :math:`\Lambda` 的空间分量, 其行列式一般不为1. 则
 
@@ -492,21 +494,21 @@
 
 利用 :math:`p^2 = -M^2` 和 :math:`p^2 = -(p^0)^2 +\bm{p}^2` 得 :math:`-(p^0)^2 +\bm{p}^2 = -M^2` 即 :math:`(p^0)^2 = \bm{p}^2 + M^2`. 由于我们仅考虑 :math:`p^0 > 0` 的情况, 即 :math:`p^0 = \sqrt{\bm{p}^2 + M^2}`.
 
-[定理38] :math:`\sqrt{\bm{p}^2 + M^2}\delta^3(\bm{p} - \bm{p}') = p^0 \delta^3(\bm{p} - \bm{p}')` 是洛伦兹不变量.
+[定理2-38] :math:`\sqrt{\bm{p}^2 + M^2}\delta^3(\bm{p} - \bm{p}') = p^0 \delta^3(\bm{p} - \bm{p}')` 是洛伦兹不变量.
 
 [证明] 根据
 
 .. math:: 
     \delta^3(\bm{p} - \bm{p}') \D^3 \bm{p}' = \sqrt{\bm{p}^2 + M^2}\delta^3(\bm{p} - \bm{p}') \frac{\D^3 \bm{p}'}{\sqrt{\bm{p}^2 + M^2}}
 
-而由 [定理37] 及 [定理36] 知 :math:`\delta^3(\bm{p} - \bm{p}') \D^3 \bm{p}'` 和 :math:`\frac{\D^3 \bm{p}'}{\sqrt{\bm{p}^2 + M^2}}` 都是洛伦兹不变体元, 因此 :math:`\sqrt{\bm{p}^2 + M^2}\delta^3(\bm{p} - \bm{p}')` 是洛伦兹不变量.
+而由 [定理2-37] 及 [定理2-36] 知 :math:`\delta^3(\bm{p} - \bm{p}') \D^3 \bm{p}'` 和 :math:`\frac{\D^3 \bm{p}'}{\sqrt{\bm{p}^2 + M^2}}` 都是洛伦兹不变体元, 因此 :math:`\sqrt{\bm{p}^2 + M^2}\delta^3(\bm{p} - \bm{p}')` 是洛伦兹不变量.
 
 由于 :math:`p'` 和 :math:`p` 通过一个洛伦兹变换 :math:`L(p)` 分别和 :math:`k'` 和 :math:`k` 相联系, 我们有
 
 .. math:: 
     p^0 \delta^3(\bm{p}' - \bm{p}) = k^0 \delta^3(\bm{k}' - \bm{k})
 
-从而根据 [定理35] 的 :eq:`psigma-sp-k` 式, 得
+从而根据 [定理2-35] 的 :eq:`psigma-sp-k` 式, 得
 
 .. math:: 
     (\psi_{p',\sigma'}, \psi_{p,\sigma}) = |N(p)|^2 \delta_{\sigma'\sigma} \left( \frac{p^0}{k^0} \right) \delta^3(\bm{p}'-\bm{p})
@@ -521,6 +523,7 @@
 
 .. math:: 
     (\psi_{p',\sigma'}, \psi_{p,\sigma}) = \delta_{\sigma'\sigma} \delta^3(\bm{p}'-\bm{p})
+    :label: psi-p-normalize
 
 下面我们考虑两种物理上有特殊意义的情形: 具有质量 :math:`M > 0` 的粒子和零质量粒子.
 
@@ -529,9 +532,9 @@
 8 角动量理论
 ^^^^^^^^^^^^
 
-正质量粒子就是 [表1] 中情形 (a), 对应的小群就是三维转动群. 三维转动群在希尔伯特空间由对应的态矢变换 :math:`U(R_{\bm{\theta}}, 0)`, 此处简记为 :math:`U(\bm{\theta})` [定理28], 即小群 :math:`W = R_{\bm{\theta}}`. 这个转动变换 :math:`U(\bm{\theta})` 的矩阵表示, 就是量子力学中的角动量理论. 下面简要回顾其中的主要结论. 所要研究的态矢构成一个矢量空间, 我们一般选择 :math:`\bm{J}^2, J_3` 的共同本征态 :math:`|jm\rangle` 作为矢量空间的基矢来研究.
+正质量粒子就是 [表1] 中情形 (a), 对应的小群就是三维转动群. 三维转动群在希尔伯特空间由对应的态矢变换 :math:`U(R_{\bm{\theta}}, 0)`, 此处简记为 :math:`U(\bm{\theta})` [定理2-28], 即小群 :math:`W = R_{\bm{\theta}}`. 这个转动变换 :math:`U(\bm{\theta})` 的矩阵表示, 就是量子力学中的角动量理论. 下面简要回顾其中的主要结论. 所要研究的态矢构成一个矢量空间, 我们一般选择 :math:`\bm{J}^2, J_3` 的共同本征态 :math:`|jm\rangle` 作为矢量空间的基矢来研究.
 
-[定理39] 角动量算符平方 :math:`\bm{J}^2 \equiv J^{12}J_{12} + J^{23}J_{23} + J^{31}J_{31}` 是转动变换 (齐次洛伦兹变换的特例) :math:`U(R_{\bm{\theta}}, 0)` 下的不变量.
+[定理2-39] 角动量算符平方 :math:`\bm{J}^2 \equiv J^{12}J_{12} + J^{23}J_{23} + J^{31}J_{31}` 是转动变换 (齐次洛伦兹变换的特例) :math:`U(R_{\bm{\theta}}, 0)` 下的不变量.
 
 [证明] 根据 :eq:`jp-lambda-trans` 得
 
@@ -570,9 +573,9 @@
     J_3 |jm \rangle =&\ m |jm\rangle \\
     J_\pm |jm \rangle \equiv&\ (J_1 \pm \I J_2) |jm\rangle = \sqrt{(j \mp m)(j \pm m + 1)} |jm\pm 1\rangle
 
-[定理40] :math:`\bm{J}^2` 和 :math:`U(R_{\bm{\theta}}, 0)` 对易.
+[定理2-40] :math:`\bm{J}^2` 和 :math:`U(R_{\bm{\theta}}, 0)` 对易.
 
-[证明] 由 [定理39], 算符 :math:`\bm{J}^2` 对应的指标 :math:`j` 是转动变换 :math:`U(R_{\bm{\theta}}, 0)` 下的不变量, 这本身就意味着 :math:`\bm{J}^2` 和 :math:`U(R_{\bm{\theta}}, 0)` 对易, 具体而言, 若用 :math:`U(R_{\bm{\theta}}, 0)` 作用于态矢 :math:`|jm\rangle`, 得到的态矢 :math:`U(R_{\bm{\theta}}, 0)|jm\rangle` 应该还具有和变换之前的态矢 :math:`|jm\rangle` 相同的 :math:`j` 指标. 写成公式就是
+[证明] 由 [定理2-39], 算符 :math:`\bm{J}^2` 对应的指标 :math:`j` 是转动变换 :math:`U(R_{\bm{\theta}}, 0)` 下的不变量, 这本身就意味着 :math:`\bm{J}^2` 和 :math:`U(R_{\bm{\theta}}, 0)` 对易, 具体而言, 若用 :math:`U(R_{\bm{\theta}}, 0)` 作用于态矢 :math:`|jm\rangle`, 得到的态矢 :math:`U(R_{\bm{\theta}}, 0)|jm\rangle` 应该还具有和变换之前的态矢 :math:`|jm\rangle` 相同的 :math:`j` 指标. 写成公式就是
 
 .. math:: 
     \bm{J}^2 |jm\rangle =&\ j(j+1) |jm\rangle \\
@@ -585,7 +588,7 @@
 
 比较上面两式得 :math:`\bm{J}^2 U(R_{\bm{\theta}}, 0) = U(R_{\bm{\theta}}, 0) \bm{J}^2`. 即两者对易.
 
-这里还有一种更为直觉化的证明. 因为 :math:`\bm{J}^2` 和 :math:`J_3` 对易, 所以推广到任意方向 :math:`\hat{\bm{\theta}}`, :math:`\bm{J}^2` 和 :math:`\hat{\bm{\theta}} \cdot \bm{J}` 也对易. 而根据 [定理28] :math:`U(R_{\bm{\theta}}, 0) = \exp(\I \bm{J}\cdot \bm{\theta}) = \exp(\I \theta \bm{J}\cdot \hat{\bm{\theta}})` 是 :math:`\hat{\bm{\theta}} \cdot \bm{J}` 的函数, 因此 :math:`\bm{J}^2` 和 :math:`U(R_{\bm{\theta}}, 0)` 对易.
+这里还有一种更为直觉化的证明. 因为 :math:`\bm{J}^2` 和 :math:`J_3` 对易, 所以推广到任意方向 :math:`\hat{\bm{\theta}}`, :math:`\bm{J}^2` 和 :math:`\hat{\bm{\theta}} \cdot \bm{J}` 也对易. 而根据 [定理2-28] :math:`U(R_{\bm{\theta}}, 0) = \exp(\I \bm{J}\cdot \bm{\theta}) = \exp(\I \theta \bm{J}\cdot \hat{\bm{\theta}})` 是 :math:`\hat{\bm{\theta}} \cdot \bm{J}` 的函数, 因此 :math:`\bm{J}^2` 和 :math:`U(R_{\bm{\theta}}, 0)` 对易.
 
 设体系处于 :math:`\bm{J}^2, J_3` 的共同本征态 :math:`|jm\rangle`, 则做旋转变换 :math:`U(R_{\bm{\theta}}, 0)` 后, 态矢变为
 
@@ -631,7 +634,7 @@
 .. math:: 
     U(W) \psi_{k,j,m} = \xtensor{{D^{(j)}}}{^{m'}}{_m}(W) \psi_{k, j,m'}
 
-由 [定理28] :math:`U(R_{\bm{\theta}}, 0) = \exp (\I \bm{J}\cdot \bm{\theta})` 及本小节开头提到的 :math:`W = R_{\bm{\theta}}`, 考虑无穷小的情况 :math:`R_{ik} = \delta_{ik} + \Theta_{ik}` 得
+由 [定理2-28] :math:`U(R_{\bm{\theta}}, 0) = \exp (\I \bm{J}\cdot \bm{\theta})` 及本小节开头提到的 :math:`W = R_{\bm{\theta}}`, 考虑无穷小的情况 :math:`R_{ik} = \delta_{ik} + \Theta_{ik}` 得
 
 .. math:: 
     U(W) = U(R_{\bm{\theta}}) = 1 + \I \bm{J}\cdot \bm{\theta} = 1 + \frac{1}{2}\I \Theta_{ik} J^{ik}
@@ -670,6 +673,7 @@
 
 .. math:: 
     U(\Lambda)\psi_{p,\sigma} = \sqrt{\frac{(\Lambda p)^0}{p^0}} \xtensor{{D^{(j)}}}{^{\sigma'}}{_\sigma}(W(\Lambda, p)) \psi_{\Lambda p,\sigma'}
+    :label: u-lambda-mass-positive-state
 
 其中小群元 :math:`W(\Lambda, p)` (称为 Wigner 转动 (Wigner rotation)) 由下式给出 (按照前面的定义)
 
@@ -689,7 +693,7 @@
 
 其中 :math:`\hat{p}_i \equiv p_i / |\bm{p}|,\quad \gamma \equiv \sqrt{\bm{p}^2 + M^2} / M`. 下面需要证明上述定义的变换确是洛伦兹变换, 并且能把标准四动量 :math:`k^\mu = (M, 0, 0, 0)` 变到 :math:`p^\mu`.
 
-[定理41] :math:`p^\mu = \xtensor{L}{^\mu}{_\nu}(p) k^\nu = \xtensor{L}{^\mu}{_0}(p) M`.
+[定理2-41] :math:`p^\mu = \xtensor{L}{^\mu}{_\nu}(p) k^\nu = \xtensor{L}{^\mu}{_0}(p) M`.
 
 [证明] 考虑
 
@@ -698,7 +702,7 @@
     \xtensor{L}{^i}{_0} M =&\ \hat{p}_i \sqrt{\gamma^2 - 1} M = \hat{p}_i \sqrt{ \frac{\bm{p}^2 + M^2}{M^2} - 1} M \\
         =&\ \hat{p}_i \sqrt{ \frac{\bm{p}^2}{M^2} } M = \hat{p}_i |\bm{p}| = p^i
 
-[定理42] :math:`\xtensor{L}{^\mu}{_\nu}(p)` 是洛伦兹变换, 即满足 :math:`\eta_{\mu\nu}\xtensor{L}{^\mu}{_\rho}\xtensor{L}{^\nu}{_\sigma} = \eta_{\rho\sigma}`.
+[定理2-42] :math:`\xtensor{L}{^\mu}{_\nu}(p)` 是洛伦兹变换, 即满足 :math:`\eta_{\mu\nu}\xtensor{L}{^\mu}{_\rho}\xtensor{L}{^\nu}{_\sigma} = \eta_{\rho\sigma}`.
 
 [证明] 先考虑 00分量, 注意 :math:`\hat{p}_i` 按定义是单位矢量, 因此它的长度 :math:`\hat{p}^2 = 1`.
 
@@ -729,7 +733,7 @@
         =&\ \delta_{jk} + \big[ (\gamma - 1 + 1)^2 - 1 -(\gamma^2 - 1) \big] \hat{p}_j\hat{p}_k \\
         =&\ \delta_{jk} = \eta_{jk}
 
-[定理43] 上述定义的 :math:`\xtensor{L}{^\mu}{_\nu}(p)` 是纯推进变换, 和梁灿彬书 G-9-5 式定义的变换 :math:`B(\bm{v})` 当 :math:`\bm{v}` 取 :math:`-\bm{u}` (逆变换) 时等价. 这里直接把其逆变换定义为 :math:`B(\bm{u})`, 其矩阵元如下
+[定理2-43] 上述定义的 :math:`\xtensor{L}{^\mu}{_\nu}(p)` 是纯推进变换, 和梁灿彬书 G-9-5 式定义的变换 :math:`B(\bm{v})` 当 :math:`\bm{v}` 取 :math:`-\bm{u}` (逆变换) 时等价. 这里直接把其逆变换定义为 :math:`B(\bm{u})`, 其矩阵元如下
 
 .. math:: 
     \xtensor{B}{^i}{_k}(\bm{u}) =&\ \xtensor{B}{^k}{_i}(\bm{u}) = \xtensor{\delta}{^i}{_k} + \frac{\gamma^2 u^iu_k}{1+\gamma} \\
@@ -784,14 +788,14 @@
 11 纯转动的 Winger 转动
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-[引理44-1] (梁灿彬书, 定理 G-9-1)
+[引理2-44-1] (梁灿彬书, 定理 G-9-1)
 
 (a) 若 :math:`B_x(u)` 是沿 :math:`x` 轴方向的纯推进, :math:`R` 是纯转动, 那么 :math:`R^{-1} B_x(u) R` 是一般的纯推进 (即可以写成 :math:`B(\bm{u})` 的形式).
 (b) 设 :math:`B(\bm{u})` 是纯推进, 则存在纯转动 :math:`R` 使 :math:`B(\bm{u}) = R^{-1} B_x(u) R`, 其中 :math:`u = |\bm{u}|`.
 
 注意这个引理中的考虑的简单洛伦兹变换是沿 :math:`x` 轴的 :math:`B_x(u)`, 下面我们主要考虑的是沿第三轴的洛伦兹变换 :math:`B(u)` 作为简单洛伦兹变换, 相当于把 :math:`x` 轴换成 :math:`z` 轴, 结论当然一样成立.
 
-[引理44-2] 纯推进变换 :math:`L(p)` 可以表示为
+[引理2-44-2] 纯推进变换 :math:`L(p)` 可以表示为
 
 .. math:: 
     L(p) = R(\hat{\bm{p}}) B(|\bm{p}|) R^{-1}(\hat{\bm{p}})
@@ -807,7 +811,7 @@
 .. math:: 
     \sqrt{\gamma^2 - 1} = \sqrt{\frac{1}{1-u^2} - 1} = \sqrt{\frac{u^2}{1-u^2}} = \gamma u
 
-[证明] 由 [引理44-1] 及 [定理43], 可知纯推进变换 :math:`L(p)` 可以表示为
+[证明] 由 [引理2-44-1] 及 [定理2-43], 可知纯推进变换 :math:`L(p)` 可以表示为
 
 .. math:: 
     L(p) = R(\hat{\bm{p}}) B(|\bm{p}|) R^{-1}(\hat{\bm{p}})
@@ -865,12 +869,12 @@
 
 于是应该取正号. 即 :math:`b = c = \sqrt{\gamma^2 - 1}, a = d = \gamma`.
 
-[定理44] 当 :math:`\xtensor{\Lambda}{^\mu}{_\nu}` 是一个任意的三维转动 :math:`\mathscr{R}`, 那么 Wigner 转动 :math:`W(\Lambda, p)` 对任意的 :math:`p` 都是相同的, 并且等于 :math:`\mathscr{R}`. 即
+[定理2-44] 当 :math:`\xtensor{\Lambda}{^\mu}{_\nu}` 是一个任意的三维转动 :math:`\mathscr{R}`, 那么 Wigner 转动 :math:`W(\Lambda, p)` 对任意的 :math:`p` 都是相同的, 并且等于 :math:`\mathscr{R}`. 即
 
 .. math:: 
     W(\mathscr{R}, p) = \mathscr{R}
 
-[证明] 由 [引理44-2], 纯推进变换 :math:`L(p)` 可以表示为
+[证明] 由 [引理2-44-2], 纯推进变换 :math:`L(p)` 可以表示为
 
 .. math:: 
     L(p) = R(\hat{\bm{p}}) B(|\bm{p}|) R^{-1}(\hat{\bm{p}})
@@ -926,7 +930,7 @@
 
 其中每一个式子第一个等号是根据洛伦兹变换的性质要求它们相等, 最后的等号是根据给定的 :math:`k^\mu, t^\mu` 分量表达式算出.
 
-[定理45] 满足条件 :math:`(Wt)^\mu(Wt)_\mu = (Wt)^\mu k_\mu = -1` 的矢量 :math:`(Wt)^\mu` 可以写为
+[定理2-45] 满足条件 :math:`(Wt)^\mu(Wt)_\mu = (Wt)^\mu k_\mu = -1` 的矢量 :math:`(Wt)^\mu` 可以写为
 
 .. math:: 
     (Wt)^\mu = (1 + \zeta, \alpha, \beta, \zeta), \quad \zeta = \frac{\alpha^2 + \beta^2}{2}
@@ -947,7 +951,7 @@
 
 上述条件限制了我们想要寻找的一个洛伦兹变换, 它至少满足两个条件, (A) 它对 :math:`t^\mu = (1, 0, 0, 0)` 的作用是得到 :math:`(1 + \zeta, \alpha, \beta, \zeta)`, (B) 它满足 :math:`\xtensor{W}{^\mu}{_\nu}` 的定义, 即 :math:`\xtensor{W}{^\mu}{_\nu} k = k`. 由于 :math:`k^\mu, t^\mu` 的第一第二空间轴的分量都为零, 所以我们暂时无法对它对这两个空间轴做的变换做任何限制. 现在的工作方案是, 我们找到一个满足条件 (A), (B) 的洛伦兹变换, 并要求 (C) 它对第一第二空间轴的作用是恒等变换的作用. 当然 :math:`W` 未必对第一第二空间轴的作用是恒等变换, 因此 :math:`W` 和 :math:`S` 的这个差别将在之后处理.
 
-[定理46] 满足条件 (A), (B), (C) 的类似于 :math:`W` 的洛伦兹变换 :math:`S(\alpha, \beta)` 采取如下形式
+[定理2-46] 满足条件 (A), (B), (C) 的类似于 :math:`W` 的洛伦兹变换 :math:`S(\alpha, \beta)` 采取如下形式
 
 .. math:: 
     \xtensor{S}{^\mu}{_\nu}(\alpha, \beta) = \begin{pmatrix} 1+\zeta & \alpha & \beta & -\zeta \\ \alpha & 1 & 0 & -\alpha \\
@@ -979,7 +983,7 @@
 .. math:: 
     \xtensor{S}{^\mu}{_\nu}(\alpha, \beta) = \begin{pmatrix} 1+\zeta & \cdot & \cdot & -\zeta \\ \alpha & 1 & 0 & \cdot \\ \beta & 0 & 1 & \cdot \\ \zeta & \cdot & \cdot & 1-\zeta \end{pmatrix}
 
-由于 :math:`S` 应该是洛伦兹变换, 洛伦兹变换的逆矩阵具有 [定理17] 的性质, 即一个齐次洛伦兹变换的逆矩阵, 是先将矩阵转置, 然后将所有 :math:`0i` 和 :math:`i0` 分量全部变号. 这个逆矩阵作用于 :math:`(1 + \zeta, \alpha, \beta, \zeta)` 应该得到 :math:`t^\mu = (1, 0, 0, 0)`. 于是
+由于 :math:`S` 应该是洛伦兹变换, 洛伦兹变换的逆矩阵具有 [定理2-17] 的性质, 即一个齐次洛伦兹变换的逆矩阵, 是先将矩阵转置, 然后将所有 :math:`0i` 和 :math:`i0` 分量全部变号. 这个逆矩阵作用于 :math:`(1 + \zeta, \alpha, \beta, \zeta)` 应该得到 :math:`t^\mu = (1, 0, 0, 0)`. 于是
 
 .. math:: 
     \begin{pmatrix} 1 \\ 0 \\ 0 \\ 0 \end{pmatrix} = \xtensor{(S^{-1})}{^\mu}{_\nu}(\alpha, \beta) \begin{pmatrix} 1+\zeta \\ \alpha \\ \beta \\ \zeta \end{pmatrix} = \begin{pmatrix} 1+\zeta & -\alpha & -\beta & -\zeta \\ \cdot & 1 & 0 & \cdot \\ \cdot & 0 & 1 & \cdot \\ \zeta & \cdot & \cdot & 1-\zeta \end{pmatrix} \begin{pmatrix} 1+\zeta \\ \alpha \\ \beta \\ \zeta \end{pmatrix} 
@@ -1004,13 +1008,13 @@
     (a+b)\zeta + a + \alpha = 0,\quad (c+d)\zeta + c + \beta = 0
     :label: ab-zeta-alpha-beta
 
-这还不能完全确定这两个元素. 把 :math:`\xtensor{(S^{-1})}{^\mu}{_\nu}` 也看成一个洛伦兹变换, 它也需要满足洛伦兹变换的条件, 即 [定理15], :math:`\eta^{\mu\nu}\xtensor{\Lambda}{^\rho}{_\mu}\xtensor{\Lambda}{^\sigma}{_\nu} = \eta^{\rho\sigma}`. 令 :math:`\rho\sigma = 11, 22` 得
+这还不能完全确定这两个元素. 把 :math:`\xtensor{(S^{-1})}{^\mu}{_\nu}` 也看成一个洛伦兹变换, 它也需要满足洛伦兹变换的条件, 即 [定理2-15], :math:`\eta^{\mu\nu}\xtensor{\Lambda}{^\rho}{_\mu}\xtensor{\Lambda}{^\sigma}{_\nu} = \eta^{\rho\sigma}`. 令 :math:`\rho\sigma = 11, 22` 得
 
 .. math:: 
     -a^2 + 1 +b^2 =&\ 1 \quad \Rightarrow \quad a^2 = b^2 \\
     -c^2 + 1 +c^2 =&\ 1 \quad \Rightarrow \quad c^2 = d^2
 
-由于洛伦兹变换是闵氏空间的变换, 它的参数应该都是实数, 因此 :math:`a = \pm b, c = \pm d`. 再利用 [定理15] 中的另一条 :math:`\eta_{\mu\nu}\xtensor{\Lambda}{^\mu}{_\rho}\xtensor{\Lambda}{^\nu}{_\sigma} = \eta_{\rho\sigma}` 令 :math:`\rho\sigma = 00` 得
+由于洛伦兹变换是闵氏空间的变换, 它的参数应该都是实数, 因此 :math:`a = \pm b, c = \pm d`. 再利用 [定理2-15] 中的另一条 :math:`\eta_{\mu\nu}\xtensor{\Lambda}{^\mu}{_\rho}\xtensor{\Lambda}{^\nu}{_\sigma} = \eta_{\rho\sigma}` 令 :math:`\rho\sigma = 00` 得
 
 .. math:: 
     -(1+\zeta)^2 + a^2 + c^2 +\zeta^2 = -1 \quad \Rightarrow \quad a^2 + c^2 = \alpha^2 + \beta^2
@@ -1032,7 +1036,7 @@
 .. math:: 
     \alpha^2 + \beta^2 + \xtensor{(S^{-1})}{^3}{_1} \alpha + \xtensor{(S^{-1})}{^3}{_2} \beta = 0
 
-这还不能完全确定这两个元素. 把 :math:`\xtensor{(S^{-1})}{^\mu}{_\nu}` 也看成一个洛伦兹变换, 它也需要满足洛伦兹变换的条件, 即 [定理15], :math:`\eta^{\mu\nu}\xtensor{\Lambda}{^\rho}{_\mu}\xtensor{\Lambda}{^\sigma}{_\nu} = \eta^{\rho\sigma}`. 令 :math:`\rho\sigma = 33` 得
+这还不能完全确定这两个元素. 把 :math:`\xtensor{(S^{-1})}{^\mu}{_\nu}` 也看成一个洛伦兹变换, 它也需要满足洛伦兹变换的条件, 即 [定理2-15], :math:`\eta^{\mu\nu}\xtensor{\Lambda}{^\rho}{_\mu}\xtensor{\Lambda}{^\sigma}{_\nu} = \eta^{\rho\sigma}`. 令 :math:`\rho\sigma = 33` 得
 
 .. math:: 
     -\zeta^2 + \big(\xtensor{(S^{-1})}{^3}{_1}\big)^2 + \big(\xtensor{(S^{-1})}{^3}{_2}\big)^2 + (1-\zeta)^2 =&\ 1 \\
@@ -1075,7 +1079,7 @@
     W(\theta, \alpha, \beta) = S(\alpha, \beta)R(\theta)
     :label: w-sr-mass-zero
 
-[引理47-1] :math:`S(\alpha, \beta)` 和 :math:`R(\theta)` 不对易, 因此 :math:`S(\alpha, \beta)R(\theta)` 和 :math:`R(\theta)S(\alpha, \beta)` 不等价.
+[引理2-47-1] :math:`S(\alpha, \beta)` 和 :math:`R(\theta)` 不对易, 因此 :math:`S(\alpha, \beta)R(\theta)` 和 :math:`R(\theta)S(\alpha, \beta)` 不等价.
 
 [证明] 暂时把时间分量作为矩阵的最后一个行列. 则 :math:`S(\alpha, \beta)` 和 :math:`R(\theta)` 都可以写成分块矩阵的形式. 下面我们分别计算 :math:`SR` 和 :math:`RS`.
 
@@ -1088,7 +1092,7 @@
 
 注意, 在进行分块矩阵相乘的时候, :math:`R, Y` 都是矩阵, 因此 :math:`YR` 不能写成 :math:`RY`.
 
-[定理47] 若定义 :math:`\tilde{W}(\theta, \alpha, \beta) = R(\theta)S(\alpha, \beta)`, 这并不能给出新的群元, 因为
+[定理2-47] 若定义 :math:`\tilde{W}(\theta, \alpha, \beta) = R(\theta)S(\alpha, \beta)`, 这并不能给出新的群元, 因为
 
 .. math:: 
     \tilde{W}(\theta, \alpha, \beta) = W(\theta, \alpha'(\theta), \beta'(\theta))
@@ -1120,12 +1124,12 @@
     
 还需证 :math:`Z' = Z`, 这等价于证 :math:`\zeta' = \zeta`. 而 :math:`(\alpha', \beta')` 只是将 :math:`(\alpha, \beta)` 通过 :math:`R` 矩阵做了旋转, 它不改变矢量的长度. 因此 :math:`2\zeta = \alpha^2 + \beta^2` 是不变量. 因此 :math:`\zeta' = \zeta`. 于是命题得证.
 
-考虑到 [定理47], 尽管 :math:`R` 和 :math:`S` 没有对易性, 也只需要选择一种 :math:`W` 的定义即可, 另一种定义只是 :math:`W` 的重参数化. :math:`W = SR` 的定义已经可以给出所有的群元.
+考虑到 [定理2-47], 尽管 :math:`R` 和 :math:`S` 没有对易性, 也只需要选择一种 :math:`W` 的定义即可, 另一种定义只是 :math:`W` 的重参数化. :math:`W = SR` 的定义已经可以给出所有的群元.
 
 13 零质量粒子小群的子群
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-[定理48] 满足 :math:`\theta = 0` 或 :math:`\alpha = \beta = 0` 的变换构成子群 (逆元和恒等元可以容易看出, 下面仅需要验证群乘法规则)
+[定理2-48] 满足 :math:`\theta = 0` 或 :math:`\alpha = \beta = 0` 的变换构成子群 (逆元和恒等元可以容易看出, 下面仅需要验证群乘法规则)
 
 .. math:: 
     S(\alpha', \beta')S(\alpha, \beta) =&\ S(\alpha' + \alpha, \beta' + \beta) \\
@@ -1133,7 +1137,7 @@
 
 并且, 这些子群是 **阿贝尔的** (Abelian), 即它们的元素彼此对易.
 
-[证明] 对第二式旋转群乘法的证明可参照 [定理28] 后面关于 :math:`U(R_{\theta'})U(R_{\theta}) = U(R_{\theta' + \theta})` 的证明. 下面仅证明第一式. 暂时把时间分量作为矩阵的最后一个行列. 则 :math:`S(\alpha, \beta)` 可以写成分块矩阵的形式.
+[证明] 对第二式旋转群乘法的证明可参照 [定理2-28] 后面关于 :math:`U(R_{\theta'})U(R_{\theta}) = U(R_{\theta' + \theta})` 的证明. 下面仅证明第一式. 暂时把时间分量作为矩阵的最后一个行列. 则 :math:`S(\alpha, \beta)` 可以写成分块矩阵的形式.
 
 .. math:: 
     S(\alpha, \beta) =&\ \begin{pmatrix} 1 & X \\ Y & Z \end{pmatrix} \\
@@ -1177,14 +1181,14 @@
     = \begin{pmatrix} 1 + X'Y & X + X'Z \\ Y' + Z'Y & Y'X + Z'Z \end{pmatrix} = \begin{pmatrix} 1 & X + X' \\ Y' + Y & Z'' \end{pmatrix}
         = \begin{pmatrix} 1 & X'' \\ Y'' & Z'' \end{pmatrix} = S(\alpha' + \alpha, \beta' + \beta)
 
-[定理49] 满足 :math:`\theta = 0` 的子群是 **不变的** (invariant), 即它的群元 (子群元) 可以借助任何群元 (小群元) 来变换 (这里的变换指的是 :math:`USU^{-1}` 这种形式的变换, 其中 :math:`U` 代表任何群元, :math:`S` 代表这个不变子群的群元), 仍得到它的群元 (子群元) (这里的子群指的是小群的子群). 这里选取的小群元当然可以是满足 :math:`\theta = 0` 的子群, 也可以是满足 :math:`\alpha = \beta = 0` 的子群. 但是这个结论对于选取 :math:`\theta = 0` 的情况显然成立, 仅需要根据群乘法规则即可. 所以真正重要的是选取 :math:`\alpha = \beta = 0` 的子群元作为小群元的情况. 我们有以下等式
+[定理2-49] 满足 :math:`\theta = 0` 的子群是 **不变的** (invariant), 即它的群元 (子群元) 可以借助任何群元 (小群元) 来变换 (这里的变换指的是 :math:`USU^{-1}` 这种形式的变换, 其中 :math:`U` 代表任何群元, :math:`S` 代表这个不变子群的群元), 仍得到它的群元 (子群元) (这里的子群指的是小群的子群). 这里选取的小群元当然可以是满足 :math:`\theta = 0` 的子群, 也可以是满足 :math:`\alpha = \beta = 0` 的子群. 但是这个结论对于选取 :math:`\theta = 0` 的情况显然成立, 仅需要根据群乘法规则即可. 所以真正重要的是选取 :math:`\alpha = \beta = 0` 的子群元作为小群元的情况. 我们有以下等式
 
 .. math:: 
     R(\theta)S(\alpha,\beta)R^{-1}(\theta) = S(\alpha\cos\theta +\beta\sin\theta, -\alpha\sin\theta + \beta\cos\theta)
 
 这个等式保证了满足 :math:`\theta = 0` 的子群是不变的.
 
-[证明] 由 [定理47] 得
+[证明] 由 [定理2-47] 得
 
 .. math:: 
     R(\theta)S(\alpha,\beta) = W(\theta, \alpha', \beta') = S(\alpha',\beta')R(\theta)
@@ -1196,14 +1200,14 @@
 
 得证.
 
-[定义6] (梁灿彬书G.1 定义7) 群 :math:`G` 的子群 :math:`H` 称为 **正规** (normal) **子群** 或 **不变** (invariant) **子群**, 若
+[定义2-6] (梁灿彬书G.1 定义7) 群 :math:`G` 的子群 :math:`H` 称为 **正规** (normal) **子群** 或 **不变** (invariant) **子群**, 若
 
 .. math:: 
     ghg^{-1} \in H, \quad \forall g \in G, h\in H
 
-[定义7] (梁灿彬书G.3 定义5) 李群 :math:`G` 称为 **单李群** (simple Lie group), 若它不是阿贝尔群而且除 :math:`G` 外不含正规子群. :math:`G` 称为 **半单李群**, 若它不含阿贝尔正规子群.
+[定义2-7] (梁灿彬书G.3 定义5) 李群 :math:`G` 称为 **单李群** (simple Lie group), 若它不是阿贝尔群而且除 :math:`G` 外不含正规子群. :math:`G` 称为 **半单李群**, 若它不含阿贝尔正规子群.
 
-利用 [定理48] 和 [定理49] 中的等式我们可以得到任何群元之间的乘积. 我们会发现这些乘积规则就是群 ISO(2) 的乘积规则, 包括 (沿矢量 :math:`(\alpha, \beta)` 的) 平移和 (按角度 :math:`\theta` 的) 二维旋转.
+利用 [定理2-48] 和 [定理2-49] 中的等式我们可以得到任何群元之间的乘积. 我们会发现这些乘积规则就是群 ISO(2) 的乘积规则, 包括 (沿矢量 :math:`(\alpha, \beta)` 的) 平移和 (按角度 :math:`\theta` 的) 二维旋转.
 
 不具有不变阿贝尔子群的群具有某些简单性质, 因此称为 **半单的** (semi-simple). 小群 ISO(2) 和非齐次洛伦兹群一样, 不是半单的, 这使问题变得复杂. 
 
@@ -1212,7 +1216,7 @@
 
 我们考虑 ISO(2) 的李代数.
 
-[定理50] 当 :math:`\theta, \alpha, \beta` 为无穷小量, 一般的 小群群元可以写成 (下面是按照 Weinberg 书的把时间行列调整到最后的版本)
+[定理2-50] 当 :math:`\theta, \alpha, \beta` 为无穷小量, 一般的 小群群元可以写成 (下面是按照 Weinberg 书的把时间行列调整到最后的版本)
 
 .. math:: 
     \xtensor{W(\theta, \alpha, \beta)}{^\mu}{_\nu} = \xtensor{\delta}{^\mu}{_\nu} + \xtensor{\omega}{^\mu}{_\nu},\quad 
@@ -1233,7 +1237,7 @@
         0 & 0 & 0 & 1 \end{pmatrix} = \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & \theta &  0 \\ 0 & -\theta & 1 & 0 \\
         0 & 0 & 0 & 1 \end{pmatrix}
 
-事实上, 借助 [引理47-1] 我们有
+事实上, 借助 [引理2-47-1] 我们有
 
 .. math:: 
     S(\alpha, \beta)R(\theta) =&\ \begin{pmatrix} R & X \\ YR & Z \end{pmatrix},\quad X = \begin{pmatrix} -\alpha & \alpha \\ -\beta & \beta \end{pmatrix},\quad Y = \begin{pmatrix} \alpha & \beta \\ \alpha & \beta \end{pmatrix}, \quad
@@ -1252,7 +1256,7 @@
         \begin{pmatrix} 0 & \theta & -\alpha & \alpha \\ -\theta & 0 & -\beta & \beta \\ 
         \alpha & \beta & 0 & 0 \\ -\alpha & -\beta & 0 & 0 \end{pmatrix}
 
-[定理51] 与小群群元 :math:`W` 对应的希尔伯特空间算符是
+[定理2-51] 与小群群元 :math:`W` 对应的希尔伯特空间算符是
 
 .. math:: 
     U(W(\theta, \alpha, \beta)) = 1 + \I \alpha A + \I \beta B + \I \theta J_3
@@ -1281,7 +1285,7 @@
 .. math:: 
     \omega_{\rho\sigma} J^{\rho\sigma} = 2\big[ \alpha A + \beta B + \theta J_3 \big]
 
-其中, :math:`\omega_{\rho\sigma}` 取 [定理50] 中的形式. 这样我们可以直接做乘法, 得到 (注意这其实相当于两个矩阵的每一项对应相乘, 然后求和. 或者理解为, 矩阵乘积再取迹. 但是这时需要把 :math:`J` 转置, 这样两个 :math:`\sigma` 指标才能相邻, 符合矩阵乘积的要求)
+其中, :math:`\omega_{\rho\sigma}` 取 [定理2-50] 中的形式. 这样我们可以直接做乘法, 得到 (注意这其实相当于两个矩阵的每一项对应相乘, 然后求和. 或者理解为, 矩阵乘积再取迹. 但是这时需要把 :math:`J` 转置, 这样两个 :math:`\sigma` 指标才能相邻, 符合矩阵乘积的要求)
 
 .. math:: 
     \omega_{\rho\sigma} J^{\rho\sigma} =&\ \mathrm{trace\ }\left[ \begin{pmatrix} 0 & -\alpha & -\beta & 0 \\ \alpha & 0 & \theta & -\alpha \\ \beta & -\theta & 0 & -\beta \\ 0 & \alpha & \beta & 0 \end{pmatrix} \begin{pmatrix} 0 & -K_1 & -K_2 & -K_3 \\ K_1 & 0 & J_3 & -J_2 \\ 
@@ -1291,14 +1295,14 @@
         =&\ 2\alpha K_1 +2\beta K_2 +2\theta J_3 + 2\alpha J_2 - 2\beta J_1 \\
         =&\ 2\big[ \alpha (K_1 + J_2) + \beta (K_2 - J_1) + \theta J_3 \big]
 
-[定理52] 生成元 :math:`A, B, J_3` 的对易关系为
+[定理2-52] 生成元 :math:`A, B, J_3` 的对易关系为
 
 .. math:: 
     [J_3, A] =&\ +\I B \\
     [J_3, B] =&\ -\I A \\
     [A, B] =&\ 0
 
-[证明] 我们需要利用 :math:`J_1, J_2, J_3, K_1, K_2` 的对易关系, 即 [定理25].
+[证明] 我们需要利用 :math:`J_1, J_2, J_3, K_1, K_2` 的对易关系, 即 [定理2-25].
 
 .. math:: 
     [J_i, J_j] =&\ \I \epsilon_{ijk}J_k,\quad [J_i, K_j] = \I \epsilon_{ijk}K_k,\quad [K_i, K_j]= -\I \epsilon_{ijk}J_k \\
@@ -1327,7 +1331,7 @@
 
 这里的一个附加问题是, 为什么我们只用 :math:`k, a, b` 标记态? 很显然, :math:`k` 指标只包括 :math:`p` 指标一部分的信息, 剩下的信息会被洛伦兹变换改变. 如果不考虑这些剩下的信息, 我们对于物理态的标记是不完全的. 事实上, 这里 :math:`p` 指标除去 :math:`k` 剩下的信息是和原来 :math:`\sigma` 指标互相关联的. 现在相当于我们取3个指标 :math:`k, a, b` 来表示态. 本来小群定义就是只除去了和 :math:`k` 相关的部分, 因此这样的指标是可行的.
 
-注意到根据 :eq:`t-lambda-a-compose`, :math:`U(W)` 构成群 :math:`W` 的一个普通表示. 于是由 [定理49] 中的
+注意到根据 :eq:`t-lambda-a-compose`, :math:`U(W)` 构成群 :math:`W` 的一个普通表示. 于是由 [定理2-49] 中的
 
 .. math:: 
     R(\theta)S(\alpha,\beta)R^{-1}(\theta) = S(\alpha\cos\theta +\beta\sin\theta, -\alpha\sin\theta + \beta\cos\theta)
@@ -1363,14 +1367,14 @@
     U(R(\theta)) A U(R^{-1}(\theta)) =&\ A \cos\theta - B \sin\theta \\
     U(R(\theta)) B U(R^{-1}(\theta)) =&\ A \sin\theta + B \cos\theta
 
-根据 [定理18], :math:`U^{-1}(\Lambda) = T(\Lambda^{-1})`, 于是 :math:`U(R^{-1}(\theta)) = U^{-1}(R(\theta))`, 得
+根据 [定理2-18], :math:`U^{-1}(\Lambda) = T(\Lambda^{-1})`, 于是 :math:`U(R^{-1}(\theta)) = U^{-1}(R(\theta))`, 得
 
 .. math:: 
     U(R(\theta)) A U^{-1}(R(\theta)) =&\ A \cos\theta - B \sin\theta \\
     U(R(\theta)) B U^{-1}(R(\theta)) =&\ A \sin\theta + B \cos\theta
     :label: uau-ubu
 
-[定理53] 对任意的 :math:`\theta`,
+[定理2-53] 对任意的 :math:`\theta`,
 
 .. math:: 
     A \psi^\theta_{k,a,b} =&\ (a\cos\theta - b\sin\theta) \psi^\theta_{k,a,b} \\
@@ -1422,7 +1426,7 @@
 16 零质量粒子态的洛伦兹变换
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-下面我们希望计算一般无质量粒子态的洛伦兹变换性质. 由 [定理48], 子群 :math:`S(\alpha, \beta)` 和 :math:`R(\theta)` 是阿贝尔子群, 并且李群参数 :math:`\alpha, \beta, \theta` 满足相加性, 对于这样的群我们可以按照类似于第 2.2.7 节的讨论, 得到, 对于有限的 :math:`\alpha, \beta, \theta` 有
+下面我们希望计算一般无质量粒子态的洛伦兹变换性质. 由 [定理2-48], 子群 :math:`S(\alpha, \beta)` 和 :math:`R(\theta)` 是阿贝尔子群, 并且李群参数 :math:`\alpha, \beta, \theta` 满足相加性, 对于这样的群我们可以按照类似于第 2.2.7 节的讨论, 得到, 对于有限的 :math:`\alpha, \beta, \theta` 有
 
 .. math:: 
     U(S(\alpha, \beta)) = \exp(\I\alpha A + \I \beta B)
@@ -1473,7 +1477,7 @@
 
 为了对给定的 :math:`\Lambda` 和 :math:`p` 计算 :eq:`w-mass-zero` 式的小群群元 (并且这也将使我们在下一节能够计算这些态的空间反射或时间反演的作用), 我们需要确定从 :math:`k^\mu = (\kappa, 0, 0, \kappa)` 到 :math:`p^\mu` 的标准洛伦兹变换的约定. 这可以方便地取为如下形式
 
-[定理54] 从 :math:`k^\mu = (\kappa, 0, 0, \kappa)` 到 :math:`p^\mu` 的标准洛伦兹变换可以取为如下形式
+[定理2-54] 从 :math:`k^\mu = (\kappa, 0, 0, \kappa)` 到 :math:`p^\mu` 的标准洛伦兹变换可以取为如下形式
 
 .. math:: 
     L(p) = R(\hat{\bm{p}})B(|\bm{p}|/\kappa)
@@ -1486,7 +1490,7 @@
 
 :math:`R(\hat{\bm{p}})` 是一个纯转动, 它把第三轴转到单位矢量 :math:`\hat{\bm{p}}` 的方向.
 
-[证明] 首先我们需要解释为什么 :math:`L(p)` 应该写成 :math:`R` 和 :math:`B` 两项. 首先我们希望 :math:`B` 是一个纯推进, 也就是说, 它是沿某一轴的推进. 我们可以先做旋转再做推进, 或者先做推进再做旋转. 因为一开始 :math:`k` 标准矢量就固定了和第三轴的联系, 因此我们如果先做纯推进, 这个纯推进就是沿第三轴的纯推进, 之后我们再做旋转就得到一般的 :math:`p`. 也就是定理中的形式. 理论上我们当然可以先做旋转再做推进, 那么这个推进就必须是旋转后的方向. 而根据类似于 [引理44-1] 的讨论 (其中 :math:`B` 的定义不太一样, 需要重新定义 :math:`\gamma`), 总可以将沿任意方向的纯推进分解为旋转和沿第三轴的纯推进的叠加, 这样就有
+[证明] 首先我们需要解释为什么 :math:`L(p)` 应该写成 :math:`R` 和 :math:`B` 两项. 首先我们希望 :math:`B` 是一个纯推进, 也就是说, 它是沿某一轴的推进. 我们可以先做旋转再做推进, 或者先做推进再做旋转. 因为一开始 :math:`k` 标准矢量就固定了和第三轴的联系, 因此我们如果先做纯推进, 这个纯推进就是沿第三轴的纯推进, 之后我们再做旋转就得到一般的 :math:`p`. 也就是定理中的形式. 理论上我们当然可以先做旋转再做推进, 那么这个推进就必须是旋转后的方向. 而根据类似于 [引理2-44-1] 的讨论 (其中 :math:`B` 的定义不太一样, 需要重新定义 :math:`\gamma`), 总可以将沿任意方向的纯推进分解为旋转和沿第三轴的纯推进的叠加, 这样就有
 
 .. math:: 
     L(p) = B(\bm{p}/\kappa)R(\hat{\bm{p}}) = R(\hat{\bm{p}})B_3(|\bm{p}|/\kappa)R^{-1}(\hat{\bm{p}})R(\hat{\bm{p}}) = R(\hat{\bm{p}})B_3(|\bm{p}|/\kappa)
@@ -1536,9 +1540,38 @@
 
 .. math:: 
     U(R(\hat{\bm{p}})) = \exp(\I \phi J_3) \exp(\I \theta J_2)
+
+其中 :math:`0\leqslant \theta \leqslant \pi, 0 \leqslant \phi \leqslant 2\pi`.
+
+注意 Weinberg 1998年版中把这里的式子修正为
+
+.. math:: 
+    U(R(\hat{\bm{p}})) = \exp(-\I \phi J_3) \exp(-\I \theta J_2)
     :label: urp-def
 
-其中 :math:`0\leqslant \theta \leqslant \pi, 0 \leqslant \phi \leqslant 2\pi`. 我们给出 :math:`U(R(\hat{\bm{p}}))` 的表达式, 而不是 :math:`R(\hat{\bm{p}})` 的, 并且给定 :math:`U(R(\hat{\bm{p}}))` 中 :math:`\phi` 和 :math:`\theta` 的取值范围. 这是因为 :math:`\theta` 或 :math:`\phi` 的 :math:`2\pi` 角的偏移会给出同样的 :math:`R(\hat{\bm{p}})` (坐标变换), 但是当作用于半整数自旋态的时候, 会导致 :math:`U(R(\hat{\bm{p}}))` 的符号改变. 考虑 :math:`J_2` 的本征值是半整数, 那么作用于它的本征态的时候, :math:`J_2` 将会被半整数比如 :math:`\frac{1}{2}` 取代, 这样 :math:`\I\theta / 2` 成了指数因子. :math:`\theta` 可取 :math:`0` 到 :math:`4\pi`. 由于上式是一个旋转, 它把第三轴转到 :math:`\hat{\bm{p}}` 的方向. 任何其他的 :math:`R(\hat{\bm{p}})` 的选择只会和这里的定义相差绕第三轴的初始转动 (也就是在上述定义的 :math:`U(R(\hat{\bm{p}}))` 右边再加上一项 :math:`\exp(\I \zeta J_3)`, 这一项作用于 :math:`(0,0,1)` 会得到它本身. 但是 :math:`U(R(\hat{\bm{p}}))` 多了个相因子). 因此这仅仅是一个单粒子态相因子的重新定义.
+实际上修正后的式子是对的. 但是修正版没有改这个式子之前的文字叙述. 应该改为 :math:`R(\hat{\bm{p}})` 是一个绕第二轴转 :math:`-\theta` 角的旋转, 这会把 (第三轴的方向) :math:`(0,0,1)` 转到 :math:`(\sin\theta, 0, \cos\theta)`. 接着我们做一个绕第三轴转 :math:`-\phi` 角的旋转, 这把 :math:`(\sin\theta, 0, \cos\theta)` 转到 :math:`(\sin\theta \cos\phi, \sin\theta \sin\phi, \cos\theta)`, 即 :math:`\hat{\bm{p}}` 的方向. 这样此处的表述和之前的 :eq:`uj-expansion` 便无矛盾. 下面解释为什么角度必须是负的. 参考 [定理28] 的证明, 对于正的旋转角度, 我们有
+
+.. math:: 
+    R(\theta) = \begin{pmatrix} \cos\theta & \sin\theta \\ -\sin\theta & \cos\theta \end{pmatrix}
+
+那么分别对于绕第三轴和绕第二轴的旋转, 我们有
+
+.. math:: 
+    R_2(\theta) =&\ \begin{pmatrix} \cos\theta & 0 & -\sin\theta \\ 0 & 1 & 0 \\ \sin\theta & 0 & \cos\theta \end{pmatrix} \\
+    R_3(\phi) =&\ \begin{pmatrix} \cos\phi & \sin\phi & 0 \\ -\sin\phi & \cos\phi & 0 \\ 0 & 0 & 1 \end{pmatrix}
+
+按照前面的定义, 我们有 :math:`U(R_2(\theta)) = \exp(\I \theta J_2), U(R_3(\phi)) = \exp(\I \phi J_3)`. 但是
+
+.. math:: 
+    R_2(\theta) \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} = \begin{pmatrix} \cos\theta & 0 & -\sin\theta \\ 0 & 1 & 0 \\ \sin\theta & 0 & \cos\theta \end{pmatrix} \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} = \begin{pmatrix} -\sin\theta \\ 0 \\ \cos\theta \end{pmatrix}
+
+无法把 :math:`(0, 0, 1)` 转到 :math:`(\sin\theta, 0, \cos\theta)`. 因此我们有
+
+.. math:: 
+    R_2(-\theta) \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} =&\ \begin{pmatrix} \cos\theta & 0 & \sin\theta \\ 0 & 1 & 0 \\ -\sin\theta & 0 & \cos\theta \end{pmatrix} \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} = \begin{pmatrix} \sin\theta \\ 0 \\ \cos\theta \end{pmatrix} \\
+    R_3(-\phi) \begin{pmatrix} \sin\theta \\ 0 \\ \cos\theta \end{pmatrix} =&\ \begin{pmatrix} \cos\phi & -\sin\phi & 0 \\ \sin\phi & \cos\phi & 0 \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} \sin\theta \\ 0 \\ \cos\theta \end{pmatrix} = \begin{pmatrix} \cos\phi\sin\theta \\ \sin\phi\sin\theta \\ \cos\theta \end{pmatrix}
+
+我们给出 :math:`U(R(\hat{\bm{p}}))` 的表达式, 而不是 :math:`R(\hat{\bm{p}})` 的, 并且给定 :math:`U(R(\hat{\bm{p}}))` 中 :math:`\phi` 和 :math:`\theta` 的取值范围. 这是因为 :math:`\theta` 或 :math:`\phi` 的 :math:`2\pi` 角的偏移会给出同样的 :math:`R(\hat{\bm{p}})` (坐标变换), 但是当作用于半整数自旋态的时候, 会导致 :math:`U(R(\hat{\bm{p}}))` 的符号改变. 考虑 :math:`J_2` 的本征值是半整数, 那么作用于它的本征态的时候, :math:`J_2` 将会被半整数比如 :math:`\frac{1}{2}` 取代, 这样 :math:`\I\theta / 2` 成了指数因子. :math:`\theta` 可取 :math:`0` 到 :math:`4\pi`. 由于上式是一个旋转, 它把第三轴转到 :math:`\hat{\bm{p}}` 的方向. 任何其他的 :math:`R(\hat{\bm{p}})` 的选择只会和这里的定义相差绕第三轴的初始转动 (也就是在上述定义的 :math:`U(R(\hat{\bm{p}}))` 右边再加上一项 :math:`\exp(\I \zeta J_3)`, 这一项作用于 :math:`(0,0,1)` 会得到它本身. 但是 :math:`U(R(\hat{\bm{p}}))` 多了个相因子). 因此这仅仅是一个单粒子态相因子的重新定义.
 
 注意到, 螺旋度是洛伦兹不变的, 一个给定螺旋度 :math:`\sigma` 的零质量粒子, 它在所有惯性系的螺旋度看起来都是一样的, 这一点和动量不同. 事实上, 我们可能会想把具有不同螺旋度的无质量粒子考虑为不同种类的粒子. 但是, 我们在下一节将发现, 具有相反螺旋度的粒子是由空间反射对称性相联系的. 因此, 因为电磁和引力服从空间反射对称性, 与电磁现象相关的具有螺旋度 :math:`\pm 1` 的无质量粒子都叫做 **光子** (photons), 而具有螺旋度 :math:`\pm 2` 的无质量粒子被认为是与引力相关, 都叫做 **引力子** (gravitons). 另一方面, 在核 :math:`\beta` 衰变中释放的具有螺旋度 :math:`\pm \frac{1}{2}` 的可能无质量的粒子 (这里是假设它无质量, 实际上现在实验测得它质量非常小), 它没有具有空间反射对称性的相互作用 (引力除外), 我们给这些粒子起了不同名字: 具有螺旋度 :math:`-\frac{1}{2}` 的称为 **中微子** (neutrinos), 具有螺旋度 :math:`+\frac{1}{2}` 的称为 **反中微子** (antineutrinos). [这里 Weinberg 书有符号错误. ]
 
