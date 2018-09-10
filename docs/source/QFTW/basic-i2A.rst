@@ -1253,21 +1253,21 @@
 和能量 :math:`P^0` 本身. 剩下的叫做推进 (boost) 生成元
 
 .. math:: 
-    \bm{K} = \{ J^{10}, J^{20}, J^{30} \}
+    \bm{K} = \{ J^{01}, J^{02}, J^{03} \}
 
-不是守恒量的算符, 因而我们不使用 :math:`\bm{K}` 的本征值标记物理态. 为了证明它们是否是守恒量只需要求对应的算符和能量算符的对易关系. 这些对易关系由下面的定理给出.
+(注意在旧版书中定义为 :math:`\bm{K} = \{ J^{10}, J^{20}, J^{30}`) 不是守恒量的算符, 因而我们不使用 :math:`\bm{K}` 的本征值标记物理态. 为了证明它们是否是守恒量只需要求对应的算符和能量算符的对易关系. 这些对易关系由下面的定理给出.
 
 [定理2-25] 采用3维标记, :eq:`poin-lie-algebra` 的对易关系可以写为
 
 .. math:: 
     [J_i, J_j] =&\ \I \epsilon_{ijk}J_k,\quad [J_i, K_j] = \I \epsilon_{ijk}K_k,\quad [K_i, K_j]= -\I \epsilon_{ijk}J_k,\\
-    [J_i, P_j] =&\ \I \epsilon_{ijk}P_k,\quad [K_i, P_j] = \I H\delta_{ij},\quad [P_i, P_j] = 0, \\
-    [K_i, H] =&\ \I P_i,\quad [J_i, H] = [P_i, H] = [H, H] = 0
+    [J_i, P_j] =&\ \I \epsilon_{ijk}P_k,\quad [K_i, P_j] = -\I H\delta_{ij},\quad [P_i, P_j] = 0, \\
+    [K_i, H] =&\ -\I P_i,\quad [J_i, H] = [P_i, H] = [H, H] = 0
     :label: 3d-poin-lie-algebra
 
-其中 :math:`i, j, k` 取 :math:`1, 2, 3`, :math:`\epsilon_{ijk}` 是全反称张量, 满足 :math:`\epsilon_{123} = +1`. 第一个对易关系 :math:`[J_i, J_j] = \I \epsilon_{ijk}J_k` 正是角动量算符的对易关系.
+其中 :math:`i, j, k` 取 :math:`1, 2, 3`, :math:`\epsilon_{ijk}` 是全反称张量, 满足 :math:`\epsilon_{123} = +1`. 第一个对易关系 :math:`[J_i, J_j] = \I \epsilon_{ijk}J_k` 正是角动量算符的对易关系. (注意这里 1995 年版中 :math:`[K_i, P_j], [K_i, H]` 相差一个负号, 因为 :math:`K_i` 定义不同)
 
-[证明]
+[证明] 注意一下证明是按照 1995 年版的 :math:`\bm{K}` 定义. 由于两个定义中 :math:`\bm{K}` 只差一个负号, 因此相应只需要将左右两边 :math:`\bm{K}` 的奇偶不一样的式子加上负号即可.
 
 (1) 首先考虑两个相同的 :math:`J`. 由于 :math:`J` 反称, 下式要求 :math:`i \neq j`.
 
@@ -1469,6 +1469,7 @@
 8 伽利略群
 ^^^^^^^^^^
 
+(注意这一小节是按照 1995 年版推导的. 需要修改. )
 牛顿力学的对称群称为 **伽利略群** (Galilean group). 我们可以比较伽利略群的李代数和 Poincaré 代数. 我们可以按照与上面推导 Poincaré 代数相同的方法, 从伽利略群的变换规则推导出伽利略群的李代数. 但是, 考虑到我们已经有 :eq:`3d-poin-lie-algebra`, 更简单的推导方式是, 通过 Inönü-Wigner 收缩 (Inönü-Wigner contraction) 将伽利略代数作为 Poincaré 代数的低速近似. 对于一个具有质量 :math:`m` 和速度 :math:`v` 的粒子系统, 动量和角动量算符的量级是 :math:`\bm{J} \sim 1, \bm{P} \sim mv` (注意角动量算符的量级是由于 :math:`\bm{J} = \bm{r} \times \bm{P}`, 而根据测不准原理 :math:`\bm{r}` 和 :math:`\bm{P}` 的乘积的量级是 :math:`\I\hbar` 是一个常数. 所以 :math:`\bm{r}` 的量级是 :math:`1/(mv)`). 另一方面, 能量算符是 :math:`H = M + W`, 其中总质量是 :math:`M`, 非质量导致的能量是 :math:`W` (动能和势能之和), 它们的量级是 :math:`M \sim m, W \sim mv^2`. 对易关系 :eq:`3d-poin-lie-algebra` 的低速近似 :math:`v \ll 1` (由于已经设定 :math:`c = 1`, 作为低速近似自动有 :math:`v \ll c = 1`) 如下
 
 .. math:: 
@@ -1494,6 +1495,8 @@
     =&\ [K_i, M](m/v) + [K_i, W](mv) = \I P_i(mv)
     
 由 :math:`m/v` 量级的等式得 :math:`[K_i, M] = 0`, 由 :math:`mv` 量级的等式得 :math:`[K_i, W] = \I P_i`.
+
+(这里仍然不知道为什么 1998 年版中的两个 :math:`\bm{K}` 的对易关系变成了零)
 
 [引理2-29-1 (Hadamard 引理, Hadamard's lemma)] 设 :math:`t` 为实参数, :math:`A, B` 为算符或矩阵, 则
 
@@ -1677,3 +1680,10 @@
     =&\ \exp(\I M \bm{a}\cdot \bm{v}/2) \exp(\I (\bm{K} \cdot \bm{v} - \bm{P}\cdot \bm{a}))
 
 注意相因子 :math:`\exp(\I M \bm{a}\cdot \bm{v}/2)` 说明这是一个投影表示. 这里还有一个超选择定则阻止不同质量的态的叠加. 就这一点而言, Poincaré 群的数学比伽利略群的简单. 但是, 我们仍然可以形式上扩张伽利略群, 给它的李代数加上一个生成元, 这个生成元与所有其他生成元都对易, 其本征值是物理态的质量. 在这种情况下, 物理态矢提供了一个扩张的对称群的通常表示而不是投影表示. 这种扩张做法所造成的效果, 除了在这种伽利略群的重新解释下我们不再需要质量超选择定则以外, 仅仅是一个标记的区别.
+
+注意这里 1998 年版本的式子是
+
+.. math:: 
+    &\ \exp(-\I \bm{K} \cdot \bm{v}) \exp(-\I \bm{P}\cdot \bm{a}) \\
+    =&\ \exp(-\I (\bm{K} \cdot \bm{v} - \bm{P}\cdot \bm{a}))\exp(\I M \bm{a}\cdot \bm{v}/2)
+    =&\ \exp(\I M \bm{a}\cdot \bm{v}/2) \exp(-\I (\bm{K} \cdot \bm{v} + \bm{P}\cdot \bm{a}))

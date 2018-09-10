@@ -40,6 +40,8 @@
 
 其中 :math:`W(\Lambda, p)` 是 :eq:`w-lambda-p-def` 定义的 Wigner 转动, :math:`D^{(j)}_{\sigma'\sigma}` 是通常的表示三维转动群的 :math:`(2j+1)-` 维幺正矩阵 (以上是对正质量粒子. 对零质量粒子, 矩阵 :math:`D^{(j)}_{\sigma'\sigma}(W(\Lambda, p))` 由 :math:`\delta_{\sigma'\sigma}\exp(\I \sigma \theta(\Lambda, p))` 替换, 其中 :math:`\theta` 按照 :eq:`w-mass-zero` 定义).
 
+注意这个公式中, 关于态矢的记号既然用了 :math:`\psi`, 那么它并没有表示必须是无相互作用粒子的态. 但是, 只有这个态是无相互作用粒子态, 它的变换才能拆解成各个单粒子态变换的直积.
+
 [证明] 首先根据 :eq:`t-lambda-a-compose` 我们有
 
 .. math:: 
@@ -302,7 +304,7 @@
     S_{\beta\alpha} = (\psi_\beta^-, \psi_\alpha^+)
     :label: s-matrix
 
-这个复振幅的矩阵被称为 :math:`S` **矩阵** (:math:`S`-matrix). 如果没有相互作用, 那么入态和出态是一样的, 那么 :math:`S_{\beta\alpha}` 就是 :math:`\delta(\alpha - \beta)`. 反应 :math:`\alpha \to \beta` 的速率正比于 :math:`|S_{\beta\alpha} - \delta(\alpha -\beta)|^2` [这里有疑问] 在第3.4节我们将具体讨论 :math:`S_{\beta\alpha}` 和测量的速率和截面.
+这个复振幅的矩阵被称为 :math:`S` **矩阵** (:math:`S`-matrix). 如果没有相互作用, 那么入态和出态是一样的, 那么 :math:`S_{\beta\alpha}` 就是 :math:`\delta(\alpha - \beta)`. 反应 :math:`\alpha \to \beta` 的速率正比于 :math:`|S_{\beta\alpha} - \delta(\alpha -\beta)|^2` [这里有疑问. 这里是说, 如果没有相互作用, 我们得到一个出态和入态一样. 当有相互作用时, 由于整个哈密顿量算符是无相互作用项与相互作用项相加的, 所以结果中仍然有一部分是和入态一样的出态, 这一部分不提供任何散射的信息. 我们要求散射波, 也就是受到相互作用的那一部分, 就需要把和出态一样的那部分减去, 称为反应速率. ] 在第3.4节我们将具体讨论 :math:`S_{\beta\alpha}` 和测量的速率和截面.
 
 应该强调入态和出态并不处于两个不同的希尔伯特空间. 它们的不同仅仅在于它们是如何被标记的: 我们通过这两个态分别在 :math:`t\to-\infty` 和 :math:`t\to+\infty` 的表现来标记它们. 任何入态可以展开为出态的和, 展开系数由 :math:`S` 矩阵 :eq:`s-matrix` 给出.
 
@@ -336,6 +338,7 @@
 
 .. math:: 
     (\phi_\beta, S\phi_\alpha) \equiv S_{\beta\alpha}
+    :label: s-op-def
 
 [定理3-3] :math:`S` 算符满足
 

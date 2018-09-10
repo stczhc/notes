@@ -25,3 +25,4 @@
    basic-i2B.rst
    basic-i2C.rst
    basic-i3A.rst
+   basic-i3B.rst
