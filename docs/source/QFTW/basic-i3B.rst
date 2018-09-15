@@ -59,6 +59,7 @@
 
 .. math:: 
     S_{\beta\alpha} - \delta(\beta - \alpha) = -2\pi \I M_{\beta\alpha} \delta^4(p_\beta - p_\alpha)
+    :label: s-matrix-delta
 
 (但是, 在下一章我们将发现, 振幅 :math:`M_{\beta\alpha}` 本身也包括其他 delta 函数因子) 注意这里按照第二节开头的讨论, 如果无相互作用, :math:`S_{\beta\alpha} = \delta(\beta - \alpha)`. 这里实际上的结论是 :math:`S_{\beta\alpha}` 可以有一个 :math:`\delta^4(p_\beta - p_\alpha)` 因子. 由于 :math:`\delta(\beta - \alpha)` 也相当于有 :math:`\delta^4(p_\beta - p_\alpha)` 因子, 因此这里把 :math:`\delta(\beta - \alpha)` 提出来并没有本质变化. :math:`-2\pi \I` 因子的引入也是任意的, 有没有这个因子只是意味着将待定参数 :math:`M_{\beta\alpha}` 重定义. :math:`\delta(\beta - \alpha)` 因子也只是将 :math:`\beta = \alpha` 的 :math:`M_{\beta\alpha}` 再重定义. 因此形式上写成这样没有任何问题.
 
@@ -808,7 +809,7 @@
 7 C, CP 和 CPT
 ^^^^^^^^^^^^^^
 
-我们已经提到, 存在一个称为电荷共轭 (char-conjugation) 的内部对称性变换 (在内部对称性小节的一开始提到). 这个变换将粒子和反粒子交换. 形式上, 这导致存在一个幺正算符 :math:`\mathsf{C}`, 它在多粒子态上的作用是
+我们已经提到, 存在一个称为电荷共轭 (charge-conjugation) 的内部对称性变换 (在内部对称性小节的一开始提到). 这个变换将粒子和反粒子交换. 形式上, 这导致存在一个幺正算符 :math:`\mathsf{C}`, 它在多粒子态上的作用是
 
 .. math::
     \mathsf{C} \psi_{p_1\sigma_1n_1;p_2\sigma_2n_2;\cdots}^\pm = \xi_{n_1}\xi_{n_2} \cdots
