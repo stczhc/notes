@@ -44,7 +44,3 @@ A
     hair 头发, 造新词 去掉 i, a 变成 o, horror 恐怖.
     palm 手掌, 白色 appall 面色惨白 惊骇. pale 苍白的.
 
-
-第1.2小节
----------
-
