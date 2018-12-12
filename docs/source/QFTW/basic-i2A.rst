@@ -1254,12 +1254,13 @@
 
 .. math:: 
     \bm{K} = \{ J^{01}, J^{02}, J^{03} \}
+    :label: boost-def
 
-(注意在旧版书中定义为 :math:`\bm{K} = \{ J^{10}, J^{20}, J^{30}`) 不是守恒量的算符, 因而我们不使用 :math:`\bm{K}` 的本征值标记物理态. 为了证明它们是否是守恒量只需要求对应的算符和能量算符的对易关系. 这些对易关系由下面的定理给出.
+(注意在旧版书中定义为 :math:`\bm{K} = \{ J^{10}, J^{20}, J^{30} \}`) 不是守恒量的算符, 因而我们不使用 :math:`\bm{K}` 的本征值标记物理态. 为了证明它们是否是守恒量只需要求对应的算符和能量算符的对易关系. 这些对易关系由下面的定理给出.
 
 [定理2-25] 采用3维标记, :eq:`poin-lie-algebra` 的对易关系可以写为
 
-.. math:: 
+.. math::
     [J_i, J_j] =&\ \I \epsilon_{ijk}J_k,\quad [J_i, K_j] = \I \epsilon_{ijk}K_k,\quad [K_i, K_j]= -\I \epsilon_{ijk}J_k,\\
     [J_i, P_j] =&\ \I \epsilon_{ijk}P_k,\quad [K_i, P_j] = -\I H\delta_{ij},\quad [P_i, P_j] = 0, \\
     [K_i, H] =&\ -\I P_i,\quad [J_i, H] = [P_i, H] = [H, H] = 0

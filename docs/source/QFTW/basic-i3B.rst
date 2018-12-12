@@ -112,13 +112,13 @@
 
 又由于洛伦兹变换是幺正变换, 有 :math:`U_0^\dagger = U_0^{-1}`. 因此 :math:`U_0(\Lambda, a)^{-1} S U_0(\Lambda, a) = S`. 其实这里绕一大圈, 本质上就是说, 在洛伦兹变换下, 考虑这个式子的变换 :math:`(\phi_\beta, S\phi_\alpha)` 应该有对应的矢量变换 :math:`\phi_\beta \to U_0\phi_\beta`, :math:`\phi_\alpha \to U_0 \phi_\alpha`, 和算符变换 :math:`S \to U_0 S U_0^{-1}`. 那么要求它不变也就是要求这个算符变换不改变原来的算符.
 
-这个条件也可以以无穷小洛伦兹变换来表示. 正如 2.4 节那样, 存在厄米算符的集合, 包括动量 :math:`\bm{P}_0`, 角动量 :math:`\bm{J}_0`, 推进生成元 :math:`\bm{K}_0` 和 :math:`H_0`. 当它们作用于自由粒子态时, 一起生成了非齐次洛伦兹变换的无穷小版本. :eq:`s-matrix-invar-def` 等价于说, :math:`S-` 矩阵不受这些变换的影响. 或者换句话说, :math:`S` 算符和这些生成元对易:
+这个条件也可以以无穷小洛伦兹变换来表示. 正如 2.4 节那样, 存在厄米算符的集合, 包括动量 :math:`\bm{P}_0`, 角动量 :math:`\bm{J}_0`, 推进生成元 :math:`\bm{K}_0` 和 :math:`H_0`. 当它们作用于自由粒子态时, 一起生成了非齐次洛伦兹变换的无穷小版本. :eq:`s-matrix-invar-def` 等价于说, :math:`S` 矩阵不受这些变换的影响. 或者换句话说, :math:`S` 算符和这些生成元对易:
 
 .. math:: 
     [H_0, S] = [\bm{P}_0, S] = [\bm{J}_0, S] = [\bm{K}_0, S] = 0
     :label: s-hpjk-commute
 
-注意这里, 之所以 :eq:`s-matrix-invar-def` 等价于 :math:`S-` 矩阵不受这些变换的影响, 是因为 :math:`S-` 矩阵元 :math:`S_{\alpha\beta}` 是定义为 :math:`S` 算符在 :math:`\phi_\alpha, \phi_\beta` 的矩阵元. 当洛伦兹变换作用后, 这些态变为 :math:`\phi_{\alpha'}, \phi_{\beta'}`, 而矩阵仍定义为 :math:`S` 和它们之间的矩阵元. 因此等价于要求 :math:`S` 不变, 因此也就是说 :math:`S` 矩阵元不变.
+注意这里, 之所以 :eq:`s-matrix-invar-def` 等价于 :math:`S` 矩阵不受这些变换的影响, 是因为 :math:`S` 矩阵元 :math:`S_{\alpha\beta}` 是定义为 :math:`S` 算符在 :math:`\phi_\alpha, \phi_\beta` 的矩阵元. 当洛伦兹变换作用后, 这些态变为 :math:`\phi_{\alpha'}, \phi_{\beta'}`, 而矩阵仍定义为 :math:`S` 和它们之间的矩阵元. 因此等价于要求 :math:`S` 不变, 因此也就是说 :math:`S` 矩阵元不变 (因为基底在洛伦兹变换下会改变, 矩阵元的数值在不同的基底下当然是应该变化的, 但是它应该对应于同一个算符在新的基底下的矩阵元. 也就是说, 如果 :math:`S` 不具有洛伦兹不变性, 那么新的矩阵元是 :math:`U_0 S U_0^{-1}` 在变换后的 :math:`U_0 \phi_\alpha, U_0\phi_\beta` 的矩阵元. 而如果 :math:`S` 具有洛伦兹不变性, 则新的矩阵元是 :math:`S` 在变换后的 :math:`U_0 \phi_\alpha, U_0\phi_\beta` 的矩阵元, 或者说洛伦兹不变的条件是 :math:`S = U_0 S U_0^{-1}`).
 
 注意 :eq:`s-hpjk-commute` 可由 :eq:`su-commute` 证明如下. 因为 :math:`U_0` 是幺正算符, 因此 :eq:`su-commute` 给出 (考虑 :math:`U_0` 为无穷小的情况)
 
