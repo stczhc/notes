@@ -372,12 +372,14 @@
 .. math::
     \frac{\D \sigma(\alpha \to \beta)}{\D \Omega} = \frac{(2\pi)^4 k'E'_1E'_2}{E u_\alpha} |M_{\beta\alpha}|^2
         = \frac{(2\pi)^4 k'E'_1E'_2E_1E_2}{E^2 k} |M_{\beta\alpha}|^2
+    :label: dsigma-two-body-scattering
 
 其中 :math:`k \equiv |\bm{p}_1| = |\bm{p}_2|`. 其中第二个等号利用了 :eq:`ualpha-comf` 和 :math:`E = E_1 + E_2`, 即
 
 .. math::
     u_\alpha = \frac{k(E_1 + E_2)}{E_1E_2} = \frac{kE}{E_1E_2} \quad \Rightarrow \quad
     \frac{1}{E u_\alpha} = \frac{E_1E_2}{kE^2}
+    :label: ualpha-two-body-scattering
 
 9 相空间因子-终态粒子数为3的情况
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -557,14 +557,14 @@
     \big(V \psi_\beta^\pm, (E_\alpha - H_0 \pm \I \epsilon)^{-1} V\psi_\alpha^\pm \big) =&\ 
         \int \D \gamma \big(V \psi_\beta^\pm, (E_\alpha - H_0 \pm \I \epsilon)^{-1} \phi_\gamma \big) (\phi_\gamma, V\psi_\alpha^\pm ) \\
     =&\ \int \D \gamma \big(V \psi_\beta^\pm, (E_\alpha - E_\gamma \pm \I \epsilon)^{-1} \phi_\gamma \big) (\phi_\gamma, V\psi_\alpha^\pm ) \\
-    =&\ (E_\alpha - E_\gamma \pm \I \epsilon)^{-1}  \int \D \gamma (V \psi_\beta^\pm, \phi_\gamma ) (\phi_\gamma, V\psi_\alpha^\pm ) \\
-    =&\ (E_\alpha - E_\gamma \pm \I \epsilon)^{-1} \int \D \gamma T_{\gamma\beta}^{\pm*} T_{\gamma\alpha}^\pm
+    =&\ \int \D \gamma (E_\alpha - E_\gamma \pm \I \epsilon)^{-1} (V \psi_\beta^\pm, \phi_\gamma ) (\phi_\gamma, V\psi_\alpha^\pm ) \\
+    =&\ \int \D \gamma (E_\alpha - E_\gamma \pm \I \epsilon)^{-1} T_{\gamma\beta}^{\pm*} T_{\gamma\alpha}^\pm
 
 类似有
 
 .. math:: 
     \big(V \psi_\beta^\pm, (E_\beta - E_\gamma \mp \I \epsilon)^{-1} V \psi_\alpha^\pm\big)
-    = (E_\beta - E_\gamma \mp \I \epsilon)^{-1} \int \D \gamma T_{\gamma\beta}^{\pm*} T_{\gamma\alpha}^\pm
+    =  \int \D \gamma (E_\beta - E_\gamma \mp \I \epsilon)^{-1} T_{\gamma\beta}^{\pm*} T_{\gamma\alpha}^\pm
 
 于是
 
@@ -634,6 +634,7 @@
     \frac{1}{E_\alpha - E_\gamma \mp \I \epsilon} - \frac{1}{E_\alpha - E_\gamma \pm \I \epsilon}
     =&\ \frac{\mathscr{P}}{E_\alpha - E_\gamma} \pm \I \pi \delta(E_\alpha - E_\gamma) - \frac{\mathscr{P}}{E_\alpha - E_\gamma} \pm \I \pi \delta(E_\alpha - E_\gamma)\\
      =&\ \pm 2 \I \pi \delta(E_\alpha - E_\gamma)
+    :label: diff-e-eps-delta
 
 我们在 :eq:`t-alpha-beta-eps-star` 第一式中只取正号得
 
@@ -692,4 +693,3 @@
     S_{\beta\alpha} = \delta(\beta -\alpha) + R_{\beta\alpha}^+ = \delta(\beta -\alpha) -2 \I \pi \delta(E_\beta - E_\alpha) T_{\beta\alpha}^{+}
 
 是幺正矩阵.
-

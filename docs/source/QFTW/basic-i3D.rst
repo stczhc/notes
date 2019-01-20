@@ -522,6 +522,7 @@
 .. math::
     \psi_{\mathrm{S}\alpha}^{\pm} = \phi_\alpha + \big( E_\alpha - H_0 \pm \I \epsilon \big)^{-1} V_{\mathrm{S}}
         \psi_{\mathrm{S}\alpha}^{\pm}
+    :label: psi-alpha-strong
 
 注意
 
@@ -544,8 +545,483 @@
     =&\ \left( \psi_{\mathrm{S}\beta}^- , V_{\mathrm{W}} \psi_\alpha^+ \right)
      + \left(  \psi_{\mathrm{S}\beta}^-
         , \left[ V_{\mathrm{S}} - V_{\mathrm{S}} \big( E_\beta - H_0 +\I \epsilon \big)^{-1} \big( V_{\mathrm{S}} + V_{\mathrm{W}} \big) \right] \psi_\alpha^+ \right)
+    :label: T-beta-alpha-sw
 
-以及 (注意下式不是)
+对于弱相互作用 :math:`V_{\mathrm{W}}` 存在的情况, :eq:`psi-alpha-strong` 应该写为
 
 .. math::
+    \psi_{\alpha}^{\pm} = \phi_\alpha + \big( E_\alpha - H_0 \pm \I \epsilon \big)^{-1} \big( V_{\mathrm{S}} + V_{\mathrm{W}} \big) \psi_{\alpha}^{\pm}
+
+或者
+
+.. math::
+    \phi_\alpha = \left[ 1 - \big( E_\alpha - H_0 + \I \epsilon \big)^{-1} \big( V_{\mathrm{S}} + V_{\mathrm{W}} \big)
+        \right] \psi_{\alpha}^+
+
+这里在讨论 :math:`T_{\beta\alpha}` 的等式时, 可以默认 :math:`E_\alpha = E_\beta`. 因为最终根据 :eq:`s-matrix-e-delta`, :math:`T` 矩阵总是带有 :math:`\delta(E_\alpha - E_\beta)` 因子. 具体可以参看下面附加的基于 :math:`S` 矩阵的推导. 但是最后一步消去 :math:`\delta(E_\alpha - E_\beta)` 实际上也是等于默认 :math:`E_\alpha = E_\beta`. 于是可以写
+
+.. math::
+    \phi_\alpha = \left[ 1 - \big( E_\beta - H_0 + \I \epsilon \big)^{-1} \big( V_{\mathrm{S}} + V_{\mathrm{W}} \big)
+        \right] \psi_{\alpha}^+
+
+代入 :eq:`T-beta-alpha-sw` 得
+
+.. math::
+    T_{\beta\alpha}^+ = \left( \psi_{\mathrm{S}\beta}^- , V_{\mathrm{W}} \psi_\alpha^+ \right)
+     + \left(  \psi_{\mathrm{S}\beta}^- , V_{\mathrm{S}} \phi_\alpha \right)
+    :label: t-beta-alpha-two-term
+
+现在假设弱相互作用 :math:`V_{\mathrm{W}}` 不存在 (等于零), 那么 :math:`V = V_{\mathrm{S}}`. 记此时的 :math:`T_{\beta\alpha}^+` 为 :math:`T_{\mathrm{S}\beta\alpha}^+`. 根据李普曼施温格方程 :eq:`lip-sch-eq` 的第二式我们有
+
+.. math::
+    T_{\mathrm{S}\beta\alpha}^+ \equiv (\phi_\beta, V_{\mathrm{S}} \psi_{\mathrm{S}\alpha}^+)
+
+另外如果在 :eq:`t-beta-alpha-two-term` 的推导中令 :math:`V_{\mathrm{W}} = 0` 我们有
+
+.. math::
+    T_{\mathrm{S}\beta\alpha}^+ = \left( \psi_{\mathrm{S}\beta}^- , V_{\mathrm{S}} \phi_\alpha \right)
+
+于是
+
+.. math::
+    T_{\mathrm{S}\beta\alpha}^+ \equiv (\phi_\beta, V_{\mathrm{S}} \psi_{\mathrm{S}\alpha}^+)
+        = \left( \psi_{\mathrm{S}\beta}^- , V_{\mathrm{S}} \phi_\alpha \right)
+    :label: t-s-beta-alpha-equiv
+
+------
+
+
+这里参考 Scattering Theory of Waves and Particles 第7.2.5节
+
+态矢和散射振幅的计算并不一定要以动能作为零级哈密顿量开始. 假设哈密顿量可以写为
+
+.. math::
+    H = H_0 + H_1' + H_2'
+
+那么我们就可以计算如下哈密顿量的态矢和格林函数
+
+.. math::
+    H_1 = H_0 + H_1'
+
+与这个哈密顿量对应的量将具有下标1, 例如
+
+.. math::
+    \mathscr{G}^\pm(E) =&\ \big( E - H \pm \I \epsilon\big)^{-1} \\
+    G^\pm(E) =&\ \big( E - H_0 \pm \I \epsilon\big)^{-1} \\
+    \mathscr{G}_1^\pm(E) =&\ \big( E - H_1 \pm \I \epsilon\big)^{-1}
+
+对应于完整哈密顿量 :math:`H` 的量的计算可以借助 :math:`H_1` 为起点. 有
+
+.. math::
+    \mathscr{G}^\pm(E) =&\ \mathscr{G}_1^\pm(E) + \mathscr{G}_1^\pm(E) H_2'\mathscr{G}^\pm(E)\\
+    =&\ \mathscr{G}_1^\pm(E) + \mathscr{G}^\pm(E) H_2'\mathscr{G}_1^\pm(E)
+
+以及
+
+.. math::
+    \psi^\pm (E,\alpha) =&\ \psi_1^\pm (E,\alpha) + \mathscr{G}_1^\pm(E)
+        H_2' \psi^\pm (E,\alpha) \\
+    =&\ \psi_1^\pm (E,\alpha) + \mathscr{G}^\pm(E)
+        H_2' \psi_1^\pm (E,\alpha)
+
+和之前的记号比较, 有
+
+.. math::
+    H_0 = H_0,\quad H_1 = H_0 + V_S, \quad H_1' = V_S, \quad H_2' = V_W,\quad H' = V
+
+根据 (7.16), (7.17), :math:`\psi_0` (这个在 Weinberg 书记为 :math:`\phi`) 和 :math:`\psi` 分别是对应于 :math:`H_0` 和 :math:`H` 的态
+
+.. math::
+    H_0 \psi_0(E) =&\ E \psi_0(E) \\
+    H_\psi(E) =&\ E \psi(E)
+
+根据 (7.15) 有
+
+.. math::
+    \psi^\pm (E,\alpha) =&\ \psi_0(E,\alpha) + G^\pm (E) H' \psi^\pm (E,\alpha) \\
+    =&\ \psi_0(E,\alpha) + \mathscr{G}^+ (E) H' \psi_0 (E,\alpha)
+
+其中第一式和 Weinberg 里面是一致的 (之前的小节), 但是第二式没有出现.
+
+现在对于 (7.76) 的推导我们使用 Weinberg 书的记号, 有
+
+.. math::
+    S_{\beta\alpha} =&\ \big(\psi^-_\beta, \psi^+_\alpha\big)
+        = \big( \psi^-_{1\beta} + \mathscr{G}^- (E_\beta) H_2' \psi^-_{1\beta}, \psi^+_\alpha\big) \\
+    =&\ \big( \psi^-_{1\beta}, \psi^+_\alpha\big)
+        + \big( \psi^-_{1\beta}, H_2' \mathscr{G}^+ (E_\beta) \psi^+_\alpha\big) \\
+    =&\ \big( \psi^-_{1\beta}, \psi_{1\alpha}^+ + \mathscr{G}_1^+(E_\alpha) H_2' \psi_{\alpha}^+ \big)
+        + \big( \psi^-_{1\beta}, H_2' \mathscr{G}^+ (E_\beta) \psi^+_\alpha\big) \\
+    =&\ \big( \psi^-_{1\beta}, \psi_{1\alpha}^+ \big) + \big( \psi^-_{1\beta},
+        \mathscr{G}_1^+(E_\alpha) H_2' \psi_{\alpha}^+ \big)
+        + \big( \psi^-_{1\beta}, H_2' \mathscr{G}^+ (E_\beta) \psi^+_\alpha\big)
+
+注意按之前的定义
+
+.. math::
+    \mathscr{G}_1^-(E_\alpha) \psi^-_{1\beta} =&\ \big( E_\alpha - H_1 - \I \epsilon\big)^{-1} \psi^-_{1\beta}
+        = \big( E_\alpha - E_\beta - \I \epsilon \big)^{-1} \psi^-_{1\beta} \\
+    \mathscr{G}^+ (E_\beta) \psi^+_\alpha =&\ \big( E_\beta - H + \I \epsilon\big)^{-1} \psi^+_\alpha
+        = \big( E_\beta - E_\alpha + \I \epsilon\big)^{-1} \psi^+_\alpha
+
+利用之前的等式 :eq:`diff-e-eps-delta`
+
+.. math::
+    \big( E_\alpha - E_\gamma \mp \I \epsilon\big)^{-1} - \big( E_\alpha - E_\gamma \pm \I \epsilon\big)^{-1}
+    = \pm 2\I \pi \delta(E_\alpha - E_\gamma)
+
+得
+
+.. math::
+    S_{\beta\alpha} =&\ \big( \psi^-_{1\beta}, \psi_{1\alpha}^+ \big)
+        + \big( \psi^-_{1\beta},
+        \big( E_\alpha - E_\beta + \I \epsilon \big)^{-1} H_2' \psi_{\alpha}^+ \big)
+        + \big( \psi^-_{1\beta}, H_2' \big( E_\beta - E_\alpha + \I \epsilon\big)^{-1} \psi^+_\alpha\big) \\
+    =&\ \big( \psi^-_{1\beta}, \psi_{1\alpha}^+ \big)
+        + \left[ \big( E_\alpha - E_\beta + \I \epsilon \big)^{-1} - \big( E_\alpha - E_\beta - \I \epsilon\big)^{-1} \right] \big( \psi^-_{1\beta}, H_2' \psi^+_\alpha\big) \\
+    =&\ \big( \psi^-_{1\beta}, \psi_{1\alpha}^+ \big) -2\I \pi \delta(E_\alpha - E_\beta)
+        \big( \psi^-_{1\beta}, H_2' \psi^+_\alpha\big)
+
+由 Weinberg 第三章第二节3, :eq:`s-matrix-e-delta` 和 :math:`S` 矩阵定义 :eq:`s-matrix` 有
+
+.. math::
+    S_{\beta\alpha} = (\psi_\beta^-, \psi_\alpha^+) = \delta(\alpha - \beta) - 2\I \pi \delta(E_\alpha - E_\beta) T_{\beta\alpha}^+
+
+代入上式得
+
+.. math::
+    \delta(\alpha - \beta) - 2\I \pi \delta(E_\alpha - E_\beta) T_{\beta\alpha}^+
+    =&\ \delta(\alpha - \beta) - 2\I \pi \delta(E_\alpha - E_\beta) T_{1\beta\alpha}^+
+    -2\I \pi \delta(E_\alpha - E_\beta) \big( \psi^-_{1\beta}, H_2' \psi^+_\alpha\big) \\
+    T_{\beta\alpha}^+ =&\ T_{1\beta\alpha}^+ + \big( \psi^-_{1\beta}, H_2' \psi^+_\alpha\big)
+
+注意, 这里消去 :math:`\delta(E_\alpha - E_\beta)` 因子的条件是, 默认 :math:`T_{\beta\alpha}^+` 只在 :math:`E_\alpha = E_\beta` 时才有意义. 这和 Weinberg 书关键处将 :math:`E_\beta` 改为 :math:`E_\alpha` 才对的思想是一致的.
+
+------
+
+:eq:`t-beta-alpha-two-term` 当第二项为零时比较有用, 也就是说, (当第二项为零时) 所考虑的过程 :math:`\alpha \to \beta` 无法仅通过强相互作用产生. (例如, 在核 beta 衰变中, 我们需要弱的核力将中子变为质子, 尽管我们也不能忽略作用在初核态和终核态的强核力的存在.) 对于这样的过程, 矩阵元 :eq:`t-s-beta-alpha-equiv` 为零, 那么 :eq:`t-beta-alpha-two-term` 成为
+
+.. math::
+    T_{\beta\alpha}^+ = \left( \psi_{\mathrm{S}\beta}^- , V_{\mathrm{W}} \psi_\alpha^+ \right)
+
+到目前为止, 推导都是完全精确的. 但是 :math:`T` 矩阵的这种改写只有当 :math:`V_{\mathrm{W}}` 非常弱时才有价值, 在这种情况下, 我们忽略它在上式中对 :math:`\psi_\alpha^+` 的影响. 也就是说, 当 :math:`V_{\mathrm{W}}` 非常弱时, 态 :math:`\psi_\alpha^+` 和态 :math:`\psi_{\mathrm{S}\alpha}^+` (因为 :math:`\psi_{\mathrm{S}\alpha}^+` 定义为是 :math:`V_{\mathrm{W}} = 0` 时对应于 :math:`\psi_\alpha^+` 的态) 也就没有太大区别. 因此上式成为
+
+.. math::
+    T_{\beta\alpha}^+ \approx \left( \psi_{\mathrm{S}\beta}^- , V_{\mathrm{W}} \psi_{\mathrm{S}\alpha}^+ \right)
+
+上式在 :math:`V_{\mathrm{W}}` 的一阶近似下成立, 但是对 :math:`V_{\mathrm{S}}` 的所有阶近似成立. 这个近似在物理中是普遍存在的. 例如, 核 beta 或 gamma 衰变的 :math:`S` 矩阵元是使用上式计算的, 其中 :math:`V_{\mathrm{S}}` 是强核相互作用, 而 :math:`V_{\mathrm{W}}` 分别是弱核相互作用或者电磁相互作用, 而 :math:`\psi_{\mathrm{S}\beta}^-` 和 :math:`\psi_{\mathrm{S}\alpha}^+` 分别是终核态和初核态.
+
+第六节 幺正性的应用
+-------------------
+
+1 光学定理
+^^^^^^^^^^
+
+:math:`S` 矩阵的幺正性导致了一个有趣而有用的条件. 这个条件将任意多粒子态 :math:`\alpha` 前向散射的振幅 :math:`M_{\alpha\alpha}` 和这个态所有反应的总速率联系起来. 注意到对于一般的情况, 其中态 :math:`\beta` 可能和态 :math:`\alpha` 一样, 也可以不一样, :math:`S` 矩阵可以写成本章第三节中 :eq:`s-matrix-delta` 的形式
+
+.. math::
+    S_{\beta\alpha} = \delta(\beta - \alpha) - 2\pi \I \delta^4(p_\beta -p_\alpha) M_{\beta\alpha}
+
+那么幺正条件给出 (幺正性的证明在本章第二节第5小节)
+
+.. math::
+    \delta(\gamma - \alpha) =&\  \int \D \beta S_{\beta\gamma}^* S_{\beta\alpha} \\
+    =&\ \int \D \beta \left[
+        \delta(\beta - \gamma) + 2\pi \I \delta^4(p_\beta -p_\gamma) M^*_{\beta\gamma}
+        \right]
+        \left[
+        \delta(\beta - \alpha) - 2\pi \I \delta^4(p_\beta -p_\alpha) M_{\beta\alpha}
+        \right] \\
+    =&\ \int \D \beta \delta(\beta - \gamma) \delta(\beta - \alpha)
+    + \int \D \beta \delta(\beta - \alpha) 2\pi \I \delta^4(p_\beta -p_\gamma) M^*_{\beta\gamma}
+    - \int \D \beta \delta(\beta - \gamma) 2\pi \I \delta^4(p_\beta -p_\alpha) M_{\beta\alpha} \\
+    &\ + 4\pi^2 \int \D \beta\delta^4(p_\beta -p_\gamma) M^*_{\beta\gamma} \delta^4(p_\beta -p_\alpha) M_{\beta\alpha} \\
+    =&\ \delta(\gamma - \alpha) + 2\pi \I \delta^4(p_\alpha -p_\gamma) M^*_{\alpha\gamma}
+    - 2\pi \I \delta^4(p_\gamma -p_\alpha) M_{\gamma\alpha} + 4\pi^2 \int \D \beta\delta^4(p_\beta -p_\gamma)  \delta^4(p_\beta -p_\alpha) M^*_{\beta\gamma} M_{\beta\alpha} \\
+    =&\ \delta(\gamma - \alpha) + 2\pi \I \delta^4(p_\alpha -p_\gamma) M^*_{\alpha\gamma}
+    - 2\pi \I \delta^4(p_\gamma -p_\alpha) M_{\gamma\alpha} + 4\pi^2 \int \D \beta\delta^4(p_\alpha -p_\gamma)  \delta^4(p_\beta -p_\alpha) M^*_{\beta\gamma} M_{\beta\alpha}
+
+(注意最后一式在有因子 :math:`\delta^4(p_\beta -p_\alpha)` 的情况下, 可以令另一个 delta 因子中 :math:`p_\beta =p_\alpha`. ) 消去 :math:`\delta(\gamma-\alpha)` 项和 :math:`2\pi \delta^4(p_\gamma -p_\alpha)` 因子 (注意到 :math:`p_\gamma \neq p_\alpha` 时该因子等于零, 不能消去. 因此消去只对 :math:`p_\gamma = p_\alpha` 的情况成立), 对于 :math:`p_\gamma = p_\alpha` 的情况我们有
+
+.. math::
+    0 = - \I M_{\gamma\alpha} + \I M^*_{\alpha\gamma} + 2\pi \int \D \beta \delta^4(p_\beta -p_\alpha) M^*_{\beta\gamma} M_{\beta\alpha}
+
+最有用的特殊情形是 :math:`\alpha = \gamma`, 此时有
+
+.. math::
+    M^*_{\beta\alpha} M_{\beta\alpha} =&\ |M_{\beta\alpha}|^2 \\
+    M_{\alpha\alpha} - M^*_{\alpha\alpha} =&\ \Re M_{\alpha\alpha} + \I \Im M_{\alpha\alpha}
+        - \big( \Re M_{\alpha\alpha} - \I \Im M_{\alpha\alpha} \big)
+        = 2 \I \Im M_{\alpha\alpha} \\
+    - \I M_{\gamma\alpha} + \I M^*_{\alpha\gamma} =&\ -\I \big( M_{\alpha\alpha} - M^*_{\alpha\alpha} \big)
+    = -\I \cdot 2 \I \Im M_{\alpha\alpha} = 2 \Im M_{\alpha\alpha}
+
+于是
+
+.. math::
+    \Im M_{\alpha\alpha} = -\pi \int \D \beta \delta^4(p_\beta -p_\alpha) |M_{\beta\alpha}|^2
+    :label: im-m-alpha-alpha
+
+根据 :eq:`diff-trans-rate` 式 即
+
+.. math::
+    \D \Gamma(\alpha \to \beta) = (2\pi)^{3N_\alpha -2} V^{1-N_\alpha}
+        \delta^4 (p_\beta - p_\alpha) |M_{\beta\alpha}|^2 \D \beta
+
+我们可以得到在体积 :math:`V` 中从初态 :math:`\alpha` 产生的所有反应的总速率的公式
+
+.. math::
+    \Gamma_\alpha \equiv \int \D \beta \frac{\D \Gamma(\alpha \to \beta)}{\D \beta}
+    =&\ (2\pi)^{3N_\alpha -2} V^{1-N_\alpha} \int \D \beta \delta^4 (p_\beta - p_\alpha) |M_{\beta\alpha}|^2 \\
+    =&\ -\frac{1}{\pi} (2\pi)^{3N_\alpha -2} V^{1-N_\alpha} \Im M_{\alpha\alpha}.
+    :label: Gamma-unitary-cond-scattering
+
+特别地, 当 :math:`\alpha` 是两粒子态 (:math:`N_\alpha = 2`) 时, 按微分截面 :eq:`diff-cross-section` 可以定义 **总截面** (total cross-section) 为
+
+.. math::
+    \sigma_\alpha \equiv \int \D \beta \frac{\D \sigma(\alpha \to \beta)}{\D \beta}
+        = (2\pi)^4 u_\alpha^{-1} \int \D \beta |M_{\beta\alpha}|^2 \delta^4 (p_\beta - p_\alpha)
+
+其中 :math:`u_{\alpha}` 是态 :math:`\alpha` 中 (两个粒子之间的) 相对速度. 于是 :eq:`im-m-alpha-alpha` 给出
+
+.. math::
+    \Im M_{\alpha\alpha} = -\pi \int \D \beta \delta^4(p_\beta -p_\alpha) |M_{\beta\alpha}|^2
+    = -\frac{\pi}{(2\pi)^4} \sigma_\alpha u_\alpha
+    = -\frac{u_\alpha\sigma_\alpha}{16 \pi^3}
+    :label: im-m-alpha-alpha-u-sigma
+
+这通常会以 **散射振幅** (scattering amplitude) :math:`f(\alpha \to \beta)` 表示为稍微不同的形式. :eq:`dsigma-two-body-scattering` 给出在质心系中, **两体** (two-body) (也就是说, 初态粒子数和终态粒子数都是2) 散射的微分截面为
+
+.. math::
+    \frac{\D \sigma(\alpha \to \beta)}{\D \Omega} =
+        \frac{(2\pi)^4 k'E'_1E'_2E_1E_2}{E^2 k} |M_{\beta\alpha}|^2
+
+其中 :math:`k'` 和 :math:`k` 分别是终态和初态的动量大小. 我们因此定义散射振幅为
+
+.. math::
+    f(\alpha \to \beta) \equiv - \frac{4\pi^2}{E} \sqrt{ \frac{k'E'_1E'_2E_1E_2}{k} } M_{\beta\alpha}
+
+从而微分截面成为
+
+.. math::
+    \frac{\D \sigma(\alpha \to \beta)}{\D \Omega} = \big| f(\alpha \to \beta) \big|^2
+
+特别地, 对于 **弹性** (elastic) 两体散射 (也就是 :math:`k' = k, E_1' = E_1, E_2' = E_2`) 我们有
+
+.. math::
+    f(\alpha \to \beta) \equiv - \frac{4\pi^2E_1E_2}{E} M_{\beta\alpha}
+
+另外 :eq:`ualpha-two-body-scattering` 给出对于所考虑的两体散射
+
+.. math::
+    u_\alpha = \frac{k(E_1 + E_2)}{E_1E_2} = \frac{|\bm{p}|(E_1 + E_2)}{E_1E_2} = \frac{kE}{E_1E_2}
+
+代入 :eq:`im-m-alpha-alpha-u-sigma` 得
+
+.. math::
+    \Im f(\alpha \to \alpha) = - \frac{4\pi^2E_1E_2}{E} \Im M_{\alpha\alpha}
+        = \frac{4\pi^2E_1E_2}{E} \frac{u_\alpha\sigma_\alpha}{16 \pi^3}
+        = \frac{4\pi^2E_1E_2}{E} \frac{kE}{E_1E_2} \frac{\sigma_\alpha}{16 \pi^3}
+        = \frac{k\sigma_\alpha}{4\pi}
+
+即
+
+.. math::
+    \Im f(\alpha \to \alpha) = \frac{k\sigma_\alpha}{4\pi}
+    :label: optical-theorem
+
+这个形式的幺正性条件 :eq:`Gamma-unitary-cond-scattering` 被称为 **光学定理** (optical theorem).
+
+2 衍射峰
+^^^^^^^^
+
+光学定理有一个很好的推论, 它给出高能散射的模式的很多信息. 散射振幅 :math:`f` 可以认为是角度的光滑函数, 那么必存在某立体角 :math:`\Delta\Omega`, 在这个立体角范围内, :math:`|f|^2` 近似取和前向散射的 :math:`|f|^2` 相同的值 (比如, 相差不到2倍). 那么我们就可以对总截面的取值范围作出限定
+
+.. math::
+    \sigma_\alpha \ge \int |f|^2 \D \Omega \ge \frac{1}{2} \big| f(\alpha \to \alpha) \big|^2 \Delta \Omega
+        \ge \frac{1}{2} \big|\Im f(\alpha \to \alpha) \big|^2 \Delta \Omega
+
+其中注意 :math:`\sigma_\alpha` 是包括所有终态 :math:`\beta` 的总截面. 而 :math:`f = f(\alpha \to \alpha)` 是只有终态为 :math:`\alpha` 的情况. 因此第一个不等号是省略了其他 :math:`\beta \neq \alpha` 态的情况. 第二个不等号是对于积分只考虑前向散射附近的情况. 第三个不等号是因为一个复数的模等于实部的平方加上虚部的平方, 那么略去实部的平方 (必定大于等于零) 就产生不等号.
+
+再利用光学定理 :eq:`optical-theorem` 得
+
+.. math::
+    \Delta \Omega \le \frac{2\sigma_\alpha}{\big|\Im f(\alpha \to \alpha) \big|^2}
+        = \frac{2\sigma_\alpha\cdot 16\pi^2 }{k^2 \sigma_\alpha^2} = 32\pi^2 \big/ k^2 \sigma_\alpha
+    :label: delta-omega-k-sigma-alpha
+
+我们在下一节将看到, 在高能的情况, 总截面通常会趋于常数或者缓慢变化, 因此 :eq:`delta-omega-k-sigma-alpha` 指出, 对应于微分截面近似为常数的前向周围的立体角范围, 当 :math:`k \to \infty` 时至少以 :math:`1/k^2` 的速度收缩. 这个在高能前向散射中逐渐变窄的峰被称为 **衍射峰** (diffraction peak).
+
+3 CPT 不变性的应用
+^^^^^^^^^^^^^^^^^^
+
+现在我们回到包含任意数量粒子的反应的一般情形. 我们可以利用 :eq:`im-m-alpha-alpha` 和 :math:`\mathsf{CPT}` 不变性来对粒子和反粒子的总相互作用速率的关系作一些讨论. 因为 :math:`\mathsf{CPT}` 是反幺正的, 它的守恒一般并不导致过程 :math:`\alpha \to \beta` 和将其中粒子变为反粒子的过程之间的任何简单关系. 事实上, 它导致一个过程和其反粒子的 **逆** (inverse) 过程之间的关系: 我们可以利用和从时间反演不变性推导 :eq:`t-s-matrix` 相同的方法来证明, :math:`\mathsf{CPT}` 不变性要求 :math:`S` 矩阵满足如下条件
+
+.. math::
+    S_{\beta,\alpha} = S_{\mathscr{CPT} \alpha, \mathscr{CPT} \beta}
+
+其中 :math:`\mathscr{CPT}` 表示我们必须反转所有自旋 :math:`z` 分量, 将所有粒子变成对应的反粒子, 并对初态的粒子将矩阵元乘以不同的相位因子, 对终态的粒子乘以对应因子的复数共轭. 由于 :math:`\mathsf{CPT}` 不变性也要求粒子具有和它们反粒子一样的质量, 在 :math:`S_{\beta\alpha}` 表达式 :eq:`s-matrix-delta` 中, 同样的关系也适用于 :math:`\delta^4(p_\alpha - p_\beta)` 的系数 (这段有些不很理解):
+
+.. math::
+    M_{\beta,\alpha} = M_{\mathscr{CPT} \alpha, \mathscr{CPT} \beta}
+
+特别地, 当初态和终态相同时, 所有相位因子都会抵消 (因为初态和终态的相位因子互为复数共轭, 而相位因子模为1, 因此所有相位因子的乘积为1), 上式成为
+
+.. math::
+    M_{p_1\sigma_1n_1;p_2\sigma_2n_2;\cdots,p_1\sigma_1n_1;p_2\sigma_2n_2;\cdots}
+        = M_{p_1-\sigma_1n_1^c;p_2-\sigma_2n_2^c;\cdots,p_1-\sigma_1n_1^c;p_2-\sigma_2n_2^c;\cdots}
     
+其中 :math:`n` 的 :math:`c` 上标表示 :math:`n` 对应的反粒子. 推广的光学定理 :eq:`im-m-alpha-alpha` 告诉我们 **以某粒子集合作为初态的总反应速率和以自旋反转的对应反粒子作为初态的总反应速率相同**:
+
+.. math::
+    \Gamma_{p_1\sigma_1n_1;p_2\sigma_2n_2;\cdots} = \Gamma_{p_1-\sigma_1n_1^c;p_2-\sigma_2n_2^c;\cdots}
+    :label: gamma-cpt-equal
+
+特别地, 应用到单粒子态, 我们发现任何粒子的衰变率等于自旋反转的反粒子的衰变率. 旋转不变性不允许粒子衰变率依赖于衰变粒子的自旋 :math:`z` 分量, 因此一般结果 :eq:`gamma-cpt-equal` 的一个特殊情况是, 不稳定粒子和它们对应的反粒子具有精确相同的寿命.
+
+4 玻尔兹曼 H 定理
+^^^^^^^^^^^^^^^^^
+
+根据从幺正条件 :math:`S^\dagger S = 1` 推导 :eq:`im-m-alpha-alpha` 相同的讨论, 我们可以从另一个幺正条件 :math:`SS^\dagger = 1` 推出
+
+.. math::
+    \Im M_{\alpha\alpha} = -\pi \int \D \beta \delta^4(p_\beta -p_\alpha) |M_{\alpha\beta}|^2
+
+(注意其中 :math:`|M_{\beta\alpha}|^2` 变为了 :math:`|M_{\alpha\beta}|^2`. 因为原来是 :math:`(S^\dagger S)_{\gamma\alpha} = S_{\gamma\beta}^\dagger S_{\beta\alpha} = S_{\beta\gamma}^*S_{\beta\alpha}`. 再令 :math:`\gamma = \alpha` 得 :math:`M_{\beta\alpha}^*M_{\beta\alpha}`. 现在是 :math:`(S S^\dagger)_{\gamma\alpha} = S_{\gamma\beta}S_{\beta\alpha}^\dagger = S_{\gamma\beta}S_{\alpha\beta}^*`. 再令 :math:`\gamma = \alpha` 得 :math:`M_{\alpha\beta}^*M_{\alpha\beta}`.)
+
+将上式和 :eq:`im-m-alpha-alpha` 比较, 我们得到互反关系 (reciprocity relation)
+
+.. math::
+    \int \D \beta \delta^4(p_\beta - p_\alpha) |M_{\beta\alpha}|^2
+        = \int \D \beta \delta^4(p_\beta - p_\alpha) |M_{\alpha\beta}|^2
+
+根据 :eq:`diff-trans-rate` 我们有
+
+.. math::
+    \int \D \beta \frac{\D \Gamma(\alpha \to \beta)}{\D \beta(2\pi)^{-2} V \big[ (2\pi)^3 / V \big]^{N_\alpha}}
+        = \int \D \beta \frac{\D \Gamma(\beta \to \alpha)}
+        {\D \alpha(2\pi)^{-2} V \big[ (2\pi)^3 / V \big]^{N_\beta}}
+
+定义
+
+.. math::
+    c_\alpha \equiv \big[ V / (2\pi)^3 \big]^{N_\alpha}
+
+就有
+
+.. math::
+    \int \D \beta c_\alpha \frac{\D \Gamma(\alpha \to \beta)}{\D \beta} =
+        \int \D \beta c_\beta \frac{\D \Gamma(\beta \to \alpha)}{\D \alpha}
+    :label: int-beta-c-alpha-beta-gamma
+
+我们可以利用这个结果推导动力学 (kinetic theory) 中的一些最重要的结果. 如果 :math:`P_\alpha \D \alpha` 是在多粒子态 :math:`\phi_\alpha` 空间中的体积 :math:`\D \alpha` 中发现系统的概率, 那么由于跃迁到其他态所造成 :math:`P_\alpha` 的减少就是
+
+.. math::
+    P_\alpha \int \D \beta \D \Gamma(\alpha \to \beta) / \D \beta
+
+而由于从其他态的跃迁造成 :math:`P_\alpha` 的增加是
+
+.. math::
+    \int \D \beta P_\beta \D \Gamma(\beta \to \alpha) / \D \alpha
+
+:math:`P_\alpha` 的变化率就是
+
+.. math::
+    \frac{\D P_\alpha}{\D t} = \int \D \beta P_\beta \frac{\D \Gamma(\beta \to \alpha)}{\D \alpha} - P_\alpha \int \D \beta \frac{\D \Gamma(\alpha \to \beta)}{\D \beta}
+    :label: inc-enentropy-two-terms
+
+若将上式对 :math:`\alpha` 积分立即就可以得到 :math:`\int P_\alpha \D \alpha` 是与时间无关的. 也就是说
+
+.. math::
+    \frac{\D}{\D t} \int P_\alpha \D \alpha =&\ \int \D \alpha \int \D \beta P_\beta \D \Gamma(\beta \to \alpha) / \D \alpha - \int \D \alpha P_\alpha \int \D \beta \D \Gamma(\alpha \to \beta) / \D \beta \\
+    =&\ \int \D \alpha \int \D \beta \left[
+        P_\beta \D \Gamma(\beta \to \alpha) / \D \alpha
+        -P_\alpha \D \Gamma(\alpha \to \beta) / \D \beta
+        \right] \\
+    =&\ \int \D \alpha \int \D \beta \left[
+        P_\alpha \D \Gamma(\alpha \to \beta) / \D \beta
+        -P_\alpha \D \Gamma(\alpha \to \beta) / \D \beta
+        \right] = 0
+
+即 :math:`\int P_\alpha \D \alpha` 随时间的变化率为零. 其中在上式最后一步, 我们对第二项重新标记了积分变量 :math:`\alpha` 和 :math:`\beta`. 另一方面, 熵 :math:`-\int \D \alpha P_\alpha \ln (P_\alpha/c_\alpha)` 的变化率为
+
+.. math::
+    -\frac{\D}{\D t} \int \D \alpha P_\alpha \ln (P_\alpha/c_\alpha)
+    =&\ -\int \D \alpha \frac{\D P_\alpha}{\D t}  \ln (P_\alpha/c_\alpha)
+    -\int \D \alpha P_\alpha \frac{c_\alpha}{P_\alpha} \frac{1}{c_\alpha} \frac{\D P_\alpha}{\D t}
+    = -\int \D \alpha\Big[ \ln (P_\alpha/c_\alpha) + 1\Big] \frac{\D P_\alpha}{\D t} \\
+    =&\ -\int \D \alpha \int \D \beta \Big[ \ln (P_\alpha/c_\alpha) + 1\Big] \left[ 
+        P_\beta \frac{\D \Gamma(\beta \to \alpha)}{\D \alpha} - P_\alpha \frac{\D \Gamma(\alpha \to \beta)}{\D \beta}
+        \right]
+
+交换第二项中积分变量的标号, 上式可以写为
+
+.. math::
+    -\frac{\D}{\D t} \int \D \alpha P_\alpha \ln (P_\alpha/c_\alpha)
+    =&\ -\int \D \alpha \int \D \beta \Big[ \ln (P_\alpha/c_\alpha) + 1\Big]
+        P_\beta \frac{\D \Gamma(\beta \to \alpha)}{\D \alpha}
+        +\int \D \alpha \int \D \beta \Big[ \ln (P_\beta/c_\beta) + 1\Big] P_\beta \frac{\D \Gamma(\beta \to \alpha)}{\D \alpha} \\
+    =&\ \int \D \alpha \int \D \beta \ln \frac{P_\beta/c_\beta}{P_\alpha/c_\alpha} 
+        P_\beta \frac{\D \Gamma(\beta \to \alpha)}{\D \alpha}
+    = \int \D \alpha \int \D \beta P_\beta \ln \frac{P_\beta c_\alpha}{P_\alpha c_\beta} 
+         \frac{\D \Gamma(\beta \to \alpha)}{\D \alpha}
+
+现在, 对于任意正数 :math:`x` 和 :math:`y`, 函数 :math:`y \ln (y / x)` 满足如下不等式
+
+.. math::
+    y \ln \left( \frac{y}{x} \right) \ge y - x
+
+[证明] 由于 :math:`y` 是正数, 两边除以 :math:`y` 不等式仍成立, 因此
+
+.. math::
+    \ln \left( \frac{y}{x} \right) \ge \frac{y - x}{y} = 1 - \frac{x}{y}
+
+令 :math:`t = y / x`, 只需证明
+
+.. math::
+    \ln t \ge 1 - 1/ t \quad \Rightarrow \quad t \ge \E^{1 - 1/t}
+
+注意到 :math:`t > 0`. 若 :math:`t = 1`, 则取等号. 其余情况可以画图验证. 因此熵的变化率的取值范围为
+
+.. math::
+    -\frac{\D}{\D t} \int \D \alpha P_\alpha \ln (P_\alpha/c_\alpha) = &\
+        \int \D \alpha \int \D \beta \frac{1}{c_\alpha} P_\beta c_\alpha \ln \frac{P_\beta c_\alpha}{P_\alpha c_\beta}  \frac{\D \Gamma(\beta \to \alpha)}{\D \alpha} \\
+    \ge &\ \int \D \alpha \int \D \beta \frac{1}{c_\alpha} \left[ P_\beta c_\alpha - P_\alpha c_\beta \right] \frac{\D \Gamma(\beta \to \alpha)}{\D \alpha} \\
+    = &\ \int \D \alpha \int \D \beta \left[ \frac{P_\beta}{c_\beta }- \frac{P_\alpha}{ c_\alpha} \right] c_\beta \frac{\D \Gamma(\beta \to \alpha)}{\D \alpha}
+
+交换第二项的积分变量得
+
+.. math::
+    -\frac{\D}{\D t} \int \D \alpha P_\alpha \ln (P_\alpha/c_\alpha) \ge &\
+    \int \D \alpha \int \D \beta \frac{P_\beta}{c_\beta} c_\beta \frac{\D \Gamma(\beta \to \alpha)}{\D \alpha}
+    -\int \D \alpha \int \D \beta \frac{P_\beta}{ c_\beta} c_\alpha \frac{\D \Gamma(\alpha \to \beta)}{\D \beta} \\
+    =&\ \int \D \alpha \int \D \beta \frac{P_\beta}{c_\beta} \left[ c_\beta \frac{\D \Gamma(\beta \to \alpha)}{\D \alpha} -c_\alpha \frac{\D \Gamma(\alpha \to \beta)}{\D \beta} \right] \\
+    =&\ \int \D \beta \frac{P_\beta}{c_\beta} \left\{ \int \D \alpha \left[ c_\beta \frac{\D \Gamma(\beta \to \alpha)}{\D \alpha} -c_\alpha \frac{\D \Gamma(\alpha \to \beta)}{\D \beta} \right] \right\}
+
+然而根据 :eq:`int-beta-c-alpha-beta-gamma` (交换 :math:`\alpha` 和 :math:`\beta`) 有
+
+.. math::
+    &\ \int \D \alpha c_\beta \frac{\D \Gamma(\beta \to \alpha)}{\D \alpha} =
+        \int \D \alpha c_\alpha \frac{\D \Gamma(\alpha \to \beta)}{\D \beta} \\
+    \Rightarrow&\ \int \D \alpha \left[ c_\beta \frac{\D \Gamma(\beta \to \alpha)}{\D \alpha}
+        - c_\alpha \frac{\D \Gamma(\alpha \to \beta)}{\D \beta} \right] = 0
+
+因此前面的式子中大括号内的项为零. 因此我们的结论是熵总是增加
+
+.. math::
+    -\frac{\D}{\D t} \int \D \alpha P_\alpha \ln (P_\alpha/c_\alpha) \ge 0
+
+这就是 "玻尔兹曼 H 定理" (Boltzmann :math:`H` theorem). 这个定理在统计力学课本中通常通过波恩近似, 即 :math:`|M_{\beta\alpha}|^2` 是关于 :math:`\alpha` 和 :math:`\beta` 对称的, 因此
+
+.. math::
+    c_\beta \D \Gamma(\beta \to \alpha) / \D \alpha = c_\alpha \D \Gamma(\alpha \to \beta) / \D \beta
+
+或者通过假设时间反演不变性, 即当交换 :math:`\alpha` 和 :math:`\beta` 并反转所有动量和自旋时 :math:`|M_{\beta\alpha}|^2` 应当不变. 当然, 波恩近似和时间反演不变性都不是精确的. 因此我们只利用幺正条件 :eq:`int-beta-c-alpha-beta-gamma` 来推导 :math:`H` 定理是不错的.
+
+当概率 :math:`P_\alpha` 成为仅仅是守恒量 (例如总能量和总电荷) 乘以因子 :math:`c_\alpha` 的函数时, 熵的增加会停止. 在这种情况下 (体系处于平衡态), 守恒律要求 :math:`\D \Gamma(\beta \to \alpha) / \D \alpha` 为零除非 :math:`P_\alpha/c_\alpha = P_\beta / c_\beta` (其中前者为跃迁率为零, 也就是静态平衡, 后者为进出率相等, 即动态平衡. 若两者都不满足, 则系统无法平衡, 即无法满足守恒律). 因此我们可以在 :eq:`inc-enentropy-two-terms` 中的第一项替换 :math:`P_\beta` 为 :math:`P_\alpha c_\beta / c_\alpha`. 得到
+
+.. math::
+    \frac{\D P_\alpha}{\D t} =&\  \int \D \beta P_\alpha c_\beta / c_\alpha \frac{\D \Gamma(\beta \to \alpha)}{\D \alpha} - P_\alpha \int \D \beta \frac{\D \Gamma(\alpha \to \beta)}{\D \beta} \\
+    =&\ \frac{P_\alpha}{c_\alpha} \left[ \int \D \beta c_\beta \frac{\D \Gamma(\beta \to \alpha)}{\D \alpha} - \int \D \beta c_\alpha  \frac{\D \Gamma(\alpha \to \beta)}{\D \beta} \right]
+
+于是我们再利用 :eq:`int-beta-c-alpha-beta-gamma` 就得到在这种情况下, :math:`P_\alpha` 是不依赖于时间的. 和之前一样, 我们只需要幺正性关系 :eq:`int-beta-c-alpha-beta-gamma`, 而不需要波恩近似或时间反演不变性.
