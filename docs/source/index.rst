@@ -10,7 +10,9 @@
    GRL/basic.rst
    QFT/basic.rst
    QFTW/basic.rst
+   QFTB/basic.rst
+   QFTP/basic.rst
    SSP/basic.rst
    ENGW/basic.rst
-
+   MEST/basic.rst
 

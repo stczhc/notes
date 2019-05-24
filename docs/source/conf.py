@@ -186,6 +186,7 @@ latex_documents = [
 
 tikz_latex_preamble = r'''
 \usepackage{bm}
+\usepackage{slashed}
 \ifxetex\usepackage{ctex}
 \else\usepackage{CJKutf8}
 \fi
@@ -193,9 +194,11 @@ tikz_latex_preamble = r'''
 \AtBeginDocument{\begin{CJK}{UTF8}{gbsn}}
 \AtEndDocument{\end{CJK}}
 \fi
+\renewcommand{\I}{\mathrm{i}}
+\newcommand{\D}{\mathrm{d}}
 '''
 
-# -- Options for manual page output ------------------------------------------
+# -- Options for manual page output -----------------------------------------
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
