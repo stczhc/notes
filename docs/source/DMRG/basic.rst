@@ -7,3 +7,4 @@
 
    basic-a.rst
    basic-b.rst
+   basic-c.rst
