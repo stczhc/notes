@@ -104,3 +104,6 @@ ENV/
 *.o
 *.hi
 manifold
+heisenberg
+classtest2
+classtest

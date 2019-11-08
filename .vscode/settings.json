@@ -1,4 +1,5 @@
 {
     "editor.wordWrap": "on",
-    "restructuredtext.confPath": "${workspaceFolder}/docs/source"
+    "restructuredtext.confPath": "${workspaceFolder}/docs/source",
+    "git.ignoreLimitWarning": true
 }

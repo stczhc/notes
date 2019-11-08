@@ -452,3 +452,126 @@
 粗略地说, 集团分解原理要求 :math:`S` **矩阵的连接部分, 和** :math:`S` **矩阵本身不同, 只包含单一的动量守恒 delta 函数**. (这里不考虑能量守恒 delta 函数的存在是因为, 和有没有能量守恒无关. 强调的是, 动量的 delta 函数不能有两个, 而不是说除了动量守恒 delta 函数以外不能有别的量的 delta 函数).
 
 为了更精确地表述这个问题, 我们可以说 :eq:`s-matrix-p-coef` 中的系数函数 :math:`C_{\bm{p}'_1\bm{p}'_2\cdots,\bm{p}_1\bm{p}_2\cdots}` 是关于它的动量指标的光滑函数. 但是多光滑? 我们似乎可以直接要求在 :math:`\bm{p}'_1 = \bm{p}'_2 = \cdots =\bm{p}_1 = \bm{p}_2 = \cdots = 0` 处 :math:`C_{\bm{p}'_1\bm{p}'_2\cdots,\bm{p}_1\bm{p}_2\cdots}` 对所有动量是解析的. 这个要求事实上确实能保证 :math:`S_{\bm{x}'_1\bm{x}'_2\cdots, \bm{x}_1\bm{x}_2\cdots}^{\mathrm{C}}` 指数快地趋于零, 当任何 :math:`\bm{x}` 和 :math:`\bm{x}'` 距离任何其他的 :math:`\bm{x}` 和 :math:`\bm{x}'` 非常远时. 但是 :math:`S^{\mathrm{C}}` 的指数衰减并不是集团分解原理的关键部分, 并且事实上解析性的要求并不是在所有理论都可以满足. 最值得一提的是, 在无质量粒子理论中, :math:`S^{\mathrm{C}}` 可以在某些 :math:`\bm{p}` 和 :math:`\bm{p}'` 值处有奇点. 例如, 我们在第10章将看到, 如果在跃迁 :math:`1\to 3` 中可以释放一个无质量粒子, 这个粒子在跃迁 :math:`2\to 4` 中被吸收, 那么 :math:`S_{34,12}^{\mathrm{C}}` 将有一个正比于 :math:`1/(p_1-p_3)^2` 的项. 傅里叶变换之后, 这样的奇点导致 :math:`S_{\bm{x}'_1\bm{x}'_2\cdots, \bm{x}_1\bm{x}_2\cdots}^{\mathrm{C}}` 包含仅按坐标差的负指数幂趋于零的项. 并没有必要将集团分解原理按照非常强的方式来推导, 从而排除了上述较慢衰减的可能性. 因此 :math:`S^{\mathrm{C}}` 的 "光滑性" 条件应该理解为在某些 :math:`\bm{p}` 和 :math:`\bm{p}'` 值处允许各种奇点和分支, 但是没有像 delta 函数那样严重的奇异性.
+
+第四节 相互作用结构
+-------------------
+
+我们现在要问, 怎样的哈密顿量将导致满足集团分解原理的 :math:`S` 矩阵? 从这里我们将看出产生和湮灭算符以它们自己的形式出现. 其解答是如下定理, 如果 (就我目前所知, 仅仅如果) 哈密顿量可以写为 :eq:`op-expr-cre-anni` 的形式, :math:`S` 矩阵将满足集团分解原理:
+
+.. math::
+    H =&\ \sum_{N=0}^\infty \sum_{M=0}^\infty \int \D q_1' \cdots \D q_N' \D q_1 \cdots \D q_M \\
+        &\ \times a^\dagger (q_1') \cdots a^\dagger (q_N')a(q_M)\cdots a(q_1) \\
+        &\ \times h_{NM}(q_1'\cdots q_N', q_1 \cdots q_M)
+    :label: hamil-expr-cre-anni
+
+其中系数函数 :math:`h_{NM}` 仅包含 **单一的** 三维动量守恒 delta 函数 (我们在这里暂时采用更加显式的记号)
+
+.. math::
+    &\ h_{NM}(\bm{p}'_1\sigma'_1n'_1\cdots \bm{p}'_N \sigma'_Nn'_N, \bm{p}_1\sigma_1n_1\cdots \bm{p}_M
+        \sigma_M n_M) \\
+    =&\ \delta^3(\bm{p}'_1 + \cdots + p'_N - \bm{p}_1 -\cdots - \bm{p}_M)
+    \tilde{h}_{NM}(\bm{p}'_1\sigma'_1n'_1\cdots \bm{p}'_N \sigma'_Nn'_N, \bm{p}_1\sigma_1n_1\cdots \bm{p}_M
+        \sigma_M n_M)
+
+其中 :math:`\tilde{h}_{NM}` 不包含 delta 函数因子. 注意, :eq:`hamil-expr-cre-anni` 式本身不包含任何内容, 我们在 4.2 节看到, **任何** 算符都可以写成这种形式. 只有当 :eq:`hamil-expr-cre-anni` 式和 :math:`h_{NM}` 仅包含一个 delta 函数这个要求结合在一起, 才保证 :math:`S` 矩阵满足集团分解原理.
+
+这个定理在微扰论的有效性, 在第六章我们发展费曼图形式体系的时候将变得明显. 读者可以跳过当前章节的剩余内容, 而在第五章考虑这个定理的推论. 但是, 这个证明有一些指导性的因素, 将帮助澄清在什么意义上下一章的场论是不可避免的.
+
+为证明这个定理, 我们采用微扰论的的依赖时间的形式. (含时微扰论的一个优势是, 它使得集团分解原理的组合学更加透明; 如果 :math:`E` 是单粒子能量之和, 那么 :math:`\E^{-\I Et}` 是各自能量的函数的乘积, 而 :math:`[E-E_\alpha+\I \epsilon]^{-1}` 则不是.) :math:`S` 矩阵由 :eq:`dyson-s` 式给出
+
+.. math::
+    S_{\beta\alpha} = \sum_{n=0}^\infty \frac{(-\I)^n}{n!} \int_{-\infty}^{\infty}
+    \D t_1\cdots \D t_n \Big( \phi_\beta, T\Big\{ V(t_1)\cdots V(t_n) \Big\} \phi_\alpha \Big),
+    :label: s-matrix-sum-beta-alpha
+
+(我们现在采用约定, 对于 :math:`n = 0` 上式中的时序乘积给出单位算符, 因此求和中 :math:`n=0` 的项仅仅给出 :math:`S_{\beta\alpha}` 中的 :math:`\delta(\beta-\alpha)` 项. 注意 :eq:`dyson-s` 式中求和从 :math:`n=1` 开始, 而多了一项1. 这里 :math:`n = 0` 实际上对应于没有积分, 得到 :math:`(\phi_\beta, \phi_\alpha) = \delta(\beta-\alpha)` 参考 :eq:`phi-norm` 式. ) 其中哈密顿量分裂为自由粒子部分 :math:`H_0` 和相互作用 :math:`V`, 并且 (参考 :eq:`ku-wu-commute` 上面的式子, 这里具体待研究)
+
+.. math::
+    V(t) \equiv \exp(\I H_0 t) V \exp(-\I H_0 t).
+
+现在, 态 :math:`\phi_\alpha` 和 :math:`\phi_\beta` 可以表示成 :eq:`creation-vac` 的产生算符乘积作用在真空 :math:`\phi_0` 的形式, 并且 :math:`V(t)` 本身也是产生和湮灭算符的乘积, 因此在求和 :eq:`s-matrix-sum-beta-alpha` 中的每一项都可以写成产生湮灭算符的乘积在真空的期望值的和. 通过利用对易和反对易规则 :eq:`commute-cre-cre`, 我们可以把所有湮灭算符逐个移到产生算符的右边. 对于每个经过一个产生算符移到右边的湮灭算符, 我们有两项, 即把 :eq:`commute-cre-cre` 写为如下形式
+
+.. math::
+    a(q')a^\dagger(q) = \pm a^\dagger(q)a(q') + \delta(q' - q).
+
+在第一项中, 把其他产生算符穿越湮灭算符 (移到左边) 产生更多的项. (由上式我们看出, 产生算符在右边的情况我们可以完全消去. 最后只剩下湮灭算符在右边的情况, 和 delta 函数的乘积) 但是 :eq:`aq-vac-zero` 表示任何湮灭算符移到右边作用于 :math:`\phi_0` 得到零, 因此最终只剩下 delta 函数. 以这种方式, 产生和湮灭算符的乘积在真空的期望值, 由不同项的和给出, 其中每一项等于 delta 函数的乘积和从对易子或反对易子得到的 :math:`\pm` 符号. 从而, :eq:`s-matrix-sum-beta-alpha` 可以表示为一系列项得乘积, 每一项等于 delta 函数, 从对易子或反对易子得到的 :math:`\pm` 号, 和由 :math:`V(t)` 贡献的任何因子的乘积, 对所有时间积分, 然后对 delta 函数的参数中的动量, 自旋, 粒子种类积分或求和.
+
+以这种方式产生的每一项可以符号化为一个图. (这还不是完整的费曼图形式理论, 因为我们还没有把数值量和图形的组成部分联系起来; 我们在这里使用图形仅仅作为一种追踪三动量 delta 函数的方式. ) 画 :math:`n` 个点, 称为 **顶点** (vertices), 其中每个点对应于一个 :math:`V(t)` 算符. 对于每个在某个 :math:`V(t)` 算符的湮灭算符移经一个在初态 :math:`\phi_\alpha` 中的产生算符时产生的 delta 函数, 画一条从下方进入图的线, 到对应的顶点. 对每个在末态 :math:`\phi_\beta` 的共轭中的湮灭算符移经某个 :math:`V(t)` 算符中的产生算符时产生的 delta 函数, 画一条从对应的顶点向上离开图的线. 对于每个在某个 :math:`V(t)` 中的湮灭算符移经另一个 :math:`V(t)` 的产生算符时产生的 delta 函数, 在这两个顶点之间画一条线. 最后, 对于每个在末态的共轭中的湮灭算符移经初态中的产生算符时产生的 delta 函数, 画一条从底部到顶部的线, 直接穿过图形. 每个和某条线联系的 delta 函数保证了由线表示的一对产生和湮灭算符的动量参数的相等. 每个顶点也会贡献一个 delta 函数, 保证在顶点处总三动量守恒.
+
+这样的图要么是连通的 (每个点都可以通过一些线和其他每个点连通), 如果不是连通的, 它可以分解为一些连通的部分. 在一个连通部分, 和一个顶点联系的 :math:`V(t)` 算符, 事实上与和在任何其他连通部分的任意顶点联系的 :math:`V(t)` 对易, 因为对这个图, 我们没有包括任何项, 在其中一个顶点的湮灭算符消灭了一个粒子, 而这个粒子由另一个顶点的产生算符产生 - 如果我们包含了这样的项, 这两个顶点将会在同一个连通部分. 因此 :eq:`s-matrix-sum-beta-alpha` 中的矩阵元可以表示为每个连通部分的贡献的 **乘积** 的和:
+
+.. math::
+    &\ \Big( \phi_\beta, T\Big\{ V(t_1)\cdots V(t_n) \Big\} \phi_\alpha \Big) \\
+    =&\ \sum_{\mathrm{clusterings}} (\pm) \prod_{j=1}^{\nu}
+    \Big( \phi_{\beta_j}, T\Big\{ V(t_{j1})\cdots V(t_{jn_j}) \Big\} \phi_{\alpha_j} \Big)_{\mathrm{C}}
+    :label: s-matrix-clustering
+
+这里, 求和是对分解入射粒子, 出射粒子和 :math:`V(t)` 算符为 :math:`\nu` 个集团的所有方法进行求和 (其中包括对 :math:`\nu` 从 1 到 :math:`n` 的求和), 其中 :math:`n_j` 个算符 :math:`V(t_{j1})\cdots V(t_{jn_j})` 和初态粒子的子集 :math:`\alpha_j` 和末态粒子的子集 :math:`\beta_j` 都在第 :math:`j` 个集团. 当然, 这意味着
+
+.. math::
+    n = n_1 + \cdots + n_{\nu}
+
+并且集合 :math:`\alpha` 是所有子集 :math:`\alpha_1, \alpha_2, \cdots \alpha_\nu` 中的粒子的并, 对末态情况也类似. 在 :eq:`s-matrix-clustering` 中的某些集团可能不包含任何顶点, 即 :math:`n_j=0`; 对这些因子, 我们必须令 :eq:`s-matrix-clustering` 中对应的矩阵元因子为零, 除非 :math:`\beta_j` 和 :math:`\alpha_j` 都是单粒子态 (在这种情况下它成为一个 delta 函数 :math:`\delta(\alpha_j - \beta_j)`), 因为唯一的无顶点的连通图包含一个单一的线, 从图的底部连到顶部. 最重要的是, :eq:`s-matrix-clustering` 中的下标 C 表明我们排除任何对应于非连通图的贡献, 即, 任何 :math:`V(t)` 算符或者任何初态或末态粒子没有和其他部分通过一系列粒子产生和湮灭相连接的贡献.
+
+现在我们在求和 :eq:`s-matrix-sum-beta-alpha` 中利用 :eq:`s-matrix-clustering`. 每个时间变量都从 :math:`-\infty` 到 :math:`\infty` 积分, 因此, :math:`t_1,\cdot t_n` 中的哪一个被分到每个集团并不导致任何区别 (这里这个阶乘因子不是很理解). 因此这个对集团的求和导致一个因子 :math:`n!/n_1!n_2!\cdots n_\nu!`, 等于把 :math:`n` 个顶点分到 :math:`\nu` 个集团, 每个集团包含 :math:`n_1, n_2, \cdots` 顶点的所有方法数:
+
+.. math::
+    &\ \int_{-\infty}^{\infty} \D t_1 \cdots \D t_n \Big( \phi_\beta, T\Big\{ V(t_1)\cdots V(t_n) \Big\} \phi_\alpha \Big) \\
+    =&\ \sum_{\mathrm{PART}}(\pm) \sum_{\underset{n_1+\cdots+n_\nu=n}{n_1\cdots n_\nu}}
+    \frac{n!}{n_1!n_2!\cdots n_\nu !} \prod_{j=1}^\nu \int_{-\infty}^{\infty} \D t_{j1}\cdots t_{jn_j}
+    \Big( \phi_{\beta_j}, T\Big\{ V(t_{j1})\cdots V(t_{jn_j}) \Big\} \phi_{\alpha_j} \Big)_{\mathrm{C}}
+
+这里第一个求和时对所有把初态和末态中的粒子分为集团 :math:`\alpha_1\cdots \alpha_\nu` 和 :math:`\beta_1\cdots \beta_\nu` 的求和 (包括对集团数 :math:`\nu` 的求和). 因子 :math:`n!` 抵消 :eq:`s-matrix-sum-beta-alpha` 中的 :math:`1/n!`, 而 :eq:`s-matrix-clustering` 微扰级数的因子 :math:`(-\I)^n` 可以写为乘积 :math:`(-\I)^{n_1}\cdots (-\I)^{n_\nu}` (这里说 :eq:`s-matrix-clustering` 的微扰级数, 其实就是 :eq:`s-matrix-sum-beta-alpha` 中的 因子 :math:`(-\I)^n`, 但是由于 :eq:`s-matrix-clustering` 是微扰级数中的一项, 所以可以指代), 因此, 本来是先对 :math:`n` 求和, 然后对 :math:`n_1, \cdots n_\nu` 求和, 但是加上限制 :math:`n_1+\cdots+n_\nu = n`, 现在关于 :math:`n` 本身的因子都可以消去了, 因此这个求和可以写为分别对 :math:`n_1, \cdots n_\nu` 求和 (移除了对 :math:`n` 求和以及总和为 :math:`n` 的限制. 因为依赖于 :math:`n` 的因子都被改写了, 而 :math:`n` 从 1 到 :math:`\infty` 求和相当于对 :math:`n` 没有限制), 这最终给出
+
+.. math::
+    S_{\beta\alpha} =\sum_{\mathrm{PART}}(\pm) \prod_{j=1}^\nu \sum_{n_j=0}^\infty \frac{(-\I)^{n_j}}{n_j!}
+    \int_{-\infty}^\infty \D t_{j1} \cdots \D t_{jn_j} \Big( \phi_{\beta_j}, T\Big\{ V(t_{j1})\cdots V(t_{jn_j}) \Big\} \phi_{\alpha_j} \Big)_{\mathrm{C}}
+
+把上式和 :eq:`s-matrix-connected` 对连接矩阵元 :math:`S_{\beta\alpha}^{\mathrm{C}}` 的定义比较, 我们可以看出这些矩阵元由这里乘积的因子给出
+
+.. math::
+    S_{\beta\alpha}^{\mathrm{C}} = \sum_{n=0}^\infty \frac{(-\I)^{n}}{n!}
+    \int_{-\infty}^\infty \D t_{1} \cdots \D t_{n} \Big( \phi_{\beta}, T\Big\{ V(t_{1})\cdots V(t_{n}) \Big\} \phi_{\alpha} \Big)_{\mathrm{C}}
+
+(这里去掉了所有 :math:`t` 和 :math:`n` 的下标 :math:`j`, 因为这些现在仅仅是积分和求和变量. ) 我们发现 :math:`S_{\beta\alpha}^{\mathrm{C}}` 由非常简单的方式计算: :math:`S_{\beta\alpha}^{\mathrm{C}}` 是所有对 :math:`S` 矩阵连接部分的贡献之和, 具体意思是, 我们去掉所有任何初态或末态粒子或任何算符 :math:`V(t)` 不和其他所有算符通过粒子产生和湮灭算符的序列连接的项. 这解释了对 :math:`S^{\mathrm{C}}` 的形容词 "连接的".
+
+正如我们已经看到的, 在每个顶点, 沿每条线动量都是守恒的, 因此 :math:`S` 矩阵的连接部分各自保持动量守恒: :math:`S_{\beta\alpha}^{\mathrm{C}}` 包含因子 :math:`\delta^3(\bm{p}_\beta-\bm{p}_\alpha)`. 我们想证明的是 :math:`S_{\beta\alpha}^{\mathrm{C}}` 不包含其他 delta 函数.
+
+我们现在假设在哈密顿量的产生和湮灭算符展开式 :eq:`hamil-expr-cre-anni` 中的系数部分 :math:`h_{NM}` 正比于一个 **单一的** 三维 delta 函数, 它确保动量守恒. 这对于自由粒子哈密顿量 :math:`H_0` 自动满足, 因此对于相互作用 :math:`V` 这也将满足. 回到我们已经使用的矩阵元的图形解释, 这意味着每个顶点贡献一个三维 delta 函数. (在矩阵元 :math:`V_{\gamma\delta}` 的其他 delta 函数仅仅保持不在对应顶点产生或消灭的其他粒子的动量不变. ) 现在, 这些 delta 函数中的大部分仅仅固定中间粒子的动量. 没有由这些 delta 函数固定的动量是那些在内线的圈中流转的. (任何一条线, 如果切断它将导致图形不再连通, 都携带一个动量, 这个动量由动量守恒固定为进入或退出图形的线的动量的某种线性组合. 如果图形有 :math:`L` 条线, 可以被同时切断, 而图形不会变得不连通, 那么我们说这个图有 :math:`L` 独立的圈, 并且有 :math:`L` 个动量没有被动量守恒固定. ) 当一个图有 :math:`V` 个顶点, :math:`I` 条内线, :math:`L` 个圈, 将有 :math:`V` 个 delta 函数, 其中 :math:`I - L` 将固定内部动量, 剩下 :math:`V - I + L` 个 delta 函数将入射和出射粒子的动量联系起来. 但是一个著名的拓扑恒等式表明, 对任意含 :math:`C` 连接部分的图, 顶点数, 内线数, 和圈数由下式联系
+
+.. math::
+    V-I+L=C
+    :label: vilc
+
+因此, 对一个连接矩阵元 :math:`S_{\beta\alpha}^{\mathrm{C}}`, 它出现在 :math:`C = 1` 的图, 我们将仅仅找到单一的三维 delta 函数 :math:`\delta^3(\bm{p}_\beta - \bm{p}_\alpha)`, 这就是要证明的.
+
+在上面的论证中, 时间变量从 :math:`-\infty` 到 :math:`+\infty` 积分并不重要. 因此, 我们可以用完全一样的论证去证明, 如果哈密顿量的系数 :math:`h_{N,M}` 仅包含一个 delta 函数, 那么 :math:`U(t, t_0)` 也可以分解为连接部分, 其中每一部分包含单一的动量守恒 delta 函数因子. 另一方面, :math:`S` 矩阵的连接部分也包含一个能量守恒 delta 函数, 在第六章当我们讨论费曼图时, 我们将看到 :math:`S_{\beta\alpha}^{\mathrm{C}}` 仅包含一个单一的能量守恒 delta 函数, :math:`\delta(E_\beta - E_\alpha)`, 而 :math:`U(t,t_0)` 不包含能量守恒 delta 函数.
+
+应该强调, 对 :eq:`hamil-expr-cre-anni` 式中 :math:`h_{NM}` 只有一个三维动量守恒 delta 函数因子的要求完全不是平庸的, 而是有非常重要的后果. 例如, 假设 :math:`V` 在双粒子态之间有非零矩阵元, 那么 :eq:`hamil-expr-cre-anni` 必须包含 :math:`N = M = 2` 的项及系数
+
+.. math::
+    v_{2,2}(\bm{p}'_1 \bm{p}'_2, \bm{p}_1\bm{p}_2 ) = V_{\bm{p}'_1 \bm{p}'_2, \bm{p}_1\bm{p}_2}.
+
+(这里我们临时去掉自旋和粒子种类标记. ) 而相互作用在三粒子态之间的矩阵元就是
+
+.. math::
+    V_{\bm{p}'_1 \bm{p}'_2 \bm{p}'_3, \bm{p}_1\bm{p}_2\bm{p}_3} =
+        v_{3,3}(\bm{p}'_1 \bm{p}'_2 \bm{p}'_3, \bm{p}_1\bm{p}_2\bm{p}_3)
+        + v_{2,2}(\bm{p}'_1 \bm{p}'_2, \bm{p}_1\bm{p}_2 ) \delta^3(\bm{p}'_3 - \bm{p}_3)
+        \pm \text{置换}
+    :label: v-3-3-momentum
+
+正如本章开始时提到的, 我们可能想实现一个不是场论的相对论量子理论, 通过选择 :math:`v_{2,2}` 使得两体 :math:`S` 矩阵是洛伦兹不变的, 并调整哈密顿量的剩余部分, 从而包含三个或更多粒子的态之间没有散射. 从而, 在上式中我们不得不选择 :math:`v_{3,3}` 使它消去其他项
+
+.. math::
+    v_{3,3}(\bm{p}'_1 \bm{p}'_2 \bm{p}'_3, \bm{p}_1\bm{p}_2\bm{p}_3)
+    = -v_{2,2}(\bm{p}'_1 \bm{p}'_2, \bm{p}_1\bm{p}_2 ) \delta^3(\bm{p}'_3 - \bm{p}_3)
+        \mp \text{置换}
+
+但是, 这将意味着 :math:`v_{3,3}` 的每一项包含 **两个** delta 函数因子 (注意 :math:`v_{2,2}(\bm{p}'_1 \bm{p}'_2, \bm{p}_1\bm{p}_2 )` 有一个因子 :math:`\delta^3(\bm{p}'_1 + \bm{p}'_2 - \bm{p}_1 - \bm{p}_2)`) 而这将违背集团分解原理. 因此, 在一个满足集团分解原理的理论中, 两个粒子散射过程的存在使得三个或更多粒子的过程不可避免.
+
+---------
+
+当我们准备解决满足集团分解原理的量子理论的三体问题时, :eq:`v-3-3-momentum` 中的 :math:`v_{3,3}` 项没有造成特别的麻烦, 但是其他项中的额外 delta 函数使得李普曼-施温格方程非常难以直接求解. 问题在于, 这些 delta 函数使得这个方程的核 :math:`[E_\alpha - E_\beta + \I \epsilon]^{-1} V_{\beta\alpha}` 不是平方可积的, 即使我们移出一个整体动量守恒 delta 函数因子. 因此, 它不能被一个有限矩阵近似表示, 即使矩阵有非常大的秩. 为了解决有三个或更多粒子的问题, 有必要将李普曼-施温格方程替换为一个等式右边连通的版本. 对于三个或更多粒子, 这样的方程已经被找出, 并且在非相对论散射问题, 它们可以递归求解, 但在相对论理论中它们并没有被证明很有用. 因此这里我们将不讨论其细节.
+
+但是, 以这种方式重写李普曼-施温格方程在另一个方面是有用的. 到目前为止, 我们在这一节的讨论依赖于微扰论. 我并不知道任何关于本节的主要定理的非微扰的证明, 但已经被证明的是, 这些重新推导的非微扰的动力学方程和要求 :math:`U^{\mathrm{C}}(t,t_0)` (并且从而 :math:`S^{\mathrm{C}}`) 应该包含一个单一的动量守恒 delta 函数 (正如集团分解原理所要求的) 是 **一致的**, 假定哈密顿量满足我们的条件, 即每个系数函数 :math:`h_{N,M}` 只包含一个单一的动量守恒 delta 函数.

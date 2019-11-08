@@ -15,4 +15,4 @@
    SSP/basic.rst
    ENGW/basic.rst
    MEST/basic.rst
-
+   DMRG/basic.rst
