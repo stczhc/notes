@@ -16,3 +16,4 @@
    ENGW/basic.rst
    MEST/basic.rst
    DMRG/basic.rst
+   Programming/basic.rst

@@ -7,4 +7,5 @@
 
    basic-i2A.rst
    basic-i2B.rst
+   basic-i2C.rst
    notes.rst
