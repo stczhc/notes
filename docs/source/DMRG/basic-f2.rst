@@ -80,21 +80,21 @@ BLOCK 代码结构
   - saveBlock.C (1453 L) 用于从磁盘储存或者读取 block 的函数, 是 stack spin block 类中函数的定义
   - set_stackspinblock_components.C (679 L) 设置算符分量的存储位置, 语法啰嗦. 是 stack spin block 类中函数的定义
   - Stack_op_components.C (1156 L) .h (543 L) 算符分量, 感觉很高级
-  - StackBaseOperator.h (410 L) .C (919 L) 算符基类 及 算符的稀疏矩阵表示 应该比较简单
-  - Stackdensity.h (61 L) .C (371 L) 密度矩阵, 从算符稀疏矩阵表示继承 应该比较简单
-  - stackguess_wavefunction.h (58 L) .C (952 L) 波函数的一系列变换
+  - [已阅读] StackBaseOperator.h (410 L) .C (919 L) 算符基类 及 算符的稀疏矩阵表示 应该比较简单
+  - [已阅读?] Stackdensity.h (61 L) .C (371 L) 密度矩阵, 从算符稀疏矩阵表示继承 应该比较简单
+  - [已阅读?] stackguess_wavefunction.h (58 L) .C (952 L) 波函数的一系列变换, 用于产生猜测的波函数为了 davidson
   - StackOperators.h (223 L) .C (4687 L) 各种算符定义, 继承自 stack sparse matrix
   - stackopxop.C (3520 L) .h (97 L) 算符之间的乘积 中间有不少注释的代码
   - stackspinblock.h (355 L) .C (2488 L) 块类 中间有不少注释的代码
-  - stackwavefunction.h (69 L) .C (610 L) 波函数类, 继承自 stack sparse matrix
-  - StateInfo.h (190 L) .C (540 L) StateInfo 类, 这个文件有很多解释!!
+  - [已阅读] stackwavefunction.h (69 L) .C (610 L) 波函数类, 继承自 stack sparse matrix
+  - [已阅读] StateInfo.h (190 L) .C (540 L) StateInfo 类, 这个文件有很多解释!!
 
 * 对称性
 
   - [已处理] IrrepSpace.C (73L) .h (49L) 表示一个整数 irrep
-  - IrrepVector.h (48 L) class 定义过于简单, 应该没什么用
+  - IrrepVector.h (48 L) class 定义过于简单, 应该没什么用 只在 symmetry.h 和 csf.h 用到
   - nonAbelianGroup.h (435 L) 非阿贝尔分子点群的定义和乘法 如果不使用分子对称性, 应该暂时不用管 用到 objectmatrix
-  - SpinQuantum.h (91 L) .C (195 L) 表示自旋量子数的复合指标, 看起来很简单
+  - [已阅读] SpinQuantum.h (91 L) .C (195 L) 表示自旋量子数的复合指标, 看起来很简单
   - [已处理] SpinSpace.C (88 L) .h (64 L) 表示 m 量子数 或 S 量子数, 根据 是否自旋适配来判断
   - [已处理] Symmetry.h (46 L) .C (716 L) 阿贝尔点群对称性 Symmetry 类
   - tensor_operator.h (390 L) 依赖 symmetry 类的 tensorop 类 虽然看起来很简单, 但未必有用?? csf.C 用到这个
@@ -103,6 +103,7 @@ BLOCK 代码结构
 
   - objectmatrix.h (192 L) 简单的矩阵定义, 还有下三角阵, 三阶张量
   - stackmatrix.h (59 L) 常规矩阵, 数据是指针表示
+  - [已阅读] para_array.h (970 L) 用于表示不同 site 指标的算符的稀疏数组
 
 * 其他
 
@@ -116,3 +117,111 @@ BLOCK 代码结构
   - RDM.C (62 L) 包含 main 函数, 废文件
   - wrapper.h (30 L) .C (310 L) 暴露给 C 的函数定义, 可能对 python 实现可以参考
   - doxyfile (1870 L) 用于用 doxygen 生成文档
+
+StackBaseOperator.C
+-------------------
+
+从 L336 StackSparseMatrix::allocate(const StateInfo& rowSI, const StateInfo& colSI, double* pData)
+看得很清楚. StackMatrix 是常规 double 的矩阵. StackSparseMatrix 是表示算符, 的 Sparse 是由于量子数耦合不耦合而造成的, state info 存储一个量子态的各种对称性, 每个对称性有多少态. StackSparseMatrix 一定是构建在这个对称性上的
+在 StackSparseMatrix 之上才有算符类型造成的稀疏性
+
+这里可能的改进方式为, 每次由两边态矢量的对称性, 计算中间矩阵的对称性, 对于每个算符矩阵都要重新计算. 而每个矩阵矩阵结构都是相同的, 不如弄一个公共类 工厂类, 然后两边量子数哈希. 如果这个哈希匹配到工厂类里面已经计算过的配置, 那么把分块的总大小和 row map  col map 直接拿来用. 工厂类有一个静态字段, 专门保存已经计算过的 对称性矩阵结构.
+
+后面的 void StackSparseMatrix::allocateShell(const StateInfo& rowSI, const StateInfo& colSI)  和
+double* StackSparseMatrix::allocateOperatorMatrix() 只是把 allocate 步骤分为两部分
+这代码也太 copy 了
+
+void StackSparseMatrix::Normalise (int* success) (800L) 这里可见前面 dotproduct 的定义是对分块结构逐元素处理, 每个元素进行 matrix dot product 其实是把 matrix 看成 vector 然后 做 vector 的点乘积. 因此这里其实是计算矩阵看成 vector 时的归一化. 和严格定义的 矩阵的 归一化不同.
+
+StateInfo.C
+-----------
+
+SpinQuantum 是单个指标 (量子态的对称性指标), StateInfo 是指标的集合. 集合中可以有重复元素, 所以要按 SpinQuantum 的 unique 分组, 另有 quantaStates 记录每个对称性有多少指标 (即 :math:`\mu` 的维数)
+
+L81: ``SpinAdapted::StateInfo::StateInfo (const std::vector< Csf >& dets, bool addWavefunctionQuanta)``
+
+这里从 csf 构建, 在决定 每个量子态的数目的时候, 没有考虑 mu 的问题. 就是说, 在这一步, 一定还没涉及重整化
+
+复合 QuantumNumber class 的构建似乎可以大胆采用 variadic template 然后递归定义 或者借助 tuple 定义
+
+也就是说,  SpinQuantum 是单个指标, StateInfo 是指标的集合. 集合中可以有重复元素
+
+L106: ``void SpinAdapted::StateInfo::UnBlockIndex ()`` 这个是从 组指标到真实指标的映射
+
+L192: 这里的 comp state 是互补态的意思. 如果互补态已经知道 compState, 而且知道整个系统波函数的量子数 q
+那么在构建当前态的时候, 如果当前态的某个量子数和互补态组合无法得到目标量子数, 那么就可以忽略当前态的这个量子数
+不然的话没有互补态就组合成什么量子数就用什么量子数就行了
+
+L202: quantaStates 是态的数目的意思, 因此当然是两个子空间的态数目相乘
+
+constraint 是指, 当前态的 q , 比如粒子数 不应该超过系统总共的粒子数
+
+EqualQ 就是说, 我要造的当前态就只要 量子数正好等于 Q 的这一个态
+
+矩阵一定要 cow 存储的时候只要弄清谁负责主要储存就行
+
+SpinQuantum.h
+-------------
+
+L54: spinToNonSpin 毫无作用 没有引用
+
+这个 class 以 tuple 支持任意数目的量子数是没有问题的 要实现 complimant 但实际就是量子数减法
+
+stackwavefunction.h
+-------------------
+
+L20.C 从这里可以看出, 这个波函数一定是分为左块右块的, 波函数是基态波函数
+因为左块右块乘积构成完整空间, 因此确实是矩阵形式. 左块右块也有量子数, 这个函数
+
+getRequiredMemoryForWavefunction 的 q 参数是一个 vector 应该说明要求的不仅是基态还有激发态
+好像确实对多个态判断方便一些
+
+Stackdensity.C
+--------------
+
+L143-361 疑问?? 这里 add noise 没有看懂 实际上就是把所有算符列出来, 然后逐个作用在波函数上, 然后计算密度矩阵. 这和 noise 有什么关系呢?
+
+Stackspinblock.h
+----------------
+
+L76 这里定义了算符
+
+para_array.h
+------------
+
+这个 para_array 做了三件事情, 一个是并行化不同 index 算符的处理 二是对算符的 site 指标进行稀疏处理
+  三是考虑双指标算符的对称性 其实我们不用这里的稀疏处理. 因为各种矩阵假设存的只是 shared ptr, 那么稀疏和不稀疏区别不大
+  除非是用 map 存储
+
+所以最终, block 里面的 ops 是一个从 op-type 到 StackOp_component_base (注意这里虽然是 base 但其实是 shared ptr 所以可以表示派生类的对象) 的 map. 实际可以改成 int array 来实现
+而 StackOp_component_base 的派生类为 StackOp_component<op> 其中 op 是枚举, 包括了单一的 para_array 字段 m_op
+因此 StackOp_component<op> 也就是不同指标的同种算符的集合 其中 para_array 表示不同的指标
+再这之后 m_op 的类型类似
+para_array_1d<std::vector<boost::shared_ptr<StackCre>>>
+因此中间还有一层 vector, 用于记录 S 量子数 最后一层 例如 StackCre 是继承自 StackSparseMatrix
+
+在 block-1.5.3/Stack_op_components.C 中的 build_iterators 函数是构建的关键函数, 首先由 screen 筛选出所需的 index
+而构建是要传 block 作为第一个参数的, 这个 block 知道自己所包含的 sites 和与自己的 sites 互补的 sites.
+
+注意 build_iterators 也只是把大的框架搭好, 具体的每个算符的矩阵是不管的
+而算符的具体构建 是 build_operators 来处理 Stackspinblock.C (L428)
+
+这里则调用了 build using csf, 关键参数是 ladder 和 dets 然后任务交给了 StackSparseMatrix::buildUsingCsf (StackBaseOperator.C L159) 这里注意 index 的循环已经是解构了 StackSparseMatrix 的矩阵元 然后后面的两个循环则直接深入到具体元素 L168 这里 nonZeroBlocks[index].second.operator()(a,b) 已经是取最小块矩阵的 a 行 b 列, 得到一个 double ,这个 double 由 redmatrix elem 算出, 而这个函数在 每个 cre des 具体算符中定义
+这里 iq-stateinfo.unBlockedIndex[i]+1 其中 +1 是因为这个矩阵定义的时候下标要改成从 1 开始. -stateinfo.unBlockedIndex[i] 则是因为它循环的时候要从 stateinfo.unBlockedIndex[i] 开始数.
+
+那接下来就看到每个算符的构建, 比如 cre 的构建在 StackOperaors.C (L107)
+
+构建顺序
+--------
+
+首先是对称性的一些东西, 然后是 quantum number 然后是 state info 然后是常规矩阵, 然后是 带量子数的 stacksparse matrix
+
+矩阵转置的处理: 矩阵内部有一个内部 class impl, operator(i, j) 时, 转到 impl 的 operator(). 调用 .T() 时 改变 impl 这样避免了每次取索引时的判断
+
+Bugs
+----
+
+partial_sweep.C: L238
+
+fread( &e, 1, sizeof(double), fin);
+=> fread( &e, sizeof(double), 1, fin);
