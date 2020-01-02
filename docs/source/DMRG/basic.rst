@@ -15,4 +15,5 @@
    basic-f1.rst
    basic-f2.rst
    basic-f3.rst
+   basic-f4.rst
    basic-g.rst
