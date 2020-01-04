@@ -33,7 +33,7 @@ manifest.in 列出需要包含在 package 中的文件. 它在标准的该包含
 
 manifest.in 的语法
 
-.. code:: python
+.. code:: bash
 
     include *.txt
     recursive-include examples *.txt *.py
