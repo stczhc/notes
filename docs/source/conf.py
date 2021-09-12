@@ -85,7 +85,7 @@ on_rtd = os.environ.get('READTHEDOCS') == 'True'
 if on_rtd:
     html_theme = 'default'
 else:
-    html_theme = 'nature'
+    html_theme = 'sphinx_rtd_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -233,7 +233,7 @@ intersphinx_mapping = {'https://docs.python.org/': None}
 todo_include_todos = True
 
 # mathjax_path = "MathJax-2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-mathjax_path = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+# mathjax_path = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 
-def setup(app):
-    app.add_stylesheet('css/fix.css')
+# def setup(app):
+#     app.add_stylesheet('css/fix.css')
