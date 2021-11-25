@@ -13,7 +13,6 @@
    QFTB/basic.rst
    QFTP/basic.rst
    SSP/basic.rst
-   ENGW/basic.rst
    MEST/basic.rst
    RQC/basic.rst
    DMRG/basic.rst
