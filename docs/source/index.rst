@@ -16,4 +16,6 @@
    MEST/basic.rst
    RQC/basic.rst
    DMRG/basic.rst
+   SPIN/basic.rst
+   QMBT/basic.rst
    Programming/basic.rst

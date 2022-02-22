@@ -20,3 +20,4 @@
    basic-f5.rst
    basic-g.rst
    basic-h.rst
+   basic-i.rst
