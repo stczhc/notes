@@ -48,6 +48,8 @@ extensions = [
     'sphinx.ext.githubpages',
 ]
 
+tikz_proc_suite = 'GhostScript'
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
