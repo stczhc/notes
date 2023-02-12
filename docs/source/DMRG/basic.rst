@@ -21,3 +21,5 @@
    basic-g.rst
    basic-h.rst
    basic-i.rst
+   basic-j.rst
+   basic-la.rst
