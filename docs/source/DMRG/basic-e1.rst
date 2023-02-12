@@ -13,7 +13,6 @@
         \newcommand{\dt}{\frac{\D}{\D t}}
         \newcommand{\E}{\mathrm{e}}
         \renewcommand{\bm}{\boldsymbol}
-        \require{mediawiki-texvc}
 
 .. note::
     Garnet K L Chan, et al. JCP 145, 014102 (2016)

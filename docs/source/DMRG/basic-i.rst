@@ -13,7 +13,6 @@
         \newcommand{\dt}{\frac{\D}{\D t}}
         \newcommand{\E}{\mathrm{e}}
         \renewcommand{\bm}{\boldsymbol}
-        \require{mediawiki-texvc}
 
 .. note::
     Payne, P.W., 1982. Matrix element factorization in the unitary group approach for configuration interaction calculations. *International Journal of Quantum Chemistry*, 22(6), 1085-1152.

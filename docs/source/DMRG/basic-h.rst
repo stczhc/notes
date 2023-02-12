@@ -13,7 +13,6 @@
         \newcommand{\dt}{\frac{\D}{\D t}}
         \newcommand{\E}{\mathrm{e}}
         \renewcommand{\bm}{\boldsymbol}
-        \require{mediawiki-texvc}
 
 N 电子价态微扰论: 无自旋形式和强收缩和部分收缩的高效实现
 =========================================================
