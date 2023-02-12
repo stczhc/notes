@@ -152,7 +152,7 @@ FCI 和 CASCI 波函数的指数级增长很快使得密集矩阵操作变得难
     |\alpha(I_\alpha)\beta(I_\beta)\rangle
         = \hat{\alpha} (I_\alpha) \hat{\beta} (I_\beta) |vac\rangle.
 
-:math:`\alpha` -串，:math:`\hat{\alpha}(I_\alpha)` ，和 :math:`\beta` -串， :math:`\hat{\beta}(I_\beta)` ，分别是由 :math:`N_\alpha` 个和 :math:`N_\beta` 个产生算符的乘积构成，用于 :math:`\alpha` 自旋轨道和 :math:`\beta` 自旋轨道，串的维度是一个常数，由给定系统的电子总数 :math:`N` 和自旋投影 :math:`M_s`（总自旋的z分量）定义。
+:math:`\alpha` -串，:math:`\hat{\alpha}(I_\alpha)` ，和 :math:`\beta` -串， :math:`\hat{\beta}(I_\beta)` ，分别是由 :math:`N_\alpha` 个和 :math:`N_\beta` 个产生算符的乘积构成，用于 :math:`\alpha` 自旋轨道和 :math:`\beta` 自旋轨道，串的维度是一个常数，由给定系统的电子总数 :math:`N` 和自旋投影 :math:`M_s` （总自旋的z分量）定义。
 
 .. math::
     N_\alpha = (N + 2M_s) / 2 \\
@@ -170,7 +170,7 @@ FCI 和 CASCI 波函数的指数级增长很快使得密集矩阵操作变得难
     N_{det} = \begin{pmatrix} n \\ N_\alpha \end{pmatrix}
     \begin{pmatrix} n \\ N_\beta  \end{pmatrix}
 
-正如在前一节中已经看到的那样. 字符串的因式分解允许以矩阵形式读取、处理和存储 Slater 行列式。该方法使得仅作用于 :math:`\alpha`（或 :math:`\beta`）电子的算符的计算变得高效。同样地，CI 向量和 sigma 向量可以被向量化并以矩阵形式存储。
+正如在前一节中已经看到的那样. 字符串的因式分解允许以矩阵形式读取、处理和存储 Slater 行列式。该方法使得仅作用于 :math:`\alpha` （或 :math:`\beta` ）电子的算符的计算变得高效。同样地，CI 向量和 sigma 向量可以被向量化并以矩阵形式存储。
 
 字符串的图形表示用于对字符串进行排序。字符串的排序是有利的，因为字符串在字符串列表中的位置提供了有关电子在轨道中分布的信息。我们考虑在 n 个轨道中有 N 个 :math:`\alpha` 电子的情况。每个字符串可以表示为一个 :math:`n \times N` 图中的路径，该图是通过在顶点（k，m）之间绘制弧线而获得的，其中 k 是轨道索引，m 是直到轨道 k 中的电子数（见图 6.3）。所有路径都从（0,0）开始，以（n，N）结束。路径上的垂直弧线从顶点（k，m）到（k + 1，m）意味着轨道（k + 1）未被占据。从顶点（k，m）到（k + 1，m + 1）的对角线弧线表示轨道（k + 1）被占据。例如，3个电子在5个轨道中的 :math:`\alpha` 字符串，可以写成一个向量
 
@@ -187,7 +187,7 @@ FCI 和 CASCI 波函数的指数级增长很快使得密集矩阵操作变得难
    :width: 400
    :align: center
 
-**图6.3.** 路径描述了字符串 :math:`\hat{a}_{1\alpha}^\dagger \hat{a}_{3\alpha}^\dagger \hat{a}_{5\alpha}^\dagger |vac\rangle`（以红色表示）。路径包含三个对角线弧（占据的轨道）和两个竖直弧（未占据的轨道）。
+**图6.3.** 路径描述了字符串 :math:`\hat{a}_{1\alpha}^\dagger \hat{a}_{3\alpha}^\dagger \hat{a}_{5\alpha}^\dagger |vac\rangle` （以红色表示）。路径包含三个对角线弧（占据的轨道）和两个竖直弧（未占据的轨道）。
 
 字符串按照逆字典序排序 [并不是把字典序倒序, 而是把字符串倒序, 然后按字典序]，即如果在最后一个不同的占据位上，字符串X的轨道编号较低，则字符串X在字符串Y之前。例如，在5个轨道中分配3个 :math:`\alpha` 电子， :math:`\alpha` -字符串 :math:`124` 在 :math:`\alpha`-字符串 :math:`135` 之前。为了从字符串的图形表示中获得逆字典序排序，对每个允许的顶点（如果至少被一个路径访问，则称为允许的顶点）关联一个顶点权重 :math:`W_{k,m}`，等于从（0，0）到（k，m）的不同路径数。由于所有这些路径必须来自（k−1，m−1）或（k−1，m），因此可以得出以下顶点权重之间的递归关系式
 
@@ -220,13 +220,13 @@ FCI 和 CASCI 波函数的指数级增长很快使得密集矩阵操作变得难
     |D_j\rangle = \hat{a}_P^\dagger \hat{a}_Q^\dagger \hat{a}_R \hat{a}_S |D_i\rangle.
     :label: eq21
 
-将第1章中的 Hamiltonian 算符的表达式（式（1.18））插入到元素 :math:`\langle D_j | \hat{H} | D_i \rangle`中，并考虑到不涉及双激发 :math:`\hat{a}_P^\dagger \hat{a}_Q^\dagger \hat{a}_R \hat{a}_S` 的所有项均为零，得到：
+将第1章中的 Hamiltonian 算符的表达式（式（1.18））插入到元素 :math:`\langle D_j | \hat{H} | D_i \rangle` 中，并考虑到不涉及双激发 :math:`\hat{a}_P^\dagger \hat{a}_Q^\dagger \hat{a}_R \hat{a}_S` 的所有项均为零，得到：
 
 .. math::
     H_{ij} =&\ \frac{1}{2} \big(
         (pr|qs) \langle D_j | \hat{E}_{pr} \hat{E}_{qs} |D_i \rangle
-        +  (qs|pr) \langle D_j | \hat{E}_{qs} \hat{E}_{pr} |D_i \rangle
-        +  (ps|qr) \langle D_j | \hat{E}_{ps} \hat{E}_{qr} |D_i \rangle
+        +  (qs|pr) \langle D_j | \hat{E}_{qs} \hat{E}_{pr} |D_i \rangle \\
+        &\ +  (ps|qr) \langle D_j | \hat{E}_{ps} \hat{E}_{qr} |D_i \rangle
         +  (qr|ps) \langle D_j | \hat{E}_{qr} \hat{E}_{ps} |D_i \rangle
         \big) \\
         =&\ (pr|qs) - (ps|qr)
@@ -250,8 +250,8 @@ FCI 和 CASCI 波函数的指数级增长很快使得密集矩阵操作变得难
     H_{ij} =&\ h_{pr} \langle D_j |\hat{E}_{pr} | D_i \rangle
     +\frac{1}{2} \sum_k \big(
         (pr|kk) \langle D_j | \hat{E}_{pr} \hat{E}_{kk} | D_i \rangle
-      + (kk|pr) \langle D_j | \hat{E}_{kk} \hat{E}_{pr} | D_i \rangle
-      + (pk|kr) \langle D_j | \hat{E}_{pk} \hat{E}_{kr} - \hat{E}_{pr} |D_i\rangle
+      + (kk|pr) \langle D_j | \hat{E}_{kk} \hat{E}_{pr} | D_i \rangle \\
+      &\ + (pk|kr) \langle D_j | \hat{E}_{pk} \hat{E}_{kr} - \hat{E}_{pr} |D_i\rangle
       + (kr|pk) \langle D_j | \hat{E}_{kr} \hat{E}_{pk} - \hat{E}_{pr} |D_i\rangle
         \big) \\
     =&\ h_{pr} + \sum_k \big[ (pr|kk) - (pk|kr) \big]
@@ -267,8 +267,8 @@ FCI 和 CASCI 波函数的指数级增长很快使得密集矩阵操作变得难
 .. math::
     H_{ii} =&\ \sum_k h_{kk} \langle D_i |\hat{E}_{kk} |D_i\rangle
         + \frac{1}{2} \sum_{kl} \big(
-      (kk|ll) \langle D_i | \hat{E}_{kk} \hat{E}_{ll} | D_i \rangle
-    + (ll|kk) \langle D_i | \hat{E}_{ll} \hat{E}_{kk} | D_i \rangle
+      (kk|ll) \langle D_i | \hat{E}_{kk} \hat{E}_{ll} | D_i \rangle \\
+    &\ + (ll|kk) \langle D_i | \hat{E}_{ll} \hat{E}_{kk} | D_i \rangle
     + 2(kl|lk) \langle D_i | \hat{E}_{kl} \hat{E}_{kl} - \hat{E}_{kl} | D_i\rangle
     \big) \\
     =&\ \sum_k h_{kk} \langle D_i | \hat{n}_k | D_i \rangle
@@ -281,4 +281,36 @@ FCI 和 CASCI 波函数的指数级增长很快使得密集矩阵操作变得难
 式 :eq:`eq22` 到 :eq:`eq25` 称为 Slater-Condon 规则，将 :math:`N` 电子问题的哈密顿矩阵元的计算简化为一、二体积分的计算。计算矩阵元的计算成本仅与占据轨道数量成线性比例，并且与所涉及的行列式的虚轨道数无关。
 
 最后，将 :math:`|D_j\rangle` 的表达式表示为 :eq:`eq21` 或 :eq:`eq23` 中的形式是应用 Slater-Condon 规则的关键。但是，式 :eq:`eq21` 中的产生/湮灭算符的顺序不固定，即 :math:`a_P^{\dagger} a_Q^\dagger a_S a_R` 的不同顺序可能会引入符号变化。
+
+6.3 组态状态函数
+----------------
+
+Slater 行列式是自旋矢量算符 :math:`\hat{\mathbf{S}}` 的 :math:`z` 分量 :math:`\hat{S}_z` 的本征函数，其相关本征值为 :math:`m_s` 。然而，它们不是总自旋算符 :math:`\hat{\mathbf{S}}^2` 的本征函数，这可以通过一个简单的两个电子在两个轨道的例子证明。我们将这两个轨道表示为A和B。共有6个 Slater 行列式可以构建。[本来两个电子分开占据两个轨道有4个函数 (下式的后面4个), 另两个是一个轨道双占据, 另一个为空轨道.]
+
+.. math::
+    |A(\alpha)A(\beta)\rangle, |B(\alpha)B(\beta)\rangle,
+    |A(\alpha)B(\beta)\rangle, |A(\beta)B(\alpha)\rangle,
+    |A(\alpha)B(\alpha)\rangle, |A(\beta)B(\beta)\rangle
+
+使用其他单粒子基函数的组合，例如 :math:`|A(\alpha)A(\alpha)\rangle` [这个本质上不属于单个 site 的 Hilbert 空间的一个态]，由于泡利不相容原理而被禁止。这六个行列式都是 :math:`\hat{S}_z` 的本征函数，但只有四个是 :math:`\hat{\mathbf{S}}^2` 的本征函数，即 :math:`|A(\alpha)A(\beta)\rangle, |B(\alpha)B(\beta)\rangle`（单重态，:math:`S = 0, m_s = 0`）和 :math:`|A(\alpha)B(\alpha)\rangle, |A(\beta)B(\beta)\rangle`（三重态，:math:`S = 1, m_s = \pm 1`）。行列式 :math:`|A(\alpha)B(\beta)\rangle, |A(\beta)B(\alpha)\rangle` 不是  :math:`\hat{S}_z` 的本征函数。只包含双占据轨道的行列式，例如 :math:`|A(\alpha)A(\beta)\rangle, |B(\alpha)B(\beta)\rangle` 被称为闭壳层行列式，并且总是纯的单重态自旋函数。只包含单占据轨道的行列式，例如 :math:`|A(\alpha)B(\beta)\rangle, |A(\beta)B(\alpha)\rangle,|A(\alpha)B(\alpha)\rangle, |A(\beta)B(\beta)\rangle`被称为开壳层行列式。当所有单占据轨道的自旋平行时，例如 :math:`|A(\alpha)B(\alpha)\rangle` 的情况，开壳层行列式是自旋本征函数。在所有其他情况下，开壳层行列式不是纯自旋本征函数。但是，具有非平行自旋的开壳层行列式可以用作对下式进行对角化的基。
+
+.. math::
+    \hat{\mathbf{S}}^2 = \big(  \hat{\mathbf{S}}_A +  \hat{\mathbf{S}}_B \big)^2,
+
+其中，通过使用轨道A和B的总自旋算符 :math:`\hat{\mathbf{S}}_A` 和 :math:`\hat{\mathbf{S}}_B` ，可以得到自旋本征函数。由使用总自旋算符的组合 :math:`|A(\alpha)B(\beta)\rangle, |A(\beta)B(\alpha)\rangle` 形成的二维矩阵，可以得到两个自旋适应函数。
+
+.. math::
+    S = 0: \frac{1}{\sqrt{2}} \big(
+        |A(\alpha)B(\beta)\rangle - |A(\beta)B(\alpha)\rangle \big), \\
+    S = 1: \frac{1}{\sqrt{2}} \big(
+        |A(\alpha)B(\beta)\rangle + |A(\beta)B(\alpha)\rangle \big),
+    :label: eq28-29
+
+第一个本征函数 (以上第一式) 是单重态（ :math:`S=0, m_s=0` ）。第二个本征函数 (以上第二式) 是三重态 ( :math:`S=1, m_s=0` )。这些自旋适应的本征函数称为组态状态函数 (CSFs)。
+
+可以类比地通过对非平行自旋的开壳层斯莱特行列式的 "完整" 集合进行 :math:`\hat{\mathbf{S}}^2` 对角化来创建更多电子的 CSF。 :math:`N` 个电子的 CSF 可以通过将 :math:`\hat{S}_N` 添加到 :math:`\hat{S}_{N-1}` 并对新的总自旋 :math:`\hat{S}_N` 的矩阵进行对角化，从 :math:`N-1` 个轨道的 CSF 中创建。 :math:`\hat{\mathbf{S}}^2` 的本征向量形式，即式 :eq:`eq28-29` ，不依赖于单粒子基的选择，轨道旋转不足以强制执行自旋守恒。[事实上这里是说轨道旋转和这种自旋适配是独立的. 不足以的意思是不能通过这种方法来达到.]
+
+对于大量电子 :math:`N` ，对完整 SD 基函数进行 :math:`\hat{\mathbf{S}}^2` 算符对角化不是实际的方法，为此开发出了更复杂的技术。
+
+由于 CSF 是 Slater 行列式的线性组合，因此对于 CSF 本身，不可用像 Slater-Condon 规则这样的简单规则，尽管它们仍适用于构成 CSF 的每个 Slater 行列式。这一特点对于在 CSF 基函数中计算哈密顿矩阵元素构成了主要挑战。一种有效构建 CSF 并通过哈密顿算符进行耦合的优雅方法是图形幺正群方法（GUGA），将在接下来的几节中讨论。
 
