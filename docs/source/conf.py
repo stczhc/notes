@@ -48,7 +48,7 @@ extensions = [
     'sphinx.ext.githubpages',
 ]
 
-tikz_proc_suite = 'GhostScript'
+# tikz_proc_suite = 'GhostScript'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -159,7 +159,11 @@ latex_elements = {
 \else%
     \newcommand{\I}{\mathrm{i}}%
 \fi%
-\newcommand{\D}{\mathrm{d}}
+\ifcsname D\endcsname%
+    \renewcommand{\D}{\mathrm{d}}%
+\else%
+    \newcommand{\D}{\mathrm{d}}%
+\fi%
 \newcommand{\DD}{\mathrm{D}}
 \newcommand{\HH}{\mathscr{H}}
 \newcommand{\DF}{\mathrm{D}_{\mathrm{F}}}
@@ -196,8 +200,16 @@ tikz_latex_preamble = r'''
 \AtBeginDocument{\begin{CJK}{UTF8}{gbsn}}
 \AtEndDocument{\end{CJK}}
 \fi
-\renewcommand{\I}{\mathrm{i}}
-\newcommand{\D}{\mathrm{d}}
+\ifcsname I\endcsname%
+    \renewcommand{\I}{\mathrm{i}}%
+\else%
+    \newcommand{\I}{\mathrm{i}}%
+\fi%
+\ifcsname D\endcsname%
+    \renewcommand{\D}{\mathrm{d}}%
+\else%
+    \newcommand{\D}{\mathrm{d}}%
+\fi%
 '''
 
 # -- Options for manual page output -----------------------------------------
