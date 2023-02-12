@@ -14,6 +14,7 @@
    QFTP/basic.rst
    SSP/basic.rst
    MEST/basic.rst
+   QCDES/basic.rst
    RQC/basic.rst
    DMRG/basic.rst
    SPIN/basic.rst
