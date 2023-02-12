@@ -42,7 +42,7 @@
     |\Psi\rangle = \sum_i C_i |i\rangle,
     :label: eq62
 
-其中 :math:`|i\rangle = |\Chi_{i_1\sigma_1} \cdots \Chi_{i_n\sigma_n} \rangle` 是 SD 被用作 :math:`N` 电子基，:math:`C_i` 是相应的系数。为方便起见，从现在开始使用简短的符号 :math:`|i\rangle` 代替完整的展开式表示 SD。向量 :math:`\mathbf{C} = \{ C_i \}` 称为组态相互作用 (CI) 向量，获得基态的 CI 向量等价于在给定的 :math:`N` 电子基上为最低特征值求解薛定谔方程。
+其中 :math:`|i\rangle = |\chi_{i_1\sigma_1} \cdots \chi_{i_n\sigma_n} \rangle` 是 SD 被用作 :math:`N` 电子基，:math:`C_i` 是相应的系数。为方便起见，从现在开始使用简短的符号 :math:`|i\rangle` 代替完整的展开式表示 SD。向量 :math:`\mathbf{C} = \{ C_i \}` 称为组态相互作用 (CI) 向量，获得基态的 CI 向量等价于在给定的 :math:`N` 电子基上为最低特征值求解薛定谔方程。
 
 将连续函数 :math:`\Psi` 用式 :eq:`eq62` 的有限 :math:`N` 电子展开来替换，薛定谔方程可以重构成一个线性代数问题。从式 :eq:`eq61` 开始，左乘 :math:`\langle j|` ，可以得到：
 
@@ -50,7 +50,7 @@
     \sum_i \langle j|\hat{H}| i\rangle C_i = E \sum_i \langle j | i \rangle C_i
     :label: eq63
 
-通过使用一个正交基组，即 :math:`\langle i | j \rangle = \delta_{ij}`，可以将式 :math:`eq63` 简化为
+通过使用一个正交基组，即 :math:`\langle i | j \rangle = \delta_{ij}`，可以将式 :eq:`eq63` 简化为
 
 .. math::
     \sum_i \langle j|\hat{H}| i\rangle C_i = E C_j.
@@ -90,9 +90,9 @@ FCI 和 CAS 方法的主要缺点是它们与相关轨道和电子数呈指数�
     \begin{pmatrix} n \\ N_{\beta} \end{pmatrix}
     :label: eq66
 
-因为 :math:`N = N_\alpha + N_\beta` 而 :math:`M_s = (N_\aloha - N_\beta) / 2`.
+因为 :math:`N = N_\alpha + N_\beta` 而 :math:`M_s = (N_\alpha - N_\beta) / 2`.
 
-在表 6.1 中列出了一系列完全活性空间（CAS）大小（CAS(N,n)）， N = n 和 S = Ms = 0 的 Slater 行列式数量以及存储相应 CI 向量所需的内存，表明在多组态方法中可以显式关联的电子和轨道的数量受到严格的技术限制。即使是额外的对称性约束，如点群对称性，也只能将波函数的大小减少一个数量级，因此可访问的系统大小不能显著增加。: ::
+在表 6.1 中列出了一系列完全活性空间（CAS）大小（CAS(N,n)）， N = n 和 S = Ms = 0 的 Slater 行列式数量以及存储相应 CI 向量所需的内存，表明在多组态方法中可以显式关联的电子和轨道的数量受到严格的技术限制。即使是额外的对称性约束，如点群对称性，也只能将波函数的大小减少一个数量级，因此可访问的系统大小不能显著增加。 ::
 
     >>> import block2 as b
     >>> for i in [8, 12, 16, 20, 24]:
@@ -135,11 +135,150 @@ Weyl-Paldus 维数公式也可用于计算总的自旋自适应函数的数量�
 
 .. math::
     N_{SD} \approx \frac{2}{\pi n} 4^n \\
-    N_{CSF} \approx \left( 1 - \left(\frac{n}{n+2}\right)^2) \frac{2}{\pi n} 4^n.
+    N_{CSF} \approx \left( 1 - \left(\frac{n}{n+2}\right)^2 \right) \frac{2}{\pi n} 4^n.
 
 以上两式清楚地表明，Slater 行列式和组态态函数的数量随着有关轨道的数量呈指数增长。Slater 行列式和组态态函数数量的增长，用斯特林公式近似表示，用实线在图 6.2 中表示。指数增长也可以通过更为定性的论证得到证明，即考虑将 n 个轨道用电子填充的可能性的数量等于 :math:`4^n`，因为每个轨道可以是双占据、只用一个 :math:`\alpha` 电子或一个 :math:`\beta` 电子占据，或者不被占据，而这些选项与其他轨道的占据情况是独立的。这样就可以生成n个轨道中任意电子数的所有可能组态，但是与固定电子数的情况相比，其规模的变化趋势是相同的。不建议使用 "阶乘级别" 的术语来指代二项式系数，因为这会暗示其增长速度比以上所示的 :math:`4^n` 增长速度更快。
 
 第二节 斯莱特行列式的耦合和分解
 -------------------------------
 
+FCI 和 CASCI 波函数的指数级增长很快使得密集矩阵操作变得难以承受。迭代方法（见第6.4.1节），例如 Davidson 方法[1，2]，已被推荐以避免对大型哈密顿矩阵进行完全对角化。这些方法需要存储 :math:`\sigma` 向量，:math:`\sigma = HC`，而不是完整的哈密顿矩阵。为了使缩并到 :math:`\sigma` 向量可以实践，其计算必须高效地进行。用于有效计算 sigma 向量的方法已被Siegbahn [3]、Knowles 和 Handy [4] 报告。
+
+在本节中，我们将讨论 Handy 的技术[5]，即将 Slater 行列式分离为 :math:`\alpha` 字符串和 :math:`\beta` 字符串，这是行列式 CI 技术的重要里程碑。这个过程用于按照规定顺序生成行列式，并以计算上的优势方式计算密度矩阵或 sigma 向量的贡献。当讨论直接CI算法 [6, 7] 时，这种方法的优势将更加明显。
+
+根据 Handy 的方法，一个 Slater 行列式可以分解如下：
+
+.. math::
+    |\alpha(I_\alpha)\beta(I_\beta)\rangle
+        = \hat{\alpha} (I_\alpha) \hat{\beta} (I_\beta) |vac\rangle.
+
+:math:`\alpha` -串，:math:`\hat{\alpha}(I_\alpha)` ，和 :math:`\beta` -串， :math:`\hat{\beta}(I_\beta)` ，分别是由 :math:`N_\alpha` 个和 :math:`N_\beta` 个产生算符的乘积构成，用于 :math:`\alpha` 自旋轨道和 :math:`\beta` 自旋轨道，串的维度是一个常数，由给定系统的电子总数 :math:`N` 和自旋投影 :math:`M_s`（总自旋的z分量）定义。
+
+.. math::
+    N_\alpha = (N + 2M_s) / 2 \\
+    N_\beta  = (N - 2M_s) / 2.
+
+:math:`\alpha`-和 :math:`\beta`-字符串的数量是通过二项式系数获得的
+
+.. math::
+    N_{strings}^\alpha = \begin{pmatrix} n \\ N_\alpha \end{pmatrix} \\
+    N_{strings}^\beta  = \begin{pmatrix} n \\ N_\beta  \end{pmatrix}
+
+其中 :math:`N_\alpha`（或 :math:`N_\beta` ）个电子分布在 :math:`n` 个轨道中，它们的乘积给出了 Slater 行列式的总数
+
+.. math::
+    N_{det} = \begin{pmatrix} n \\ N_\alpha \end{pmatrix}
+    \begin{pmatrix} n \\ N_\beta  \end{pmatrix}
+
+正如在前一节中已经看到的那样. 字符串的因式分解允许以矩阵形式读取、处理和存储 Slater 行列式。该方法使得仅作用于 :math:`\alpha`（或 :math:`\beta`）电子的算符的计算变得高效。同样地，CI 向量和 sigma 向量可以被向量化并以矩阵形式存储。
+
+字符串的图形表示用于对字符串进行排序。字符串的排序是有利的，因为字符串在字符串列表中的位置提供了有关电子在轨道中分布的信息。我们考虑在 n 个轨道中有 N 个 :math:`\alpha` 电子的情况。每个字符串可以表示为一个 :math:`n \times N` 图中的路径，该图是通过在顶点（k，m）之间绘制弧线而获得的，其中 k 是轨道索引，m 是直到轨道 k 中的电子数（见图 6.3）。所有路径都从（0,0）开始，以（n，N）结束。路径上的垂直弧线从顶点（k，m）到（k + 1，m）意味着轨道（k + 1）未被占据。从顶点（k，m）到（k + 1，m + 1）的对角线弧线表示轨道（k + 1）被占据。例如，3个电子在5个轨道中的 :math:`\alpha` 字符串，可以写成一个向量
+
+.. math::
+    \hat{a}_{1\alpha}^\dagger
+    \hat{a}_{3\alpha}^\dagger
+    \hat{a}_{5\alpha}^\dagger |vac\rangle
+    = \begin{pmatrix} k & m \\ 1 & 1 \\ 
+    2 & 1 \\  3 & 2 \\ 4 & 2 \\ 5 & 3 \\ \end{pmatrix}
+
+该路径可以在图 6.3 中进行图形表示。
+
+.. figure:: ../_static/QCDES/fig-6-3.png
+   :width: 400
+   :align: center
+
+**图6.3.** 路径描述了字符串 :math:`\hat{a}_{1\alpha}^\dagger \hat{a}_{3\alpha}^\dagger \hat{a}_{5\alpha}^\dagger |vac\rangle`（以红色表示）。路径包含三个对角线弧（占据的轨道）和两个竖直弧（未占据的轨道）。
+
+字符串按照逆字典序排序 [并不是把字典序倒序, 而是把字符串倒序, 然后按字典序]，即如果在最后一个不同的占据位上，字符串X的轨道编号较低，则字符串X在字符串Y之前。例如，在5个轨道中分配3个 :math:`\alpha` 电子， :math:`\alpha` -字符串 :math:`124` 在 :math:`\alpha`-字符串 :math:`135` 之前。为了从字符串的图形表示中获得逆字典序排序，对每个允许的顶点（如果至少被一个路径访问，则称为允许的顶点）关联一个顶点权重 :math:`W_{k,m}`，等于从（0，0）到（k，m）的不同路径数。由于所有这些路径必须来自（k−1，m−1）或（k−1，m），因此可以得出以下顶点权重之间的递归关系式
+
+.. math::
+    W_{k,m} = W_{k-1,m} + W_{k-1,m-1}
+
+这个方程清楚地表明每个顶点的权重等于右上角和左上角的顶点权重之和。 起始顶点（0,0）的权重为1（:math:`W_{0,0}=1`）。禁止的顶点权重设置为零。所有其他顶点权重均根据公式（6.18）计算。 我们还使用以下递归关系引入弧权重
+
+.. math::
+    Y_{k+1,m+1} = W_{k+1,m+1} - W_{k,m} = W_{k,m+1}
+
+它等于位于弧的右上方的顶点权重。垂直弧的弧权重为零。然后，路径权重是沿考虑的路径的弧权重之和。对于图6.3中给出的示例，我们发现路径权重为 :math:`I_\alpha = 5` 。路径权重代表逆字典序排序行列式的索引编号。有了路径权重，任何字符串列表都可以按逆字典序排序并写入。具有较低路径权重的 :math:`\alpha`-和 :math:`\beta`-字符串在有序字符串列表中出现较早。有关此主题的更多细节，请参考文献[7，8]。
+
+[这个如何理解? 和不同行表的道理一样, 竖着的是轨道. 这里只有两个分支.
+所以 GHF 的不同行表就是 alpha beta 分开的 string 方法.]
+
+6.2.1 斯莱特-康顿规则
+^^^^^^^^^^^^^^^^^^^^^
+
+一种评估哈密顿矩阵元素的高效方法
+
+.. math::
+    H_{ij} = \langle D_i | \hat{H} | D_j \rangle
+
+在量子化学应用中，有效地评估 Slater 行列式之间的哈密顿矩阵元是至关重要的。由于电子哈密顿量最多包含二体相互作用，任何两个差距超过四个自旋轨道的行列式 :math:`|D_i\rangle` 和 :math:`|D_j\rangle` 之间的矩阵元都将为零。
+
+首先，假设 :math:`|D_i\rangle` 和 :math:`|D_j\rangle` 正好相差四个自旋轨道，即在 :math:`|D_i\rangle` 中占据的两个自旋轨道 R, S [大写字母表示自旋轨道的组合的空间和自旋坐标.] 在 :math:`|D_j\rangle` 中没有被占据，在 :math:`|D_j\rangle` 中占据的两个轨道 P、Q 在 :math:`|D_i\rangle` 中没有被占据，而所有其他自旋轨道在 :math:`|D_i\rangle` 和 :math:`|D_j\rangle` 中的占据数相同。我们称 :math:`|D_j\rangle` 是 :math:`|D_i\rangle` 的双激发，然后可以将其写为：
+
+.. math::
+    |D_j\rangle = \hat{a}_P^\dagger \hat{a}_Q^\dagger \hat{a}_R \hat{a}_S |D_i\rangle.
+    :label: eq21
+
+将第1章中的 Hamiltonian 算符的表达式（式（1.18））插入到元素 :math:`\langle D_j | \hat{H} | D_i \rangle`中，并考虑到不涉及双激发 :math:`\hat{a}_P^\dagger \hat{a}_Q^\dagger \hat{a}_R \hat{a}_S` 的所有项均为零，得到：
+
+.. math::
+    H_{ij} =&\ \frac{1}{2} \big(
+        (pr|qs) \langle D_j | \hat{E}_{pr} \hat{E}_{qs} |D_i \rangle
+        +  (qs|pr) \langle D_j | \hat{E}_{qs} \hat{E}_{pr} |D_i \rangle
+        +  (ps|qr) \langle D_j | \hat{E}_{ps} \hat{E}_{qr} |D_i \rangle
+        +  (qr|ps) \langle D_j | \hat{E}_{qr} \hat{E}_{ps} |D_i \rangle
+        \big) \\
+        =&\ (pr|qs) - (ps|qr)
+    :label: eq22
+
+[我们后面倾向于不用斯莱特-康顿规则, 而采用更一般的方法计算任意二次量子化哈密顿量的矩阵元. 因此忽略这里的推导. 注意上面 Hamiltonian 的定义如下. 这里意味着 pqrs 在自旋轨道的意义上互相完全不一样.]
+
+.. math::
+    \hat{H} = \sum_{pq} \hat{E}pq h_{pq}
+    + \frac{1}{2} \sum_{pqrs} \hat{e}_{pqrs} (pq|rs)
+
+因此，在双激发的情况下，矩阵元只取决于激发算符，而与其余轨道无关。对于单重激发
+
+.. math::
+    |D_j\rangle = \hat{a}_P^\dagger \hat{a}_R |D_i\rangle,
+    :label: eq23
+
+我们得到下列表达式 [这里虽然取决于其他轨道, 但是这些轨道也是 Hamiltonian 里面的, 因此不影响我对一般 Hamiltonian 方法的理解, 即 integral driven 的方法.]
+
+.. math::
+    H_{ij} =&\ h_{pr} \langle D_j |\hat{E}_{pr} | D_i \rangle
+    +\frac{1}{2} \sum_k \big(
+        (pr|kk) \langle D_j | \hat{E}_{pr} \hat{E}_{kk} | D_i \rangle
+      + (kk|pr) \langle D_j | \hat{E}_{kk} \hat{E}_{pr} | D_i \rangle
+      + (pk|kr) \langle D_j | \hat{E}_{pk} \hat{E}_{kr} - \hat{E}_{pr} |D_i\rangle
+      + (kr|pk) \langle D_j | \hat{E}_{kr} \hat{E}_{pk} - \hat{E}_{pr} |D_i\rangle
+        \big) \\
+    =&\ h_{pr} + \sum_k \big[ (pr|kk) - (pk|kr) \big]
+        \langle D_i | \hat{n}_k | D_i \rangle,
+    :label: eq24
+
+[当然 Hamiltonian driven 的算法可能也有问题, 就是对单激发行列式, 行列式的数量比实际要低. 所以可能在积分重排序之后, 按照可能涉及的激发类型进行分类? 然后每一类即使只有一个, 选出那一个应该并不需要枚举.]
+
+其中 :math:`\hat{n}_k = \hat{a}_k^\dagger \hat{a}_k` 是空间轨道 :math:`k` 的占据数算符，限制了求和范围为占据轨道。与双激发相比，矩阵元现在取决于哪些轨道被占据。
+
+对于对角矩阵元 :math:`H_{ii}` ，不会产生由激发算符引起的改变自旋轨道占据情况的贡献, 从而
+
+.. math::
+    H_{ii} =&\ \sum_k h_{kk} \langle D_i |\hat{E}_{kk} |D_i\rangle
+        + \frac{1}{2} \sum_{kl} \big(
+      (kk|ll) \langle D_i | \hat{E}_{kk} \hat{E}_{ll} | D_i \rangle
+    + (ll|kk) \langle D_i | \hat{E}_{ll} \hat{E}_{kk} | D_i \rangle
+    + 2(kl|lk) \langle D_i | \hat{E}_{kl} \hat{E}_{kl} - \hat{E}_{kl} | D_i\rangle
+    \big) \\
+    =&\ \sum_k h_{kk} \langle D_i | \hat{n}_k | D_i \rangle
+    + \sum_{kl} \big[ (kk|ll) - (kl|lk) \big]
+        \langle D_i | \hat{n}_k \hat{n}_l | D_i \rangle
+    :label: eq25
+
+我们再一次看到，占据数算符的期望值限制了空间轨道的求和范围。
+
+式 :eq:`eq22` 到 :eq:`eq25` 称为 Slater-Condon 规则，将 :math:`N` 电子问题的哈密顿矩阵元的计算简化为一、二体积分的计算。计算矩阵元的计算成本仅与占据轨道数量成线性比例，并且与所涉及的行列式的虚轨道数无关。
+
+最后，将 :math:`|D_j\rangle` 的表达式表示为 :eq:`eq21` 或 :eq:`eq23` 中的形式是应用 Slater-Condon 规则的关键。但是，式 :eq:`eq21` 中的产生/湮灭算符的顺序不固定，即 :math:`a_P^{\dagger} a_Q^\dagger a_S a_R` 的不同顺序可能会引入符号变化。
 
