@@ -141,7 +141,7 @@ latex_elements = {
 \else\usepackage{CJKutf8}
 \fi
 \usepackage{color}
-\usepackage{amsmath}
+%\usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathrsfs}
 \usepackage{tensor}
